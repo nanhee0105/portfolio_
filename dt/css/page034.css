@@ -1,0 +1,139 @@
+@charset "utf-8";
+.midWrap {top: 0;}
+.rightTop {position: absolute;right: 10px;top: 100px;width: 480px;}
+.rightTop p:nth-of-type(1) {margin-bottom: 40px;}
+.rightTop p:nth-of-type(3) {margin-top: 240px;}
+
+
+/* 사이드 */
+.safety .checkBox {position: absolute; left: 16px;}
+.midWrap .side {top: 382px;}
+
+.rightTop .clickBtn {top: -89px;left: -181px;z-index: 2;}
+
+.rightTop .imgclickWrap {height: 170px;position: absolute;top: 134px;}
+.rightTop .imgclickWrap .imgBox {width: 228px;height: 164px;margin-right: 9px;}
+.rightTop .imgclickWrap .imgBox img {width: 227px;height: auto;}
+.rightTop .imgclickWrap .imgClick:nth-child(1) {margin-right: 10px;}
+.rightTop .imgclickWrap .imgBox .imgWrap {width: 226px;height: 160px;}
+.rightTop .imgclickWrap .imgBox .text {bottom: -30px;left: 53%;}
+
+.imgclickWrap .imgBox .imgWrap {opacity: 1;}
+.imgclickWrap .bar {position: absolute;top: -234px;left: -245px;} 
+.imgclickWrap .bar .imgWrap {width: 154px;height: 361px;} 
+.imgclickWrap .bar .imgWrap img {width: 154px;filter: grayscale(50%) brightness(0%) opacity(0.1);height: auto;} 
+
+.bottomWrap .clickBtn {top: 280px;left: 100px;z-index: 2;}
+.bottomWrap img.bar {width: 154px;height: auto;position: absolute;bottom: -9px;left: 60px;}
+.bottomWrap {z-index: -1;position: absolute;bottom: 0px;right: 0px;height: 524px;width: 100%;}
+img.bottomBg {width: 768px;height: auto;position: absolute;top: 0px;left: 0px;}
+.bottomWrap .imgclickWrap {position: absolute;top: 0px;left: 0px;}
+.bottomWrap .imgclickWrap .imgBox {width: 178px;height: 178px;border-radius: 100%;position: absolute;background-color: #fff;}
+.bottomWrap .imgclickWrap .imgBox:nth-of-type(2) {top: 50px;left: 260px;}
+.bottomWrap .imgclickWrap .imgBox:nth-of-type(3) {top: 80px;left: 510px;}
+.bottomWrap .imgclickWrap .imgBox:nth-of-type(3) .imgWrap  {width: 190px;height: 190px;}
+.bottomWrap .imgclickWrap .imgBox:nth-of-type(4) {top: 240px;left: 364px;}
+.bottomWrap .imgclickWrap .imgBox img {width: 178px;height: auto;position: absolute;}
+.bottomWrap .imgclickWrap .imgBox .imgWrap {width: 178px;height: 178px;position: relative;top: 50%;left: 50%;transform: translate(-50%,-50%);transform-origin: 0% 0%;opacity: 1;}
+.bottomWrap .imgclickWrap .imgBox .text {position: absolute;}
+.bottomWrap .imgclickWrap .imgBox:nth-of-type(2) .text {bottom: 30px;left: 143px;}
+.bottomWrap .imgclickWrap .imgBox:nth-of-type(3) .text {bottom: 17px;left: 116px;width: 80px;}
+.bottomWrap .imgclickWrap .imgBox:nth-of-type(4) .text {bottom: 10px;left: 100px;}
+.bottomWrap .imgclickWrap .imgBox .text::after{content:"";width: 0px;height: 0px;border-left: 6px solid transparent;border-right: 6px solid transparent;border-bottom: 10px solid #939393;position: absolute;top: 4px;left: -17px;}
+.bottomWrap .wood {background-color: #fff;border-radius: 20px;position: absolute;bottom: 60px;left: 270px;width: 120px;height: 28px;}
+.bottomWrap .wood span {text-align: center;display: inline-block;line-height: 29px;width: 100%;}
+
+.bottomWrap .bar {position: absolute;top: 63px;left: 43px;} 
+.bottomWrap .bar .imgWrap {width: 137px;height: 462px;} 
+.bottomWrap .bar .imgWrap img {width: 137px;filter: grayscale(50%) brightness(0%) opacity(0.5);height: auto;} 
+
+
+/* 용어 사전 */
+.openPopup1 .popupWrap {height: 660px;}
+.openPopup2 .popupWrap {height: 660px;}
+.openPopup2 .imgText span {position: absolute;font-size: 12px;}
+.openPopup2 .imgText span:nth-of-type(1) {top: 463px;left: 231px;}
+.openPopup2 .imgText span:nth-of-type(2) {top: 526px;left: 219px;}
+
+.page {-webkit-text-stroke: 0.5px #fff;}
+
+/* 애니메이션 */
+.bar .imgWrap.opacity { animation: none; }
+.bar .imgWrap.opacity img { animation: original 2s linear forwards; }
+@keyframes original {
+    0% {filter: grayscale(50%) brightness(0%) opacity(0.1);}
+    10% {filter: grayscale(0%) brightness(100%) opacity(1);}
+    100% {filter: grayscale(0%) brightness(100%) opacity(1);}
+}
+
+
+/* Btn */
+.supreiBtn {right: 40px;top: 65px;}
+/* 보충심화 팝업 */
+.supreiPopup .popupWrap {height: 490px;}
+.supreiPopup .sliderWrap {
+  height: 380px;
+  top: 90px;
+}
+.supreiPopup .sliderWrap .sliceInner .itemList::after {
+  content: '';
+  background: url(../images/pop/bullet.png) no-repeat center/contain;
+  width: 27px;
+  height: 21px;
+  position: absolute;
+  top: -40px;
+  left: -17px;
+}
+.supreiPopup .sliderWrap .sliceInner .itemList::before {
+  content: '광택이 있고 단단한 자동차';
+  position: absolute;
+  top: -36px;
+  left: 60px;
+  font-family: 'NanumSquareRoundEB';
+  font-size: 20px;
+}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(2):before {
+  content: '광택이 있고 단단한 철길';
+}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(3):before {
+    content: '광택이 있고 단단한 금속 망치';
+  }
+.supreiPopup .sliderWrap .slideView {
+  height: 410px;
+}
+.supreiPopup .sliderWrap .sliceInner {
+  width: 2080px;
+  top: 40px;
+}
+.supreiPopup .sliderWrap .sliceInner p {font-size: 20px;position: relative;}
+
+
+/* 드래그 */
+.dragWrap .dragTarget {width: 115px;height: 379px;line-height: 30px;position: absolute;background: rgba(0,0,0,0.5);border: 2px dashed red;padding: 10px;box-sizing: border-box;}
+.dragWrap .dragTargetWrap div:nth-of-type(1) {top: 0;left: 34px;}
+.dragWrap .dragTargetWrap div:nth-of-type(2) {top: 266px;left: 43px;}
+.dragWrap .dragTargetWrap div:nth-of-type(3) {top: 243px;left: 0;}
+.dragWrap .dragTargetWrap div:nth-of-type(4) {top: 289px;left: 0;}
+.dragWrap .dragTarget input {display: none;}
+.dragWrap .dragBox {width: 186px;height: 158px;position: absolute;left: -219px;top: 190px;border-radius: 10px;background: #efe2d2;}
+.dragWrap .dragTarget .guideT {color:#f44741; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;}
+.dragWrap .dragBox .drag {position: absolute;}
+.dragWrap .dragBox .drag img {width: 41px;height: auto;}
+.dragWrap .dragBox .drag1 {top: -228px;left: 423px;}
+.dragWrap .dragBox .drag2 {top: -228px;left: 474px;}
+.dragWrap .dragBox .drag3 {top: -228px;left: 527px;}
+.dragWrap .dragBox .drag4 {top: -228px;left: 577px;}
+.dragWrap .dragBox .ex {position: absolute;top: -180px;left: 659px;width: 235px;text-align: left;color: #f44741;line-height: 25px;}
+.dragWrap .dragBox .ex .dragTarget {position: relative;top: 7px;display: inline-block;margin: 0 4px;width: 40px;height: 25px;border-radius: 6px;border: 1px dashed green;background: #f6f6f6;}
+.dragWrap .dragBox .ex::after {content: "";background: url(../images/common/point_btn.png) no-repeat center/19px 19px;width: 24px;height: 24px;position: absolute;left: -28px;top: 0;}
+.dragWrap .dragTargetWrap div.complete {width: 100%;position: absolute;top: 0;left: 0px;}
+.dragWrap .dragTargetWrap div.complete img {width: 100%;}
+
+.retryagainBtn {display: none;top: 5px;left: 657px;}
+.doitsolve {top: 52px; left: 547px; z-index: 1;}
+.doitsolve::after { top: -10px; border-top: none; border-bottom: 12px solid #fd6522; border-right: 6px solid transparent; border-left: 6px solid transparent;}
+.checkBtn {width: 33px;height: 34px;cursor: pointer;position: absolute;top: 5px;left: 657px;}
+.retry .retryagainBtn {display: block;}
+.retry .checkBtn {display: none;}
+
+.thinkagain {top: 2px !important;}

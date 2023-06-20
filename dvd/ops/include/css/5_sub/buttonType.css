@@ -1,0 +1,150 @@
+
+/* 버튼 */
+.goTomain {
+  display: inline-block;
+  width: 105px;
+  height: 41px;
+  margin-left: 10px;
+  vertical-align: middle;
+  background: url(../../images/btn/sub/goTomain.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.goTomain.ON, .goTomain.on {
+  background: url(../../images/btn/sub/goTomain.png) no-repeat center bottom/100%;
+}
+.answerCheck {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 34px;
+  height:34px;
+  background: url(../../images/btn/sub/checkBtn.png) no-repeat center top/100%;
+  cursor: pointer;
+  z-index: 2;
+}
+.answerCheck.ON {
+  background: url(../../images/btn/sub/checkBtn.png) no-repeat center bottom/100%;
+}
+
+.answerCheck.reset{
+  background: url(../../images/btn/sub/checkBtn_click.png) no-repeat center top/100%;
+}
+
+.answerCheck.reset.ON{
+  background: url(../../images/btn/sub/checkBtn_click.png) no-repeat center bottom/100%;
+}
+
+.addBtn {
+  position: absolute;
+  width:51px;
+  height: 51px;
+  background: url(../../images/btn/butt_zoom.png) no-repeat center top/100%;
+  cursor: pointer;
+} 
+.addBtn.ON {
+  transform: scale(.94);
+  background-position-y: bottom;
+}
+
+.popcloseBtn{
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 45px;
+  height: 45px;
+  vertical-align: middle;
+  transform-origin: center center;
+  background: url(../../images/btn/bt_pop_close.png) no-repeat center top/100%;
+  cursor: pointer;
+  z-index: 1;
+}
+.popcloseBtn.ON {
+  transform: scale(.94);
+  background-position-y: bottom;
+}
+.answerRetry {
+  position: absolute;
+  right: -14px;
+  top: -12px;
+  width: 34px;
+  height:34px;
+  background: url(../../images/btn/sub/checkBtn_click.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.answerRetry.ON {
+  background: url(../../images/btn/sub/checkBtn_click.png) no-repeat center bottom/100%;
+}
+.exanserBtn {
+  position: absolute;
+  bottom: 0px;
+  right: 60px;
+  width: 143px;
+  height: 41px;
+  background: url(../../images/btn/sub/btnAnswer.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.exanserBtn.ON {
+  background: url(../../images/btn/sub/btnAnswer.png) no-repeat center bottom/100%;
+}
+.answerRetry[data-type="retry"],
+.exanserBtn[data-type="retry"],
+.answerBtn[data-type="retry"],
+.retryBtn {
+  position: absolute;
+  bottom: 0px;
+  right: 60px;
+  width: 143px;
+  height: 41px;
+  background: url(../../images/btn/sub/btnSolve.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.answerRetry[data-type="retry"],
+.exanserBtn[data-type="retry"],
+.answerBtn[data-type="retry"],
+.retryBtn.ON {
+  background: url(../../images/btn/sub/btnSolve.png) no-repeat center bottom/100%;
+}
+
+.answerRetry[data-type="retry"].ON,
+.exanserBtn[data-type="retry"].ON,
+.answerBtn[data-type="retry"].ON {
+  background: url(../../images/btn/sub/btnSolve.png) no-repeat center bottom/100%;
+}
+
+.answerRetry,
+.exanserBtn,
+.answerBtn,
+.retryBtn {
+  display: none;
+}
+.answerRetry.show,
+.exanserBtn.show,
+.answerBtn.show,
+.retryBtn.show {
+  display: block;
+}
+
+.drawBtn {
+  position: absolute;
+  bottom: 2px;
+  right: 206px;
+  width: 146px;
+  height: 36px;
+  background: url(../../images/btn/sub/butt_paint.png) no-repeat center top/100%;
+  }
+
+.drawBtn.ON {background: url(../../images/btn/sub/butt_paint.png) no-repeat center bottom/100%;}
+
+.answerBtn {
+  position: absolute;
+  bottom: 0px;
+  right: 60px;
+  width: 143px;
+  height: 42px;
+  background: url(../../images/btn/btnCheck.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.answerBtn.ON {
+  background: url(../../images/btn/btnCheck.png) no-repeat center bottom/100%;
+}

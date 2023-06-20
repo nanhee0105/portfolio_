@@ -1,0 +1,2728 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=1280, height=720" />
+	<link rel="stylesheet" type="text/css" href="../css/6/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/5/g5_nav.css" />
+	<script src="../js/jquery-3.5.1.min.js"></script>
+	<title>nav</title>
+</head>
+
+<body id="mainFrame">
+	<div class="js-toc">
+		<div class="topMenu">
+			<p><img class="js-toggleTocButton navBar" src="../../images/nav/main_bar.png" alt=""></p>
+			<div class="menutext">
+				<span class="js-subTitleInHeader titleColor"></span>
+				<span class="js-infoTitleInHeader"></span>
+				<span class="stepArea">
+					<span class="titleColor">|</span>
+					<span class='js-stepInHeader'></span>
+				</span>
+			</div>
+			<div class="pagetext">
+				<p>
+					<span>과학</span>
+					<span class="js-pageNumber"></span><span>쪽으로 가기</span>
+				</p>
+			</div>
+			<div class="pagebox">
+				<div class="pageBtnleft"></div>
+				<div class="pageBtnright"></div>
+				<div class="pagenum">
+					<p>
+						<input type="text" value="" />/<input type="text" value="" />
+					</p>
+				</div>
+			</div>
+			<div class="help js-helpButton"></div>
+			<div class="appbox js-appButton"></div>
+			<div class="appWarp js-appContainer">
+				<div class="mainApp">
+					<div class="appList">
+						<div class="hardong">
+							<ul>
+								<li class="js-reference reference" data-active="reference">
+									<p class="appArea"></p>
+								</li>
+								<li class="js-activeButton board" data-active="board">
+									<p class="appArea"></p>
+								</li>
+								<li class="js-activeButton timer" data-active="timer">
+									<p class="appArea"></p>
+								</li>
+								<li class="js-activeButton sticker" data-active="groupSticker">
+									<p class="appArea"></p>
+								</li>
+								<li class="js-activeButton announce" data-active="selection">
+									<p class="appArea"></p>
+								</li>
+								<li class="js-stamp stamp" data-active="stamp">
+									<p class="appArea"></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="stampWrap js-stampContainer">
+				<div class="stampDropArea js-stampDropArea"></div>
+				<div class="stampBox js-stampBox">
+					<span class="stamp_drag js-stampDrag"></span>
+					<span class="stamp_close js-stampClose"></span>
+					<div class="stampArea">
+						<div class="stamp1 js-stampType" data-type="1">
+							<p class="appArea"></p>
+						</div>
+						<div class="stamp2 js-stampType" data-type="2">
+							<p class="appArea"></p>
+						</div>
+						<div class="stamp3 js-stampType" data-type="3">
+							<p class="appArea"></p>
+						</div>	
+						<div class="stamp4 js-stampType" data-type="4">
+							<p class="appArea"></p>
+						</div>
+					</div>
+					<div class="easerArea">
+						<div class="easer1 js-eraser" data-type="piece">
+							<p class="appArea"></p>
+						</div>
+						<div class="easer2 js-eraser" data-type="all">
+							<p class="appArea"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mainCloseBtn js-tocCloseButton"></div>
+		</div>
+		<!--탑메뉴-->
+		<div class="navWrap">
+			<div class="navBackground"></div>
+			<nav>
+				<ul class="gnb">
+					<li class="js-sectionButton section1">
+						<h2>1. 탐구야, 궁금한 점을 해결해 볼까?<img src="../../images/nav/icon_b_1.png" alt="" /></h2>
+					</li>
+					<li class="js-sectionButton section2">
+						<h2>2. 생물과 환경 <img src="../../images/nav/icon_b_2.png" alt="" /> </h2>
+					</li>	
+					<li class="js-sectionButton section3">
+						<h2>3. 날씨와 우리 생활<img src="../../images/nav/icon_b_3.png" alt="" /> </h2>
+					</li>
+					<li class="js-sectionButton section4">
+						<h2>4. 물체의 운동<img src="../../images/nav/icon_b_4.png" alt="" /> </h2>
+					</li>
+					<li class="js-sectionButton section5">
+						<h2>5. 산과 염기<img src="../../images/nav/icon_b_5.png" alt="" /> </h2>
+					</li>
+				</ul>
+				
+				<div class="js-lessonBox liInner">
+					<div class="ofNum"><span>1.</span> <span class="js-lessonTitleText">탐구야,<br>궁금한 점을<br>해결해 볼까?</span></div>
+
+					<div class="js-subTitle subBox" data-intro="">
+						<h3><span class="dashDot"></span>대단원 도입</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="1">
+						<h3><span class="dashDot"></span>과학 탐구</h3>
+					</div>
+				</div>
+				
+				<div class="js-lessonBox liInner">
+					<div class="ofNum"><span>2.</span> <span class="js-lessonTitleText">생물과<br>환경</span></div>
+					<div class="js-subTitle subBox" data-intro="">
+						<h3><span class="dashDot"></span>대단원 도입</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="1">
+						<h3><span class="dashDot"></span>생각 열기</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="2">
+						<h3><span class="dashDot"></span>과학 탐구</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="3">
+						<h3><span class="dashDot"></span>창의 융합 활동</h3>
+					</div>
+					
+					<div class="js-subTitle subBox" data-sub-index="4">
+						<h3><span class="dashDot"></span>신기한 과학 탐험</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="5">
+						<h3><span class="dashDot"></span>단원 정리하기</h3>
+					</div>
+				</div>
+				
+				<div class="js-lessonBox liInner">
+					<div class="ofNum"><span>3.</span> <span class="js-lessonTitleText">날씨와<br>우리 생활</span></div>
+					<div class="js-subTitle subBox" data-intro="">
+						<h3><span class="dashDot"></span>대단원 도입</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="1">
+						<h3><span class="dashDot"></span>생각 열기</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="2">
+						<h3><span class="dashDot"></span>과학 탐구</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="3">
+						<h3><span class="dashDot"></span>창의 융합 활동</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="4">
+						<h3><span class="dashDot"></span>신기한 과학 탐험</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="5">
+						<h3><span class="dashDot"></span>단원 정리하기</h3>
+					</div>
+				</div>
+				
+				<div class="js-lessonBox liInner">
+					<div class="ofNum"><span>4.</span> <span class="js-lessonTitleText">물체의<br/> 운동</span></div>
+					<div class="js-subTitle subBox" data-intro="">
+						<h3><span class="dashDot"></span>대단원 도입</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="1">
+						<h3><span class="dashDot"></span>생각 열기</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="2">
+						<h3><span class="dashDot"></span>과학 탐구</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="3">
+						<h3><span class="dashDot"></span>창의 융합 활동</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="4">
+						<h3><span class="dashDot"></span>신기한 과학 탐험</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="5">
+						<h3><span class="dashDot"></span>단원 정리하기</h3>
+					</div>
+				</div>
+				
+				<div class="js-lessonBox liInner">
+					<div class="ofNum"><span>5.</span> <span class="js-lessonTitleText">산과 염기</span></div>
+					<div class="js-subTitle subBox" data-intro="">
+						<h3><span class="dashDot"></span>대단원 도입</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="1">
+						<h3><span class="dashDot"></span>생각 열기</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="2">
+						<h3><span class="dashDot"></span>과학 탐구</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="3">
+						<h3><span class="dashDot"></span>창의 융합 활동</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="4">
+						<h3><span class="dashDot"></span>신기한 과학 탐험</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="5">
+						<h3><span class="dashDot"></span>단원 정리하기</h3>
+					</div>
+				</div>
+				
+				<div class="infoInner">
+					<div class="js-subMenuBox infoInner_sub">
+						<div class="js-subMenu infoBox" data-index="1">
+							<div class="js-infoTitle">무엇을 탐구할지 정해 볼까요?</div>
+							<div class="js-infoTitle">탐구 계획을 세워 볼까요?</div>
+							<div class="js-infoTitle">탐구를 실행해 볼까요?</div>
+							<div class="js-infoTitle">탐구 결과 발표 자료를 만들어 볼까요?</div>
+							<div class="js-infoTitle">탐구 결과를 발표해 볼까요?</div>
+						</div>
+					</div>
+					
+					<div class="js-subMenuBox infoInner_sub">
+						<div class="js-subMenu infoBox" data-index="1">
+							<div class="js-infoTitle">학교의 환경을 관찰해 볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="2">
+							<div class="js-infoTitle">생태계를 이루고 있는 요소</div>
+							<div class="js-infoTitle">생물 요소 분류</div>
+							<div class="js-infoTitle">생태계에서 생물 요소의 먹이 관계</div>
+							<div class="js-infoTitle">안정적인 생태계의 모습</div>
+							<div class="js-infoTitle">비생물 요소가 생물에 미치는 영향</div>
+							<div class="js-infoTitle">환경에 적응하여 사는 생물</div>
+							<div class="js-infoTitle">환경 오염이 생물에 미치는 영향</div>
+						</div>
+						
+						
+						<div class="js-subMenu infoBox" data-index="3">
+							<div class="js-infoTitle">마을 생태계를 복원하고 보전하기 위한<br>방법을 소개해 볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="4">
+							<div class="js-infoTitle">독도의 생태계를 알아볼까요?</div>
+							<!-- <div class="js-infoTitle">직업 탐험</div> -->
+						</div>
+						<div class="js-subMenu infoBox" data-hidden-menu="" data-index="5">
+							<div class="js-infoTitle">단원 정리하기</div>
+						</div>
+					</div>
+					
+					<div class="js-subMenuBox infoInner_sub">
+						<div class="js-subMenu infoBox" data-index="1">
+							<div class="js-infoTitle">날씨에 따라 달라지는 것을 표현해 볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="2">
+							<div class="js-infoTitle">습도가 우리 생활에 미치는 영향</div>
+							<div class="js-infoTitle">이슬과 안개, 그리고 구름</div>
+							<div class="js-infoTitle">비와 눈이 내리는 과정</div>
+							<div class="js-infoTitle">고기압과 저기압</div>
+							<div class="js-infoTitle">바람이 부는 까닭</div>
+							<div class="js-infoTitle">우리나라의 계절별 날씨</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="3">
+							<div class="js-infoTitle">날씨 앱을 구상해 볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="4">
+							<div class="js-infoTitle">'맞춤형 일기 예보 - 앱에서 스마트<br>창문까지'</div>
+						</div>
+						<div class="js-subMenu infoBox" data-hidden-menu="" data-index="5">
+							<div class="js-infoTitle">단원 정리하기</div>
+						</div>
+					</div>
+					
+					<div class="js-subMenuBox infoInner_sub">
+						<div class="js-subMenu infoBox" data-index="1">
+							<div class="js-infoTitle">가장 빠른 강아지를 찾아볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="2">
+							<div class="js-infoTitle">물체의 운동을 나타내는 방법</div>
+							<div class="js-infoTitle">여러 가지 물체의 운동</div>
+							<div class="js-infoTitle">일정한 거리를 이동한 물체의 빠르기 비교</div>
+							<div class="js-infoTitle">일정한 시간 동안 이동한 물체의 빠르기<br>비교</div>
+							<div class="js-infoTitle">물체의 속력</div>
+							<div class="js-infoTitle">속력과 관련된 안전장치와 교통안전 수칙</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="3">
+							<div class="js-infoTitle">안전한 배송 수단을 만들어 물건을 배달해 볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="4">
+							<div class="js-infoTitle">빠르고 편리한 드론, 어디에 이용할까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-hidden-menu="" data-index="5">
+							<div class="js-infoTitle">단원 정리하기</div>
+						</div>
+					</div>
+					
+					<div class="js-subMenuBox infoInner_sub">
+						<div class="js-subMenu infoBox" data-index="1">
+							<div class="js-infoTitle">알록달록 애벌레를 만들어 볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="2">
+							<div class="js-infoTitle">여러 가지 용액의 분류</div>
+							<div class="js-infoTitle">색깔 변화를 이용한 용액 분류</div>
+							<div class="js-infoTitle">자주색 양배추를 이용한 용액 분류</div>
+							<div class="js-infoTitle">산성 용액과 염기성 용액의 성질 비교</div>
+							<div class="js-infoTitle">산성 용액과 염기성 용액을 섞을 때의 변화</div>
+							<div class="js-infoTitle">산성 용액과 염기성 용액의 이용</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="3">
+							<div class="js-infoTitle">천연 지시약으로 전통 문양을 만들어 볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="4">
+							<div class="js-infoTitle">한지에 숨겨진 비밀</div>
+							<div class="js-infoTitle">직업 탐험</div>
+						</div>
+						<div class="js-subMenu infoBox" data-hidden-menu="" data-index="5">
+							<div class="js-infoTitle">단원 정리하기</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="sectionInfo goDown">
+			<ul class='js-infoBox section1_info'>
+				<!--1. 탐구야, 궁금한 점을 해결해 볼까?-->
+				<li class="js-infoList infoPop">
+					<!--1-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="1단원_1차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>	
+							<p data-down="g52_01_p012_05.mp4">개념 학습 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="1단원_1차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="1단원_1차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">탐구 문제 정하기</p>
+								<p class="js-page hidden">탐구 문제 정하기</p>
+								<p class="js-page">궁금한 점 생각하고 탐구 문제 정하기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--2-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="1단원_2차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_02_p014_04.mp4">개념 학습 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="1단원_2차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="1단원_2차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">탐구 계획 세우기</p>
+								<p class="js-page">탐구 문제 해결 방법 생각하고 탐구<br>계획 세우기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--3-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="1단원_3~4차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_03_p016_06.mp4">개념 학습 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="1단원_3~4차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="1단원_3~4차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">탐구 문제를 해결할 수 있는 고리<br>비행기 만들기</p>
+								<p class="js-page hidden">탐구 문제를 해결할 수 있는 고리 비행기 만들기</p>
+								<p class="js-page">고리 비행기 보완하기</p>
+								<p class="js-page">탐구 결과물을 만들고 보완하기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--5-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="1단원_5차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_04_p020_05.mp4">개념 학습 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="1단원_5차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">탐구 결과를 발표할 자료 만들기</p>
+								<p class="js-page hidden">탐구 결과를 발표할 자료 만들기</p>
+								<p class="js-page">발표 방법 정하고 발표 자료 만들기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!-- 6 -->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="1단원_6차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_05_p022_05.mp4">개념 학습 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="1단원_6차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">탐구 결과 발표하기</p>
+								<p class="js-page hidden">탐구 결과 발표하기</p>
+								<p class="js-page">탐구 결과 발표하고 새로운 탐구 <br>생각하기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<ul class='js-infoBox section2_info'>
+				<!--2. 생물과 환경-->
+				<li class="js-infoList infoPop">
+					<!--1-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="2단원_1차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_01_p026_01.mp4">생각 열기 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="2단원_1차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">학교의 환경을 관찰해 볼까요?</p>
+								<p class="js-page hidden">학교의 환경을 관찰해 볼까요?</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--2-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="2단원_2차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="2단원_2차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="2단원_2차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_2차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_2차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_2차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">다양한 생태계의 모습</p>
+								<p class="js-page">숲 생태계 관찰하기</p>
+								<p class="js-page hidden">숲 생태계 관찰하기</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--3-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="2단원_3차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="2단원_3차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="2단원_3차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_3차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_3차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_3차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">양분을 얻는 방법에 따라 생물<br>요소 분류하기</p>
+								<p class="js-page hidden">양분을 얻는 방법에 따라 생물 요소 분류하기</p>
+								<p class="js-page">생물 요소의 분류</p>
+								<p class="js-page hidden">생물 요소의 분류</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--4-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="2단원_4차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="2단원_4차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="2단원_4차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_4차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_4차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_4차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">먹이 관계 놀이 하기</p>
+								<p class="js-page hidden">먹이 관계 놀이 하기</p>
+								<p class="js-page">먹이 사슬과 먹이 그물</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--5-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="2단원_5차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="2단원_5차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="2단원_5차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_5차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_5차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_5차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">생태 피라미드와 생태계 평형</p>
+								<p class="js-page">생태계 평형 알아보기</p>
+								<p class="js-page hidden">생태계 평형 알아보기</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--6-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="2단원_6차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="2단원_6차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="2단원_6차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_6차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_6차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_6차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">햇빛과 물이 콩나물의 자람에 미치는<br>영향 알아보기</p>
+								<p class="js-page hidden">햇빛과 물이 콩나물의 자람에 미치는 영향 알아보기</p>
+								<p class="js-page hidden">햇빛과 물이 콩나물의 자람에 미치는 영향 알아보기</p>
+								<p class="js-page">비생물 요소의 영향</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--7-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="2단원_7차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="2단원_7차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="2단원_7차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_7차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_7차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_7차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">다양한 환경에 적응한 생물 알아보기</p>
+								<p class="js-page hidden">다양한 환경에 적응한 생물 알아보기</p>
+								<p class="js-page">환경에 적응한 생물</p>
+								<p class="js-page hidden">환경에 적응한 생물</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--8-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="2단원_8차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="2단원_8차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="2단원_8차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_8차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_8차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_8차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">환경 오염이 생물에 미치는 영향<br>조사하기</p>
+								<p class="js-page hidden">환경 오염이 생물에 미치는 영향<br>조사하기</p>
+								<p class="js-page">환경 오염의 종류와 영향</p>
+								<p class="js-page hidden">환경 오염의 종류와 영향</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--창의 융합 활동-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="2단원_9~10차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="2단원_9~10차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="2단원_9~10차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_9~10차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_9~10차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="2단원_9~10차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>상황 제시</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">탐구 문제 알아보기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>창의적 설계</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">쏙쏙! 생각 모으기</p>
+								<p class="js-page">척척! 함께 활동하기</p>
+								<p class="js-page hidden">척척! 함께 활동하기</p>
+								<!-- <p class="js-page hidden">척척! 함께 활동하기</p> -->
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>감성적 체험</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">톡톡! 함께 나누기</p>
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--신기한 과학 탐험-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="g52_10_p046_01.mp4">개념 학습 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea type2">
+						<div>
+							<div class="subBox" data-no-step="">
+								<p class="js-page">독도의 생태계를 알아볼까요?</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--단원 정리하기-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="2단원_11차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea type2">
+						<div>
+							<div class="subBox" data-no-step="">
+								<p class="js-page">생각 그물 완성하기</p>
+								<p class="js-page">이 단원에서 나는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+			<ul class='js-infoBox section3_info'>
+				<!--3. 날씨와 우리 생활-->
+				<li class="js-infoList infoPop">
+					<!--1-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="3단원_1차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_01_p052_01.mp4">생각 열기 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">날씨에 따라 달라지는 것을 표현해<br>볼까요?</p>
+								<p class="js-page hidden">날씨에 따라 달라지는 것을 표현해 볼까요?</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--2-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="3단원_2~3차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_02_p054_06.mp4">실험 동영상
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="3단원_2~3차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="3단원_2~3차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="3단원_2~3차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_2~3차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_2~3차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_2~3차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">건습구 온도계로 습도 측정하기</p>
+								<p class="js-page hidden">건습구 온도계로 습도 측정하기</p>
+								<p class="js-page hidden">건습구 온도계로 습도 측정하기</p>
+								<p class="js-page hidden">건습구 온도계로 습도 측정하기</p>
+								<p class="js-page hidden">건습구 온도계로 습도 측정하기</p>
+								<p class="js-page">습도가 우리 생활에 미치는 영향 조사하기</p>
+								<p class="js-page hidden">습도가 우리 생활에 미치는 영향 조사하기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--3-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="3단원_4~5차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_04_p058_05.mp4">실험 동영상
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="g52_04_p058_10.mp4">실험 동영상
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="3단원_4~5차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="3단원_4~5차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="3단원_4~5차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_4~5차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_4~5차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_4~5차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">이슬과 안개 발생 실험하기</p>
+								<p class="js-page hidden">이슬과 안개 발생 실험하기</p>
+								<p class="js-page hidden">이슬과 안개 발생 실험하기</p>
+								<p class="js-page hidden">이슬과 안개 발생 실험하기</p>
+								<p class="js-page">생각 쑥쑥</p>
+								<p class="js-page">구름 발생 실험하기</p>
+								<p class="js-page hidden">구름 발생 실험하기</p>
+								<p class="js-page hidden">구름 발생 실험하기</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--4-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="3단원_6차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_06_p062_05.mp4">실험 동영상
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="3단원_6차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="3단원_6차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="3단원_6차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_6차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_6차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_6차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">비 발생 실험하기</p>
+								<p class="js-page hidden">비 발생 실험하기</p>
+								<p class="js-page hidden">비 발생 실험하기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--5-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="3단원_7차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_07_p064_05.mp4">실험 동영상
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="3단원_7차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="3단원_7차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="3단원_7차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_7차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_7차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_7차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">기온에 따른 공기의 무게 비교하기</p>
+								<p class="js-page hidden">기온에 따른 공기의 무게 비교하기</p>
+								<p class="js-page hidden">기온에 따른 공기의 무게 비교하기</p>
+								<p class="js-page hidden">기온에 따른 공기의 무게 비교하기</p>
+								<!-- <p class="js-page hidden">기온에 따른 공기의 무게 비교하기</p> -->
+								<p class="js-page">고기압과 저기압</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--6-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="3단원_8차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_08_p066_05.mp4">실험 동영상
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="3단원_8차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="3단원_8차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="3단원_8차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_8차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_8차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_8차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">바람 발생 모형실험 하기</p>
+								<p class="js-page hidden">바람 발생 모형실험 하기</p>
+								<p class="js-page hidden">바람 발생 모형실험 하기</p>
+								<p class="js-page">바닷가에서 낮과 밤에 부는 바람의 방향</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--7-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="3단원_9차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="3단원_9차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="3단원_9차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_9차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_9차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="3단원_9차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">우리나라에 영향을 주는 공기 덩어리의 성질 조사하기</p>
+								<p class="js-page hidden">우리나라에 영향을 주는 공기 덩어리의 성질 조사하기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--창의 융합 활동-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="3단원_10~11차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="3단원_10~11차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>상황 제시</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">탐구 문제 알아보기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>창의적 설계</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">쏙쏙! 생각 모으기</p>
+								<p class="js-page">척척! 함께 활동하기</p>
+								<p class="js-page hidden">척척! 함께 활동하기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>감성적 체험</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">톡톡! 함께 나누기</p>
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<!-- <p class="js-page">정리 문제</p> -->
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--신기한 과학 탐험-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="g52_11_p072_01.mp4">개념 학습 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea type2">
+						<div>
+							<div class="subBox" data-no-step="">
+								<p class="js-page">'맞춤형 일기 예보 - 앱에서 스마트<br>창문까지'</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--단원 정리하기-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="3단원_12차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea type2">
+						<div>
+							<div class="subBox" data-no-step="">
+								<p class="js-page">생각 그물 완성하기</p>
+								<p class="js-page">이 단원에서 나는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+			<ul class='js-infoBox section4_info'>
+				<!--4. 물체의 운동-->
+				<li class="js-infoList infoPop">
+					<!--1-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="4단원_1차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_01_p078_01.mp4">생각 열기 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="g52_01_p078_05.mp4">실험 동영상
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">가장 빠른 강아지를 찾아볼까요?</p>
+								<p class="js-page hidden">가장 빠른 강아지를 찾아볼까요?</p>
+								<p class="js-page hidden">가장 빠른 강아지를 찾아볼까요?</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--2-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="4단원_2차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="4단원_2차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="4단원_2차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_2차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_2차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_2차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">물체의 운동 알아보기</p>
+								<p class="js-page">운동의 뜻 알아보기</p>
+								<p class="js-page">물체의 운동 나타내기</p>
+								<p class="js-page">물체의 운동을 나타내는 방법 알아보기</p>
+								<!-- <p class="js-page hidden">물체의 운동 나타내기</p> -->
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--3-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="4단원_3차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="4단원_3차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="4단원_3차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_3차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_3차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_3차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">여러 가지 물체의 운동 비교하기</p>
+								<p class="js-page hidden">여러 가지 물체의 운동 비교하기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--4-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="4단원_4차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="4단원_4차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="4단원_4차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="4단원_4차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_4차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_4차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_4차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">일정한 거리를 이동한 물체의 빠르기<br>비교하기</p>
+								<p class="js-page hidden">일정한 거리를 이동한 물체의 빠르기 비교하기</p>
+								<p class="js-page">일정한 거리를 이동하는 데 걸린 시간을<br>측정해 빠르기를 비교하는 운동 경기</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--5-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="4단원_5차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="4단원_5차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="4단원_5차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="4단원_5차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_5차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_5차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_5차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">일정한 시간 동안 이동한 물체의<br>빠르기 비교하기</p>
+								<p class="js-page hidden">일정한 시간 동안 이동한 물체의 빠르기 비교하기</p>
+								<p class="js-page">일정한 시간 동안 이동한 물체의<br>빠르기를 비교하는 방법 알아보기</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--6-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="4단원_6차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="4단원_6차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="4단원_6차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_6차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_6차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_6차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">이동 거리와 이동하는 데 걸린 시간이<br>모두 다른 물체의 빠르기 비교하기</p>
+								<p class="js-page">속력의 뜻과 속력을 구하는 방법<br>알아보기</p>
+								<p class="js-page">여러 가지 물체의 속력 알아보기</p>
+								<p class="js-page hidden">여러 가지 물체의 속력 알아보기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--7-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="4단원_7~8차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="4단원_7~8차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="4단원_7~8차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_7~8차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_7~8차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="4단원_7~8차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">속력과 관련된 안전장치와 교통안전 수칙 조사하기</p>
+								<p class="js-page hidden">속력과 관련된 안전장치와 교통안전 수칙 조사하기</p>
+								<!-- <p class="js-page hidden">속력과 관련된 안전장치와 교통안전 수칙 조사하기</p> -->
+								<!-- <p class="js-page hidden">속력과 관련된 안전장치와 교통안전 수칙 조사하기</p> -->
+								<!-- <p class="js-page hidden">속력과 관련된 안전장치와 교통안전 수칙 조사하기</p> -->
+								<p class="js-page">속력과 관련된 안전장치</p>
+								<p class="js-page hidden">속력과 관련된 안전장치</p>
+								<p class="js-page hidden">속력과 관련된 안전장치</p>
+								<p class="js-page">생각 쑥쑥</p>
+								<p class="js-page">우리 모둠의 교통안전 수칙 만들기</p>
+								<p class="js-page hidden">우리 모둠의 교통안전 수칙 만들기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--창의 융합 활동-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="4단원_9~10차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="4단원_9~10차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="4단원_9~10차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>상황 제시</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">탐구 문제 알아보기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>창의적 설계</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">쏙쏙! 생각 모으기</p>
+								<p class="js-page">척척! 함께 활동하기</p>
+								<p class="js-page hidden">척척! 함께 활동하기</p>
+
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>감성적 체험</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">톡톡! 함께 나누기</p>
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--신기한 과학 탐험-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="g52_09_p096_01.mp4">개념 학습 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea type2">
+						<div>
+							<div class="subBox" data-no-step="">
+								<p class="js-page">빠르고 편리한 드론, 어디에 이용할까요?</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--단원 정리하기-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="4단원_11차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea type2">
+						<div>
+							<div class="subBox" data-no-step="">
+								<p class="js-page">생각 그물 완성하기</p>
+								<p class="js-page">이 단원에서 나는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+			<ul class='js-infoBox section5_info'>
+				<!--5. 산과 염기-->
+				<li class="js-infoList infoPop">
+					<!--1-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="5단원_1차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_01_p102_01.mp4">생각 열기 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="5단원_1차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">알록달록 애벌레를 만들어 볼까요?</p>
+								<p class="js-page hidden">알록달록 애벌레를 만들어 볼까요?</p>
+								<!-- <p class="js-page hidden">알록달록 애벌레를 만들어 볼까요?</p> -->
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page hidden">정리하기</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--2-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="5단원_2차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_02_p104_05.mp4">실험 동영상
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="5단원_2차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_2차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_2차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_2차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_2차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_2차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">여러 가지 용액을 관찰하여 분류하기</p>
+								<p class="js-page hidden">여러 가지 용액을 관찰하여 분류하기</p>
+								<p class="js-page hidden">여러 가지 용액을 관찰하여 분류하기</p>
+								<p class="js-page hidden">여러 가지 용액을 관찰하여 분류하기</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--3-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="5단원_3차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_03_p106_05.mp4">실험 동영상
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="5단원_3차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_3차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_3차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_3차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_3차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_3차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">색깔 변화를 이용하여 용액 분류하기</p>
+								<p class="js-page hidden">색깔 변화를 이용하여 용액 분류하기</p>
+								<p class="js-page hidden">색깔 변화를 이용하여 용액 분류하기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--4-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="5단원_4차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_04_p108_05.mp4">실험 동영상
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="5단원_4차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_4차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_4차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_4차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_4차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_4차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">지시약을 만들어 용액 분류하기</p>
+								<p class="js-page hidden">지시약을 만들어 용액 분류하기</p>
+								<p class="js-page hidden">지시약을 만들어 용액 분류하기</p>
+								<p class="js-page hidden">지시약을 만들어 용액 분류하기</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--5-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="5단원_5차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="g52_06_p112_05.mp4">실험 동영상
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+							<p data-down="5단원_5차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_5차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_5차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_5차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_5차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_5차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">산성 용액과 염기성 용액에 여러 가지<br>물질 넣어 보기</p>
+								<p class="js-page hidden">산성 용액과 염기성 용액에 여러 가지 물질 넣어 보기</p>
+								<p class="js-page hidden">산성 용액과 염기성 용액에 여러 가지 물질 넣어 보기</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--5-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="5단원_6차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="5단원_6차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_6차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_6차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_6차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_6차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_6차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">산성 용액과 염기성 용액을 섞을 때의<br>변화 관찰하기</p>
+								<p class="js-page hidden">산성 용액과 염기성 용액을 섞을 때의 변화 관찰하기</p>
+								<p class="js-page">생각 쑥쑥</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--5-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="5단원_7~8차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="5단원_7~8차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_7~8차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_7~8차시_과정중심평가기준안.pdf">과정 중심 평가 기준안
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_7~8차시_과정중심평가학습지.pdf">과정 중심 평가 학습지
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_7~8차시_활동지(보충).pdf">활동지(보충)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+							<p data-down="5단원_7~8차시_활동지(심화).pdf">활동지(심화)
+								<a class="downIcon downIcon1 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>도입</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">들어가기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>전개</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">산성 용액과 염기성 용액을 이용하는<br>예 조사하기</p>
+								<p class="js-page hidden">산성 용액과 염기성 용액을 이용하는 예 조사하기</p>
+								<p class="js-page">산성 용액과 염기성 용액의 이용 예</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>정리</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">정리 문제</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--창의 융합 활동-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="5단원_9~10차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+							<p data-down="5단원_9~10차시_잠깐안전.hwp">잠깐! 안전
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+							<p data-down="5단원_9~10차시_참고자료.hwp">참고 자료
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div>
+							<p class="title">
+								<span>상황 제시</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">탐구 문제 알아보기</p>
+								<p class="js-page">학습 문제</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span>창의적 설계</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">쏙쏙! 생각 모으기</p>
+								<p class="js-page">척척! 함께 활동하기</p>
+								<p class="js-page hidden">척척! 함께 활동하기</p>
+							</div>
+						</div>
+						<div>
+							<p class="title">
+								<span> 감성적 체험</span>
+							</p>
+							<div class="subBox">
+								<p class="js-page">톡톡! 함께 나누기</p>
+								<p class="js-page">정리하기</p>
+								<p class="js-page">확인 꼭꼭</p>
+								<p class="js-page">다음 시간에는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--신기한 과학 탐험-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="g52_09_p118_01.mp4">개념 학습 애니메이션
+								<a class="downIcon downIcon3 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea type2">
+						<div>
+							<div class="subBox" data-no-step="">
+								<p class="js-page">한지에 숨겨진 비밀</p>
+								<p class="js-page hidden">한지에 숨겨진 비밀</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--신기한 과학 탐험-->
+					<div class="downArea" style="display: none;">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<!-- <p data-down="g52_09_p118_01.mp4">개념 학습 애니메이션
+								<a class="downIcon downIcon2 iconType1"></a>
+							</p> -->
+						</div>
+					</div>
+					<div class="infoArea type2">
+						<div>
+							<div class="subBox" data-no-step="">
+								<p class="js-page">문화재 보존 과학자</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="js-infoList infoPop">
+					<!--단원 정리하기-->
+					<div class="downArea">
+						<p class="downarea_title">자료실 데이터</p>
+						<div>
+							<p data-down="5단원_11차시_수업PPT.pptx">수업 PPT
+								<a class="downIcon downIcon4 iconType1"></a>
+							</p>
+						</div>
+					</div>
+					<div class="infoArea type2">
+						<div>
+							<div class="subBox" data-no-step="">
+								<p class="js-page">생각 그물 완성하기</p>
+								<p class="js-page">이 단원에서 나는</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!--섹션인포-->
+	</div>
+	<!--//navWrap-->
+	
+</div>
+<script src="../js/util.js"></script>
+<script src="../js/activeHelper.js"></script>
+<script src="../js/stamp.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+
+</html>

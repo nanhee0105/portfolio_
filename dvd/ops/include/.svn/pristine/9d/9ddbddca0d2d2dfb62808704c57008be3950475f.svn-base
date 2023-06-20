@@ -1,0 +1,22 @@
+
+/* 폰트*/
+@font-face {
+  font-family: "NanumSquareRoundEB";
+  src: url("../font/NanumSquareRoundEB.woff") format("woff");
+}
+@font-face {
+  font-family: "NotoSansKR-Regular";
+  src: url("../font/NotoSansKR-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "NotoSansKR-Medium";
+  src: url("../font/NotoSansKR-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "NotoSansKR-Bold";
+  src: url("../font/NotoSansKR-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "cafe24";
+  src: url("../font/Cafe24Ssurround.woff") format("woff");
+}

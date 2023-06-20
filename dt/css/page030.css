@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+.topWrap .bigTitle img:nth-child(1) {width: 54px;height: auto;position: absolute;top: 30px;left: 148px;}
+.topWrap .bigTitle img:nth-child(2) {width: 160px;height: auto;position: absolute;top: 80px;left: 573px;}
+.topWrap .topcont {
+    width: 300px;
+}
+.videoBtn {top: 60px;left: 610px;}
+
+/* 사이드 */
+.midWrap .side .safety {top: 0;}
+
+
+/* 준비해요 */
+.sliderWrap .slideView {left: 0;transform: none;}
+.slideView .listBox {width: 50%;}
+.slideView .listBox > p {height: 118px;}
+.slideView .listBox:nth-child(1) img{width: 100px;}
+.slideView .listBox:nth-child(2) img{width: 130px;}
+.slideView .checkText {left: 53%;}
+
+.bottomWrap {position: absolute;bottom: 0px;left: 0px;}
+.bottomWrap img.Bg {width: 692px;height: auto;}
+
+.balloonText p {text-align: center;position: absolute;top: 39px;left: 262px;line-height: 21px;}
+.balloonText .talkBtn {top: 21px;left: 363px;}
+.roadfindBtn {
+    top: 409px;
+    left: 23px;
+}
+
+
+.popupOverlay.subPop .popupWrap .tabTopImg::after {left: 290px;}
+.activityTit .square {width: 47px;height: 24.5px;display: inline-block;position: relative;top: 6px;box-sizing: border-box;border: 1px solid #ad9575;border-radius: 2px;margin-left: 5px;}
+.activityTit .square::after {content: ""; width: 90%; height: 80%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #fff3e9; border-radius: 1px;}
+
+
+.act_pop_01 {width: 640px; height: 400px; display: flex; justify-content: space-between; align-content: space-between; flex-wrap: wrap; left: 50%; transform: translateX(-50%);}
+.act_pop_01 .list {width: 32.3333%; height: 24%; position: relative; box-sizing: border-box; border: 2px solid #ad9575; border-radius: 3px ;}
+.act_pop_01 .list div {width: 50%; height: 100%; position: absolute;}
+.act_pop_01 .list img {position: absolute; top: 12px; left: 50%; transform: translateX(-50%);}
+.act_pop_01 .list span {width: 100%; position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); text-align: center;}
+.act_pop_01 .list textarea {width: 85px; height: 69px; padding: 5px; line-height: 16px; position: absolute; top: 50%; right: 12px; transform: translateY(-50%); background: #fff3e9;}
+.act_pop_01 .list:nth-of-type(1) img {width: 83px;}
+.act_pop_01 .list:nth-of-type(2) img {width: 64px;}
+.act_pop_01 .list:nth-of-type(3) img {width: 59px;}
+.act_pop_01 .list:nth-of-type(4) img {width: 42px;}
+.act_pop_01 .list:nth-of-type(5) img {width: 57px;}
+.act_pop_01 .list:nth-of-type(6) img {width: 57px;}
+.act_pop_01 .list:nth-of-type(7) img {width: 35px;}
+.act_pop_01 .list:nth-of-type(8) img {width: 55px;}
+.act_pop_01 .list:nth-of-type(9) img {width: 61px;}
+.act_pop_01 .list:nth-of-type(10) img {width: 54px;}
+.act_pop_01 .list:nth-of-type(11) img {width: 61px;}
+.act_pop_01 .list:nth-of-type(12) img {width: 47px;}
+
+.tabContent .popupList:nth-of-type(2) .activityCont {text-align: center;}
+.tabContent .popupList:nth-of-type(2) .activityCont textarea {width: 640px; height: 134px; box-sizing: border-box; border: 2px solid #d2c8ba; border-radius: 3px;}
+
+
+/* 활용하기 */
+.openPopup2.miniPopup .exView {height: 565px;}
+.openPopup2 .wordImg {width: 400px;}
+
+
+.videoBg .videoWrap .tabTopImg::after {left: 285px;}

@@ -1,0 +1,184 @@
+
+/* 준비해요 */
+.typeB .contWrap {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 600px;
+  border-radius: 0 70px 0 0;
+  background-color: #fff;
+}
+.typeB .title {
+  position: absolute;
+  top: -48px;
+  width: 100%;
+  height: 60px;
+  background: url(../../images/common/title_tam.png) no-repeat left/257px 60px;
+}
+.typeB .title span {
+  position: absolute;
+  left: 260px;
+  top: 8px;
+  font-size: 32px;
+  font-family: "cafe24";
+}
+/* 준비해요 준비물 */
+.typeB .list {
+  position: absolute;
+  top: 90px;
+  left: 40px;
+  width: 800px;
+  height: auto;
+}
+.typeB .itemList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 790px;
+  height: auto;
+}
+.typeB .checkText * {
+  font-size: 37px;
+}
+.typeB .itemList .listBox  {
+  width: 47%;
+  margin-right: 3%;
+}
+.typeB .itemList .listBox .checkText {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+.typeB .itemList .listBox .checkText .checkBox {
+  display: inline-block;
+  position: relative;
+  top: 8px;
+  width: 35px;
+  height: 35px;
+  margin-right: 9px;
+  border: 3px solid #b9b9b9;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.typeB .itemList .listBox .checkText .checkBox.click::after {
+  content:"";
+  position: absolute;
+  top: -5px;
+  left: -3px;
+  width: 39px;
+  height: 35px;
+  background:url(../../images/btn/check_blue.png) no-repeat center/contain;
+  animation: zoomIn .2s ease-in-out;
+}
+
+.typeB .itemList .listBox .checkText > p {
+  max-width: 450px;
+}
+.typeB.NoImg .itemList .listBox .checkText > p {
+  max-width: 294px;
+}
+
+/* 준비해요 준비물 이미지 */
+.typeB .leftImg {
+  position: absolute;
+  left: 750px;
+  top: 0px;
+  width: 450px;
+  height: 500px;
+}
+.typeB .leftImg .imgWrap img {
+  width: 100%;
+  border-radius: 15px;
+}
+.typeB .leftImg .imgWrap span {
+  display: inline-block;
+  width: auto;
+  padding: 5px 30px;
+  margin-top: 30px;
+  font-size: 27px;
+  background-color: #eaeaea;
+  border-radius: 30px;
+}
+
+.typeB .leftImg .imgWrap img.on {
+  animation-name: onImg;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes onImg {
+  0% { opacity: 0.8; }
+  40% {
+    opacity: 1;
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  to { opacity: 0.4;}
+}
+
+/* 준비해요 / 창의융합 활동 */
+.typeB.B2 .title {
+  background: url(../../images/common/title_chang.png) no-repeat left/332px 60px;
+}
+.typeB.B2 .title span {
+  left: 340px;
+}
+.typeB.B2 .list {top: 50px;}
+
+
+/* 준비해요 해보아요 상단 탭 */
+.listBtn {
+  position: absolute;
+  left: 50%;
+  width: 344px;
+  height: 48px;
+  transform: translateX(-50%);
+}
+.listBtn li {
+  position: absolute;
+  cursor: pointer;
+}
+.listBtn li.junbe {
+  left: 0;
+  width: 172px;
+  height: 48px;
+  background: url(../../images/btn/junbe.png) no-repeat center top/100%;
+}
+.listBtn li.haebo {
+  right: 0;
+  width: 172px;
+  height: 48px;
+  background: url(../../images/btn/haebo.png) no-repeat center top/100%;
+}
+
+
+.listBtn li.junbe.ON,
+.listBtn li.haebo.ON {
+  background-position-y: bottom;
+}
+
+.listBtn li.junbe.on,
+.listBtn li.haebo.on {
+  background-position-y: bottom;
+}
+
+.listBtn li.junbe.off,
+.listBtn li.haebo.off {
+  pointer-events: none;
+}
+
+/* 준비해요, 해보아요 2개 */
+.typeB.B3 .listBtn {width: 496px;}
+.typeB.B3 .listBtn li.haebo1 {width: 158px;height: 48px;background: url(../../images/btn/haebo1.png) no-repeat center top/100%;left: 50%;transform: translateX(-50%);}
+.typeB.B3 .listBtn li.haebo2 {right: 0;width: 169px;height: 48px;background: url(../../images/btn/haebo2.png) no-repeat center top/100%;}
+.typeB.B3 .listBtn li.haebo1.ON, .typeB.B3 .listBtn li.haebo2.ON,
+.typeB.B3 .listBtn li.haebo1.on, .typeB.B3 .listBtn li.haebo2.on { background-position-y: bottom;}
+
+/* 준비해요 이미지 없는 것 */
+.typeB.NoImg .itemList .listBox {width: 30%;}
+.typeB.NoImg .itemList {width: 1130px;}
+
+/* 준비해요 생각열기 */
+.typeB.B5 .title {height: 69px; background: url(../../images/common/title_thinkopen.png) no-repeat 50px/166px 69px;}
+.typeB.B5 .title span {left: 225px;}

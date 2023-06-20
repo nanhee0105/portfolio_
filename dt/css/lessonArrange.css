@@ -1,0 +1,21 @@
+
+.answerBox,
+.nextBtn,
+.exanswerBtn.retry {
+  display: none;
+}
+
+.exanswerBtn.hide {
+  display: none;
+}
+
+.answerBox.show,
+.nextBtn.show,
+.exanswerBtn.retry.show {
+  display: block;
+  pointer-events: auto;
+}
+
+.popupList.blocked {
+  pointer-events: none;
+}

@@ -1,0 +1,140 @@
+
+/* Ã­â€¢â„¢Ã¬Å ÂµÃ«Â¬Â¸Ã¬Â Å“ */
+.typeA .contWrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1150px;
+  height:580px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 30px;
+}
+.typeA .title {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 190px;
+  height: 187px;
+  background: url(../../images/common/title_timeCheck_5.png) no-repeat center/contain;
+}
+.typeA .title span {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  color: #fff;
+  font-size: 32px;
+  font-family: "cafe24";
+  text-align: center;
+}
+.typeA .Text {
+  position: relative;
+  left: 215px;
+  top: 50px;
+  width: 880px;
+  height: auto;
+  text-align: justify;
+}
+.typeA .Text p {
+  position: relative;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+.typeA .Text > p::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -35px;
+  width: 20px;
+  height: 20px;
+  background-color: #0782c2;
+  border-radius: 100%;
+}
+.typeA .Text p:last-of-type(1) {
+  margin-bottom: 0px;
+}
+
+/* Ã­â€¢â„¢Ã¬Å ÂµÃ«Â¬Â¸Ã¬Â Å“ */
+.typeA.A2  .title {
+  background: url(../../images/common/title_thisPoint_5.png) no-repeat center/contain;
+}
+.typeA.A2 .Text > p::after {
+  background-color: #b4cc0f;
+}
+.typeA.A2 .Text .listText > p {
+  display: flex;
+ }
+.typeA.A2 .Text .listText p span {
+  margin-right: 12px;
+  font-family: 'NotoSansKR-Medium';
+}
+
+
+/* Ã­â€¢â„¢Ã¬Å ÂµÃ«Â¬Â¸Ã¬Â Å“ */
+.typeF .contWrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1150px;
+  height:580px;
+  border-radius: 30px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+}
+.typeF .title {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 190px;
+  height: 187px;
+  background: url(../../images/common/title_link_5.png) no-repeat center/contain;
+}
+.typeF .title span {
+  color: #fff;
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  font-size: 32px;
+  font-family: "cafe24";
+  text-align: center;
+}
+.typeF h3 {
+  position: absolute;
+  top: 50px;
+  left: 192px;
+  font-size: 50px;
+}
+.typeF .Text {
+  position: absolute;
+  left: 85px;
+  top: 170px;
+  width: 580px;
+  height: auto;
+}
+.typeF .Text p {
+  position: relative;
+  margin-bottom: 30px;
+  font-size: 43px;
+  text-align: justify;
+}
+.typeF .Text > p::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -35px;
+  width: 20px;
+  height: 20px;
+  background-color: #b597f9;
+  border-radius: 100%;
+}
+.typeF .Text p:last-of-type(1) {
+  margin-bottom: 0px;
+}
+.typeF .img {
+  position: absolute;
+  right: 30px;
+  top: 178px;
+  width: 390px;
+  height: 360px;
+  border-radius: 30px;
+}

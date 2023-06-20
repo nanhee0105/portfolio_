@@ -1,0 +1,205 @@
+header {width: 100%; height: 60px; background: rgba(255,255,250,0.9); position: static; font-family: 'Noto Sans KR', sans-serif}
+header h2.logo {background:url(../images/logo.png) no-repeat 0 5px; width: 150px; height: 56px; background-size: contain; margin: auto}
+header h2.logo > a {height: 100%; display: block; text-indent: -9999px}
+
+header ul.nav>li {  float: left;margin: 0 0px 0px 20px;}
+header ul.nav {width: 290px; position: absolute; right: 10px; top: 16px;}
+header ul.nav>li.mypage {background: url(../images/mypage.png) no-repeat center/contain; width: 35px; height: 35px;   padding-top:10px;text-indent: -9999px;position: absolute;right: 20px;margin: 0;}
+header ul.nav>li.mypage a {display: block}
+header ul.nav > li > ul {display: none; margin-top: 5px; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px; border-width: 1px 1px 1px; border-style: none solid solid; border-color: rgb(235, 235, 235) rgb(235, 235, 235) rgb(235, 235, 235) !important; border-top: none !important;}
+
+header ul.nav > li > ul > li {padding: 10px; border-bottom: 1px solid #eee;}
+header ul.nav > li > ul > li:nth-last-of-type(1) {border-bottom: 0;}
+
+
+header ul.nav .gnb1 {width: 200px; height: 113px; background: #fff; margin-left: -142px; font-size: 15px}
+header ul.nav .gnb1 > .top {position: relative}
+header ul.nav .gnb1 li:nth-of-type(2)::after  {content:""; width: 50px; height: 50px; background: url(../images/small.jpg) no-repeat; position: absolute; right: 10px;}
+
+
+header ul.nav .gnb1 > .top span {position: absolute; right: 10px}
+
+header ul.nav .gnb2 {width: 200px; height: 84px; background: #fff; margin-left: -107px; font-size: 14px}
+
+header ul.nav .gnb2 span {position: absolute; right: 10px}
+
+.mobile {width: 100%; height: 311px; display: none;}
+.mobile img {width: 100%;}
+
+section div.main_txt {height: 100px; position: absolute; top: 15%; left: 5%;}
+section div.main_txt > h2 {color: #ff5a5f; font-size: 55px; font-family: 'Noto Sans KR', sans-serif}
+section div.main_txt > p {color: #fff; font-size: 40px; font-family: 'Noto Sans KR', sans-serif; font-weight: bold}
+
+section div.booking { max-width: 1200px;height: auto; background: #fff; position: absolute; top: 290px; left: 100px;}
+section div.booking > div {width: 32%; height: 100px; background:#fff; float: left; padding: 20px 0 0 20px; font-family: 'Noto Sans KR', sans-serif}
+section div.booking > div > p {margin-bottom: 5px; font-size: 20px}
+section div.booking > div > input {width: 260px; height: 35px; font-size: 17px; border: none; color: gray}
+
+section div.booking > .date {width: 18%}
+section div.booking > .date input {width: 90%; font-family: 'Noto Sans KR', sans-serif}
+section div.booking > .number_people select {width: 290px; height: 35px; font-size: 17px; border: none; color: gray; background-color: transparent}
+
+section div.booking > .search {width: 100%; height: 55px; position: relative; top: 0; background: #ff5a5f;}
+
+section div.booking > .search > p {margin: auto; width: 75px; color: #fff; line-height: 10px;}
+section div.booking > .search a {color: #fff}
+
+article.best_place {max-width: 1200px; height: auto; position: relative;  margin: auto; font-family: 'Noto Sans KR', sans-serif;margin-top: 4%;}
+.best_place_wrap {display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-evenly;}
+
+article.best_place dl { width: 32%;}
+article.best_place dl dt a {display: block; height: 100%; text-indent: -9999px}
+
+article.best_place dl .image {width: 100%;  }
+article.best_place dl .image:hover {filter: brightness(30%)}
+article.best_place dl .image img {width: 100%;}
+
+
+
+article.best_place dl.hongkong, article.best_place dl.paris {margin: 0 1%;}
+
+article.best_place dt.text {font-size: 17px; font-weight: bold; margin-bottom: 4px;width: 100%;}
+article.best_place dd {font-size: 15px; margin-bottom: 20px}
+
+article.love2018 {width: 100%; background: url(../images/love2018.jpg) no-repeat bottom; position: relative;  height: 350px; margin-top: 4%;background-size: cover; font-family: 'Noto Sans KR', sans-serif}
+article.love2018 > p{font-size: 24px; color: #fff; position: absolute; top: 100px; left: 122px}
+article.love2018 > span {font-size: 18px; border: 1px solid #fff; width: 125px; height: 43px; border-radius: 5px; display: inline-block; padding: 10px 0 0 10px; position: absolute; top: 140px; left: 122px}
+article.love2018 > span a {display: block; height: 100%; color: #fff; margin-top: -3px}
+
+article.option {max-width: 1200px;  height: 100%;position: relative; margin: auto;  font-family: 'Noto Sans KR', sans-serif;margin-top: 4%;}
+article.option .option_wrap {display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-evenly;}
+
+article.option dl {width: 33%;   }
+article.option dl img {width: 100%;}
+
+article.option dl dt {font-size: 17px; font-weight: bold;  }
+article.option dl dd {font-size: 15px;  text-align: justify;}
+
+article.hotels {margin-top: 4% !important;max-width: 1200px;  position: relative;  margin: auto; font-family: 'Noto Sans KR', sans-serif}
+article.hotels > div {display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-evenly;}
+article.hotels dl {width: 24%; height: auto; margin-bottom: 1%;}
+
+article.hotels dt.room {font-size: 14px; color: rgb(118, 118, 118); font-weight: bold; position: relative; }
+article.hotels dt.name {font-size: 16px; font-weight: bold; }
+article.hotels dt.won {font-size: 14px; color: rgb(118, 118, 118);  }
+article.hotels dd.review {font-size: 12px; color: #008489; }
+article.hotels dd.review span {font-size: 12px; color: #000}
+article.hotels dt:nth-of-type(1) {width: 100%; }
+article.hotels dt:nth-of-type(1) img {width: 100%;}
+
+article.hotels > p.all > a {color: #008489; font-size: 16px;  }
+article.hotels > p.all > a:hover {text-decoration: underline}
+
+article.class {max-width: 1200px;  height: auto;position: relative;  margin: auto; font-family: 'Noto Sans KR', sans-serif;margin-top: 4%;;}
+article.class > div {display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-evenly;}
+
+
+article.class dl {float: left; width: 49%;}
+article.class dl dt > a {display: block; height: 100%}
+article.class dl.cooking dt.images {width: 100%;}
+article.class dl dt.images img {width: 100%;}
+
+article.class dt.text {  font-size: 17px; font-weight: bold;margin-bottom: 3px;}
+article.class dd {  font-size: 15px}
+
+article.trip {margin-top: 3% !important;max-width: 1200px;  position: relative;  margin: auto; font-family: 'Noto Sans KR', sans-serif}
+article.trip > div {display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-evenly;}
+
+article.trip dl {width: 24%;  margin-bottom: 30px;}
+article.trip dl dt img {width: 100%;}
+article.trip dt a {display: block; height: 100%}
+
+article.trip dt.room {font-size: 14px; color: rgb(118, 118, 118); font-weight: bold;  }
+article.trip dt.name {font-size: 16px; font-weight: bold; }
+article.trip dt.won {font-size: 14px; color: rgb(118, 118, 118);  }
+article.trip dd.review {font-size: 12px; color: #008489; }
+article.trip dd.review span {font-size: 12px; color: #000}
+
+
+article.trip > p.all > a {color: #008489; font-size: 16px;  }
+article.trip > p.all > a:hover {text-decoration: underline}
+
+
+
+article.host {width: 100%; height: 410px; margin: auto; position: relative; margin-top: 50px;}
+article.host > div.host_img {background: url(../images/hosting.jpg) no-repeat center/cover; width: 100%; height: 100%; }
+article.host > div.host_img a {display: block; height: 100%; text-indent: -9999px}
+
+footer {max-width: 1200px; height: 190px; position: relative;  margin: auto; font-family: 'Noto Sans KR', sans-serif;bottom: 0;margin-top: 40px;display: flex;justify-content: space-around;}
+footer .line {width: 100%; border-bottom: 0.5px solid #dbdbdb; margin-bottom: 30px;position: absolute;top: 0;left: 0;}
+footer .footer_logo {background: url(../images/footer_logo.png) no-repeat center/contain; width: 82px; height: 74px;   position: relative;top: 40px;}
+footer div { margin-top: 20px;}
+footer div span {font-weight: bold; margin-bottom: 15px; display: inline-block; color: #484848; font-size: 0.85rem;}
+footer div p {color: #767676; font-size: 0.75rem; line-height: 20px}
+
+@media screen and (max-width:1024px){
+    header h2.logo {margin-left: 10px;}
+    video {display: none}
+    .mobile {display: block;height: 100%;}
+
+    section div.main_txt {top: 95px; left: 50px;line-height: 46px;}
+    section div.main_txt > h2 {font-size: 40px}
+    section div.booking {top: 200px; left: 50px; width: 690px;height: 200px;}
+    section div.booking > div > input {width: 668px}
+    section div.booking > div { width: 100%; }
+    section div.booking > .search {width: 100%;  }
+    section div.booking > .date {float: left; width: 50%;  border-left: 0px;}
+    section div.booking > .date input {width: 310px}
+    section div.booking > .number_people select {width:668px;}
+    article.best_place {width: 100%;}
+    article.love2018 { height: 400px;}
+
+    article.hotels dt.name { font-size: 15px}
+    article.trip dl {width: 23%}
+    article.trip dt.name { font-size: 15px}
+}
+    
+ @media screen and (max-width:768px){
+    section div.main_txt {top: 90px; left: 25px;}
+    section div.booking {top: 200px; left: 25px;width: 650px;}
+     section div.main_txt > p {font-size: 30px}
+     section div.booking > .date {width: 33%;padding: 20px 0 0 10px;}
+     section div.booking > .date input {width: 195px}
+     section div.booking > .number_people {width:34%; position: absolute; top: 100px; right: 0px}
+     section div.booking > .number_people select {width: 195px}
+     section div.booking > .search {top: 0;}
+     article.best_place dl {width: 48%;}
+     article.option dl {width: 32%; height: 100%;}
+     article.hotels dl {width: 49%;}
+     article.trip dl {width: 49%;}
+     footer .footer_logo {width: 30px;position: absolute;bottom: 10px;top: auto;right: 10px;}
+}
+
+     
+@media screen and (max-width:414px){
+    header h2.logo {background: url(../images/footer_logo.png) no-repeat 0 6px; width: 43px; height: 52px; background-size: contain}
+    section div.booking {display: none}
+    section div.main_txt > h2 {font-size: 25px}
+    section div.main_txt > p {font-size: 18px;}
+
+    article.love2018 {top: 0px}
+    article.love2018 > p {left: 54px; top: 200px}
+    article.love2018 > span {left: 54px; top: 245px}
+    article.option dl {width: 100%; height: 311px}
+    
+    article.option dl.unique dt {top: 908px;}
+    article.option dl.unique dd {top: 933px; width: 100%}
+    article.class dl {width: 100%}
+    article.class dl.cooking dt.images, article.class dl.picture dt.images {width: 100%}
+    article.class dl.cooking {height: 322px}
+    
+    article.host {height: 100%;}
+    article.host > div.host_img {  height: 192px; }
+}
+
+    
+    @media screen and (max-width:320px){
+    article.best_place {width: 320px }
+    section div.main_txt > p {width: 68%; text-align: justify}
+    article.best_place dl .image {width: 153px; height: 102px;}
+    article.best_place dl {height: 190px}
+     
+        footer div {margin-left: 67px; font-size: 14px; position: absolute; top: -10px}
+        footer .footer_logo {top: 48px; left: 114px;}
+        
+}

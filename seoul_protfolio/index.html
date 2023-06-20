@@ -1,0 +1,1323 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>서울문화포털</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+
+    <script ype="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+              
+    <script type="text/javascript" src="/code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript" src="js/js.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <div class="quickMenu">
+            <p class="menuBg">QuickMenu</p>
+            <div class="menu">
+                <ul class="quicklist">
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">내주변</a></li>
+                    <li><a href="#">오늘</a></li>
+                    <li>
+                        <a href="#">영상</a>
+                    </li>
+                    <li class="searchBtn">
+                        <div class="search">
+                            <label for="searchWord" class="hidden">검색</label>
+                            <input class="sch_input" name="searchWord" id="searchWord" placeholder="검색어를 입력하세요." type="text" title="검색어">
+                        </div>
+                   </li>
+                </ul>
+                <button class="closeQuick"><span>닫기</span></button>
+            </div>
+        </div>
+
+
+        <div class="inner">
+            <div class="innerWrap">
+                <h2 class="logo"><a href="#">로고</a></h2>
+
+                <nav>
+                    <ul class="nav">
+                        <li>
+                            <a href="#">문화행사</a>
+                            <ul class="depth">
+                                <li><a href="#">공연</a></li>
+                                <li><a href="#">전시</a></li>
+                                <li><a href="#">축제</a></li>
+                                <li><a href="#">교육/체험</a></li>
+                                <li><a href="#">기타</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">영상</a>
+                            <ul class="depth">
+                                <li><a href="#">공연</a></li>
+                                <li><a href="#">전시</a></li>
+                                <li><a href="#">축제</a></li>
+                                <li><a href="#">라이브</a></li>
+                                <li><a href="#">어린이</a></li>
+                                <li><a href="#">교육/체험</a></li>
+                                <li><a href="#">VR</a></li>
+                                <li><a href="#">인터뷰</a></li>
+                                <li><a href="#">기타</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">문화정보</a>
+                            <ul class="depth">
+                                <li><a href="#">서울문화축제</a></li>
+                                <li><a href="#">문화자료</a></li>
+                                <li><a href="#">문화공간</a></li>
+                                <li><a href="#">예술인/단체정보</a></li>
+                                <li><a href="#">문화정책</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">신청 참여</a>
+                            <ul class="depth">
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">보신각 타종 신청</a></li>
+                                <li><a href="#">수문장 교대</a></li>
+                                <li><a href="#">서울365 거리공연</a></li>
+                                <li><a href="#">행사 홍보 신청</a></li>
+                                <li><a href="#">문화공간등록 신청</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">새소식</a>
+                            <ul class="depth">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">보도자료</a></li>
+                                <li><a href="#">채용공고</a></li>
+                                <li><a href="#">E-문화알림</a></li>
+                                <li><a href="#">서울문화메이트소식</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <ul class="gnb">
+                    <li class="login"><a href="#">로그인</a></li>
+                    <li class="tabMenu tabMenuP">
+                        <button type="button">메뉴열기</button>
+                    </li>
+                    <li><a href="https://korean.visitseoul.net/index">서울 관광의 모든것 VISIT SEOUL</a></li>
+
+                    <li class="tabMenu tabMenuM">
+                        <button type="button">메뉴열기</button>
+                    </li>
+                </ul>
+            </div> <!-- innerWrap -->
+
+            <div class="depthBg"></div>
+            <div class="lnb">
+                <ul>
+                    <li>
+                        <a href="#">문화행사</a>
+                        <ul class="depth">
+                            <li><a href="#">공연</a></li>
+                            <li><a href="#">전시</a></li>
+                            <li><a href="#">축제</a></li>
+                            <li><a href="#">교육/체험</a></li>
+                            <li><a href="#">기타</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">영상</a>
+                        <ul class="depth">
+                            <li><a href="#">공연</a></li>
+                            <li><a href="#">전시</a></li>
+                            <li><a href="#">축제</a></li>
+                            <li><a href="#">라이브</a></li>
+                            <li><a href="#">어린이</a></li>
+                            <li><a href="#">교육/체험</a></li>
+                            <li><a href="#">VR</a></li>
+                            <li><a href="#">인터뷰</a></li>
+                            <li><a href="#">기타</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">문화정보</a>
+                        <ul class="depth">
+                            <li><a href="#">서울문화축제</a></li>
+                            <li><a href="#">문화자료</a></li>
+                            <li><a href="#">문화공간</a></li>
+                            <li><a href="#">예술인/단체정보</a></li>
+                            <li><a href="#">문화정책</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">신청 참여</a>
+                        <ul class="depth">
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">보신각 타종 신청</a></li>
+                            <li><a href="#">수문장 교대</a></li>
+                            <li><a href="#">서울365 거리공연</a></li>
+                            <li><a href="#">행사 홍보 신청</a></li>
+                            <li><a href="#">문화공간등록 신청</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">새소식</a>
+                        <ul class="depth">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">보도자료</a></li>
+                            <li><a href="#">채용공고</a></li>
+                            <li><a href="#">E-문화알림</a></li>
+                            <li><a href="#">서울문화메이트소식</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lnbM">
+                <div class="top">
+                    <div class="login"><img src="images/login.png" alt=""/>로그인</div>
+                    <div class="close"><img src="images/btn-close_m.png" alt=""/></div>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">문화행사</a>
+                        <ul class="depth" style="display: block;">
+                            <li><a href="#">공연</a></li>
+                            <li><a href="#">전시</a></li>
+                            <li><a href="#">축제</a></li>
+                            <li><a href="#">교육/체험</a></li>
+                            <li><a href="#">기타</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">영상</a>
+                        <ul class="depth">
+                            <li><a href="#">공연</a></li>
+                            <li><a href="#">전시</a></li>
+                            <li><a href="#">축제</a></li>
+                            <li><a href="#">라이브</a></li>
+                            <li><a href="#">어린이</a></li>
+                            <li><a href="#">교육/체험</a></li>
+                            <li><a href="#">VR</a></li>
+                            <li><a href="#">인터뷰</a></li>
+                            <li><a href="#">기타</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">문화정보</a>
+                        <ul class="depth">
+                            <li><a href="#">서울문화축제</a></li>
+                            <li><a href="#">문화자료</a></li>
+                            <li><a href="#">문화공간</a></li>
+                            <li><a href="#">예술인/단체정보</a></li>
+                            <li><a href="#">문화정책</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">신청 참여</a>
+                        <ul class="depth">
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">보신각 타종 신청</a></li>
+                            <li><a href="#">수문장 교대</a></li>
+                            <li><a href="#">서울365 거리공연</a></li>
+                            <li><a href="#">행사 홍보 신청</a></li>
+                            <li><a href="#">문화공간등록 신청</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">새소식</a>
+                        <ul class="depth">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">보도자료</a></li>
+                            <li><a href="#">채용공고</a></li>
+                            <li><a href="#">E-문화알림</a></li>
+                            <li><a href="#">서울문화메이트소식</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div> <!-- inner -->
+
+       
+
+        <!-- 메인 이미지 -->
+        <div class="visual">
+            <div class="imgShow">
+                <img src="images/visual/main_01.jpg" alt="메인이미지1" />
+                <img src="images/visual/main_01_m.jpg" alt="메인이미지1" />
+            </div>
+            <div>
+                <img src="images/visual/main_02.jpg" alt="메인이미지2" />
+                <img src="images/visual/main_02_m.jpg" alt="메인이미지2" />
+            </div>
+            <div>
+                <img src="images/visual/main_03.jpg" alt="메인이미지3" />
+                <img src="images/visual/main_03_m.jpg" alt="메인이미지3" />
+            </div>
+            <div>
+                <img src="images/visual/main_04.jpg" alt="메인이미지4" />
+                <img src="images/visual/main_04_m.jpg" alt="메인이미지4" />
+            </div>
+            <div>
+                <img src="images/visual/main_05.jpg" alt="메인이미지5" />
+                <img src="images/visual/main_05.jpg" alt="메인이미지5" />
+            </div>
+
+            <p class="dot">
+                <span class="on"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </p>
+        </div>
+
+        <!-- 핫클릭 문화행사 -->
+        <div class="hotClickWrap">
+            <div class="hotClick">
+
+                <div class="top">
+                    <p class="hotText">
+                        <span>핫클릭</span>
+                        <span>문화행사</span>
+                    </p>
+
+                    <div class="outer">
+                        <div class="tabBtn">
+                            <button class="active">전체</button>
+                            <button>공연</button>
+                            <button>전시</button>
+                            <button>축제</button>
+                            <button>교육/체험</button>
+                            <button>기타</button>
+                        </div>
+                    </div>
+                    <div class="more"><a href="#">더보기+</a></div>
+
+                </div>
+
+                <div class="tabs">
+                    <div class="tab active">
+                        <div class="tabBoxWrap">
+                            <div class="textAdd">
+                                <img src="images/hot1.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot2.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot3.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot4.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot5.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot6.png" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot7.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+
+                            <div class="textAdd">
+                                <img src="images/hot3.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+
+                            <div class="textAdd">
+                                <img src="images/hot4.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot7.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="tabBoxWrap">
+                            <div class="textAdd">
+                                <img src="images/hot4.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot2.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot7.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot3.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot6.png" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot5.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot1.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="tabBoxWrap">
+                            <div class="textAdd">
+                                <img src="images/hot3.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot6.png" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot1.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot4.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot5.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot7.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot2.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="tabBoxWrap">
+                            <div class="textAdd">
+                                <img src="images/hot1.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot2.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot3.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot4.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot5.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot6.png" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot7.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+
+                            <div class="textAdd">
+                                <img src="images/hot3.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+
+                            <div class="textAdd">
+                                <img src="images/hot4.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot7.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="tabBoxWrap">
+                            <div class="textAdd">
+                                <img src="images/hot4.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot2.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot7.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot3.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot6.png" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot5.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot1.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="tabBoxWrap">
+                            <div class="textAdd">
+                                <img src="images/hot3.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot6.png" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot1.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot4.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot5.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot7.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                            <div class="textAdd">
+                                <img src="images/hot2.jpg" alt="" />
+                                <div class="txt">
+                                    <strong>[서울문화재단] 2022 거리예술 시즌 프로그램 &lt;거리예술 캬라반 '봄'&gt;</strong>
+                                    <span class="date">2022.04.23~2022.05.22</span>
+                                    <span class="place">
+                                        DDP(4.23.-4.24.), 서울숲(4.29.-5.1.), 노원 불빛정원(5.7.-5.8.),
+                                        평화문화진지(5.14.-5.15.),
+                                        선유도공원(5.21.-5.22.)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div> <!-- hotClickWrap -->
+
+
+        <div class="monthCulture">
+            <div class="top">
+                <h2>이달의 문화영상</h2>
+                <div class="more"><a href="#">더보기+</a></div>
+            </div>
+
+            <div class="slideImg">
+
+
+                <div class="innerTop">
+                    <div class="slider slider-single">
+
+                        <div class="sliderWrap">
+                            <div class="imgIframe">
+                                <img src="images/thum/imgsrc1.jpg" alt="" />
+                                <iframe src="https://www.youtube.com/embed/byE2AA-XVx4?autoplay=1"
+                                    title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+
+
+                        <div class="sliderWrap">
+                            <div class="imgIframe">
+                                <img src="images/thum/imgsrc2.jpg" alt="" />
+                                <iframe src="https://www.youtube.com/embed/wFtedlvAhkQ" title="YouTube video player"
+                                    frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="sliderWrap">
+                            <div class="imgIframe">
+                                <img src="images/thum/imgsrc3.jpg" alt="" />
+                                <iframe src="https://www.youtube.com/embed/4_hsOx_2Yhs" title="YouTube video player"
+                                    frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="sliderWrap">
+                            <div class="imgIframe">
+                                <img src="images/thum/imgsrc4.jpg" alt="" />
+                                <iframe src="https://www.youtube.com/embed/qT-_iBBdvZQ" title="YouTube video player"
+                                    frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="sliderWrap">
+                            <div class="imgIframe">
+                                <img src="images/thum/imgsrc5.jpg" alt="" />
+                                <iframe src="https://www.youtube.com/embed/NsraSKoBoGc" title="YouTube video player"
+                                    frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="sliderWrap">
+                            <div class="imgIframe">
+                                <img src="images/thum/imgsrc6.jpg" alt="" />
+                                <iframe src="https://www.youtube.com/embed/nimnD5A2zfY" title="YouTube video player"
+                                    frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="sliderWrap">
+                            <div class="imgIframe">
+                                <img src="images/thum/imgsrc7.jpg" alt="" />
+                                <iframe src="https://www.youtube.com/embed/BwG7gw1KiqU" title="YouTube video player"
+                                    frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="sliderWrap">
+                            <div class="imgIframe">
+                                <img src="images/thum/imgsrc8.jpg" alt="" />
+                                <iframe src="https://www.youtube.com/embed/jOXZwTcubkI" title="YouTube video player"
+                                    frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="sliderWrap">
+                            <div class="imgIframe">
+                                <img src="images/thum/imgsrc9.jpg" alt="" />
+                                <iframe src="https://www.youtube.com/embed/yBeS3N0n6Uw" title="YouTube video player"
+                                    frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="sliderWrap">
+                            <div class="imgIframe">
+                                <img src="images/thum/imgsrc10.jpg" alt="" />
+                                <iframe src="https://www.youtube.com/embed/dRw0EC9xJOk" title="YouTube video player"
+                                    frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider slider-nav">
+                    <div class="thumWrap">
+                        <img src="images/thum/imgsrc1.jpg" alt="" />
+                        <div class="in">
+                            <p>[서울생활문화센터 체부] 체부 OnLive - 한국대학생연합오케스트라</p>
+                        </div>
+                    </div>
+                    <div class="thumWrap">
+                        <img src="images/thum/imgsrc2.jpg" alt="" />
+                        <div class="in">
+                            <p>[서울생활문화센터 체부] 체부 OnLive - 한국대학생연합오케스트라</p>
+                        </div>
+                    </div>
+                    <div class="thumWrap">
+                        <img src="images/thum/imgsrc3.jpg" alt="" />
+                        <div class="in">
+                            <p>[서울생활문화센터 체부] 체부 OnLive - 한국대학생연합오케스트라</p>
+                        </div>
+                    </div>
+                    <div class="thumWrap">
+                        <img src="images/thum/imgsrc4.jpg" alt="" />
+                        <div class="in">
+                            <p>[서울생활문화센터 체부] 체부 OnLive - 한국대학생연합오케스트라</p>
+                        </div>
+                    </div>
+                    <div class="thumWrap">
+                        <img src="images/thum/imgsrc5.jpg" alt="" />
+                        <div class="in">
+                            <p>[서울생활문화센터 체부] 체부 OnLive - 한국대학생연합오케스트라</p>
+                        </div>
+                    </div>
+                    <div class="thumWrap">
+                        <img src="images/thum/imgsrc6.jpg" alt="" />
+                        <div class="in">
+                            <p>[서울생활문화센터 체부] 체부 OnLive - 한국대학생연합오케스트라</p>
+                        </div>
+                    </div>
+                    <div class="thumWrap">
+                        <img src="images/thum/imgsrc7.jpg" alt="" />
+                        <div class="in">
+                            <p>[서울생활문화센터 체부] 체부 OnLive - 한국대학생연합오케스트라</p>
+                        </div>
+                    </div>
+                    <div class="thumWrap">
+                        <img src="images/thum/imgsrc8.jpg" alt="" />
+                        <div class="in">
+                            <p>[서울생활문화센터 체부] 체부 OnLive - 한국대학생연합오케스트라</p>
+                        </div>
+                    </div>
+                    <div class="thumWrap">
+                        <img src="images/thum/imgsrc9.jpg" alt="" />
+                        <div class="in">
+                            <p>[서울생활문화센터 체부] 체부 OnLive - 한국대학생연합오케스트라</p>
+                        </div>
+                    </div>
+                    <div class="thumWrap">
+                        <img src="images/thum/imgsrc10.jpg" alt="" />
+                        <div class="in">
+                            <p>[서울생활문화센터 체부] 체부 OnLive - 한국대학생연합오케스트라</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> <!-- monthCulture -->
+
+
+        <div class="mainBanner">
+            <ul class="bannerWrap">
+                <li>
+                    <a href="#">
+                        <span>현재 서울의 전시</span>
+                        <p>서울시립미술관에서 진행중인 전시 소식을 전해드립니다.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>서울의 2천년 역사</span>
+                        <p>서울의 2천년 역사를 시기별로 알아볼 수 있습니다. </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>서울365 거리공연</span>
+                        <p>일상공간에서 다양한 장르의 공연을 제공합니다.</p>
+                    </a>
+                </li>
+                </li>
+            </ul>
+        </div> <!-- mainBanner -->
+
+        <div class="culturalNews">
+
+            <div class="top">
+                <h2>알려드립니다, 문화소식</h2>
+                <div class="more"><a href="#">더보기+</a></div>
+            </div>
+
+
+
+            <div class="slideWrap">
+                <div class="slideCont">
+                    <div class="textBox">
+                        <a href="#">
+                            <p class="title">[2022 청년예술가 지역공간 연계 지원사업] 참여예술가 모집</p>
+                            <p class="data">2022-04-26</p>
+                        </a>
+                    </div>
+
+                    <div class="textBox">
+                        <a href="#">
+                            <p class="title">2022년 동작문화재단 3기 시민기자단 <동작N> 모집</p>
+                            <p class="data">2022-04-26</p>
+                        </a>
+                    </div>
+
+                    <div class="textBox">
+                        <a href="#">
+                            <p class="title">「서울형 뉴딜일자리 청년활동가 사업」 참여자 모집 공고</p>
+                            <p class="data">2022-04-26</p>
+                        </a>
+                    </div>
+
+                    <div class="textBox">
+                        <a href="#">
+                            <p class="title">2022 노원 청소년 역사·문화 예술제 개최안내</p>
+                            <p class="data">2022-04-26</p>
+                        </a>
+                    </div>
+
+                    <div class="textBox">
+                        <a href="#">
+                            <p class="title">2022년 충무아트센터 전시시설 수시대관 공고</p>
+                            <p class="data">2022-04-26</p>
+                        </a>
+                    </div>
+
+                    <div class="textBox">
+                        <a href="#">
+                            <p class="title">2022 동작 지역문화기획자 양성과정 「디딤 」 2기 참여자 추가 모집</p>
+                            <p class="data">2022-04-26</p>
+                        </a>
+                    </div>
+
+                </div>
+            </div> <!-- slideWrap -->
+
+        </div> <!-- culturalNews -->
+
+        <div class="etc">
+            <div class="etcWrap">
+                <div class="sns">
+                    <h2>SNS_facebook</h2>
+
+                    <div class="snsWrap">
+                        <div class="info">
+                            <img src="images/etc/infologo.png" alt="" />
+                            <p>서울시 문화본부</p>
+                            <span>@culture.seoul.go.kr</span>
+                        </div>
+
+                        <div class="text">
+                            <div class="textWrap">
+                                <div>
+                                    <span>2022-04-26 04:45:14</span>
+                                    <p>이번 주말 뭐 하세요?
+                                        서울광장이 열린 도서관으로 변신 #책읽는서울광장 지난주 토요일 개장 당일에만 2천 명이 넘는 서울시민이 책 읽는 서울광장을 즐겨주셨답니다! 이번
+                                        주부터는 서울 거리공연 #구석구석라이브 도 &lt;책 읽는 서울광장&gt;에서 만나볼 수 있어요! 날씨 좋은 봄날
+                                        푸른 잔디 위에서 책과 쉼이 함께하는 힐링을 만끽해 보세요 책 읽는 서울광장 4.23-10.29 / 매주 금 토요일 11:00-16:00
+                                        (7~8월은
+                                        쉬어가요) 주류 반입은 금지 배달음식도 안돼요 간단한 음료와 핑거푸드 #서울도서관 에서 빌린 책도 읽을 수 #서울문화 #서울시문화본부</p>
+                                </div>
+
+                                <div>
+                                    <span>2022-04-20 08:15:24</span>
+                                    <p>이번 주말 뭐 하세요?
+                                        서울광장이 열린 도서관으로 변신 #책읽는서울광장 지난주 토요일 개장 당일에만 2천 명이 넘는 서울시민이 책 읽는 서울광장을 즐겨주셨답니다! 이번
+                                        주부터는 서울 거리공연 #구석구석라이브 도 &lt;책 읽는 서울광장&gt;에서 만나볼 수 있어요! 날씨 좋은 봄날
+                                        푸른 잔디 위에서 책과 쉼이 함께하는 힐링을 만끽해 보세요 책 읽는 서울광장 4.23-10.29 / 매주 금 토요일 11:00-16:00
+                                        (7~8월은
+                                        쉬어가요) 주류 반입은 금지 배달음식도 안돼요 간단한 음료와 핑거푸드 #서울도서관 에서 빌린 책도 읽을 수 #서울문화 #서울시문화본부</p>
+                                </div>
+
+                                <div>
+                                    <span>2022-04-19 08:22:47</span>
+                                    <p>이번 주말 뭐 하세요?
+                                        서울광장이 열린 도서관으로 변신 #책읽는서울광장 지난주 토요일 개장 당일에만 2천 명이 넘는 서울시민이 책 읽는 서울광장을 즐겨주셨답니다! 이번
+                                        주부터는 서울 거리공연 #구석구석라이브 도 &lt;책 읽는 서울광장&gt;에서 만나볼 수 있어요! 날씨 좋은 봄날
+                                        푸른 잔디 위에서 책과 쉼이 함께하는 힐링을 만끽해 보세요 책 읽는 서울광장 4.23-10.29 / 매주 금 토요일 11:00-16:00
+                                        (7~8월은
+                                        쉬어가요) 주류 반입은 금지 배달음식도 안돼요 간단한 음료와 핑거푸드 #서울도서관 에서 빌린 책도 읽을 수 #서울문화 #서울시문화본부</p>
+                                </div>
+
+                                <div>
+                                    <span>2022-04-19 08:22:47</span>
+                                    <p>이번 주말 뭐 하세요?
+                                        서울광장이 열린 도서관으로 변신 #책읽는서울광장 지난주 토요일 개장 당일에만 2천 명이 넘는 서울시민이 책 읽는 서울광장을 즐겨주셨답니다! 이번
+                                        주부터는 서울 거리공연 #구석구석라이브 도 &lt;책 읽는 서울광장&gt;에서 만나볼 수 있어요! 날씨 좋은 봄날
+                                        푸른 잔디 위에서 책과 쉼이 함께하는 힐링을 만끽해 보세요 책 읽는 서울광장 4.23-10.29 / 매주 금 토요일 11:00-16:00
+                                        (7~8월은
+                                        쉬어가요) 주류 반입은 금지 배달음식도 안돼요 간단한 음료와 핑거푸드 #서울도서관 에서 빌린 책도 읽을 수 #서울문화 #서울시문화본부</p>
+                                </div>
+                            </div><!-- textWrap -->
+                        </div> <!-- text -->
+                    </div>
+                </div>
+
+
+                <div class="issue">
+                    <div class="event">
+                        <h2>EVENT</h2>
+
+                        <div class="eventCont">
+                            <div><img src="images/etc/event1.jpg" alt=""></div>
+                            <div><img src="images/etc/event2.gif" alt=""></div>
+                            <div><img src="images/etc/event3.jpg" alt=""></div>
+                            <div><img src="images/etc/event4.jpg" alt=""></div>
+                            <div><img src="images/etc/event5.jpg" alt=""></div>
+                        </div>
+                        <div class="controler">
+                            <button class="play">시작</button>
+                            <button class="stop">정지</button>
+                        </div>
+                    </div>
+
+                    <div class="news">
+                        <h2>NEWS</h2>
+
+                        <div class="newsCont">
+                            <div><img src="images/etc/news1.jpg" alt=""></div>
+                            <div><img src="images/etc/news1.jpg" alt=""></div>
+                            <div><img src="images/etc/news1.jpg" alt=""></div>
+                        </div>
+                        <div class="controler">
+                            <button class="play">시작</button>
+                            <button class="stop">정지</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!-- ect Wrap -->
+        </div> <!-- ect -->
+
+        <div class="letsNow">
+            <div class="letsWrap">
+                <h2>신청 및 참여 바로가기</h2>
+                <span>서울문화포털을 더욱 빠르게 만나보세요.</span>
+
+                <ul>
+                    <li>
+                        <img src="images/quick1.gif" alt=""/>
+                        <span>보신각 타종체험 신청</span>
+                    </li>
+                    <li>
+                        <img src="images/quick2.gif" alt=""/>
+                        <span>행사 홍보신청</span>
+                    </li>
+                    <li>
+                        <img src="images/quick4.gif" alt=""/>
+                        <span>문화공간 홍보신청</span>
+                    </li>
+                    <li>
+                        <img src="images/quick5.gif" alt=""/>
+                        <span>서울문화메이트 소식</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+
+        <div class="newsletter">
+            <div class="newsletterWrap">
+                <h2>문화 소식지</h2>
+
+                <div class="slideEvent">
+                    <div><img src="images/n1.png" alt=""/></div>
+                    <div><img src="images/n3.png" alt=""/></div>
+                    <div><img src="images/n4.png" alt=""/></div>
+                    <div><img src="images/n6_new.png" alt=""/></div>
+                    <div><img src="images/rel_new1.png" alt=""/></div>
+                    <div><img src="images/rel_new22.png" alt=""/></div>
+                    <div><img src="images/rel_new3.png" alt=""/></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="site">
+            <div class="siteWrap">
+                <h2>관련사이트</h2>
+
+                <div class="siteSlide">
+                    <div><img src="images/rel1.png" alt=""/></div>
+                    <div><img src="images/rel3.png" alt=""/></div>
+                    <div><img src="images/rel4.png" alt=""/></div>
+                    <div><img src="images/rel5.png" alt=""/></div>
+                    <div><img src="images/rel6.png" alt=""/></div>
+                    <div><img src="images/rel19.png" alt=""/></div>
+                    <div><img src="images/rel20.png" alt=""/></div>
+                    <div><img src="images/rel21.png" alt=""/></div>
+                    <div><img src="images/rel22.png" alt=""/></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footerWrap">
+                <div class="logo">
+                    <img src="images/footer/f_logo.png" alt="" class=""/>
+                    <div class="snsicon">
+                        <img src="images/footer/sns-f.png" alt=""/>
+                        <img src="images/footer/sns-b.png" alt=""/>
+                    </div>
+                </div>
+                <div class="info">
+                    <ul>
+                        <li>개인정보처리방침</li>
+                        <li><a href="https://www.seoul.go.kr/helper/email.do" target="_blank" >이메일 무단수집거부</a></li>
+                    </ul>
+                    <div class="add">
+                        <p>서울특별시청 문화본부 문화정책과 중구 덕수궁길 15 서소문별관 1동 4층 | TEL. 02-2133-2538</p>
+                        <p class="copy">Copyright © 2021. Seoul Culture Portal All Rights Reserved.</p>
+                    </div>
+                </div>
+               
+
+                <div class="banner">
+                    <img src="images/footer/banner1.jpg" alt=""/>
+                </div>
+
+                <div class="mark">
+                    <img src="images/footer/mark.png" alt=""/>
+                </div>
+            </div>
+        </footer>
+        
+
+    </header>
+</body>
+
+
+

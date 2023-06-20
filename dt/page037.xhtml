@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ko" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+
+<head>
+    <title>page037</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=768, height=1024" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/page037.css" />
+    <link rel="stylesheet" type="text/css" href="css/arrangeQuestion.css" />
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/slide.js"></script>
+    <script src="js/DTCaliperSensor.js"></script>
+    <script src="js/arrangeQuestion.js"></script>
+    <script src="js/thinkPopQuestion.js"></script>
+
+    <script>
+        $(function() {
+            var times;
+            $('.soundBox .soundWrap .talkBtn').click(function(){
+                var index = $('.soundBox .soundWrap .talkBtn').index(this);
+                allOff();
+                $(".twink:eq(" + index + ")").addClass('ON');
+                $(".twink:eq(" + index + ") .imgAdd").css('opacity','1');
+
+                if( $(this).hasClass('sMotion') ) {
+                    $(this).siblings('.balloon').find('.point').css({'font-family':'NanumSquareB', 'font-size':'18px'});
+                } else {
+                    $(this).siblings('.balloon').find('.point').css({'font-family':'NanumSquareR', 'font-size':'16px'});
+                    clearTimeout(times);
+                    $(".twink:eq(" + index + ")").removeClass('ON');
+                    $(".twink:eq(" + index + ") .imgAdd").css('opacity','0');
+                }; 
+                times = setTimeout(function(){
+                    $(".twink:eq(" + index + ")").removeClass('ON');
+                },2000)
+            });
+
+            $('.retryagainBtn').on('click', function(){
+                allOff();
+                audio.pause();
+                audio.currentTime = 0;
+                $('.talkBtn').each(function (idx) {
+                    $('.talkBtn').eq(idx).removeClass('playingTalk');
+                    $('.talkBtn').eq(idx).attr('src', 'images/btn/talk_btn.png');
+                });
+                if ($('.talkBtn').hasClass('sMotion')) $('.talkBtn').removeClass('sMotion');
+            });
+
+            $('.popupOpen2, .gotothinkBtn, .popupOpen1, .bigPopOpen').on('click', function(){
+                allOff();
+            });
+
+            function allOff(){
+                $('.twink').removeClass('ON');
+                $('.twink .imgAdd').css('opacity', '0');
+
+                $('.balloon').find('.point').css({'font-family':'NanumSquareR', 'font-size':'16px'});
+                clearTimeout(times);
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="container">
+            <div class="top_p top_p2">
+                <span>과학적 탐구 능력</span>
+                <span>과학적 의사소통 능력</span>
+            </div>
+            <div class="contWrap">
+                <div class="TopContent">
+                    <p class="MyeongjoB">물질마다 성질이 서로 다르기 때문에 물체의 쓰임새, 즉 물체의 기능에 알맞은 물질을 선택하여 물체를 만들면 더 편리하게 사용할 수 있습니다.</p>
+                    <p class="MyeongjoB">휠체어나 자전거처럼 하나의 물체를 만들 때, 각 부분의 <span class="bold popupOpen2">기능</span>에 알맞은 물질을 선택하여 만들면 더 편리하게 사용할 수 있습니다.</p>
+                </div> <!-- rightTop -->
+                <div class="midContent">
+                    <img class="retryagainBtn" src="images/btn/butt_reload.png" alt="" />
+
+                    <img src="images/page037/37_wheel.png" alt="" class="bg" />
+
+                    <div class="linetext imgclickWrap line1"> 
+                        <div class="twink">
+                            <img src="images/page037/37_line03.png" alt="" />
+                            <span>발판</span>
+
+                            <div class="imgAdd">
+                                <img src="images/page037/37_wheel_violet.png" alt=""/>
+                                <span>플라스틱</span>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="linetext imgclickWrap line3">
+                        <div class="twink">
+                            <img src="images/page037/37_line02.png" alt="" />
+                            <span>몸체</span>
+
+                            <div class="imgAdd">
+                                <img src="images/page037/37_wheel_red.png" alt=""/>
+                                <span>금속</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linetext imgclickWrap line2">
+                        <div class="twink">
+                            <img src="images/page037/37_line01.png" alt="" />
+                            <span>타이어</span>
+
+                            <div class="imgAdd">
+                                <img src="images/page037/37_wheel_yellow.png" alt=""/>
+                                <span>고무</span>
+                            </div>
+                        </div>
+                    </div>
+                  
+
+                    <p>여러 가지 물질을<br /> 사용하여 만든 휠체어 </p>
+
+                    
+                    <div class="soundBox">
+                        <div class="soundWrap">
+                            <img class="talkBtn" data-audio="page037/s01.mp3" src="images/btn/talk_btn.png" alt="" title="생활에서 이용되는 물질의 성질(말풍선 1)" data-dtext_index="dtext_cls_audio"/>
+                            <div class="char">
+                                <img src="images/char/04_cha.png" title=""/>
+                            </div>
+                            <div class="balloon">
+                                <p class="bubble">
+                                    <span class="point">발판</span>은<br /><span class="point">플라스틱</span>으로<br />만들어 가벼워요.</p>
+                            </div>
+                        </div> <!-- 1 -->
+
+                        <div class="soundWrap">
+                            <img class="talkBtn" data-audio="page037/s02.mp3" src="images/btn/talk_btn.png" alt="" title="생활에서 이용되는 물질의 성질(말풍선 2)" data-dtext_index="dtext_cls_audio"/>
+                            <div class="char">
+                                <img src="images/char/03_cha.png" alt="" />
+                            </div>
+                            <div class="balloon">
+                                <p class="bubble">
+                                    <span class="point">몸체</span>는 <span class="point">금속</span>으로<br />만들어 단단해요.</p>
+                            </div>
+                        </div> <!-- 2 -->
+
+                        <div class="soundWrap">
+                            <img class="talkBtn"  data-audio="page037/s03.mp3" src="images/btn/talk_btn.png" alt="" title="생활에서 이용되는 물질의 성질(말풍선 3)" data-dtext_index="dtext_cls_audio"/>
+                            <div class="char">
+                                <img src="images/char/37_char03.png" alt="" />
+                            </div>
+                            <div class="balloon">
+                                <p class="bubble"><span class="point">타이어</span>는<br /><span class="point">고무</span>로 만들어<br />충격을 줄일 수<br />있어요.</p>
+                            </div>
+                        </div> <!-- 3 -->
+                    </div>
+                </div><!-- midContent -->
+            </div> <!-- contWrap -->
+
+            <div class="menuTabs normal">
+                <ul class="tabTitle">
+                    <li class="selected">생각 쑥쑥</li>
+                    <li>확인 꼭꼭</li>
+                </ul>
+                <div class="tabContent">
+                    <div class="selected">
+                        <p class="tabTitle">교실에서 두 가지 이상의 물질로 이루어진 물체를 찾아보고 각 부분을 이루는 물질을 알아봅시다. 그리고 그 물질로 물체를 만들면 어떤 점이 좋은지 이야기해 볼까요?
+                            <img class="gotothinkBtn" src="images/btn/write_btn.png" alt="" />
+                        </p>
+                    </div>
+                    <div>
+                        <div class="selfcheck">
+                            <p>물질의 성질이 우리 생활에 어떻게 이용되는지 설명할 수 있나요?</p>
+                            <div class="checkWrapperBox">
+                                <input class="checkbox" type="checkbox" id="p037_01" />
+                                <label for="p037_01"></label>
+                                <input class="checkbox" type="checkbox" id="p037_02" />
+                                <label for="p037_02"></label>
+                                <input class="checkbox" type="checkbox" id="p037_03" />
+                                <label for="p037_03"></label>
+                            </div>
+                        </div>
+
+                        <div class="selfcheck">
+                            <p>물체의 기능과 물질의 성질을 알아보는 활동에 적극적으로 참여하였나요?</p>
+                            <div class="checkWrapperBox">
+                                <input class="checkbox" type="checkbox" id="p037_04" />
+                                <label for="p037_04"></label>
+                                <input class="checkbox" type="checkbox" id="p037_05" />
+                                <label for="p037_05"></label>
+                                <input class="checkbox" type="checkbox" id="p037_06" />
+                                <label for="p037_06"></label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> <!-- tabContent -->
+            </div>
+            <!--// menu-tabs -->
+            <div class="miniPopup openPopup1">
+                <div class="popupWrap">
+                    <div class="popupClose"></div>
+                    <img class="icon" src="images/pop/minip_icon3.png" alt="" />
+                    <p class="miniPopT">정리하기</p>
+
+                    <ul class="cleanCont">
+                        <li>물질마다 성질이 서로 다릅니다.</li>
+                        <li>물체의 기능에 알맞은 물질을 선택하여 물체를 만들면 편리하게 사용할 수 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <img class="cleanupBtn popupOpen1" src="images/btn/cleanup_btn.png" alt="" />
+
+            <img class="studyBtn bigPopOpen" src="images/btn/study_btn.png" alt="" />
+            <div class="contentpage rightpage">
+                <span class="lesson">2. 물질의 성질</span>
+                <span class="page">37</span>
+            </div> <!-- //page -->
+
+        </div> <!-- //container -->
+    </div> <!-- wrap -->
+
+    <div class="popupOverlay thinkPop">
+        <div class="popupWrap">
+            <div class="popupClose"></div>
+            <div class="menuTabs">
+                <div class="tabtop">
+                    <div class="tabTopImg"></div>
+                    <span class="tabimg"></span>
+                    <p class="tabName">생활에서 이용되는 물질의 성질</p>
+                    <div class="activityBox">
+                        <img src="images/pop/thinkpop_icon.png" alt="" />
+                        <span class="icon"></span>
+                        <p>교실에서 두 가지 이상의 물질로 이루어진 물체를 찾아보고 각 부분을 이루는 물질을 알아봅시다. 그리고 그 물질로 물체를 만들면 어떤 점이 좋은지 이야기해 볼까요?
+                            <img class="tryagainBtn" src="images/btn/butt_reload.png" alt="" />
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tabContent">
+                    <div class="popupList selected">
+                        <div class="activityCont act_pop_01">
+                            <table title="표(실험 관찰)"  data-dtext_index="dtext_cls_table">
+                               <caption>표(실험 관찰)</caption>
+                                <tbody>
+                                    <tr>
+                                        <td>물체</td>
+                                        <td>물질</td>
+                                        <td>좋은 점</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="tdBox">
+                                                <textarea id="p037_subp_01"></textarea>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="tdBox">
+                                                <textarea id="p037_subp_02"></textarea>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="tdBox">
+                                                <textarea id="p037_subp_03"></textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div onclick="parent.GO_OPEN_FILE('images/pdf/31_037_01.pdf','pdf')"> 
+                            <img src="images/pop/butt_exanswer2.png" class="subAnswerBtn" alt="" />
+                        </div>
+                    </div>
+                </div> <!-- tabContent -->
+
+            </div>
+            <!--// menu-tabs -->
+        </div>
+        <!--// OBpopupWrap -->
+    </div>
+    <!--// popupOverlay -->
+
+
+
+
+    <div class="bigPopup cleanUpPro popupOverlay">
+        <div class="popupWrap">
+            <div class="popupClose"></div>
+            <div class="menuTabs">
+                <div class="tabtop">
+                    <div class="tabTopImg"></div>
+
+                    <span class="tabimg"></span>
+                    <p class="tabName">정리 문제</p>
+                    <ul class="tabTitle">
+                        <li class="selected" data-tab="1">
+                          <img class="right" src="images/pop/mark_right.png" alt=""/>
+                          <img class="wrong" src="images/pop/mark_wrong.png" alt=""/>
+                        </li>
+                        <li data-tab="2">
+                          <img class="right" src="images/pop/mark_right.png" alt=""/>
+                          <img class="wrong" src="images/pop/mark_wrong.png" alt=""/>
+                        </li>
+                        <li data-tab="3">
+                          <img class="right" src="images/pop/mark_right.png" alt=""/>
+                          <img class="wrong" src="images/pop/mark_wrong.png" alt=""/>
+                        </li>
+                      </ul>
+                      <img class="beginning" data-arrangeQuestion-retry="" src="images/pop/butt_beginning.png" alt=""/>
+                </div>
+
+                <div class="tabContent">
+                    <div class="popupList selected">
+                        <assessmentItem data-response-type="singleChoice" data-qid="quiz_1" data-description="정리 1번">
+                            <itemBody>
+                                <div class="quizTitle">
+                                    <span class="quizNum"></span>
+                                    <p>가위와 책상의 각 부분을 그 물질로 만들었을 때 좋은 점에 대한 설명으로 옳은 것은 어느 것입니까?
+                                    </p>
+                                </div>
+
+                                <div class="quizCont">
+                                    <div class="checkNum">
+                                        <div class="inputBox">
+                                            <input class="radiobox" name="check2" type="radio" id="p037_qp_01" />
+                                            <label for="p037_qp_01" data-quiz-obj="" data-value="①">1</label>
+                                            <p>책상의 몸체는 고무로 만들어 가볍다.</p>
+                                        </div>
+
+                                        <div class="inputBox">
+                                            <input class="radiobox" name="check2" type="radio" id="p037_qp_02" />
+                                            <label for="p037_qp_02" data-quiz-obj="" data-value="②">2</label>
+                                            <p>가위의 손잡이는 플라스틱으로 만들어 무겁다.</p>
+                                        </div>
+
+                                        <div class="inputBox">
+                                            <input class="radiobox" name="check2" type="radio" id="p037_qp_03" />
+                                            <label for="p037_qp_03" data-quiz-obj="" data-value="③">3</label>
+                                            <p>책상의 상판은 고무로 만들어 고유한 향과 무늬가 있다.</p>
+                                        </div>
+
+                                        <div class="inputBox">
+                                            <input class="radiobox" name="check2" type="radio" id="p037_qp_04" />
+                                            <label for="p037_qp_04" data-quiz-obj="" data-value="④">4</label>
+                                            <p>책상의 받침은 금속으로 만들어 바닥이 긁히는 것을 막는다.</p>
+                                        </div>
+
+                                        <div class="inputBox">
+                                            <input class="radiobox" name="check2" type="radio" id="p037_qp_05" />
+                                            <label for="p037_qp_05" data-quiz-obj="" data-value="⑤">5</label>
+                                            <p>가위의 날은 금속으로 만들어 다른 물질을 쉽게 자를 수 있다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </itemBody>
+
+                            <img class="confirmBtn" src="images/pop/butt_confi.png" alt="" />
+                            <img class="retryBtn" src="images/pop/butt_retry.png" alt="" />
+                            <div class="wrongCheck"></div>
+                            <div class="rightCheck"></div>
+                            <div class="firstChallCheck"></div>
+                            <div class="secondChallCheck"></div>
+                            <div class="nextBtn">
+                                <img src="images/pop/butt_next.png" alt="" />
+                                <span>다음 문제</span>
+                            </div>
+
+                            <modalFeedback>
+                                <div class="hintBox">
+                                    <div class="hintWrap">
+                                        <div class="hint">
+                                            <span>힌트</span>
+                                        </div>
+
+                                        <div class="hintText">
+                                            <span>금속은 다른 물질보다 단단한 성질이 있습니다.</span>
+                                        </div>
+                                    </div> <!-- hintWrap -->
+                                </div> <!-- hintbox -->
+                            </modalFeedback>
+
+                            <img class="answerCheck" src="images/pop/answer_check.png" alt="" />
+                            <div class="answerBox">
+                                <div class="answerWrap">
+                                    <div class="box">
+                                        <div class="answer">
+                                            <span>정답</span>
+                                        </div>
+
+                                        <div class="answerText">
+                                            <correctResponse><span>⑤</span></correctResponse>
+                                        </div>
+                                    </div>
+
+                                    <div class="box">
+                                        <div class="explanation">
+                                            <span>해설</span>
+                                        </div>
+
+                                        <div class="explanationText">
+                                            <span>가위의 날은 금속으로 만들어 다른 물질을 쉽게 자를 수 있습니다.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </assessmentItem>
+
+                    </div> <!-- popupList -->
+
+                    <div class="popupList">
+                        <!-- data-response-type="퀴즈 유형(singleChoice, multipleChoice, True/False, input, drawLine, dragdrop" -->
+                        <assessmentItem data-qid="quiz_2" data-response-type="singleChoice" data-description="정리 2번">
+                            <itemBody>
+                                <div class="quizTitle">
+                                    <span class="quizNum"></span>
+                                    <p>휠체어의 타이어에 사용되어 충격을 줄일 수 있는 물질로 알맞은 것을 고르시오. </p>
+                                </div>
+
+                                <div class="quizCont">
+                                    <div class="checkNum">
+                                        <div class="inputBox">
+                                            <input class="radiobox" name="check" type="radio" id="p037_qp_08" />
+                                            <label for="p037_qp_08" data-quiz-obj="" data-value="㉠">ㄱ</label>
+                                            <p>금속</p>
+                                        </div>
+
+                                        <div class="inputBox">
+                                            <input class="radiobox" name="check" type="radio" id="p037_qp_09" />
+                                            <label for="p037_qp_09" data-quiz-obj="" data-value="㉡">ㄴ</label>
+                                            <p>나무</p>
+                                        </div>
+
+                                        <div class="inputBox">
+                                            <input class="radiobox" name="check" type="radio" id="p037_qp_10" />
+                                            <label for="p037_qp_10" data-quiz-obj="" data-value="㉢">ㄷ</label>
+                                            <p>고무</p>
+                                        </div>
+
+                                        <div class="inputBox">
+                                            <input class="radiobox" name="check" type="radio" id="p037_qp_11" />
+                                            <label for="p037_qp_11" data-quiz-obj="" data-value="㉣">ㄹ</label>
+                                            <p>플라스틱</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </itemBody>
+
+                            <img class="confirmBtn" src="images/pop/butt_confi.png" alt="" />
+                            <img class="retryBtn" src="images/pop/butt_retry.png" alt="" />
+                            <div class="wrongCheck"></div>
+                            <div class="rightCheck"></div>
+                            <div class="firstChallCheck"></div>
+                            <div class="secondChallCheck"></div>
+                            <div class="nextBtn">
+                                <img src="images/pop/butt_next.png" alt="" />
+                                <span>다음 문제</span>
+                            </div>
+
+                            <modalFeedback>
+                                <div class="hintBox">
+                                    <div class="hintWrap">
+                                        <div class="hint">
+                                            <span>힌트</span>
+                                        </div>
+
+                                        <div class="hintText">
+                                            <span>금속은 단단하고, 나무는 부드러우며, 고무는 충격을 줄일 수 있습니다. 플라스틱은 다양한 색깔과 모양의 물체를 쉽게 만들 수 있습니다.</span>
+                                        </div>
+                                    </div> <!-- hintWrap -->
+                                </div> <!-- hintbox -->
+                            </modalFeedback>
+
+                            <div class="answerBox">
+                                <div class="answerWrap">
+                                    <div class="box">
+                                        <div class="answer">
+                                            <span>정답</span>
+                                        </div>
+
+                                        <div class="answerText">
+                                            <correctResponse><span>㉢</span></correctResponse>
+                                        </div>
+                                    </div>
+
+                                    <div class="box">
+                                        <div class="explanation">
+                                            <span>해설</span>
+                                        </div>
+
+                                        <div class="explanationText">
+                                            <span>타이어는 고무로 만들어 충격을 줄일 수 있습니다.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </assessmentItem>
+                    </div> <!-- popupList -->
+
+                    <div class="popupList">
+                        <assessmentItem data-qid="quiz_3" data-response-type="fillInTheBlank" data-description="정리 3번">
+                            <itemBody>
+                                <div class="quizTitle">
+                                    <span class="quizNum"></span>
+                                    <p>(<span class="width"></span>) 안에 들어갈 알맞은 말을 써 봅시다.</p>
+                                </div>
+                                <div class="quizCont">
+                                    <p>물질마다 (<span class="width"></span>)이/가 다르기 때문에 물체의 기능에 알맞은 물질을 선택하여 물체를 만들면 더 편리하게 사용할 수 있습니다.</p>
+                                </div>
+                                <input type="text" data-quiz-obj="" id="p037_qp_07" />
+                            </itemBody>
+
+                            <img class="confirmBtn" src="images/pop/butt_confi.png" alt="" />
+                            <img class="retryBtn" src="images/pop/butt_retry.png" alt="" />
+                            <div class="wrongCheck"></div>
+                            <div class="rightCheck"></div>
+                            <div class="firstChallCheck"></div>
+                            <div class="secondChallCheck"></div>
+                            <!-- <div class="nextBtn">
+                                <img src="images/pop/butt_next.png" alt="" />
+                                <span>다음 문제</span>
+                            </div> -->
+
+                            <modalFeedback>
+                                <div class="hintBox">
+                                    <div class="hintWrap">
+                                        <div class="hint">
+                                            <span>힌트</span>
+                                        </div>
+
+                                        <div class="hintText">
+                                            <span>물질마다 각 물질이 가지는 성질이 다릅니다.</span>
+                                        </div>
+                                    </div> <!-- hintWrap -->
+                                </div> <!-- hintbox -->
+                            </modalFeedback>
+
+                            <div class="answerBox">
+                                <div class="answerWrap">
+                                    <div class="box">
+                                        <div class="answer">
+                                            <span>정답</span>
+                                        </div>
+
+                                        <div class="answerText">
+                                            <correctResponse><span>성질</span></correctResponse>
+                                        </div>
+                                    </div>
+
+                                    <div class="box">
+                                        <div class="explanation">
+                                            <span>해설</span>
+                                        </div>
+
+                                        <div class="explanationText">
+                                            <span>물체의 기능에 알맞은 물질을 선택하여 만들면 더 편리하게 사용할 수 있습니다.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </assessmentItem>
+                    </div> <!-- popupList -->
+                </div> <!-- tabContent -->
+
+            </div>
+            <!--// menu-tabs -->
+        </div>
+        <!--// OBpopupWrap -->
+    </div>
+
+    <div class="miniPopup openPopup2">
+        <div class="popupWrap">
+            <div class="popupIcon"></div>
+            <div class="popupClose"></div>
+            <img class="icon" src="images/pop/minip_icon2.png" alt="" />
+            <p class="miniPopT termT">용어 술술</p>
+
+            <div class="wordCont">
+                <p class="word">기능</p>
+                <p class="text">하는 구실이나 작용을 하는 것을 말함.</p>
+            </div>
+
+            <div class="exSentence">
+                <span><span>예문</span></span>
+                <p> 자전거와 같은 하나의 물체를 만들 때, 물체의 <span class="red">기능</span>에 알맞은 물질을 선택할 수 있습니다. </p>
+            </div>
+
+            <div class="wordImg">
+                <img src="images/wordimg/wordimg37.jpg" alt="자전거(용어)" title="자전거(용어)" data-dtext_index="dtext_cls_image" />
+            </div>
+
+            <div class="imgText">
+                <span>손잡이-플라스틱</span>
+                <span>몸체-금속</span>
+                <span>타이어-고무</span>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

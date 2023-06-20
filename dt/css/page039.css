@@ -1,0 +1,213 @@
+@charset "utf-8";
+.top_p span:nth-of-type(1)::before {background-image: url(../images/common/top_icon3.png);}
+.top_p span:nth-of-type(2)::before {background-image: url(../images/common/top_icon5.png);}
+/* Btn */
+.addBtn {margin: 5px 6px;}
+.titlePopup .slider_in > div:nth-child(3) img {border-radius: 12px;width: 400px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+
+/* 보충심화 팝업 */
+.supreiPopup .popupWrap {height: 530px;}
+.supreiPopup .sliderWrap {
+  height: 380px;
+  top: 90px;
+}
+.supreiPopup .sliderWrap .sliceInner .itemList::after {
+  content: '';
+  background: url(../images/pop/bullet.png) no-repeat center/contain;
+  width: 27px;
+  height: 21px;
+  position: absolute;
+  top: -40px;
+  left: -17px;
+}
+.supreiPopup .sliderWrap .sliceInner .itemList::before {
+  content: '고무로 만든 고무장갑';
+  position: absolute;
+  top: -36px;
+  left: 60px;
+  font-family: 'NanumSquareRoundEB';
+  font-size: 20px;
+}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(2):before {
+  content: '가죽으로 만든 가죽 장갑';
+}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(3):before {
+  content: '플라스틱으로 만든 비닐장갑';
+}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(4):before {
+  content: '섬유로 만든 면장갑';
+}
+.supreiPopup .sliderWrap .slideView {
+  height: 410px;
+}
+.supreiPopup .sliderWrap .sliceInner {
+  width: 2080px;
+  top: 40px;
+}
+.supreiPopup .sliderWrap .sliceInner p {font-size: 20px;position: relative;}
+.contWrap .TopContent {width: 538px;position: absolute;left: 236px;top: 79px;line-height: 12px;}
+.contWrap .TopContent .MyeongjoB {width: 440px;}
+.contWrap img {position: absolute;}
+
+
+.midContent p {position: absolute;top: 231px;left: 83px;color: rgb(34, 138, 34);font-family: 'NanumSquareEB';font-size: 22px;}
+
+
+.clickBtn.serial {position: absolute;left: 622px;top: 289px;z-index: 2;}
+.imgBox {width: 620px;height:500px;position: relative;left: 68px;top: 216px;}
+.midContent .imgBox img {width: 619px;height: auto;top: 16px;left: 8px;}
+.midContent .imgBox .img01:nth-of-type(1) img{width: 162px;top: 67px;left: 411px;}
+.midContent .imgBox .img01:nth-of-type(2) img {width: 155px;top: 71px;left: 251px;}
+.midContent .imgBox .img01:nth-of-type(3) img {width: 207px;top: 257px; left: 30px;}
+.midContent .imgBox .img01:nth-of-type(4) img {width: 174px;top: 299px; left: 209px;}
+.midContent .imgBox .img01:nth-of-type(5) img:nth-child(1) {width: 174px; top: 311px; left: 436px;}
+.midContent .imgBox .img01:nth-of-type(5) img:nth-child(2) {width: 179px; top: 434px; left: 427px;}
+
+
+/* .textBox {position: relative; font-size: 14px;} */
+.textBox .text01 {width: 180px;height:19px;opacity: 1;position: relative;font-size: 16px;}
+.textBox .text01:nth-of-type(1) {top: -76px;left: 508px;}
+.textBox .text01:nth-of-type(2) {top: -94px;left: 312px;}
+.textBox .text01:nth-of-type(3) {top: 71px;left: 125px;}
+.textBox .text01:nth-of-type(4) {top: 100px;left: 293px;}
+.textBox .text01:nth-of-type(5) {top: -75px;left: 509px;}
+
+.original img { animation: original 1.2s linear forwards; }
+
+@keyframes original {
+  0% {opacity: 0;}
+  30% {opacity: 0.7;}
+  60% {opacity: 0.9;}
+  100% {opacity: 1;}
+}
+
+.postit {animation: postit 0.7s ease-in-out both;}
+@-webkit-keyframes postit {
+    0% {
+        -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+        opacity: 1;
+      }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+      opacity: 1;
+    }
+  }
+@keyframes postit {
+    0% {
+        -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+        opacity: 1;
+      }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+      opacity: 1;
+    }
+  }
+
+.tri::before {left: -16px;}
+.tri:nth-child(5)::before  {transform: rotate(180deg);}
+
+/* 정리문제 */
+
+
+.popupList:nth-child(1) .imgWrap {position: absolute;top: -30px;}
+.popupList:nth-child(1) .imgWrap div {float: left;padding: 0px 40px;height: 160px;position: relative;width: 115px;}
+.popupList:nth-child(1) .imgWrap div span.tri {position: absolute;font-size: 16px;bottom: 10px;left: 52%;transform: translateX(-50%);}
+.popupList:nth-child(1) .imgWrap div img {height: auto;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.popupList:nth-child(1) .imgWrap div:nth-child(1) img {width: 100px;}
+.popupList:nth-child(1) .imgWrap div:nth-child(2) img {width: 100px;}
+.popupList:nth-child(1) .imgWrap div:nth-child(3) img {width: 100px;}
+.popupList:nth-child(1) .imgWrap div:nth-child(4) img {width: 100px;}
+.popupList:nth-child(1) .imgWrap div:nth-child(5) img {width: 100px;}
+.popupList:nth-child(1) .checkNum input[type="radio"] + label:nth-child(2) {top: 0;left: 10px;}
+.popupList:nth-child(1) .checkNum input[type="radio"] + label:nth-child(4) {top: 0;left: 200px;}
+.popupList:nth-child(1) .checkNum input[type="radio"] + label:nth-child(6) {top: 0;left: 400px;}
+.popupList:nth-child(1) .checkNum input[type="radio"] + label:nth-child(8) {top: 160px;left: 10px;}
+.popupList:nth-child(1) .checkNum input[type="radio"] + label:nth-child(10) {top: 160px;left: 200px;}
+[data-response-type="singleChoice"] .answerCheck {top: 85px;left: 255px;}
+
+
+#p039_qp_06 {top: 310px;left: 50%;transform: translateX(-50%);}
+.popupList:nth-child(2) .view {width: 410px; height: 170px; position: absolute; top: 100px; left: 40px; border: 1px solid #d2c8ba; border-radius: 10px;}
+.popupList:nth-child(2) .view span {font-size: 20px; margin-bottom: 10px; display: inline-block;}
+.popupList:nth-child(2) .view > span {position: absolute; top: -17px; left: 20px;}
+.popupList:nth-child(2) .view p{padding: 30px;}
+.popupList:nth-child(2) img.qImg {width: 200px; position: absolute; top: 120px; right: 40px; }
+
+#p039_qp_07 {width: 300px;top: 320px;left: 50%;transform: translateX(-50%);}
+.popupList:nth-child(3) .view {width: 400px;height: 70px;position: absolute;top: 120px;left: 50%;transform: translateX(-50%);border: 1px solid #d2c8ba;}.popupList:nth-child(1) .view p {width: 100%;text-align: center;word-spacing: 20px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.popupList:nth-child(3) .view p::after {content: "< 보기 >";position: absolute;top: -40px;left: 50%;transform: translateX(-50%);font-size: 20px;background-color: #fff;word-spacing: 0px;}
+.popupList:nth-child(3) .view span {font-size: 20px;}
+.popupList:nth-child(3) .view p {width: 100%;text-align: center;word-spacing: 20px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.popupList:nth-child(3) .imgWrap {display: flex;align-items: center;width: 580px;position: absolute;left: 50%;transform: translateX(-50%);justify-content: space-between;}
+.popupList:nth-child(3) .imgWrap div  {width: 26%;position: relative;}
+.popupList:nth-child(3) .imgWrap div span.tri {position: absolute;bottom: -40px;left: 51%;font-size: 16px;transform: translateX(-50%);text-align: left;}
+.popupList:nth-child(3) .imgWrap div img {width: 100%;}
+
+/* 용어 사전 */
+.openPopup2 .popupWrap {height: 660px;}
+.miniPopup .popupWrap > .wordImg{width: 240px;}
+.miniPopup .popupWrap > .wordImg img{border: none;}
+
+.popupOverlay.thinkPop .popupWrap .tabContent {top: 205px;height: 768px;}
+.thinkPop .popupWrap .tabTopImg::after {left: 364px;}
+
+.supreiBtn {
+    top: 665px;
+    left: 166px;
+}
+
+.normal {top: 780px;}
+
+
+/* 드래그 */
+.dragBg {height: 290px;position: absolute;top: 91px;left: 20px;}
+.mid .dragBox .drag {width: 57px;height: 30px;line-height: 30px;position: absolute;background: #92d0c1;box-sizing: border-box;border: 1px dashed green;border-radius: 10px;text-align: center;}
+.mid .dragTarget {width: 57px;height: 30px;line-height: 30px;position: absolute;background: #f6f6f6;box-sizing: border-box;border: 1px dashed green;border-radius: 10px;text-align: center;}
+.mid .dragTargetWrap div:nth-of-type(1) {top: -174px;left: 313px;}
+.mid .dragTargetWrap div:nth-of-type(2) {top: -206px;left: 509px;}
+.mid .dragTargetWrap div:nth-of-type(3) {top: -51px;left: 125px;}
+.mid .dragTargetWrap div:nth-of-type(4) {top: -34px;left: 293px;}
+.mid .dragTargetWrap div:nth-of-type(5) {top: -219px;left: 509px;}
+.mid .dragTarget input {display: none;}
+.mid .dragBox {width: 186px;height: 158px;position: absolute;left: -219px;top: 190px;border-radius: 10px;background: #efe2d2;}
+.mid .dragBox .drag {position: absolute;}
+.mid .dragBox .drag span {font-size: 14px;}
+.mid .dragBox .drag1 {top: 561px;left: 287px;}
+.mid .dragBox .drag2 {top: 562px;left: 349px;}
+.mid .dragBox .drag3 {top: 562px;left: 411px;}
+.mid .dragBox .drag4 {top: 562px;left: 473px;}
+.mid .dragBox .drag5 {top: 562px;left: 534px;}
+.mid .dragBox .ex {position: absolute;top: 534px;left: 309px !important;width: 245px;text-align: left;color: #f44741;line-height: 25px;}
+.mid .dragBox .ex .dragTarget {position: relative;top: 7px;display: inline-block;margin: 0 4px;width: 40px;height: 25px;border-radius: 6px;border: 1px dashed green;background: #f6f6f6;}
+.mid .dragBox .ex::after {content: "";background: url(../images/common/point_btn.png) no-repeat center/19px 19px;width: 24px;height: 24px;position: absolute;left: -28px;top: 0;}
+.mid .dragTargetWrap div.complete {width: 100%;position: absolute;top: 0;left: 0px;}
+.mid .dragTargetWrap div.complete > span {font-size: 15px;}
+.checkBtn {width: 33px;height: 34px;cursor: pointer;position: absolute;top: 715px;left: 308px;}
+
+.doitsolve {
+  top: 662px;
+  right: auto;
+  left: 199px;
+}
+.retryagainBtn {
+  top: 715px;
+  left: 308px;
+  display: none;
+}
+
+.retry .retryagainBtn {display: block;}
+.retry .checkBtn {display: none;}

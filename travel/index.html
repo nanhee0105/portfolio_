@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>airbnb</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/common.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h2 class="logo"><a href="#">로고</a></h2>
+
+        <ul class="nav">
+            <li><a href="#">저장목록</a>
+                <ul class="gnb1">
+                    <li class="top"><a class="bold" href="#">목록</a> <span><a href="#">목록보기</a></span></li>
+                    <li><a href="#">항목 3개</a></li>
+                </ul>
+            </li>
+            <li><a href="#">여행</a></li>
+            <li><a href="#">메세지</a>
+                <ul class="gnb2">
+                    <li><a class="bold" href="#">메세지(1)</a> <span><a href="#">모두보기</a></span></li>
+                    <li><a class="bold" href="#">알림(1)</a> <span><a href="#">모두보기</a></span></li>
+                </ul>
+            </li>
+            <li class="mypage"><a href="#">마이페이지</a></li>
+        </ul>
+    </header>
+    <section>
+        <video width="100%" autoplay loop muted>
+            <source src="video/airbnb.mp4" type="video/mp4" />
+        </video>
+
+        <div class="mobile">
+            <img src="images/mobile_image.jpg" alt="" />
+        </div>
+
+        <div class="main_txt">
+            <h2>여행은 살아보는 거야</h2>
+            <p>무엇을 생각하든 그 이상을
+                에어비앤비에서</p>
+        </div>
+
+        <div class="booking">
+            <div class="location">
+                <p>위치</p>
+                <input type="text" class="" placeholder="'치앙마이'에 가보는 건 어떠세요?">
+            </div>
+
+            <div class="date" style="border-left: 1px solid #ccc">
+                <p>체크인</p>
+                <input type="date" name="bday" value="2019-01-01">
+            </div>
+
+            <div class="date" style="border-left: 1px solid #ccc; border-right: 1px solid #ccc">
+                <p>체크아웃</p>
+                <input type="date" name="bday" value="2019-01-02">
+            </div>
+
+
+            <div class="number_people">
+                <p>인원</p>
+                <!--                <input type="text" placeholder="1명">-->
+                <select>
+                    <option value="one">1명</option>
+                    <option value="two">2명</option>
+                    <option value="three">3명</option>
+                    <option value="four">4명</option>
+                    <option value="five">5명</option>
+                </select>
+            </div>
+
+            <div class="search">
+                <p><a href="#">검색하기</a></p>
+            </div>
+        </div>
+    </section>
+
+    <article class="best_place">
+        <h3>지금 당장 떠나고 싶은 매력적인 도시들</h3>
+
+
+        <div class="best_place_wrap">
+            <dl class="italy">
+                <dt class="image"><img src="images/italy.jpg" alt=""></dt>
+                <dt class="text">이탈리아</dt>
+                <dd>머물수록 빠져들고 볼 수록 매력적인, 이탈리아</dd>
+            </dl>
+
+            <dl class="paris">
+                <dt class="image"><img src="images/paris.jpg" alt=""></dt>
+                <dt class="text">파리</dt>
+                <dd>모두의 로망, 파리</dd>
+            </dl>
+
+            <dl class="singapore">
+                <dt class="image"><img src="images/singapore.jpg" alt=""></dt>
+                <dt class="text">싱가포르</dt>
+                <dd>낮보다 밤이 더 매력적인 도시, 싱가포르</dd>
+            </dl>
+
+            <dl class="chiangmai">
+                <dt class="image"><img src="images/chiangmai.jpg" alt=""></dt>
+                <dt class="text">치앙마이</dt>
+                <dd>디지털 노마드의 성지, 치앙마이</dd>
+            </dl>
+
+            <dl class="hongkong">
+                <dt class="image"><img src="images/hongkong.jpg" alt=""></dt>
+                <dt class="text">홍콩</dt>
+                <dd>쇼핑의 메카, 홍콩</dd>
+            </dl>
+
+            <dl class="osaka">
+                <dt class="image"><img src="images/osaka.jpg" alt=""></dt>
+                <dt class="text">오사카</dt>
+                <dd>식도락 여행, 오사카</dd>
+            </dl>
+        </div>
+
+
+    </article>
+
+    <article class="love2018">
+        <p>2018년 가장 사랑받은 숙소</p>
+        <span><a href="#">숙소 바로가기</a></span>
+    </article>
+
+    <article class="option">
+        <h3>다양한 숙소 옵션으로 간편하게 선택</h3>
+        <div class="option_wrap">
+            <dl class="animal">
+                <img src="images/animal.jpg" alt="" />
+                <dt><a href="#">반려동물과 함께</a></dt>
+                <dd><a href="#">사랑스러운 반려동물과 함께 행복한 여행을 떠나보세요</a></dd>
+            </dl>
+
+            <dl class="swimming">
+                <img src="images/swimming.jpg" alt="" />
+                <dt><a href="#">수영장과 헬스장</a></dt>
+                <dd><a href="#">수영장과 헬스장이 있는 숙소에서 즐겨보세요</a></dd>
+            </dl>
+
+            <dl class="unique">
+                <img src="images/unique.jpg" alt="" />
+                <dt><a href="#">유니크한 호텔</a></dt>
+                <dd><a href="#">유니크한 장소에서 오랫동안 간직할 수 있는 추억을 만들어보세요</a></dd>
+            </dl>
+        </div>
+    </article>
+
+    <article class="hotels">
+        <h3>슈퍼 호스트</h3>
+        <div class="box1">
+            <dl>
+                <dt><a href="#"><img src="images/aribnb_1.jpg" alt="" /></a></dt>
+                <dt class="room">개인실 LA HABANA</dt>
+                <dt class="name">La Rosa de Ortega / Standard Room</dt>
+                <dt class="won">₩78,118/박</dt>
+                <dd class="review">★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/aribnb_2.jpg" alt="" /></a></dt>
+                <dt class="room">개인실 LA HABANA</dt>
+                <dt class="name">La Rosa de Ortega / Standard Room</dt>
+                <dt class="won">₩78,118/박</dt>
+                <dd class="review">★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/aribnb_3.jpg" alt="" /></a></dt>
+                <dt class="room">개인실 LA HABANA</dt>
+                <dt class="name">La Rosa de Ortega / Standard Room</dt>
+                <dt class="won won2">₩78,118/박</dt>
+                <dd class="review review2">★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/aribnb_4.jpg" alt="" /></a></dt>
+                <dt class="room">개인실 LA HABANA</dt>
+                <dt class="name">La Rosa de Ortega / Standard Room</dt>
+                <dt class="won won2">₩78,118/박</dt>
+                <dd class="review review2">★★★★★ <span>168</span></dd>
+            </dl>
+        </div>
+
+        <div class="box2">
+            <dl>
+                <dt><a href="#"><img src="images/aribnb_5.jpg" alt="" /></a></dt>
+                <dt class="room">개인실 LA HABANA</dt>
+                <dt class="name">La Rosa de Ortega / Standard Room</dt>
+                <dt class="won">₩78,118/박</dt>
+                <dd class="review">★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/aribnb_6.jpg" alt="" /></a></dt>
+                <dt class="room">개인실 LA HABANA</dt>
+                <dt class="name">La Rosa de Ortega / Standard Room</dt>
+                <dt class="won">₩78,118/박</dt>
+                <dd class="review">★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/aribnb_7.jpg" alt="" /></a></dt>
+                <dt class="room">개인실 LA HABANA</dt>
+                <dt class="name">La Rosa de Ortega / Standard Room</dt>
+                <dt class="won won2">₩78,118/박</dt>
+                <dd class="review review2">★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/aribnb_8.jpg" alt="" /></a></dt>
+                <dt class="room">개인실 LA HABANA</dt>
+                <dt class="name">La Rosa de Ortega / Standard Room</dt>
+                <dt class="won won2">₩78,118/박</dt>
+                <dd class="review review2">★★★★★ <span>168</span></dd>
+            </dl>
+        </div>
+
+        <p class="all"><a href="#">슈퍼호스트 모두 보기 ></a></p>
+
+    </article>
+
+    <article class="class">
+        <h3>다양한 즐길거리</h3>
+        <div>
+            <dl class="cooking">
+                <dt class="images"><a href="#"><img src="images/class.jpg" alt="" /></a></dt>
+                <dt class="text">2000개 이상의 쿠킹클라스</dt>
+                <dd>각국의 나라에서 쿠킹클라스를 받아보아요</dd>
+            </dl>
+
+            <dl class="picture">
+                <dt class="images"><a href="#"><img src="images/class2.jpg" alt="" /></a></dt>
+                <dt class="text picture_text">1000개 이상의 사진클라스</dt>
+                <dd class="picture_text2">각국의 나라에서 사진클라스를 받아보아요</dd>
+            </dl>
+        </div>
+    </article>
+
+    <article class="trip">
+        <h3>최고 평점의 트립</h3>
+        <div class="box1">
+            <dl>
+                <dt><a href="#"><img src="images/trip1.jpg" alt="" /></a></dt>
+                <dt class="room">등산 · 쿠바 웨스트</dt>
+                <dt class="name">Hiking Life in Cuba</dt>
+                <dt class="won">1인당 ₩50,954</dt>
+                <dd class="review">4.93★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/trip2.jpg" alt="" /></a></dt>
+                <dt class="room">등산 · 쿠바 웨스트</dt>
+                <dt class="name">Hiking Life in Cuba</dt>
+                <dt class="won">1인당 ₩50,954</dt>
+                <dd class="review">4.93★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/trip3.jpg" alt="" /></a></dt>
+                <dt class="room">등산 · 쿠바 웨스트</dt>
+                <dt class="name">Hiking Life in Cuba</dt>
+                <dt class="won won2">1인당 ₩50,954</dt>
+                <dd class="review review2">4.93★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/trip4.jpg" alt="" /></a></dt>
+                <dt class="room">등산 · 쿠바 웨스트</dt>
+                <dt class="name">Hiking Life in Cuba</dt>
+                <dt class="won won2">1인당 ₩50,954</dt>
+                <dd class="review review2">4.93★★★★★ <span>168</span></dd>
+            </dl>
+        </div>
+
+        <div class="box2">
+            <dl>
+                <dt><a href="#"><img src="images/trip5.jpg" alt="" /></a></dt>
+                <dt class="room">등산 · 쿠바 웨스트</dt>
+                <dt class="name">Hiking Life in Cuba</dt>
+                <dt class="won">1인당 ₩50,954</dt>
+                <dd class="review">4.93★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/trip6.jpg" alt="" /></a></dt>
+                <dt class="room">등산 · 쿠바 웨스트</dt>
+                <dt class="name">Hiking Life in Cuba</dt>
+                <dt class="won">1인당 ₩50,954</dt>
+                <dd class="review">4.93★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/trip7.jpg" alt="" /></a></dt>
+                <dt class="room">등산 · 쿠바 웨스트</dt>
+                <dt class="name">Hiking Life in Cuba</dt>
+                <dt class="won won2">1인당 ₩50,954</dt>
+                <dd class="review review2">4.93★★★★★ <span>168</span></dd>
+            </dl>
+
+            <dl>
+                <dt><a href="#"><img src="images/trip8.jpg" alt="" /></a></dt>
+                <dt class="room">등산 · 쿠바 웨스트</dt>
+                <dt class="name">Hiking Life in Cuba</dt>
+                <dt class="won won2">1인당 ₩50,954</dt>
+                <dd class="review review2">4.93★★★★★ <span>168</span></dd>
+            </dl>
+        </div>
+
+        <p class="all"><a href="#">트립 모두 보기 ></a></p>
+    </article>
+
+
+
+    <article class="host">
+        <div class="host_img"><a href="#">수입을 올려보세요</a></div>
+    </article>
+
+    <footer>
+        <p class="line"></p>
+
+        <p class="footer_logo"></p>
+
+        <div class="displaynone">
+            <p><span><a href="#">에어비앤비</a></span></p>
+            <p><a href="#">채용정보</a></p>
+            <p><a href="#">미디어</a></p>
+            <p><a href="#">정책</a></p>
+            <p><a href="#">도움말</a></p>
+        </div>
+
+        <div class="displaynone">
+            <p><span><a href="#">여행하기</a></span></p>
+            <p><a href="#">여행 크레딧</a></p>
+            <p><a href="#">Airbnb Citizen</a></p>
+            <p><a href="#">비즈니스 프로그램</a></p>
+            <p><a href="#">에어비앤비 이벤트</a></p>
+            <p><a href="#">한국의 변경된 환불 정책</a></p>
+        </div>
+
+        <div class="displaynone">
+            <p><span><a href="#">호스팅하기</a></span></p>
+            <p><a href="#">호스팅의 장점</a></p>
+            <p><a href="#">호스팅 기준</a></p>
+            <p><a href="#">책임감 있는 호스트 되기</a></p>
+            <p><a href="#">커뮤니티 센터</a></p>
+        </div>
+
+        <div class="displayinline">
+            <p><a href="#">이용약관</a></p>
+            <p><a href="#">개인정보 처리방침</a></p>
+            <p><a href="#">여행지 찾기</a></p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

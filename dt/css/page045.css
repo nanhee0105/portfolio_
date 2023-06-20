@@ -1,0 +1,55 @@
+@charset "utf-8";
+.top_p span:nth-of-type(1)::before {background-image: url(../images/common/top_icon9.png);}
+
+#wrap {background: url(../images/page045/page045_bg.jpg)no-repeat center/contain;}
+.supreiBtn {top: 530px;left: 185px;z-index: 1;}
+
+.contWrap > div {position: absolute;}
+.top_p span {top: 5px; left: 14px;}
+
+.top {top: 10px; left: 50px;}
+.top p {width: 350px;line-height: 1.6;position: relative;top: 95px;left: 0px;letter-spacing: 0;text-indent: 16px;}
+.top .imgBox img {position: absolute;}
+.top .imgBox img:nth-of-type(1) {width: 300px;top: 100px;left: 390px;}
+.top .imgBox img:nth-of-type(2) {width: 150px;top: 260px;left: 527px;}
+.top .imgBox img:nth-of-type(3) {width: 400px;top: 200px;left: -20px;}
+.top .imgBox span {position: absolute;}
+.top .imgBox span:nth-of-type(1) {width: 190px;top: 465px;left: 140px;font-size: 16px;}
+.top .imgBox span:nth-of-type(2) {width: 125px;top: 320px;left: 400px;font-size: 16px;}
+.top .imgBox .tri:nth-of-type(2)::before{
+}
+
+.bottomWrap {top: 543px;left: 60px;}
+.bottomWrap > div:nth-of-type(1) {display: flex;}
+.bottomWrap > div:nth-of-type(1) div img {width: 116px;}
+.bottomWrap > div:nth-of-type(1) div p {position: absolute; top: 40px; left: 25px; transform: rotate(355deg); text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; font-family: "NanumSquareEB"; font-size: 20px; color: #fff;}
+.bottomWrap > div:nth-of-type(1) div p span {text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; font-family: "NanumSquareEB"; font-size: 20px; color: #fff100;}
+.bottomWrap > div:nth-of-type(1) > p {position: relative; top: 75px; left: 15px; transform: rotate(358deg); text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; font-family: "NanumSquareEB"; font-size: 42px; color: #fff;}
+.bottomWrap > div:nth-of-type(1) > p span { text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; font-family: "NanumSquareEB"; font-size: 50px; color: #16bff1;}
+
+.bottomWrap > div:nth-of-type(2) {display: flex;position: relative;top: 0px;}
+.bottomWrap > div:nth-of-type(2) p {width: 311px; line-height: 1.7; letter-spacing: 0; text-indent: 16px;}
+.bottomWrap > div:nth-of-type(2) div {width: 362px;position: relative;bottom: 10px;left: 35px;}
+.bottomWrap > div:nth-of-type(2) div img {width: 100%;}
+
+
+/*음성*/
+.talkBtn {top: 620px;left: 615px;}
+
+
+.lesson, .page {text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff}
+
+.titlePopup .slider_in > div {height: 400px;background: transparent;}
+.titlePopup .slider_in > div img {width: 100%;}
+
+
+/* 보충심화 */
+.supreiPopup .popupWrap {height: 500px;}
+.supreiPopup .sliderWrap {height: 350px;}
+.supreiPopup .sliderWrap .slideView {height: 430px;}
+.supreiPopup .sliderWrap .sliceInner {width: 2080px;}
+.supreiPopup .sliderWrap .sliceInner p {font-size: 20px;position: relative;}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(1):after {content: "바이오플라스틱으로 만든 숟가락, 포크";}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(2):after {content: "바이오플라스틱으로 만든 식기";}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(3):after {content: "바이오플라스틱으로 만든 컵";}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(4):after {content: "바이오플라스틱으로 만든 바이오페트";width: 140px;height: 46px;}

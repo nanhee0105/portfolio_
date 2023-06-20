@@ -1,0 +1,215 @@
+@charset "utf-8";
+#wrap {background: url(../images/page043/page043_bg.jpg)no-repeat center/contain;}
+
+.top_p span:nth-of-type(1)::before {background-image: url(../images/common/top_icon1.png);}
+.top_p span:nth-of-type(2)::before {background-image: url(../images/common/top_icon8.png);}
+.top_p span:nth-of-type(3)::before {background-image: url(../images/common/top_icon5.png);}
+.top_p span:nth-of-type(2) {left: 122px;}
+
+/* ic_talk */
+.ic_talk.ic_talk2 {width: 148px; background: url(../images/common/ic_talk02.png)no-repeat center/contain;}
+.ic_talk.ic_talk3 {width: 135px; background: url(../images/common/ic_talk03.png)no-repeat center/contain;}
+
+.ic_talk {width: 133px; height: 39px; position: relative; top: 0; left: 0;}
+.ic_talk p {position: absolute; top: 15px; left: 55px; color: #694700; font-family: "NanumSquareRoundEB";}
+.ic_talk span {position: absolute; color: #fff;}
+.ic_talk span:nth-of-type(1) {top: 1px; left: -40px;}
+.ic_talk span:nth-of-type(2) {top: 0; left: -25px;}
+
+/* 레이아웃 */
+
+.contWrap {position: relative;top: 80px;left: 60px;z-index: 1;}
+.contWrap > div {position: absolute;z-index: 2;}
+
+/* 준비해요 */
+.contWrap .getReadyWrap {top: 50px;left: 0;}
+
+.sliderWrap {width: 500px;height: 125px;top: 35px;left: 0;}
+.sliderWrap .slideView .listBox {width: 25%;}
+.sliderWrap .slideView .listBox > p {height: 65px;}
+.sliderWrap .slideView .listBox p img {height: 85%;}
+
+/* 해보아요 */
+.contWrap .doitWrap {top: 185px;left: 0;}
+.contWrap .doitWrap ul { top: 40px;}
+
+.doitWrap > div:nth-of-type(2) {display: flex; position: relative; top: 160px; left: -10px;}
+.doitWrap > div:nth-of-type(2) > div {width: 50%;}
+.doitWrap > div:nth-of-type(2) > div div {width: 289px; height: 162.5px; margin: 0 auto 10px; box-sizing: border-box; border: 3px solid #92d0c1; border-radius: 10px;}
+.doitWrap > div:nth-of-type(2) > div p {width: 98px; position: relative; left: 50%; transform: translateX(-50%); font-size: 15px; text-align: center;}
+.doitWrap > div:nth-of-type(2) > div:nth-of-type(2) p {width: 69px;}
+
+
+/* content */
+.content {width: 630px;display: flex;justify-content: space-between;top: 545px;left: 0;}
+
+.content > div:nth-of-type(1) ul {position: relative; top: 10px;}
+.content > div:nth-of-type(1) ul li {width: 340px;line-height: 1.4;position: relative;left: 30px;letter-spacing: 0;margin-bottom: 15px;}
+
+.content > .imgclickWrap {position: relative;border-radius: 20px;width: 270px;left: 50px;}
+.content > .imgclickWrap .imgWrap {width: 200px;height: 180px;position: relative;top: 56%;left: 50%;transform: translate(-50%, -50%);opacity: 0;transform-origin: 0% 0%;}
+.content > .imgclickWrap .imgWrap span {position: absolute;}
+.content > .imgclickWrap .imgWrap span:nth-of-type(1) {top: 11px; left: 42px;}
+.content > .imgclickWrap .imgWrap span:nth-of-type(2) {top: 24px; left: 118px;}
+.content > .imgclickWrap .imgWrap span:nth-of-type(3) {top: 138px; left: 20px;}
+.content > .imgclickWrap .imgWrap span:nth-of-type(4) {top: 128px; left: 135px;}
+.content > .imgclickWrap .imgWrap span:nth-of-type(5) {top: 26px;left: 153px;transform: rotate(4deg);text-align: center;font-size: 15px;}
+.content > .imgclickWrap .imgWrap img {width: 100%;}
+.content > .imgclickWrap .clickBtn {top: 80px; left: 115px;}
+
+
+.contentpage .lesson {margin-right: 10px;}
+
+/* 정리 하기 */
+/* 팝업 */
+
+.popupOverlay.subPop .popupWrap .tabContent .popupList .activityCont{top: 8px;}
+/***pop_01***/
+.act_pop_01 table tbody tr:nth-child(1) td:nth-child(2),
+.act_pop_01 table tbody tr:nth-child(1) td:nth-child(4)
+{background: none;}
+.act_pop_01 table tbody tr:nth-child(5) td:nth-child(2){background: #f1f0ed;}
+.act_pop_01 table tbody tr:nth-child(6) td:nth-child(1){background: #f1f0ed;}
+.act_pop_01 table tbody tr:nth-child(4) td{height: 385px;}
+.act_pop_01 table tbody tr:nth-child(2),
+.act_pop_01 table tbody tr:nth-child(3) {height: 95px;}
+
+
+.opacity {animation: opacity 2s linear 0.5s forwards;}
+
+
+
+/* 그리기 */
+.canvasContainer {position: absolute;width: 658px;top: 339px;left:0px;height: 250px;}
+.canvasContainer canvas {display: inline-block;position: absolute;top: 0px;left: 0px;}
+.canvasContainer ul li.canvas {display: inline-block;width: 616px;height: 170px;}
+.canvasContainer ul li.canvas span {width: 260px;height: 100%;float: left;box-sizing: border-box;border: 3px solid #92d0c1;border-radius: 10px;margin: 0 5px;}
+.contWrap .canvas::after {content: ""}
+.canvasContainer ul li.canvas span {
+    line-height: 33px;
+    color: #a1a1a1;
+    text-indent: 10px;
+}
+.canvasContainer ul > li.options {top: -28px;left: 598px;z-index: 2;}
+.strokeSize button {width: 15px;height: 15px;border-radius: 100%;border: 2px solid #1ec172;margin: -2px 16px;position: relative;}
+.canvas .tri {width: auto;position: absolute;top: 175px;left: 85px;font-size: 16px;}
+.canvas .tri:nth-of-type(2) {left: 380px;}
+
+/* 확인꼭꼭 */
+.selfRating {bottom: 115px;left: 22px;}
+
+/* 예시보기 */
+.exviewBtn {top: -220px;left: 464px;position: relative;}
+.miniPopup .exView .wordImg span {font-size: 18px;position: absolute;top: -7px;left: 50%;transform: translateX(-50%);padding: 4px 10px;border: 1px solid green;border-radius: 5px;}
+.miniPopup .exView .wordImg {width: 45%;top: 89px;left: 30px; transform: none;}
+.miniPopup .exView .wordImg2 {left: 380px;}
+.miniPopup .exView .wordImg img {width: 100%; border: none;}
+.miniPopup .exView .textbox span {position: absolute;top: 130px;left: 190px;font-family: "middleschool";font-size: 20px;}
+.miniPopup .exView .textbox span::before {content: '';width: 40px;height: 1px;position: absolute;top: 44px;left: 4px;transform: rotate(62deg);background: #000;}
+.miniPopup .exView .textbox span:nth-of-type(2) {top: 260px;left: 300px;}
+.miniPopup .exView .textbox span:nth-of-type(2)::before {width: 25px;top: -8px;left: -6px;}
+.miniPopup .exView .textbox span:nth-of-type(3) {top: 320px;left: 190px;}
+.miniPopup .exView .textbox span:nth-of-type(3)::before {width: 40px;top: -2px;left: 21px;transform: rotate(146deg);}
+.miniPopup .exView .textbox span:nth-of-type(4) {top: 330px;left: 30px;}
+.miniPopup .exView .textbox span:nth-of-type(4)::before {width: 36px;top: -16px;left: 5px;transform: rotate(124deg);}
+.miniPopup .exView .textbox2 span:nth-of-type(1) {top: 340px;left: 460px;}
+.miniPopup .exView .textbox2 span:nth-of-type(1)::before {width: 30px;top: -17px;left: 0;transform: rotate(90deg);}
+.miniPopup .exView .textbox2 span:nth-of-type(2) {top: 160px;left: 610px;}
+.miniPopup .exView .textbox2 span:nth-of-type(2)::before {width: 30px;top: 27px;left: -33px;transform: rotate(337deg);}
+.miniPopup .exView .textbox2 span:nth-of-type(3) {top: 200px;left: 380px;}
+.miniPopup .exView .textbox2 span:nth-of-type(3)::before {width: 40px;top: 60px;left: 0;transform: rotate(42deg);}
+.miniPopup .exView .textbox2 span:nth-of-type(4) {top: 130px;left: 590px;}
+.miniPopup .exView .textbox2 span:nth-of-type(4)::before {width: 40px;top: 23px;left: -41px;transform: rotate(343deg);}
+
+
+
+/* 정리문제 */
+
+.popupOverlay.cleanUpPro .popupWrap .tabContent .answerWrap .box > div:nth-of-type(2) span i {font-style: normal;font-size: 20px;line-height: 30px;font-family: "NanumSquareB";margin-right: 7px;}
+.popupList:nth-child(1) .checkNum .inputBox {float: left;margin-right: 19px;width: 100%;margin-bottom: 20px;}
+
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) .quizCont {width: 415px;top: -38px;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) .quizCont img {width: 100%;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) input {width: 180px;top: 420px;left: 35%;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) .quizCont p{position: absolute;left: 340px;top: 265px;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) .quizCont .line{
+    width: 40px;
+    top: 275px;
+    left: 295px;
+    transform: rotate(
+0deg);
+    position: absolute;
+    border: 0.5px dashed #00a17c;
+    }
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) .quizCont .dot{width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    position: absolute;
+    background: #00a17c;
+    top: -3px;
+    left: -3px;}
+
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .quizCont {height: inherit;padding: 20px;top: 0;border: 1px solid #d2c8ba;text-indent: 18px;display: flex;justify-content: space-around;align-items: center;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) input {top: 330px;left: 40%;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .quizCont img{width: 140px;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .quizCont p{width: 346px;line-height: 30px;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .pbox .line{
+    width: 40px;
+    top: 145px;
+    left: 560px;
+    transform: rotate(
+0deg);
+    position: absolute;
+    border: 0.5px dashed #00a17c;
+    }
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .pbox .dot{width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    position: absolute;
+    background: #00a17c;
+    top: -3px;
+    left: -3px;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .pbox p{position: absolute;left: 606px;top: 137px;}
+
+
+/* 정리 문제 관련 추가 */
+/* .answerCheck {top: -22px;left: 13px;} */
+[data-response-type="singleChoice"] .answerCheck {
+    top: 244px;
+    left: 91px;
+}
+
+.tryagainBtn {right: 40px;top: 91px;}
+.subPop .textWrap{width: 200px;height: 100%;position: relative;}
+
+/* 그리기 */
+.subPop .drawBtn2{left: 150px;top: 390px;z-index: 1;}
+.subPop .canvasContainer {position: relative;width: 100%;top: 0px;left:0px;height: 100%;border: 3px dashed #1ec172;box-sizing: border-box;border-radius: 15px;}
+.subPop .canvasContainer canvas {position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;}
+.subPop .canvasContainer ul {
+    height: 100%;
+    }
+.subPop .canvasContainer ul li.canvas {width: 100%;height: 100%;}
+.subPop .canvasContainer ul li.canvas span {width: 260px;height: 100%;float: left;box-sizing: border-box;border: 3px solid #92d0c1;border-radius: 10px;margin: 0 5px;}
+.subPop .canvasContainer ul > li.options {top: 0px;left: 220px;z-index: 2;}
+.subPop .strokeSize button {width: 15px;height: 15px;border-radius: 100%;border: 2px solid #1ec172;margin: -2px 16px;position: relative;}
+
+
+.subPop table tbody tr:nth-child(4) td .tdBox{display: flex;justify-content: space-between;}
+
+
+.drawBtn2 {
+    width: 33px;
+    height: 34px;
+    position: absolute;
+    cursor: pointer;
+    margin-left: 10px;
+    display: inline-block;
+}
+.subPop .canvasContainer ul > li.options {
+    top: 45px;
+    left: -52px;
+}

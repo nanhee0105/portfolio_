@@ -1,0 +1,291 @@
+
+/* 다음 시간에는 */
+.typeE .contWrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 50px;
+}
+.typeE .contWrap::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  width: 126px;
+  height: 116px;
+  background: url(../../images/common/nextTime_bg.png) no-repeat center/contain;
+}
+.typeE .nextTime {
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  width: 201px;
+  height: 222px;
+  background: url(../../images/common/title_nexttime.png) no-repeat center/contain;
+}
+
+.typeE .nextTime2 {
+  background: url(../../images/common/title_nexttime2.png) no-repeat center/contain;
+}
+
+.typeE .nextTime span {
+  display: inline-block;
+  position: absolute;
+  top: 31px;
+  left: 48%;
+  width: 100%;
+  color: #fff;
+  font-size: 28px;
+  font-family: 'cafe24';
+  text-align: center;
+  transform: translateX(-50%);
+}
+.typeE .nextTime2 span {
+  top: 74px;
+}
+
+
+.typeE .nextTime .nextPlayBtn {
+  position: absolute;
+  top: calc(104px);
+  left: calc(48% - (68px / 2));
+  width: 68px;
+  height: 68px;
+  transition: transform .1s linear;
+  background: url(../../images/btn/bt_next_time.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.typeE .nextTime .nextPlayBtn.ON {
+  transform: scale(.95);
+  background-position-y: bottom;
+}
+.typeE .title {
+  position: absolute;
+  top: 55px;
+  left: 250px;
+}
+.typeE .title span:nth-of-type(1) {
+  color: #00833d;
+  font-size: 55px;
+}
+.typeE .bottom {
+  position: absolute;
+  top: 250px;
+  left: 70px;
+  width: 890px;
+  height: auto;
+}
+.typeE .bottom.noReady {left: 250px;}
+
+.typeE .bottom > div:not(.getready) {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.typeE .bottom > div:not(.getready) span {
+  font-size: 37px;
+  margin-left: 10px;
+}
+
+.typeE .bottom.noReady > div {width: 100%; margin: 30px 0px;}
+
+.typeE .science .btn {
+  width: 118px;
+  height: 58px;
+  background: url(../../images/common/ic_nextTime01.png) no-repeat center/contain;
+}
+.typeE .sub .btn {
+  width: 118px;
+  height: 58px;
+  background: url(../../images/common/ic_nextTime02.png) no-repeat center/contain;
+}
+.typeE .science, .typeE .sub {
+  float: left;
+  width: 50%;
+}
+
+.typeE .getready {
+  clear: both;
+  position: relative;
+  top: 50px;
+  width: 720px;
+  height: auto;
+  max-height: 240px;
+  border: 3px solid #ff9933;
+  border-radius: 0 20px 20px 20px;
+}
+.typeE .getready .btn  {
+  position: absolute;
+  top: -50px;
+  left: -9px;
+  width: 118px;
+  height: 58px;
+  background: url(../../images/common/ic_nextTime03.png) no-repeat center/contain;
+}
+.typeE .getready span {
+  display: inline-block;
+  width: 99%;
+  height: auto;
+  max-height: 159px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 37px;
+  overflow-y: auto;
+  font-family: "NotoSansKR-Medium";
+}
+.typeE .imgMotiom {
+  position: absolute;
+  top: 220px;
+  right: 50px;
+  width: 218px;
+  height: 289px;
+}
+.typeE .imgMotiom.ON {
+  animation: charZoom .2s linear;
+}
+@keyframes charZoom { 50% { transform: scale(1.05); } }
+@-o-keyframes charZoom { 50% { transform: scale(1.05); } }
+@-moz-keyframes charZoom { 50% { transform: scale(1.05); } }
+@-webkit-keyframes charZoom { 50% { transform: scale(1.05); } }
+
+.typeE .imgMotiom img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.typeE .imgMotiom img.over {
+  opacity: 0;
+}
+.typeE .imgMotiom.ON img.over {
+  opacity: 1;
+}
+
+.typeE .imgMotiom img.default.on {
+  opacity: 0;
+}
+.typeE .imgMotiom img.motion {
+  opacity: 0;
+}
+.typeE .imgMotiom img.motion.on {
+  opacity: 1;
+}
+
+/* 비디오 팝업 */
+.typeE .videoPopup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  overflow: hidden;
+  z-index: 7;
+}
+.typeE .videoPopup.on {
+  display: block;
+  animation: showOpacity .2s linear;
+}
+.typeE .popupClose {
+  opacity: 0;
+  position: absolute;
+  right: 74px;
+  top: 90px;
+  width: 47px;
+  height: 122.5px;
+  background: url("../../images/common/btn/videoPopupClose.png") center/contain;
+  cursor: pointer;
+  z-index: 4;
+}
+.typeE .video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 910px;
+  height: 520px;
+  border-radius: 30px;
+  border: 5px solid #9dce2a;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.typeE video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 101%;
+  height: 101%;
+  transform: translate(-50%, -50%);
+}
+
+.typeE .mainAinbtn {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 181px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: rgba(0,131,61,0.8);
+}
+.typeE .mainAinbtn span:nth-child(1) {
+  position: absolute;
+  top: 11px;
+  left: 15px;
+  color: #fff;
+  font-size: 22px;
+}
+.typeE .mainAinbtn .aniplaybtn,
+.typeE .mainAinbtn .anireplaybtn {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: no-repeat center top/100%;
+  cursor: pointer;
+}
+.typeE .mainAinbtn .aniplaybtn {
+  left: 107px;
+  top: 8px;
+  background-image: url(../../images/mediaImg/vPlayer_btn_play.png);
+}
+.typeE .mainAinbtn .aniplaybtn.ON {
+  background-position-y: bottom;
+}
+
+.typeE .mainAinbtn .aniplaybtn.pause {
+  background-image: url(../../images/mediaImg/vPlayer_btn_pause.png);
+}
+
+.typeE .mainAinbtn .anireplaybtn {
+  top: 8px;
+  left: 136px;
+  background-image: url(../../images/mediaImg/vPlayer_btn_stop.png);
+}
+.typeE .mainAinbtn .anireplaybtn.ON {
+  background-position-y: bottom;
+}
+
+.typeE .videocloseBtn {
+  position: absolute;
+  left: 1039px;
+  top: 100px;
+  width: 110px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #9dce2a;
+  cursor: pointer;
+  z-index: -1;
+}
+.typeE .videocloseBtn .closeImg {
+  position: absolute;
+  top: 47px;
+  left: 61px;
+  width: 28px;
+  height: 28px;
+  background: url(../../images/btn/mini_close.png) no-repeat center/contain;
+}

@@ -1,0 +1,204 @@
+/* 정리문제 */
+.typeD .contWrap {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 600px;
+	background-color: #fff;
+	border-radius: 0 70px 0 0;
+}
+.typeD .title {
+	position: absolute;
+	top: -46px;
+	left: 20px;
+	width: 255px;
+	height: 55px;
+	background:url(../../images/common/sub/ic_lessonmun.png) no-repeat center/contain;
+	z-index: 0;
+}
+.typeD .firsText {
+	display: flex;
+	align-items: baseline;
+	margin: 35px 0;
+	padding-right: 20px;
+}
+.typeD .firsText p {text-align: justify;}
+
+.typeD .text2 {
+	display: flex;
+	position: absolute;
+	top: 80px;
+	left: 30px;
+	margin-bottom: 40px;
+}
+.typeD .text2 p {
+	width: 1060px;
+	margin-left: 70px;
+}
+.typeD > p {
+	text-align: justify;
+}
+.typeD .textWrap  {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: auto;
+	padding: 20px;
+	text-align: center;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+}
+.typeD .num1 {
+	width: 45px;
+	height: 43px;
+	background: url(../../images/common/sub/end_num_01.png) no-repeat left top/45px 43px;
+	border-radius: 0;
+}
+.typeD .num2 {
+	position: relative;
+	left: -20px;
+	top: -12px;
+	width: 136px;
+	height: 63px;
+	background: url(../../images/common/sub/end_num_02.png) no-repeat left top/contain;
+	border-radius: 0;
+}
+.typeD .tabNum li:nth-of-type(1) {
+	width: 100px;
+}
+.typeD .tabNum li.ON,.typeD .tabNum li.on {
+	height: 43px;
+	margin-top: 2px;
+	color: #fff;
+	background-color: #31b9e0;
+}
+
+.typeD .menuTabs .tabContent > div {
+    display: none;
+}
+
+.typeD .menuTabs .tabContent > div.on {
+    display: block;
+}
+
+.typeD .menuTabs .tabContent > div.cleanAns {
+	height: 600px;
+}
+.typeD .menuTabs .tabContent > div.cleanAns .tabWrap {
+	position: absolute;
+	top: 20px;
+	left: 52%;
+	width: 92%;
+	transform: translateX(-50%);
+}
+
+.typeD .view_btn {
+	position: absolute;
+	top: 0px;
+	left: 17px;
+	width: 53px;
+	height: 70px;
+	background: url(../../images/btn/sub/view_btn.png) no-repeat top/100%;
+}
+.typeD .view_btn.ON{
+	background: url(../../images/btn/sub/view_btn.png) no-repeat bottom/100%;
+}
+
+.typeD .imgWrap{
+	position: relative;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.typeD .imgWrap img{
+	width: 100%;
+}
+.typeD .Text_input{
+	position: relative;
+	left: 50px;
+	width: 1054px;
+	height: 330px;
+	padding: 5px;
+	text-align: center;
+	vertical-align: middle;
+	border: 2px solid #666;
+	box-sizing: border-box;
+}
+.typeD .Qpage .tabWrap {
+	width: 83%;
+	height: 460px;
+	overflow-y: auto;
+}
+.typeD .Qpage {
+	display: none;
+}
+.typeD .Qpage .text {
+	display: flex;
+	justify-content: flex-start;
+	margin: 35px 0 40px 0;
+}
+.typeD .Qpage span.num{
+	top: 12px;
+	color: #674300;
+	background-color: #ffe599;
+	border-radius: 100%;
+}
+.typeD .Qpage span.txt {
+	width: 1080px;
+}
+.typeD .libox {
+	position: relative;
+	left: 40px;
+	width: 1070px;
+	padding: 25px 30px;
+	text-align: justify;
+	background: #f1f7e9;
+	border-radius: 10px;
+}
+.typeD .libox > p {
+	text-indent: 20px;
+}
+
+
+/* 지문 보기 팝업 */
+.typeD .popcontainer {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	background: rgba(0, 0, 0, .7);
+}
+.typeD .popcontainer.on {
+	display: block;
+}
+.typeD .popcontainer .tabWrap {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	right: 50px;
+	bottom: 50px;
+	background: #FFF;
+	border-radius: 30px;
+	border: 5px solid #674301;
+}
+
+.typeD .popcontainer .tabWrap > div.box {
+	width: 90%;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.typeD .popcontainer .popcloseBtn {width: 39px; height: 39px; background:url(../../images/btn/sub/view_close.png) no-repeat top/100%;  position: absolute; top:10px; right: 10px; cursor: pointer;}
+.typeD .popcontainer .popcloseBtn.ON {background:url(../../images/btn/sub/view_close.png) no-repeat bottom/100%; }
+/* 서술형 논술형 / 과학 글쓰기 */
+.typeD .firsText .numText {position: absolute;top: 10px;left: 31px;background: url(../../images/common/sub/text_stroke.png) no-repeat center/contain;width: 108px;height: 34px; transform: rotate(-2deg);}
+.typeD .firsText .numText > span {position: absolute;top: 5px;width: 100%;text-align: center;color: #006699;font-size: 16px;}
+
+.typeD .firsText p {text-align: justify;}
+.typeD .tabNum {top: -45px;}

@@ -1,0 +1,150 @@
+
+/* 투명 */
+@keyframes showOpacity {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes showOpacity {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes showOpacity {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes showOpacity {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* 확대 */
+@keyframes zoomIn {
+  0% { transform: scale(.3); opacity: 0; }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1;}
+}
+@-o-keyframes zoomIn {
+  0% { transform: scale(.3); opacity: 0; }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1;}
+}
+@-moz-keyframes zoomIn {
+  0% { transform: scale(.3); opacity: 0; }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1;}
+}
+@-webkit-keyframes zoomIn {
+  0% { transform: scale(.3); opacity: 0; }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1;}
+}
+
+/* 축소 */
+@keyframes zoomOut {
+  0% { transform: scale(2); }
+  80% { transform: scale(.9); }
+  100% { transform: scale(1); }
+}
+@-o-keyframes zoomOut {
+  0% { transform: scale(2); }
+  80% { transform: scale(.9); }
+  100% { transform: scale(1); }
+}
+@-moz-keyframes zoomOut {
+  0% { transform: scale(2); }
+  80% { transform: scale(.9); }
+  100% { transform: scale(1); }
+}
+@-webkit-keyframes zoomOut {
+  0% { transform: scale(2); }
+  80% { transform: scale(.9); }
+  100% { transform: scale(1); }
+}
+
+/* 아래쪽 -> 위쪽 */
+@keyframes slideup {
+  0% { transform: translateY(100%); opacity: 0; }
+  80% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+@-o-keyframes slideup {
+  0% { transform: translateY(100%); opacity: 0; }
+  80% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+@-moz-keyframes slideup {
+  0% { transform: translateY(100%); opacity: 0; }
+  80% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+@-webkit-keyframes slideup {
+  0% { transform: translateY(100%); opacity: 0; }
+  80% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* 위쪽 -> 아래쪽 */
+@keyframes slidedown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  80% { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
+@-o-keyframes slidedown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  80% { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
+@-moz-keyframes slidedown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  80% { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
+@-webkit-keyframes slidedown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  80% { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
+
+/* 왼쪽 -> 오른쪽 */
+@keyframes slideleft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  80% { transform: translateX(20px); }
+  100% { transform: translateX(0); }
+}
+@-o-keyframes slideleft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  80% { transform: translateX(20px); }
+  100% { transform: translateX(0); }
+}
+@-moz-keyframes slideleft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  80% { transform: translateX(20px); }
+  100% { transform: translateX(0); }
+}
+@-webkit-keyframes slideleft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  80% { transform: translateX(20px); }
+  100% { transform: translateX(0); }
+}
+
+/* 오른쪽 -> 왼쪽 */
+@keyframes slideright {
+  0% { transform: translateX(100%); opacity: 0; }
+  80% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+@-o-keyframes slideright {
+  0% { transform: translateX(100%); opacity: 0; }
+  80% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+@-moz-keyframes slideright {
+  0% { transform: translateX(100%); opacity: 0; }
+  80% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+@-webkit-keyframes slideright {
+  0% { transform: translateX(100%); opacity: 0; }
+  80% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}

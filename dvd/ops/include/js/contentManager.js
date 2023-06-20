@@ -1,0 +1,647 @@
+(() => {
+  /* 21.11.01 spvog 공용 사운드 추가($audio, $efSound) */
+  window.$audio = window.$audio || new Audio();
+  window.$efSound = window.$efSound || new Audio();
+
+  /* 21.11.01 spvog 실행 환경 체크(body에 클래스 추가 - run_IOS, run_Android, run_Mobile, run_PC) */
+  $ic.isMobile();
+
+  const contentManager = {};
+  contentManager.inPage = [];
+  contentManager.player = [];
+  contentManager.slider = [];
+  contentManager.popup = [];
+  contentManager.quiz = [];
+  contentManager.quizChain = [];
+  contentManager.callback = {};
+  contentManager.reset = {
+    player: (__parent = document.body) => {
+      // plyayer가 reset되어야 하는 상황: 슬라이드 이동, 팝업 실행
+      contentManager.player.forEach((player) => {
+        if (__parent.contains(player.container.DOM)) player.reset();
+      });
+    },
+    speaker: (__parent = document.body) => {
+      // speaker가 reset되어야 하는 상황: 슬라이드 이동, 팝업 실행/닫기
+      contentManager.speaker.forEach((speaker) => {
+        if (__parent.contains(speaker.DOM)) speaker.reset();
+      });
+    },
+    slider: (__parent = document.body) => {
+      // slider가 reset되어야 하는 상황: ???
+      contentManager.slider.forEach((slider) => {
+        if (__parent.contains(slider.container.DOM)) slider.reset();
+      });
+    },
+    popup: (__parent = document.body) => {},
+    quiz: (__parent = document.body) => {
+      // quiz가 reset되어야 하는 상황: 슬라이드 이됭, 팝업 닫기
+      contentManager.quiz.forEach((quiz) => {
+        if (__parent.contains(quiz.container.DOM)) quiz.reset();
+      });
+    },
+    chain: (__parent = document.body) => {
+      contentManager.quizChain.forEach((button) => {
+        if (__parent.contains(button.DOM)) button.reset();
+      });
+    },
+    draw: (__parent = document.body) => {
+      contentManager.draws.forEach((draw) => {
+        if (__parent.contains(draw.container.DOM)) draw.reset();
+      });
+    }
+  };
+  
+  /* window 등록 */
+  window.$CM = contentManager;
+  
+  function toggleClickObject({obj, targets, index, callback}) {
+    if (obj.isClicked) closeTargets({obj, targets, index, callback})
+    else {
+      contentManager.efSound.click();
+      openTargets({obj, targets, index, callback});
+    }
+  }
+
+  function openTargets({obj, targets, index, callback}) {
+    obj.on('click');
+    obj.isClicked = true;
+    if (targets) targets.forEach((target) => { target.on(); });
+    callback && callback.open && callback.open({obj, targets, index});
+  }
+
+  function closeTargets({obj, targets, index, callback}) {
+    obj.off('click');
+    obj.isClicked = false;
+    if (targets) targets.forEach((target) => { target.off(); });
+    callback && callback.close && callback.close({obj, targets, index});
+  }
+  
+  /* efSound(효과음) */
+  (() => {
+    const soundSrc = `./media/effect/`;
+    const sound = {};
+    
+    sound.click = $ic.createAudio({audio: $efSound, src: soundSrc, name: 'click_ac0'});
+    sound.correct = $ic.createAudio({audio: $efSound, src: soundSrc, name: 'correct_ac2'});
+    sound.wrong = $ic.createAudio({audio: $efSound, src: soundSrc, name: 'wrong_ac1'});
+    
+    const efSoundStop = () => {
+      Object.getOwnPropertyNames(sound).forEach((name) => {
+        sound[name].stop();
+      });
+    }
+    const efSoundPlay = (__name) => {
+      efSoundStop();
+      sound[__name].play();
+    }
+    
+    contentManager.efSound = {
+      click: efSoundPlay.bind(null, 'click'),
+      correct: efSoundPlay.bind(null, 'correct'),
+      wrong: efSoundPlay.bind(null, 'wrong'),
+    }
+  })();
+  /* END */
+  
+  window.addEventListener('load', () => {
+    /* test scale */
+    // $ic.initScale($ic.getEl('#wrap').DOM);
+
+    /* auto Run(페이지 내부에 해당 클래스가 있으면 자동 실행) */
+    // 1. 마우스 오버 / 아웃
+    if ($ic.getEl('.js-hover')) $ic.getEl('.js-hover', true).forEach((el) => { el.hover('ON'); });
+    
+    // 2. 페이지 이동
+    if ($ic.getEl('.js-pageLink')) $ic.getEl('.js-pageLink', true).forEach((el) => {
+      el.hover('on');
+      el.event('click touchstart', $ic.pageLink.bind(null, el));
+    });
+    
+    // 3. click object / target
+    if ($ic.getEl('.js-clickObj')) {
+      $ic.getEl('.js-clickObj', true).forEach((clickObj) => {
+        const index = clickObj.data('index');
+        const targets = $ic.getEl(`.js-clickTarget[data-index="${index}"]`, true);
+        const closeButton = $ic.getEl(`.js-clickClose[data-index="${index}"]`, true);
+        const callback = contentManager.callback.click;
+
+        if (closeButton) closeButton.forEach((button) => {
+          button.event('click touchstart', () => {
+            contentManager.efSound.click();
+            closeTargets({obj: clickObj, targets, index, callback});
+          });
+        });
+
+        clickObj.hover();
+        clickObj.event('click touchstart', () => {
+          toggleClickObject({obj: clickObj, index, targets, callback});
+        });
+      });
+    }
+
+    // 4. speaker
+    if ($ic.getEl('.js-speaker')) {
+      const soundSrc = `./media/mp3/`;
+      contentManager.speaker = $ic.getEl('.js-speaker', true).map((speaker) => {
+        const index = speaker.data('index');
+        const options = speaker.data('speakerOption') ? speaker.data('speakerOption').replace(/ /g, '').split(',') : null;
+        const targets = $ic.getEl(`.js-speakerTarget[data-index="${index}"]`, true);
+        const closeButton = $ic.getEl(`.js-speakerClose[data-index="${index}"]`, true);
+        const callback = contentManager.callback.speaker;
+        const audio = (() => {
+          const newAudio = $ic.createAudio({audio: $audio, name: speaker.data('audio'), src: soundSrc});
+          newAudio.DOM.addEventListener('ended', () => {
+            if (options && options.includes('autoStop')) speaker.reset();
+          });
+          return newAudio;
+        })();
+
+        if (closeButton) {
+          closeButton.forEach((button) => {
+            button.hover();
+            button.event('click touchstart', () => {
+              contentManager.efSound.click();
+              closeTargets({obj: speaker, targets, index, callback});
+              speaker.off('hide');
+              audio.stop();
+            });
+          });
+        }
+
+        speaker.hover();
+        speaker.event('click touchstart', () => {
+          openTargets({obj: speaker, targets, index, callback});
+          speaker.on('hide');
+          audio.play();
+        });
+
+        speaker.reset = () => {
+          closeTargets({obj: speaker, targets, index, callback});
+          speaker.off('hide');
+          audio.stop();
+        }
+
+        return speaker;
+      });
+    }
+    
+    // 5. slider
+    if ($ic.getEl('.js-slider')) {
+      contentManager.slider = $ic.getEl('.js-slider', true).map((container) => {
+        const name = container.data('sliderName');
+        const options = container.data('sliderOption') ? container.data('sliderOption').replace(/ /g, '').split(',') : null;
+        let showSlidePage;
+        let tabs = $ic.getEl(`.js-slideTab[data-slider="${name}"]`, true);
+
+        if ($ic.getEl(`.js-slidePage[data-slider="${name}"]`, true).length === 1 && !$ic.getEl(`.js-slideTab[data-slider="${name}"]`, true)) {
+          container.on('hideTab');
+          const tabBox = $ic.createEl({parent: container.DOM, className: 'tab_box'});
+          const tabButton = $ic.createEl({parent: tabBox.DOM, className: 'js-slideTab tab on', attr: {'data-slider': name}});
+          tabs = [tabButton];
+        }
+
+        return new $ic.Slider({
+          container, name, options, tabs,
+          pages: $ic.getEl(`.js-slidePage[data-slider="${name}"]`, true), 
+          // tabs: $ic.getEl(`.js-slideTab[data-slider="${name}"]`, true) || tabs,
+          prevButton: $ic.getEl(`.js-prevButton[data-slider="${name}"]`),
+          nextButton: $ic.getEl(`.js-nextButton[data-slider="${name}"]`),
+          sliderButton: $ic.getEl(`.js-sliderButton[data-slider="${name}"]`, true),
+          callback: (__slider) => {
+            contentManager.callback[name] && contentManager.callback[name](__slider);
+
+            /* 페이지 이동 시 초기화 함수 */
+            if (contentManager.speaker) contentManager.reset.speaker(__slider.container);
+            if (contentManager.player) contentManager.reset.player(__slider.container);
+            if (contentManager.quiz) contentManager.reset.quiz(__slider.container);
+            if (contentManager.quizChain) contentManager.reset.chain();
+            if (contentManager.draws) contentManager.reset.draw(__slider.container);
+            /* END */
+            
+            // contentManager.efSound.click();
+            // 모션 진행
+            clearTimeout(showSlidePage);
+            showSlidePage = setTimeout(() => {
+              // 모션 정지
+              __slider.currentPage.off('fadeInRightShort');
+            }, 1000);
+            if (options && options.includes('motion')) __slider.currentPage.on('fadeInRightShort');
+          }
+        });
+      });
+    }
+
+    // 6. popup
+    if ($ic.getEl('.js-popup') && $ic.getEl('.js-popupButton')) {
+      contentManager.popup = $ic.getEl('.js-popup', true).map((container) => {
+        const name = container.data('popupName');
+        const options = container.data('popupOption') ? container.data('popupOption').replace(/ /g, '').split(',') : null;
+        let showPopup;
+
+        return new $ic.Popup({
+          container, name, options,
+          popupButton: $ic.getEl(`.js-popupButton[data-popup="${name}"]`, true),
+          closeButton: container.getEl(`.js-popupCloseButton[data-popup="${name}"]`),
+          callback: {
+            open: (__popup) => {
+              /* 팝업 실행 시 초기화 함수 */
+              if (contentManager.speaker) contentManager.reset.speaker();
+              if (contentManager.player) contentManager.reset.player();
+              if (contentManager.draw) contentManager.reset.draw(__popup.container);
+              /* END */
+              
+              /* 21.11.24 spvog
+                팝업 내부에 iframe이 있는 경우 초기화 안되는 현상이 있어서 강제 초기화 추가
+              */
+              const iframe = __popup.container.DOM.querySelector('iframe');
+              if (iframe) {
+                const src = iframe.getAttribute('src');
+                iframe.setAttribute('src', src);
+                setTimeout(() => {
+                  iframe.setAttribute('src', src);
+                }, 50);
+
+                window.parent.hideViewer && window.parent.hideViewer();
+              }
+
+              // 모션 진행
+              clearTimeout(showPopup);
+              showPopup = setTimeout(() => {
+                // 모션 정지
+                __popup.container.off('fadeInRightShort');
+              }, 1000);
+
+              if (options && options.includes('motion')) {
+                __popup.container.on('fadeInRightShort');
+                // window.parent.hideViewer && window.parent.hideViewer();
+              }
+
+              if (getComputedStyle(__popup.container.DOM).width === '1280px' 
+                && getComputedStyle(__popup.container.DOM).height === '720px') {
+                  window.parent.hideViewer && window.parent.hideViewer();
+                }
+
+              contentManager.callback[name] && contentManager.callback[name].open 
+                && contentManager.callback[name].open(__popup);
+            },
+            close: (__popup) => {
+              /* 팝업 종료 시 초기화 함수 */
+              if (contentManager.speaker) contentManager.reset.speaker(__popup.container);
+              if (contentManager.player) contentManager.reset.player(__popup.container);
+              if (contentManager.quiz) contentManager.reset.quiz(__popup.container);
+              if (contentManager.quizChain) contentManager.reset.chain(__popup.container);
+              if (contentManager.draws) contentManager.reset.draw(__popup.container);
+              /* END */
+
+              if (contentManager.slider) {
+                contentManager.slider.forEach((slider) => {
+                  if (__popup.container.DOM.contains(slider.container.DOM)) {
+                    slider.container.off('isSlide');
+                  }
+                });
+              }
+              
+              window.parent.showViewer && window.parent.showViewer();
+
+              contentManager.callback[name] && contentManager.callback[name].close 
+                && contentManager.callback[name].close(__popup);
+            }
+          }
+        });
+      });
+    }
+
+    // 7. player
+    if ($ic.getEl('.js-player')) {
+      contentManager.player = $ic.getEl('.js-player', true).map((container) => {
+        const name = container.data('playerName');
+        const options = container.data('playerOption') ? container.data('playerOption').replace(/ /g, '').split(',') : '';
+
+        return new $ic.Player({
+          container, name, options,
+          media: container.getEl('.js-media')[0],
+          playButton: container.getEl('.js-playButton')[0],
+          stopButton: container.getEl('.js-stopButton')[0],
+          screenButton: container.getEl('.js-screenButton')[0],
+          volumeButton: container.getEl('.js-volumeButton')[0],
+          fullScreenButton: container.getEl('.js-fullScreenButton')[0],
+          timer: container.getEl('.js-timer')[0],
+          progress: container.getEl('.js-progress')[0],
+          progressHandler: container.getEl('.js-progressHandler')[0],
+          progressBg: container.getEl('.js-progressBg')[0],
+          callback: {
+            play: (__player) => {
+              /* 플레이어 재생 시 초기화 함수 */
+              if (contentManager.speaker) contentManager.reset.speaker();
+              if (contentManager.player) {
+                contentManager.player.forEach((player) => {
+                  if (player.name !== __player.name) player.reset();
+                });
+              }
+              /* END */
+
+              contentManager.callback[name] && contentManager.callback[name].play 
+                && contentManager.callback[name].play(__player);
+            },
+            pause: (__player) => {
+              contentManager.callback[name] && contentManager.callback[name].pause 
+                && contentManager.callback[name].pause(__player);
+            },
+            stop: (__player) => {
+              contentManager.callback[name] && contentManager.callback[name].stop 
+                && contentManager.callback[name].stop(__player);
+            },
+          }
+        });
+      });
+    }
+
+    // 8. star
+    if ($ic.getEl('.js-star')) {
+      function getGroup(index) { return starGroup.filter(star => star.groupIndex === index); }
+      function activeLength(group) { return group.filter(star => star.selected).length; }
+
+      const starGroup = $ic.getEl('.js-star', true);
+      starGroup.forEach((star, index) => {
+        star.hover('hover');
+        star.index = index % 3;
+        star.groupIndex = Math.floor(index / 3);
+        star.active = () => {
+          star.selected = true;
+          star.on('ON');
+        }
+        star.inactive = () => {
+          star.selected = false;
+          star.off('ON');
+        }
+        
+        let animate;
+        star.event('click touchstart', () => {
+          clearTimeout(animate);
+          star.off('jello');
+
+          const starsInSameGroup = getGroup(star.groupIndex);
+          
+          if (activeLength(starsInSameGroup) === 1 && star.index === 0) {
+            star.inactive();
+            return;
+          }
+
+          starsInSameGroup.forEach((_star, _index) => {
+            if (_index > star.index) _star.inactive();
+            else _star.active();
+          });
+          
+          contentManager.efSound.correct();
+          star.on('animated jello');
+          animate = setTimeout(() => {
+            star.off('jello');
+          }, 600);
+        });
+      });
+    }
+
+    // 9. drag
+    if ($ic.getEl('.js-drag')) {
+      $ic.getEl('.js-drag', true).forEach((drag) => {
+        drag.setPosition = (top = null, left = null) => {
+          drag.style({
+            top: (top ? `${top}px` : ''), 
+            left: (left ? `${left}px` : '')
+          });
+        }
+        $ic.initDrag({
+          dragObj: drag,
+          container: $ic.getEl('body'),
+          callback: {
+            start: (DRAG, event) => {
+              drag.start = { x: drag.left, y: drag.top };
+            },
+            move: (DRAG, event) => {
+              const movePosition = {
+                x: DRAG.moveX + drag.start.x,
+                y: DRAG.moveY + drag.start.y
+              }
+              drag.setPosition(movePosition.y, movePosition.x);
+            },
+            end: (DRAG, event) => {
+              // const dropElement = $ic.getElementFromPoint(event);
+              console.log(`top: ${drag.top}px; left: ${drag.left}px;`);
+            },
+          }
+        });
+      });
+    }
+
+    // 10. draw
+    if ($ic.getEl('.js-draw')) {
+      const script = document.createElement('script');
+      document.body.appendChild(script);
+      script.src = './include/js/draw.js';
+      script.onload = function (object) {
+        const drawContainers = $ic.getEl('.js-draw', true);
+        contentManager.draws = drawContainers.map((container) => {
+          const name = container.data('drawName') || 'draw';
+          const palette = container.getEl('.js-drawPalette')[0];
+          palette.move = palette.getEl('.js-move')[0];
+          palette.pens = palette.getEl('.js-pen');
+          palette.erasers = palette.getEl('.js-eraser');
+          palette.colors = palette.getEl('.js-color > li');
+          palette.sizes = palette.getEl('.js-size > li');
+
+          return new Draw({
+            container, palette, name,
+            canvases: container.getEl('.js-drawCanvas'),
+            buttons: container.getEl('.js-drawButton'),
+          });
+        });
+        
+      };
+    }
+    
+    // quiz
+    if ($ic.getEl('.js-quiz')) {
+      contentManager.quiz = $ic.getEl('.js-quiz', true).map((container) => {
+        const type = container.data('quizType');
+        const name = container.data('quizName') || type;
+        const data = {
+          container, name, type,
+          alerts: container.getEl('.js-alert'),
+          closeButtons: container.getEl('.js-closeButton'),
+          explainButton: container.getEl('.js-explainButton')[0],
+          answerButton: container.getEl('.js-answerButton')[0],
+          retryButton: container.getEl('.js-retryButton')[0],
+          checkButtons: container.getEl('.js-checkButton'),
+          quizObjs: container.getEl('.js-quizObj'),
+          options: container.attr('data-quiz-option'),
+          afterAnswerObjs: container.getEl('.js-afterAnswerObj'),
+          callback: window.$CM.callback[name] || {}
+        }
+        
+        let selectedQuiz;
+        switch(type) {
+          case 'input': selectedQuiz = new window.$ic.INPUT(data); break;
+          case 'trueFalse': selectedQuiz = new window.$ic.TRUEFALSE(data); break;
+          case 'check': selectedQuiz = new window.$ic.CHECK(data); break;
+          case 'multiCheck': selectedQuiz = new window.$ic.MULTICHECK(data); break;
+          case 'drawLine': selectedQuiz = new window.$ic.DRAWLINE(data); break;
+          case 'dragDrop': selectedQuiz = new window.$ic.DRAGDROP(data); break;
+          case 'select': selectedQuiz = new window.$ic.SELECT(data); break;
+        }
+        
+        return selectedQuiz;
+      });
+    }
+
+    if ($ic.getEl('.js-quizChainButton')) {
+      const chainButtons = $ic.getEl('.js-quizChainButton').length > 1 
+        ? $ic.getEl('.js-quizChainButton') 
+        : [$ic.getEl('.js-quizChainButton')];
+
+      contentManager.quizChain = chainButtons.map((button) => {
+        function setStateButton(__boolean) {
+          const mode = __boolean ? 'answer' : 'retry';
+          button.type = mode;
+          button.attr('data-type', mode);
+        }
+        function isChainCorrect() {
+          return button.quiz.filter((quiz) => quiz.isCorrect).length === button.quiz.length;
+        }
+
+        const quizNames = button.data('quizChain').replace(/ /g, '').split(',');
+
+        button.hover();
+        button.on('show');
+        setStateButton(true);
+        button.quiz = contentManager.quiz.filter((quiz) => quizNames.includes(quiz.name));
+
+        button.quiz.forEach((quiz) => {
+          quiz.callback.chain = () => {
+            if (isChainCorrect()) setStateButton(false);
+            else setStateButton(true);
+          };
+        });
+
+        button.event('click touchstart', () => {
+          contentManager.efSound.click();
+          if (button.type === 'answer') {
+            button.quiz.forEach((quiz) => quiz.showAnswer());
+            setStateButton(false);
+          }
+          else {
+            button.quiz.forEach((quiz) => quiz.reset());
+            setStateButton(true);
+          }
+        });
+
+        button.reset = () => {
+          setStateButton(true);
+        }
+        
+        return button;
+      });
+    }
+
+    // page slider move
+    (() => {
+      let search;
+      if ($ic.inViewer()) {
+        search = parent.location.search.split('?');
+        search = search.filter((text) => text.includes('slider'))[0];
+      } 
+      else search = location.search ? location.search.split('?')[1] : null;
+      
+      if (search) {
+        const sliderIndex = search.split('slider=')[1] - 1;
+        contentManager.slider.forEach((slider) => {
+          if (slider.name === 'main') slider.setStatePage(sliderIndex);
+        });
+        const newUrl = parent.location.href.replace('?slider='+(sliderIndex + 1), '');
+        setTimeout(() => {
+          parent.history.pushState(null, null, newUrl);
+        }, 1000);
+      }
+    })();
+    /* END */
+    
+    
+    /* test */
+    (() => {
+      /* 효과음 */
+      /* window.$CM.efSound.click();
+      window.$CM.efSound.correct();
+      window.$CM.efSound.wrong(); */
+      
+      /* callback */
+      /* window.$CM.callback['mainSlider: data-name'] = () => {
+        // mainSlider[slider name] 페이지 이동 시 실행
+      }
+      window.$CM.callback.click = {
+        open: ({obj, targets, index}) => {
+          // clickObj 홀수 클릭 시 실행(target 보임)
+        },
+        close: ({obj, targets, index}) => {
+          // clickObj 짝수 클릭 시 실행(target 숨김)
+        }
+      }
+      window.$CM.callback.speaker = {
+        open: ({obj, targets, index}) => {
+          // 스피커 팝업이 열릴 때 실행
+        },
+        close: ({obj, targets, index}) => {
+          // 스피커 팝업이 닫힐 때 실행
+        }
+      }
+      window.$CM.callback['popup'] = {
+        open: (POPUP) => {
+          // 팝업이 열릴 때 실행
+        },
+        close: (POPUP) => {
+          // 팝업이 닫힐 때 실행
+        }
+      }
+      window.$CM.callback['player'] = {
+          play: (PLAYER) => {
+              // 재생 시 실행
+          },
+          pause: (PLAYER) => {
+              // 일시 정지 시 실행
+          },
+          stop: (PLAYER) => {
+              // 정지 시 실행
+          }
+      }
+      window.$CM.callback['quiz name'] = {
+        correct: () => {
+          // 정답일 때 실행
+        },
+        incorrect: () => {
+          // 오답일 때 실행
+        },
+        showAnswer: () => {
+          // 정답보기 버튼 클릭 시 실행
+        },
+        reset: () => {
+          // 다시하기 버튼 클릭 시 실행
+        },
+        currentShowAnwer: () => {
+          // 개별 정답보기 버튼 클릭 시 실행
+        },
+        currentReset: () => {
+          // 개별 다시하기 버튼 클릭 시 실행
+        },
+        click: () => {
+          // obj 클릭 시 실행
+        },
+        startDrag: () => {
+          // 드래그 시작 시 실행
+        },
+        endDrag: () => {
+          // 드래그 완료 시 실행
+        }
+      } */
+    });
+    /* END */
+  });
+})();

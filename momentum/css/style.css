@@ -1,0 +1,60 @@
+/* reset */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500;1,600;1,700&display=swap');
+
+.notoSansL {font-family: 'Noto Sans KR', sans-serif;font-weight: 300;}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, button, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead,  article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;line-height: 1.3;vertical-align: baseline;box-sizing: border-box;border: none;outline: none;font-family: 'Noto Sans KR', sans-serif; font-weight: 400;font-size: 1.0em;color: #333;}
+h3 {font-family: 'Lora', serif; font-weight: 700; font-size: 3em;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+ol, ul, li {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+a {color: inherit;text-decoration: none;}
+caption, legend {display: none;}
+button { margin: 0; padding: 0; color: none; outline: none; background-color: transparent;}
+* {-webkit-tap-highlight-color: transparent;}
+
+
+.container {width: 100%; height: 100vh;background: linear-gradient(#d2dae2, #4bcffa); display: flex;  align-items: center;  justify-content: center; }
+
+.loginContainer {width: 100%; height: 100vh; position: absolute; top: 0; left: 0; background-color: rgba(0,0,0,0.7);  flex-direction: column; align-items: center; justify-content: center; z-index: 2; display: none;}
+.loginContainer h3 {margin-bottom: 30px; color: #fff;}
+.loginContainer input {padding: 5px; font-size: 1.2em; text-align: center; border-radius: 5px;}
+
+
+.contents {width: 90%; height: 90%; background-color: #fff; border-radius: 30px;}
+
+.header {padding: 15px 30px 0; display: flex; justify-content: space-between;}
+
+.header .logout {font-weight: bold; cursor: pointer; padding: 5px; background-color: transparent;}
+.header div span:nth-of-type(1) {color:gray}
+.header div span:nth-of-type(2) {font-size: 1.1em; vertical-align: middle; font-weight: bold;}
+
+
+.contents > div[class$="Wrap"] {width: 80%; margin: 20px auto 0;}
+
+.contents .sayingWrap {height: 250px;  border-radius: 10px; text-align: center; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;}
+.contents .sayingWrap::before {content:""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.2); }
+.contents .sayingWrap h3 {color: #fff; font-size: 3em; margin-top: 0px; z-index: 1;}
+.contents .sayingWrap p {color: #fff; margin-top: 10px; font-family: 'Lora', serif; font-weight: 300; padding: 0 20px; z-index: 1;}
+.contents .sayingWrap p:nth-of-type(2) {font-size: 0.8em;}
+
+.contents .midWrap {display: flex; justify-content: space-between; max-height: 300px;}
+.contents .midWrap > div {width: 49%;}
+.contents .midWrap .todoWrap .todoList {max-height: 340px;overflow-y: auto; padding: 5px 10px 10px 5px;}
+
+.contents .midWrap .todoWrap .todoList li {box-shadow: 1px 1px 4px 1px #d3d3d3; margin-bottom: 20px; padding: 9px; border-radius: 5px; display: flex;
+    justify-content: space-between; width: 99%;}
+
+.contents .midWrap .todoWrap #todoForm input {padding: 5px; font-size: 1.2em; text-align: center; border-radius: 5px; width: 100%; box-sizing: border-box; margin-bottom: 10px;}
+
+.contents .midWrap .calendarWrap #calendar {height: 380px;}
+
+.hide {display: none;}
+.show {display: flex;}
+.flexWrap {display: flex;}
+
+
+.fc .fc-toolbar-title {font-size: 1em !important; font-family: 'Lora', serif !important}
+.fc .fc-button-primary.fc-prev-button, .fc .fc-button-primary.fc-next-button {background-color: transparent !important; border-color: transparent !important;}

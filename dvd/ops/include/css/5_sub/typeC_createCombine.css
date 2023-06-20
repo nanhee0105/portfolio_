@@ -1,0 +1,39 @@
+
+/* 창의융합활동 */
+.typeC .box {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 0 70px 0 0;
+}
+.typeC .title {
+  position: absolute;
+  top: -48px;
+  width: 100%;
+  height: 60px;
+  background: url(../../images/common/sub/title_chang.png) no-repeat left/332px 60px;
+}
+.typeC .title span {
+  position: absolute;
+  top: 8px;
+  left: 370px;
+  font-size: 32px;
+  font-family: "cafe24";
+}
+.typeC table{
+  margin-top: 80px;
+}
+.typeC .goTomain{
+  position: absolute;
+  top: 10px;
+  right: 40px;
+}
+.typeC .cont{
+  position: absolute;
+  top: 60px;
+  height: 460px;
+  padding: 0px 20px 0 0;
+  overflow-y: scroll;
+}

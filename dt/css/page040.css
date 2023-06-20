@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+.topWrap .bigTitle img {position: absolute;}
+.topWrap .bigTitle img:nth-child(1) {width: 59px;top: 38px;left: 157px;}
+.topWrap .bigTitle img:nth-child(2) {width: 200px;top: 96px;left: 522px;}
+
+.topWrap .topcont {width: 290px;top: 75px;}
+.videoBtn {top: 70px;left: 530px;}
+.experimentBtn {top: 0; left: 111px;}
+.listBox img{width: 90px;}
+.itemList:nth-of-type(1) .listBox:nth-of-type(1) img {width: 53px;}
+.itemList:nth-of-type(4) .listBox img {width: 80px;}
+.itemList:nth-of-type(4) .listBox:nth-child(1) img {transform: scaleY(-1);}
+
+.bottomWrap {position: absolute;bottom: 0px;right: 0px;}
+.bottomWrap_bg img{width: 360px;height: auto;}
+
+.zoomWrap1 {top: 0;left: 20px;}
+.zoomWrap1 p{position: absolute;top: -20px;left: 58%;transform: translate(-50%, -50%);width: 90px;}
+.zoomWrap2 {top: 0;left: 278px;}
+.zoomWrap2 p{position: absolute;top: -20px;left: 55%;transform: translate(-50%,-50%);}
+.zoomWrap3 {top: 0;left: 537px;}
+.zoomWrap3 p{position: absolute;top: -15px;left: 55%;transform: translate(-50%,-50%);}
+
+/* zoom */
+.pictureZoom {width: 220px;height: 280px;position: absolute;}
+.zoombg {width: 230px;height: 230px;border-radius: 100%;overflow: hidden;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+/* 그림 확대 */
+.pictureZoom img {width: 100%;height: 100%;position: absolute;border-radius: 10px;}/*기능 작동 대문에 kj 수정*/
+.overBox { width: 100%; height: 100%; }
+
+.pictureZoom .magnifyBox {/* background-color: #eee; */width: 158px;height: 22px;position: absolute;bottom: -25px;left: 50%;transform: translateX(-50%);border-radius: 15px;border: 1px solid #34cd65;box-shadow: 0px 2px 0px 1px #47d175;top: auto;overflow: visible;}
+.pictureZoom .magnifyBox .plus {width: 22px;height: 23px;position: absolute;top: 0px;right: 0px;border-radius: 0 5px 5px 0;cursor: pointer;}
+.pictureZoom .magnifyBox .minus {width: 30px;height: 23px;position: absolute;top: 0px;left: 0px;border-radius: 5px 0 0 5px;cursor: pointer;}
+.pictureZoom .magnifyBox .bar {width: 104px;height:8px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);border-radius: 10px;background-color: #ade7c1;}
+.pictureZoom .magnifyBox .dot {border-radius: 100%;background-color: #faffb0;position: absolute;width: 9px;height: 9px;left: 0%;cursor: pointer;border: 3px solid #33cc66;top: 50%;transform: translateY(-50%);}
+.pictureZoom .magnifyBox .minus::before {content: "";position: absolute;width: 13px;height: 4px;background-color: #33cc66;top: 9px;left: 8px;border-radius: 10px;}
+.pictureZoom .magnifyBox .plus::before {content: "";position: absolute;width: 15px;height: 15px;background: url(../images/common/zoomadd.png) no-repeat center/contain;top: 3px;left: 1px;}
+
+
+.popupOverlay.subPop .popupWrap .tabTopImg::after {left: 320px;}
+/***pop_01***/
+.act_pop_01 table tbody tr td:first-child{width: 20%;}
+.act_pop_01 table tbody tr td:nth-child(2){width: 20%;}
+
+.videoBg .videoWrap .tabTopImg::after {left: 330px;}
+
+.addBtn {top: 685px;left: 442px;z-index: 2;}
+
+
+#sliderWrap2 {top: 610px;height: 340px;left: 190px;z-index: 2;width: 320px;}
+#sliderWrap2  .slideView {width: 260px;height: 320px;}
+
+
+
+/**/
+.learningBtn{top: 206px;}
+#sliderWrap2 .arrowLeft {top: 40%;}
+#sliderWrap2 .arrowRight {top: 40%;}
+
+.studyPopup.miniPopup .videoBox {top: 190px;}

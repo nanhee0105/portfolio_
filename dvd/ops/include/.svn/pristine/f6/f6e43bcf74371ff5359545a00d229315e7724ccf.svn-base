@@ -1,0 +1,158 @@
+(() => {
+  class Slider {
+    constructor(opts) {
+      this.init(opts);
+      
+      this.currentPageIndex = 0;
+    }
+
+    get totalPageLength() { return this.pages.length; }
+
+    showPage(__index) {
+      this.hidePage();
+      this.pages[__index].on();
+      this.currentPage = this.pages[__index];
+    }
+    
+    hidePage() {
+      this.pages.forEach((page) => { page.off(); });
+    }
+
+    onTab(__index) {
+      if (this.tabs) {
+        this.offTabs();
+        this.tabs[__index].on();
+        this.currentTab = this.tabs[__index];
+      }
+    }
+
+    offTabs() {
+      if (this.tabs) this.tabs.forEach((tab) => { tab.off(); });
+    }
+
+    prev() {
+      if (this.currentPageIndex > 0) this.currentPageIndex--;
+      this.setStatePage(this.currentPageIndex);
+    }
+
+    next() {
+      if (this.currentPageIndex < this.totalPageLength) this.currentPageIndex++;
+      this.setStatePage(this.currentPageIndex);
+    }
+
+    setStatePageButton() {
+      if (this.currentPageIndex === 0) {
+        this.prevButton.on('off');
+        this.nextButton.off('off');
+      }
+      else if ((this.currentPageIndex + 1) === this.totalPageLength) {
+        this.prevButton.off('off');
+        this.nextButton.on('off');
+      }
+      else {
+        this.prevButton.off('off');
+        this.nextButton.off('off');
+      }
+    }
+
+    pageMove(__index) {
+      this.currentPageIndex = __index;
+      this.onTab(__index);
+      this.showPage(__index);
+      if (this.prevButton && this.nextButton) this.setStatePageButton();
+    }
+
+    setStatePage(__index) {
+      this.pageMove(__index);
+      
+      if (this.slide) {
+        this.pages.forEach((page) => {
+          /* 21.09.28 spvog 
+            팝업에서 열리는 경우 width가 0이라서 translate가 제대로 동작 안함
+            interval로 width값을 찾은 후에 translate 실행
+            이때 화면이 움짤하는 현상이 있어서 opacity를 0으로 주고 translate 실행 후에 원상복귀 시킴
+          */
+          /* 21.11.24 spvog
+            페이지가 1개인 경우 탭이 없을 때 화면이 하얗게 보이는 현상이 있어서 조건 추가함.
+          */
+          if (page.width == 0 && this.pages.length > 1) {
+            page.DOM.style.opacity = 0;
+          }
+          const getPageWidth = setInterval(() => {
+            if (page.width > 0) {
+              clearInterval(getPageWidth);
+              page.DOM.style.transform = `translateX(-${page.width * __index}px)`;
+              page.DOM.style.opacity = '';
+            }
+          }, 10);
+        });
+
+        if (!this.container.DOM.classList.contains('isSlide')) {
+          setTimeout(() => {
+            this.container.on('isSlide');
+          }, 500);
+        }
+      }
+      
+      this.callback && this.callback(this);
+    }
+
+    reset() {
+      this.setStatePage(0);
+    }
+
+    init({container, name, options, pages, tabs, prevButton, nextButton, sliderButton, callback = null}) {
+      this.container = container;
+      this.name = name;
+      this.pages = pages;
+      
+      if (options) {
+        options.forEach((option) => { this[option] = true; });
+      }
+      
+      if (tabs) this.tabs = tabs.map((tab, index) => {
+        tab.index = index;
+        tab.hover();
+        tab.event('click touchstart', () => {
+          $CM.efSound.click();
+          this.setStatePage(index);
+        });
+        return tab;
+      });
+      if (prevButton) {
+        prevButton.hover();
+        prevButton.event('click touchstart', () => {
+          $CM.efSound.click();
+          this.prev();
+        });
+        this.prevButton = prevButton;
+      }
+      if (nextButton) {
+        nextButton.hover();
+        nextButton.event('click touchstart', () => {
+          $CM.efSound.click();
+          this.next();
+        });
+        this.nextButton = nextButton;
+      }
+      if (sliderButton) {
+        this.sliderButton = sliderButton.map((button) => {
+          const pageIndex = button.data('sliderPage') - 1;
+          button.hover();
+          button.event('click touchstart', this.setStatePage.bind(this, pageIndex));
+        });
+      }
+      this.callback = callback;
+
+      $CM.inPage[(name || 'slider')] = {
+        _this: this,
+        setStatePage: this.setStatePage,
+        prev: this.prev,
+        next: this.next,
+        reset: this.reset,
+      }
+    }
+  }
+  
+  window.$ic.Slider = Slider;
+})();

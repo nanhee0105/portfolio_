@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+.drawText {position: absolute;top: 41px;left: 40px;display: flex;}
+.drawText .doitDraw {width: auto;height: 30px;border-radius: 20px;background-color: #fd6522;text-align: center;line-height: 30px;color: #fff;padding: 0 10px;}
+.drawText .doitDraw span {font-family: "NanumSquareRoundEB";font-size: 20px;}
+.drawText  p {font-size: 22px;line-height: 28px;color: #611607;margin-left: 34px;position: relative;top: 2px;}
+.drawText  p::after {content:"";background: url(../images/common/point_btn.png) no-repeat center/19px 19px;width: 24px;height: 24px;position: absolute;left: -28px;top: 0px;}
+.dragWrap {position: absolute;width: 1450px;height: 783px;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+/* 배경 */
+.dragBg {position: relative;width: 100%;height: 693px;top: -50px;left: 50%;transform: translateX(-50%);}
+.dragBg img {width: 1388px;position: absolute;top: 0;left: 50%;transform: translateX(-50%);}
+
+/* 아래 드래그 */
+.dragItems {width: 90%;height: 90px;position: absolute;bottom: -50px;left: 50%;background: #f9e9d3;border-radius: 10px;transform: translate(-50%);}
+.dragItems > div {float: left;position: relative;}
+.dragItems > div.dragImg {width: 979px;left: 111px;}
+.dragItems .imgItem {width: 89px;height: 90px;position: absolute;top: 0px;}
+.dragItems .imgItem:nth-child(1) {left: -30px; cursor: pointer; }
+.dragItems .imgItem:nth-child(2) {left: 76px; cursor: pointer;}
+.dragItems .imgItem:nth-child(3) {left: 182px; cursor: pointer; }
+.dragItems .imgItem:nth-child(4) {left: 289px; cursor: pointer; }
+.dragItems .imgItem:nth-child(5) {left: 407px; cursor: pointer; }
+.dragItems .imgItem:nth-child(6) {left: 528px; cursor: pointer; }
+.dragItems .imgItem img {width: 71px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); pointer-events: none;}
+
+/* 텍스트 */
+.dragItems .txtItem {width: auto;height: 29px;padding: 0 10px;color:#415daa;background-color:#b4fffd;border: 2px solid #55c5ef;border-radius: 5px;box-shadow: 1px 2px 2px #c8caca;box-sizing: content-box;margin-left: 14px;float: left;cursor: pointer;position: absolute;white-space: nowrap;}
+.dragItems .txtItem span {font-size: 18px;line-height: 28px;font-family: "NanumSquareB"; pointer-events: none;}
+.dragItems .txtItem:nth-child(1) {top: 10px;}
+.dragItems .txtItem:nth-child(2) {top: 10px;left: 65px;}
+.dragItems .txtItem:nth-child(3) {top: 10px;left: 132px;}
+.dragItems .txtItem:nth-child(4) {top: 10px;left: 211px;}
+.dragItems .txtItem:nth-child(5) {top: 48px;left: 29px;}
+.dragItems .txtItem:nth-child(6) {top: 48px;left: 94px;}
+.dragItems .txtItem:nth-child(7) {top: 48px;left: 157px;}
+
+.dragItems .dragtext {width: 360px;height: 90px;left: 800px;}
+.answerArea .answer {width: 84px;height: 84px;position: absolute;}
+.answerArea .answer img {width: 70px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); display: none;}
+.answerArea .answer input[type="text"] {top: 0px;left: 0px;width: 100%;height: 100%;font-size: 14px;position: absolute;padding: 0 5px;}
+.answerArea .answer:nth-child(1) {top: 159px;left: 54px;}
+.answerArea .answer:nth-child(2) {top: 386px;left: 191px;}
+.answerArea .answer:nth-child(3) {top: 634px;left: 206px;}
+.answerArea .answer:nth-child(4) {top: 634px;left: 500px;}
+.answerArea .answer:nth-child(4) img {width: 65px;}
+.answerArea .answer:nth-child(5) {top: 170px;left: 1063px;height: 68px;}
+.answerArea .answer:nth-child(5) img {width: auto; max-width:65px; max-height: 100%;}
+.answerArea .answer:nth-child(6) {top: 170px;left: 1250px;height: 68px;}
+.answerArea .answer:nth-child(6) img {width: auto; max-width:65px; max-height: 100%;}
+.answerArea .answer:nth-child(7) {top: 110px;left: 130px;width: 57px;height: 25px;}
+.answerArea .answer:nth-child(8) {top: 315px;left: 169px;width: 60px;height: 25px;}
+.answerArea .answer:nth-child(9) {top: 587px;left: 169px;width: 76px;height: 27px;}
+.answerArea .answer:nth-child(10) {top: 562px;left: 438px;width: 83px;height: 27px;}
+.answerArea .answer:nth-child(11) {top: -9px;left: 1090px;width: 60px;height: 29px;}
+.answerArea .answer:nth-child(12) {top: 100px;left: 1123px;width: 58px;height: 28px;}
+.answerArea .answer:nth-child(13) {top: 315px;left: 1284px;width: 110px;height: 27px;}
+.answerArea .answer input[type="text"] { cursor: default;}
+
+.thinkanswerBtn {position:absolute;bottom: 137px;right: 120px;width: 107px;height: 29px;cursor: pointer;}
+.thinkresetBtn {display: none;position:absolute;bottom: 137px;right: 120px;width: 107px;height: 29px;cursor: pointer;}
+.dragwrap,.bg{user-select: none;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;}
+
+
+/* .thinkagain {background-color: #03a9f4;border-radius: 12px;position: absolute;top: -46px;width: 127px;padding: 6px;text-align: center;line-height: 20px;color: #fff;left: 50%;transform: translateX(-50%);}
+.thinkagain::after {content: "";width: 0px;height: 0px;position: absolute;top: 30px;left: 50%;border-bottom: none;border-top: 12px solid #01a9f4;border-right: 6px solid transparent;border-left: 6px solid  transparent;transform: translateX(-50%);} */
+
+.dragthinkagain::after {content: "다시 생각해 보세요.";background-color: #03a9f4;border-radius: 12px;position: absolute;top: -44px;width: 127px;padding: 6px;text-align: center;line-height: 20px;color: #fff;left: 50%;transform: translateX(-50%);} 
+.dragthinkagain::before {content: "";width: 0px;height: 0px;position: absolute;top: -15px;left: 50%;border-bottom: none;border-top: 12px solid #01a9f4;border-right: 6px solid transparent;border-left: 6px solid  transparent;transform: translateX(-50%);} 
+
+.doitsolve {
+  top: 738px;
+  right: 120px;
+}

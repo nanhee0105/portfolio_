@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+[data-dragdrop-container=""] [data-drag-type="drop"] input.userValue {
+  display: none;
+}
+
+[data-dragdrop-container=""] [data-drag-type="drag"] {
+  position: absolute;
+}
+[data-drag-type="drag"].isDragging {
+  z-index: 10;
+}
+[data-drag-type="drag"] img,
+[data-drag-type="drag"].off {
+  pointer-events: none;
+}
+[data-dragdrop-container=""] [data-drag-type="drop"] {
+  position: relative;
+}
+
+[data-dragdrop-container=""] [data-drag-type="drop"] * {
+  pointer-events: none;
+}
+
+[data-dragdrop-container=""] [data-drag-type="drop"] > [data-drag-type="drag"] {
+  pointer-events: auto;
+}

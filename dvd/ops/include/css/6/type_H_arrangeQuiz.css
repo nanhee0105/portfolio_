@@ -1,0 +1,440 @@
+
+/* 정리문제 */
+.TypeH .contWrap {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 600px;
+  border-radius: 0 70px 0 0;
+  background-color: #fff;
+}
+.TypeH .title {
+  position: absolute;
+  top: -46px;
+  width: 229px;
+  height: 58px;
+  background:url(../../images/common/title_mun.png) no-repeat center/contain;
+  z-index: 0;
+}
+.TypeH .text {
+  display: flex;
+  margin-bottom: 40px;
+}
+.TypeH .text p {
+  width: 1100px;
+  text-align:justify;
+}
+
+.TypeH .show {
+  display: block;
+}
+
+.TypeH .answerBtn {
+  background:url(../../images/btn/clean_answer.png)  no-repeat center top/100%;
+}
+.TypeH .answerBtn.ON {background-position-y: bottom;}
+
+
+.TypeH .pointerOff {
+  pointer-events: none !important;
+}
+
+.TypeH .input .pointerOff {
+  font-family: "NotoSansKR-Medium";
+  color: #d53030;
+}
+
+.TypeH u.line {
+  border-bottom: 3px solid #000;
+  text-decoration: none;
+}
+
+.TypeH  img {border-radius: 15px;}
+
+/* 정리문제 전체 해설보기 */
+.AllexplanationBox {
+  display: none;
+  position: absolute;
+  top: -87px;
+  left: 0;
+  width: 100%;
+  height: 680px;
+  background-color: rgba(0,0,0,.5);
+  z-index: 2;
+}
+.Allexplanation {
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  height: 460px;
+  border-radius: 30px 30px 0 0;
+  background-color: #fff;
+}
+.AllexplanationBox.show {
+  animation: showOpacity .2s linear forwards;
+}
+.AllexplanationBox.show .Allexplanation {
+  animation: slideupExplainPopup .4s ease-in-out;
+}
+@keyframes slideupExplainPopup {
+  0% { transform: translateY(400px); }
+  80% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+@-o-keyframes slideupExplainPopup {
+  0% { transform: translateY(400px); }
+  80% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+@-moz-keyframes slideupExplainPopup {
+  0% { transform: translateY(400px); }
+  80% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+@-webkit-keyframes slideupExplainPopup {
+  0% { transform: translateY(400px); }
+  80% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+.Allexplanation::after {
+  content:"";
+  position: absolute;
+  top: -9px;
+  width: 1280px;
+  height:67px;
+  background: url(../../images/common/mun_exp_top.png) no-repeat center/contain;
+}
+.Allexplanation div.textWrap {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  width: 91%;
+  height: 350px;
+  transform: translateX(-50%);
+  overflow-y: auto;
+  padding-right: 30px;
+}
+
+.Allexplanation div.textWrap p {
+  display: flex;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+.Allexplanation div.textWrap p span:nth-of-type(1) {
+  margin-right: 10px;
+}
+.Allexplanation div.textWrap p span:nth-of-type(2) {
+  width: 1110px;
+}
+.Allexplanation div.close {
+  position: absolute;
+  top: 7px;
+  right: 13px;
+  width: 34px;
+  height: 34px;
+  background: url(../../images/btn/bt_expClose.png) no-repeat center top/100%;
+  z-index: 2;
+  cursor: pointer;
+}
+.Allexplanation div.close.ON {
+  background: url(../../images/btn/bt_expClose.png) no-repeat center bottom/100%;
+}
+/* 정리문제 전체 해설보기에서 앞에 도트 있는 거 class dot 추가 */
+.Allexplanation div.textWrap p .dot {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 17px;
+  border-radius: 100%;
+  background-color: #d74cff;
+}
+
+/* alerts */
+.NotEnter,
+.wrong,
+.right {
+  display: none;
+  position: absolute;
+  top: -87px;
+  left: 0;
+  width: 100%;
+  height: 669px;
+  background-color: rgba(0,0,0,.5);
+  z-index: 2;
+}
+.NotEnter.show,
+.wrong.show,
+.right.show {
+  animation: showOpacity .1s linear;
+}
+
+/* 정리문제 답 입력 안 했을 떄 */
+.NotEnter {}
+.NotEnter .img {
+  position: absolute;
+  top: calc(50% - (292px / 2));
+  left: calc(50% - (293px / 2));
+  width: 293px;
+  height: 292px;
+  background: url(../../images/common/mun_exp_al.png) no-repeat center/contain;
+} 
+.NotEnter.show .img {
+  animation: slidedown .3s ease-in-out;
+}
+.NotEnter .img span {
+  position: absolute;
+  top: 164px;
+  left: 50%;
+  width: 100%;
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.cleanAns .shutBtn {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 29px;
+  height: 30px;
+  background: url(../../images/btn/shutbtn.png) no-repeat top/100%;
+  cursor: pointer;
+}
+.cleanAns .shutBtn.ON {
+  background-position: bottom;
+}
+
+
+
+/* 틀렸을 때 다시하기 */
+.wrong {}
+.wrong .img {
+  position: absolute;
+  top: calc(50% - (292px / 2));
+  left: calc(50% - (293px / 2));
+  width: 293px;
+  height: 292px;
+  background: url(../../images/common/mun_exp_al.png) no-repeat center/contain;
+}
+.wrong.show .img {
+  animation: slidedown .3s ease-in-out;
+}
+.wrong .btn {
+  position: absolute;
+  top: 200px;
+  left: calc(50% - (138px / 2));
+  width: 138px;
+  height: 40px;
+  background: url(../../images/btn/bt_exp_no_replay.png) no-repeat center top/100%;
+}
+.wrong .btn.ON {
+  background: url(../../images/btn/bt_exp_no_replay.png) no-repeat center bottom/100%;
+}
+
+/* 정답일 경우, 해설 */
+.right.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right .img {
+  position: relative;
+  width: 689px;
+  padding-top: 234px;
+  background: url(../../images/common/mun_exp_ok_top.png) no-repeat top/689px 235px;
+} 
+.right.show .img {
+  animation: slidedown .3s ease-in-out;
+}
+.right .img > span {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 10px 40px 30px 40px;
+  font-size: 33px;
+  text-align: justify;
+  border-radius: 0 0 30px 30px;
+  background-color: #fff;
+}
+
+.TypeH .menuTabs .tabContent > div.cleanAns {
+  height: 570px;
+}
+.TypeH .menuTabs .tabContent > div.cleanAns .tabWrap {
+  position: absolute;
+  left: 50%;
+  width: 90%;
+  transform: translateX(-50%);
+}
+.TypeH .AnsCont {
+  position: absolute;
+  left: 50%;
+  width: 90%;
+  transform: translateX(-50%);
+}
+
+/* 정리문제 OX */
+.TypeH .OX .AnsCont > div {
+  position: relative;
+  padding: 15px 0;
+  border-bottom: 2px solid #d6d6d6;
+}
+.TypeH .OX .AnsCont > div:nth-last-of-type(1) {
+  border-bottom: 0px;
+}
+.TypeH .OX .AnsCont p {
+  display: flex;
+  width: 87%;
+}
+.TypeH .OX .AnsCont p > span:nth-of-type(1) {
+  margin-right: 10px;
+}
+.TypeH .OX .AnsCont .icon {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  width: 109px;
+  height: 50px;
+  transform: translateY(-50%);
+}
+.TypeH .OX .AnsCont .icon .o {
+  display: inline-block;
+  position: relative;
+  width: 55px;
+  height: 52px;
+  background:url(../../images/btn/test_o.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.TypeH .OX .AnsCont .icon .o.on,
+.TypeH .OX .AnsCont .icon .o.ON {
+  background:url(../../images/btn/test_o.png) no-repeat center bottom/100%;
+}
+.TypeH .OX .AnsCont .icon .x {
+  position: absolute;
+  width: 55px;
+  height: 52px;
+  background:url(../../images/btn/test_x.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.TypeH .OX .AnsCont .icon .x.on,
+.TypeH .OX .AnsCont .icon .x.ON {
+  background:url(../../images/btn/test_x.png) no-repeat center bottom/100%;
+}
+.TypeH .OX .AnsCont .checkBtn,.TypeH .OX .AnsCont .checkResetBtn {
+  position: absolute;
+  top: 5px;
+  right: -44px;
+  cursor: pointer;
+}
+
+/* 정리문제 input */
+.TypeH  .input .AnsCont > div {
+  position: relative;
+  padding: 25px 30px;
+  text-align: justify;
+  text-indent: 20px;
+  border-radius: 10px;
+  background: #f1f7e9;
+}
+.TypeH  .input .AnsCont > div > p {font-family: "NotoSansKR-Medium";}
+.TypeH .checkBtn {
+  display: inline-block;
+  /* position: inherit;
+  width: 38px; height: 38px;
+  background: url(../../images/btn/butt_pen.png) no-repeat center/contain; */
+}
+.TypeH .checkBtn.reset {
+  width: 32px;
+  height: 32px;
+  background: url(../../images/btn/checkBtn_click.png) no-repeat center top/100%;
+}
+.TypeH .checkBtn.reset.ON {
+  background: url(../../images/btn/checkBtn_click.png) no-repeat center bottom/100%;
+}
+
+.TypeH .checkBtn {
+  display: inline-block;
+  position: inherit;
+}
+.TypeH .input .AnsCont input {
+  position: relative;
+  top: 0px;
+  height: 70px;
+  border: 2px solid #909090;
+  border-radius: 10px;
+  width: 200px;
+}
+
+/*  정리문제 check */
+.TypeH .check .AnsCont .checkNum input[type="radio"] + label{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  color: #000;
+  font-size: 37px;
+  text-align: center;
+  line-height: 33px;
+  border: 2px solid #000;
+  border-radius: 100%;
+}
+.TypeH .check .AnsCont .checkNum input[type="radio"]:checked+label::after {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: -5px;
+  width: 53px;
+  height: 40px;
+  background: url(../../images/btn/redCheck.png) no-repeat center/contain;
+  /* 21.11.01 spvog 체크 박스 모션 추가 */
+  animation: zoomIn .2s ease-in-out;
+}
+.TypeH .check .AnsCont .checkNum .inputBox {
+  float: left;
+  width: 33%;
+  margin-bottom: 60px;
+}
+.TypeH .check .AnsCont .checkNum .inputBox p {
+  margin-left: 52px;
+  line-height: 36px;
+}
+
+/* 정리문제 select */
+.TypeH .input .AnsCont .selectOption {background-color: transparent;}
+.TypeH .input .AnsCont .selectOption select {width: 144px;height: 50px;font-size: 22px;}
+
+
+
+
+/* 정리문제 check2 텍스트 클릭하면 하늘색 나오게 */
+.TypeH  .check2 .AnsCont > div {
+  position: relative;
+  padding: 25px 30px;
+  text-align: justify;
+  text-indent: 20px;
+  border-radius: 10px;
+  background: #f1f7e9;
+}
+.TypeH  .check2 .AnsCont > div p {font-family: "NotoSansKR-Medium";}
+.TypeH  .check2 .clickText p span {font-family: "NotoSansKR-Medium";}
+.TypeH .check2 .roundClick {
+  display: inline-block;
+  position: relative;
+  width: auto;
+  height: 68px;
+  text-indent: 0;
+  cursor: pointer;
+}
+.TypeH .check2  .roundClick.on::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 58px;
+  border: 3px solid #a51f06;
+  border-radius: 50%;
+}
+
+/* 정리문제 인풋 괄호 크기 */
+.TypeH .textBra {text-indent: 0;width: 160px;display: inline-block;letter-spacing: 42px;}

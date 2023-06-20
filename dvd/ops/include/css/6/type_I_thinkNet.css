@@ -1,0 +1,56 @@
+
+/* 단원 정리하기 생각그물 */
+.typeI .contWrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1150px;
+  height:580px;
+  border-radius: 30px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+}
+.typeI .title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 112px;
+  height: 112px;
+  background: url(../../images/common/title_lessonmun.png) no-repeat center/contain;
+}
+
+.typeI .Text {
+  position: absolute;
+  left: 162px;
+  top: 20px;
+  width: 970px;
+  height: auto;
+}
+.typeI .Text p {
+  position: relative;
+  margin-bottom: 30px;
+  text-align: justify;
+} 
+.typeI .Text p:last-of-type(1) {
+  margin-bottom: 0px;
+}
+.typeI .mainArea{
+  position: absolute;
+  left: 50%;
+  top: 170px;
+  width: 720px;
+  height: 410px;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+.typeI .mainArea img{
+  opacity: 0.3;
+  width: 100%;
+}
+
+.completeBtn {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%,-50%);
+}

@@ -1,0 +1,130 @@
+@charset "utf-8";
+.top_p span:nth-of-type(1)::before {background-image: url(../images/common/top_icon3.png);}
+.top_p span:nth-of-type(2)::before {background-image: url(../images/common/top_icon5.png);}
+
+.contWrap .TopContent {width: 500px;position: absolute;left: 145px;top: 90px;line-height: 12px;text-indent: 11px;}
+.midContent {position: absolute;width: 670px;height: 510px;top: 220px;left: 50%;transform: translateX(-50%);}
+.contWrap img {position: absolute;}
+.soundBox .soundWrap {position: relative;}
+.balloon {position: absolute;}
+.soundBox .soundWrap:nth-of-type(1) {top: 265px;left: -145px;}
+.soundBox .soundWrap:nth-of-type(1) .talkBtn {top: -90px; left: 230px ;}
+.soundBox .soundWrap:nth-of-type(1) .char img {width: 92px;top: 30px;left: 135px;transform: scaleX(-1);}
+.soundBox .soundWrap:nth-of-type(1) .balloon {width: 166px;height: 124px;top: -80px;left: 135px;background: url(../images/page037/37_bal01.png)no-repeat center/contain;}
+.soundBox .soundWrap:nth-of-type(1) .bubble {width: 95px;top: 17px;left: 22px;}
+
+.soundBox .soundWrap:nth-of-type(2) {top: 40px;left: 420px;}
+.soundBox .soundWrap:nth-of-type(2) .talkBtn {top: -55px; left: 205px;}
+.soundBox .soundWrap:nth-of-type(2) .char img {width: 90px;top: 45px;left: 124px;}
+.soundBox .soundWrap:nth-of-type(2) .balloon {width: 117px;height: 87px;top: -40px;left: 120px;background: url(../images/page037/37_bal02.png)no-repeat center/contain;}
+.soundBox .soundWrap:nth-of-type(2) .bubble {width: 107px;top: 18px;left: 6px;}
+
+.soundBox .soundWrap:nth-of-type(3) {top: 320px;left: 390px;}
+.soundBox .soundWrap:nth-of-type(3) .talkBtn {top: -50px; left: 250px;}
+.soundBox .soundWrap:nth-of-type(3) .char img {width: 96px;top: 40px;left: 165px;}
+.soundBox .soundWrap:nth-of-type(3) .balloon {width: 146px;height: 115px;top: -50px;left: 135px;background: url(../images/page037/37_bal03.png)no-repeat center/contain;}
+.soundBox .soundWrap:nth-of-type(3) .bubble {width: 95px;top: 11px;left: 26px;}
+
+.contWrap .midContent > p {color: rgb(34, 138, 34);font-family:'NanumSquareEB';font-size: 22px;position: absolute;top: 51px;left: 77px;}
+
+.contWrap .linetext span {position: absolute;width: 41px;text-align: center;}
+.contWrap img.bg {width: 600px;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+
+.contWrap .linetext div, .contWrap .linetext div span, .contWrap img {position: absolute;}
+.contWrap .linetext div.twink {opacity: 1; }
+.contWrap .linetext.line3 > div.twink {top: 186px;left: 431px;}
+.contWrap .linetext.line2 > div.twink {top: 226px;left: 493px;}
+.contWrap .linetext.line1 > div.twink {top: 358px;left: 174px;}
+
+.contWrap .linetext.line3 > div.twink img {width: 35px;height: 5px;}
+.contWrap .linetext.line2 > div.twink img {width: 50px;height: 17px;}
+.contWrap .linetext.line1 > div.twink img {width: 29px;height: 55px;}
+
+.contWrap .linetext.line3 > div > span {left: 28px;top: -6px;}
+.contWrap .linetext.line2 > div > span {top: -9px;left: 50px;}
+.contWrap .linetext.line1 > div > span {top: 43px;left: 23px;}
+.contWrap .linetext .clickBtn  {z-index: 2;}
+.contWrap .linetext.line3 .clickBtn {top: 142px;left: 443px;}
+.contWrap .linetext.line2 .clickBtn {top: 210px;left: 470px;}
+.contWrap .linetext.line1 .clickBtn {top: 350px;left: 162px;}
+
+/* 추가 이미지 */
+.contWrap .linetext .twink .imgAdd {opacity: 0;}
+.contWrap .linetext .twink .imgAdd > img {position: absolute;height: auto !important;}
+
+.contWrap .linetext.line1 .twink .imgAdd > img {width: 113px;top: -45px;left: -73px;}
+.contWrap .linetext.line1 .twink .imgAdd > span {top: -2px;left: -98px;width: 70px;}
+
+.contWrap .linetext.line2 .twink .imgAdd > img {width: 277px;top: -17px;left: -254px;}
+.contWrap .linetext.line2 .twink .imgAdd > span {top: 168px;left: -41px;width: 70px;}
+
+.contWrap .linetext.line3 .twink .imgAdd > img {width: 336px;top: -115px;left: -300px;}
+.contWrap .linetext.line3 .twink .imgAdd > span {top: -74px;left: -138px;width: 70px;}
+
+@keyframes original {
+    0% {filter: grayscale(50%) brightness(0%) opacity(0.1);}
+    10% {filter: grayscale(0%) brightness(100%) opacity(1);}
+    100% {filter: grayscale(0%) brightness(100%) opacity(1);}
+}
+
+
+
+
+/* 생각쑥쑥 */
+.popupOverlay.thinkPop .popupWrap .tabContent {top: 270px;}
+.thinkPop table tr td:nth-child(1) {width: 20%;}
+.thinkPop table tr td:nth-child(2) {width: 30%;}
+.thinkPop table tr td:nth-child(3) {width: 50%;}
+.thinkPop table tr:nth-of-type(2) td {background-color: #fff;height: 120px;}
+.thinkPop .popupWrap .tabContent .act_pop_01 textarea {border: none;}
+
+.linetext div.ON {
+    animation: twinkle 2s both;
+}
+
+
+@keyframes twinkle {
+    0%,10%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+
+
+/* 정리문제 */
+
+.popupList:nth-child(1) .checkNum .inputBox {float: left;margin-right: 19px;width: 100%;margin-bottom: 20px;}
+.popupList:nth-child(1) .quizCont {top: 0;}
+.popupList:nth-child(1) .answerCheck {top: 330px;left: 70px;}
+
+
+
+.popupList:nth-child(2) .inputBox {width: 19%;}
+.popupList:nth-child(2) .view {position: absolute;top: 120px;left: 50%;transform: translateX(-50%);width: 540px;}
+
+#p037_qp_07 {top: 240px;left: 50%;transform: translateX(-50%);}
+.popupList:nth-child(3) .view {width: 400px;height: 70px;position: absolute;top: 120px;left: 50%;transform: translateX(-50%);border: 1px solid #d2c8ba;}.popupList:nth-child(1) .view p {width: 100%;text-align: center;word-spacing: 20px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.popupList:nth-child(3) .view p::after {content: "< 보기 >";position: absolute;top: -40px;left: 50%;transform: translateX(-50%);font-size: 20px;background-color: #fff;word-spacing: 0px;}
+.popupList:nth-child(3) .view span {font-size: 20px;}
+.popupList:nth-child(3) .view p {width: 100%;text-align: center;word-spacing: 20px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.popupList:nth-child(3) .quizCont{border: 1px solid #d2c8ba;padding: 10px;top: -20px;}
+.popupList:nth-child(3) .quizCont p{top: 50%;position: absolute;left: 50%;transform: translate(-50%, -50%);width: 550px;text-indent: 14px;line-height: 30px;}
+
+/* 용어 사전 */
+.openPopup2 .popupWrap {height: 660px;}
+.openPopup2 .imgText span {position: absolute;font-size: 15px;}
+.openPopup2 .imgText span:nth-of-type(1) {top: 364px;left: 344px;}
+.openPopup2 .imgText span:nth-of-type(2) {top: 441px;left: 341px;}
+.openPopup2 .imgText span:nth-of-type(3) {top: 427px;left: 174px;}
+
+
+.thinkPop .popupWrap .tabTopImg::after {left: 304px;}
+
+.retryagainBtn {
+    top: 80px;
+    left: 269px;
+    z-index: 2;
+}

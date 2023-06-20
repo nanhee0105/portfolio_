@@ -1,0 +1,494 @@
+@charset "utf-8";
+
+
+
+body {background: #565656;overflow: hidden;width: 100%;height: 100%;}
+#container {position: absolute;left: 0px;top: 0px;width: 100%;height: 100%;}
+#contents {position: absolute;left: 0px;top: 0px;width: 1920px;height: 1080px;overflow: hidden;background: #fff;}
+.bg {width: 100%; height: 100%; background: #cabca8;}
+
+
+/* 폰트*/
+
+@font-face {
+	font-family: "NanumSquareEB";
+	src: url('../font/NanumSquareEB.woff') format("woff");
+}
+
+@font-face {
+	font-family: "NanumSquareB";
+	src: url('../font/NanumSquareB.woff') format("woff");
+}
+
+@font-face {
+	font-family: "NanumSquareR";
+	src: url('../font/NanumSquareR.woff') format("woff");
+}
+
+@font-face {
+	font-family: "NanumSquareRoundEB";
+	src: url('../font/NanumSquareRoundEB.woff') format("woff");
+}
+
+@font-face {
+	font-family: "NanumMyeongjo-Bold";
+	src: url('../font/NanumMyeongjoBold.woff') format("woff");
+}
+
+@font-face {
+	font-family: "middleschool";
+	src: url('../font/nanummiddleschool.woff') format("woff");
+}
+
+
+body,
+div,
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	font-family: "NanumSquareRoundEB";
+}
+
+li {
+	list-style: none;
+}
+
+p {
+	display: block;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+
+/* 배경이미지 */
+body{
+	background: rgba(0,0,0,0.6);
+}
+.bgContainer {
+	position: relative;
+	width: 1920px;
+	height: 1080px;
+	box-sizing: border-box;
+	background: url(../images/game/g1_g_bg.jpg) no-repeat center;
+	background-size: 100%;
+	display: none;
+}
+
+/* 메인 */
+
+.que02, .que03{
+	display:none;
+}
+.main_q {
+	background: url(../images/game/g1_g_munbox.png) no-repeat center;
+	background-size: 100%;
+	width: 1240px;
+	height: 320px;
+	position: absolute;
+	top: 65px;
+	left: 73px;
+	z-index: 1;
+}
+
+
+.main_q_text {
+	width: 950px;
+	line-height: 70px;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 45px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.main_q_text ul li {
+	display: none;
+	font-size: 47px;
+}
+
+.main_q_text ul li.on {
+	display: block;
+}
+
+.btn_q_next {
+	cursor: pointer;
+}
+
+.btn_q_next ul li.on {
+	position: absolute;
+	top: 50%;
+	left: 95%;
+	transform: translate(-50%, -50%);
+	width: 80px;
+	line-height: 70px;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 45px;
+	display: block;
+}
+
+.btn_q_next ul li {
+	display: none;
+}
+
+/* 문제 클릭 */
+
+.main_a {width: auto; height: auto;position: absolute; left: 10%; z-index: 1; }
+
+.main_a div {height: auto;float:left;background-color: #fff;border: 10px solid rgb(248, 219, 89);border-radius: 20px;cursor:pointer;text-align: center;}
+.que01 .main_a {top: 470px;left: 418px;}
+.que01 .main_a div {width: 150px;margin-left: 80px;font-size: 110px;text-align: center;line-height: 158px;height: 160px; }
+.que02 .main_a {top: 450px;left: 240px;width: 70%;}
+.que02 .main_a div {width: auto; padding: 17px 30px;font-size: 40px; white-space: nowrap; margin-bottom: 30px;}
+.que02 .main_a div:nth-child(2) {margin: 0 30px;}
+.que03 .main_a {top: 416px; left: 140px; width: 70%;}
+.que03 .main_a div {width: auto; padding: 17px 30px;font-size: 40px;margin: 0 0 25px 30px; white-space: nowrap; margin-bottom: 30px;}
+
+
+
+
+.main_a_text {
+	width: 560px;
+	line-height: 70px;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 45px;
+	position: absolute;
+	top: 61%;
+	left: 54%;
+	transform: translate(-50%, -50%);
+	border: none;
+	text-align: center;
+}
+
+
+.main_img {
+	position: absolute;
+	top: 184px;
+	left: 964px;
+	width: 955px;
+	height: 895px;
+	z-index: 0;
+}
+
+.main_img img {
+	width: 100%;
+}
+.timer {
+	background: url(../images/game/bg_timer.png) no-repeat center;
+	background-size: 100%;
+	width: 920px;
+	height: 165px;
+	top: 874px;
+	left: 187px;
+	position: absolute;
+	z-index: 1;
+	background-position: center top;
+}
+
+.timer img {
+	position: absolute;
+	width: 735px;
+	top: 100px;
+	left: 146px;
+}
+
+.life {
+	background: url(../images/game/bg_life.png) no-repeat center;
+	background-size: 100%;
+	width: 407px;
+	height: 145px;
+	top: 902px;
+	left: 1278px;
+	position: absolute;
+	z-index: 1;
+	background-position: center top;
+}
+
+.life img {
+	position: absolute;
+	width: 70px;
+	top: 64px;
+}
+
+.life_01 {
+	left: 134px;
+}
+
+.life_02 {
+	left: 218px;
+}
+
+.life_03 {
+	left: 298px;
+}
+
+/*
+  level
+*/
+
+.level{top: 20px;right: 0px;position: absolute;z-index: 1;}
+.level p{background: url(../images/game/level_02.png) no-repeat center;background-size: 100%;width: 82px;height: 89px;position: absolute;right: 0;background-position: center top;font-size: 31px;color: #fff;text-align: center;line-height: 62px;pointer-events: none;text-indent: 19px;}
+.level p.on{background: url(../images/game/level_01.png) no-repeat center;background-size: 100%;width: 133px;height: 99px;position: absolute;background-position: center top;right: 0px;}
+.step_01{top: 0px;}
+.step_02{top: 83px;}
+.step_03{top: 167px;}
+
+
+
+/* 버튼 */
+.gameclear_go {background: url(../images/game/challenge.png) no-repeat center top/250px;width: 250px;height: 120px;position: absolute;z-index: 1;  cursor: pointer;}
+.gameclear_go:hover {background-position: 0 bottom;}
+.gameover_replay {background: url(../images/game/btn_replay.png) no-repeat center top/250px;width: 250px;height: 120px;position: absolute;z-index: 1;  cursor: pointer;}
+.gameover_replay:hover {background-position: 0 bottom;}
+.gameclear_start {background: url(../images/game/btn_start.png) no-repeat center top/250px;width: 250px;height: 120px;position: absolute;z-index: 1;cursor: pointer;}
+.gameclear_start:hover {background-position: 0 bottom;}
+
+
+.gameclear_title {width: 400px;height: 100px;top: 185px;right: 180px;position: absolute;}
+
+/* 성공 후 팝업 */
+.gameclear_go {top: 333px;left: 609px}
+.gameclear_go:hover { background-position: 0 bottom;}
+/* 성공텍스트 */
+.gameclear_01,.gameclear_02 {position: absolute;top: 45%;left: 50%;transform: translate(-50%,-50%);background: url(../images/game/t_suc_bg.png) no-repeat center;background-size: 100%;width: 1114px;height: 492px;z-index: 11;display: none;}
+.gameclear_01 p:nth-child(1),.gameclear_02 p:nth-child(1) {color: #fcb54d;font-size: 40px;text-align: right;height: 50px;margin: 0;}
+.gameclear_01 p:nth-child(2),.gameclear_02 p:nth-child(2) {color: #714d32;font-size: 45px;margin-top: 10px;}
+
+/* 실패 후 팝업 */
+.gameover_01,.gameover_02,.gameover_03 {position: absolute;top: 50%;left: 50%;background: url(../images/game/t_fail_bg.png) no-repeat center/100%;width: 854px;height: 412px;z-index: 11;display: none;transform: translate(-50%, -50%);}
+.gameover_01 .gameover_replay, .gameover_02 .gameover_replay, .gameover_03 .gameover_replay {top: 230px;left: 268px}
+.gameover_01 .gameclear_start, .gameover_02 .gameclear_start, .gameover_03 .gameclear_start {top: 230px;left: 540px;}
+/* 실패 텍스트 */
+.gameover_title {width: auto;top: 90px;right: 97px;position: absolute;}
+.gameover_01 p:nth-child(1),.gameover_02 p:nth-child(1),.gameover_03 p:nth-child(1) {color: #fcb54d;font-size: 40px;text-align: right;margin: 0;}
+.gameover_01 p:nth-child(2),.gameover_02 p:nth-child(2),.gameover_03 p:nth-child(2) {color: #714d32;font-size: 45px;margin-top: 10px;}
+/* 3단계 까지 성공 */
+.gameclear_03 {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);background: url(../images/game/t_suc_txt03.png) no-repeat center/100%;width: 984px;height: 612px;z-index: 11;display: none;}
+.gameclear_03 .gameclear_start {top: 380px;left: 622px;}
+/* 3단계 성공 텍스트 */
+.gameclear_03 .gameclear_title {right: 40px;top: 183px;text-align: center;}
+.gameclear_03 p:nth-child(1) {color: #e50760;font-size: 44px; margin: 0;}
+.gameclear_03 p:nth-child(2),.gameclear_03 p:nth-child(3) {color: #714d32;font-size: 45px; margin: 0;}
+.gameclear_03 p:nth-child(3) {color: #714d32;font-size: 32px;}
+
+
+
+
+#glayLayer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+	z-index: 10;
+}
+
+/* .timer p img.loading{
+	animation: loading 300s linear forwards;
+}
+
+@keyframes loading {
+
+	0% {
+		transform: translate3d(0, 0, 0);
+		visibility: visible;
+		clip: rect(0px, 735px, 35px, 0px);
+	}
+
+	to {
+		clip: rect(0px, 0px, 35px, 0px);
+		transform: translateZ(0)
+	}
+} */
+
+/* 배경이미지 */
+.bgintro {
+	position: relative;
+	width: 1920px;
+	height: 1080px;
+	box-sizing: border-box;
+	background: url(../images/game/g1_i_bg.jpg) no-repeat center;
+	background-size: 100%;
+	z-index: 10;
+}
+/* 메인 */
+
+.main_text{
+	position: absolute;
+	width: auto;
+	height: 255px;
+	text-align: center;
+	top: 653px;
+	left: 371px;
+}
+.main_text p {
+	font-size: 36px;
+	line-height: 82px;
+	color: #91705a;
+	font-family: "NanumSquareRoundEB";
+	margin: 0;
+	padding: 0;
+}
+.btn_play {
+	width: 323px;
+	height: 136px;
+	top: 784px;
+	left: 587px;
+	position: absolute;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.btn_help_pop {
+	width: 323px;
+	height: 136px;
+	top: 784px;
+	left: 232px;
+	position: absolute;
+	z-index: 1;
+	cursor: pointer;
+}
+
+
+
+.help_pop_gray {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 10;
+	display: none;
+}
+
+.help_pop {
+	background: url(../images/game/exp_box.png) no-repeat center;
+	background-size: 100%;
+	width: 1500px;
+	height: 1000px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.help_pop_img {
+	width: 800px;
+	height: 452px;
+	position: absolute;
+	top: 697px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.help_pop_img img {
+	width: 100%;
+}
+
+
+.help_num {
+	height: 45px;
+	width: 45px;
+	border-radius: 50px;
+	background: #6a8656;
+	font-size: 30px;
+	text-align: center;
+	line-height: 52px;
+	color: #fff;
+	display: inline-block;
+	margin-right: 30px;
+}
+
+.help_pop_text {
+	position: absolute;
+	top: 135px;
+	left: 95px;
+}
+
+.help_pop_text p {
+	font-size: 32px;
+	line-height: 50px;
+	margin: 0;
+	padding: 0;
+}
+.help_pop_text p:nth-child(1){margin-top: 10px;}
+.help_pop_text p+p{margin-top: 20px;}
+
+.help_pop_text p >i{
+	display: inline-block;
+	width: 72px;
+	height: 20px;
+}
+
+.help_pop_close {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 80px;
+	right: 57px;
+	cursor: pointer;
+}
+
+
+
+.ox_o{
+	background: url(../images/game/ox_01.png)no-repeat center;
+	background-size: 100%;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 35%;
+	transform: translate(-50%,-50%);
+	z-index: 30;	
+	display: none;
+}
+
+@keyframes scaleS{
+	from {
+		width: 100px;
+		height: 100px;
+	}
+	to {
+		width: 200px;
+		width: 200px;
+	}
+}
+
+.ox_o.on{
+	animation-name: scaleS;
+	animation-duration: 0.5s;
+	display: block;
+}
+
+.ox_x{
+	background: url(../images/game/ox_02.png)no-repeat center;
+	background-size: 100%;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 35%;
+	transform: translate(-50%,-50%);
+	z-index: 30;
+	display: none;
+}
+
+.ox_x.on{
+	animation-name: scaleS;
+	animation-duration: 0.5s;
+	display: block;
+}
+
+.main_q div ul span {display: inline-block;width: 100px;}
+.main_q div ul span.thin {display: inline-block;width: 50px;}

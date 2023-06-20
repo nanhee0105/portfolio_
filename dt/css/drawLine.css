@@ -1,0 +1,43 @@
+
+[data-drag-container=""] {
+  position: relative;
+}
+[data-drag-container=""] > svg:nth-child(1) {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+[data-drag-container=""] > svg:nth-child(1) > line {
+  stroke: #149bc7;
+  stroke-width: 4px;
+  fill: none;
+}
+
+input.dragSavePoint {
+  display: none;
+}
+
+/* .popupOverlay .popupWrap .tabContent .popupList {
+  display: block;
+}
+.subPop.popupOverlay {
+  display: block;
+} */
+
+[data-drag-container] [data-quiz-obj]:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+}

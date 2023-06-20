@@ -1,0 +1,190 @@
+.right-dark-arrow {background: url(../images/right-dark-arrow.png) no-repeat;width: 43px;height: 44px;position: absolute;top: 20px;right: 10px;background-size: contain;z-index: 10;}
+.right-dark-arrow a {display: block; width: 100%; height: 100%;}
+
+/* 버튼 */
+.gotoSub {
+  display: inline-block;
+  width: 141px;
+  height: 40px;
+  vertical-align: middle;
+  background: url(../images/btn/goTosub.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.gotoSub.on {
+  background: url(../images/btn/goTosub.png) no-repeat center bottom/100%;
+}
+.gotolab {
+  display: inline-block;
+  width: 167px;
+  height: 46px;
+  vertical-align: middle;
+  background: url(../images/btn/goTolab.png) no-repeat center top/100%;
+}
+.gotolab.ON {
+  background: url(../images/btn/goTolab.png) no-repeat center bottom/100%;
+}
+.addBtn {
+  position: absolute;
+  width:51px;
+  height: 51px;
+  background: url(../images/btn/butt_zoom.png) no-repeat center top/100%;
+  cursor: pointer;
+} 
+
+.addBtn.ON {
+  transform: scale(.94);
+  background-position-y: bottom;
+}
+
+.playBtn {
+  position: absolute;
+  width:51px;
+  height: 51px;
+  background: url(../images/btn/butt_play.png) no-repeat center top/100%;
+  cursor: pointer;
+} 
+
+.playBtn.ON {
+  transform: scale(.94);
+  background-position-y: bottom;
+}
+
+.checkBtn {
+  width:32px;
+  height: 32px;
+  background: url(../images/btn/checkBtn.png) no-repeat center top/100%;
+  cursor: pointer;
+} 
+.checkBtn.ON {
+  background: url(../images/btn/checkBtn.png) no-repeat center bottom/100%;
+} 
+.checkBtn.hide {
+  display: none !important;
+}
+.checkBtn.reset {
+  width:32px;
+  height: 32px;
+  background: url(../images/btn/checkBtn_click.png) no-repeat center top/100%;
+} 
+.checkBtn.reset.ON {
+  background: url(../images/btn/checkBtn_click.png) no-repeat center bottom/100%;
+} 
+.answerBtn,
+.retryBtn {
+  display: none;
+  position: absolute;
+  bottom: 3px;
+  right: 50px;
+  width: 137px;
+  height: 41px;
+  cursor: pointer;
+}
+.answerBtn {
+  background: url(../images/btn/btnCheck.png) no-repeat center top/100%;
+}
+.retryBtn {
+  background: url(../images/btn/btnSolve.png) no-repeat center top/100%;
+}
+.explainView {
+  display: none;
+  position: absolute;
+  bottom: 3px;
+  right: 195px;
+  width: 138px;
+  height: 41px;
+  background: url(../images/btn/btnCmt.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.answerBtn.ON,
+.retryBtn.ON,
+.explainView.ON {
+  background-position-y: bottom;
+}
+
+.btnSpeak {
+  position: absolute;
+  width: 46px;
+  height: 48px;
+  background: url(../images/btn/butt_speak.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.btnSpeak.ON {
+  background-position-y: bottom;
+}
+.btnSpeak.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+.btnSpeakClose {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 25px;
+  background: url(../images/btn/btnSpeakClose.png) no-repeat center top/24px 50px;
+  cursor: pointer;
+}
+.btnSpeakClose.ON {
+  width: 24px;
+  height: 25px;
+  background: url(../images/btn/btnSpeakClose.png) no-repeat center bottom/24px 50px;
+}
+
+.closeBtn {
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+  vertical-align: middle;
+  background: url(../images/btn/bt_replay.png) no-repeat center top/100%;
+  cursor: pointer;
+  z-index: 1;
+}
+.closeBtn.ON {
+  background: url(../images/btn/bt_replay.png) no-repeat center bottom/100%;
+}
+.clickBtn {
+  display: inline-block;
+  width: 51px;
+  height: 51px;
+  vertical-align: middle;
+  background: url(../images/btn/butt_finger.png) no-repeat center top/100%;
+  cursor: pointer;
+}
+.clickBtn.ON {
+  background: url(../images/btn/butt_finger.png) no-repeat center bottom/100%;
+}
+.ssock {
+  position: relative;
+  width: 198px;
+  height: 47px;
+  background: url(../images/common/title_ss01.png) no-repeat center/contain;
+}
+.chuck {
+  position: relative;
+  width: 199px;
+  height: 44px;
+  background: url(../images/common/title_ss02.png) no-repeat center/contain;
+}
+.tok {
+  position: relative;
+  width: 180px;
+  height: 44px;
+  background: url(../images/common/title_ss03.png) no-repeat center/contain;
+}
+.popcloseBtn{
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 45px;
+  height: 45px;
+  vertical-align: middle;
+  transform-origin: center center;
+  background: url(../images/btn/bt_pop_close.png) no-repeat center top/100%;
+  cursor: pointer;
+  z-index: 1;
+}
+.popcloseBtn.ON {
+  transform: scale(.94);
+  background-position-y: bottom;
+}

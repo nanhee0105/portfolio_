@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+* {
+	-webkit-tap-highlight-color: transparent;
+    box-sizing: border-box
+}
+
+
+/* Fonts */
+
+@font-face {
+	font-family: "NotoSans-Black";
+	src: url('../font/NotoSans-Black.woff') format("woff");
+}
+
+@font-face {
+	font-family: "NotoSans-Bold";
+	src: url('../font/NotoSans-Bold.woff') format("woff");
+}
+
+@font-face {
+	font-family: "NotoSans-DemiLight";
+	src: url('../font/NotoSans-DemiLight.woff') format("woff");
+}
+
+@font-face {
+	font-family: "NotoSans-Light";
+	src: url('../font/NotoSans-Light.woff') format("woff");
+}
+
+@font-face {
+	font-family: "NotoSans-Medium";
+	src: url('../font/NotoSans-Medium.woff') format("woff");
+}
+
+@font-face {
+	font-family: "NotoSans-Regular";
+	src: url('../font/NotoSans-Regular.woff') format("woff");
+}
+
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+button,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: none;
+	vertical-align: baseline;
+	outline: none;
+    
+}
+
+a {text-decoration: none; color: #000}
+
+h3 {margin-bottom: 10px; font-size: 20px; font-family: 'NanumBarunGothic', sans-serif;}
+
+table,
+tr,
+th,
+td {
+	vertical-align: middle;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+ol,
+ul,
+li {
+	list-style: none;
+}
+
+.bold {font-weight: bold}

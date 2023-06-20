@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+#wrap {background: url(../images/page046/46_bg.jpg)no-repeat center/contain;}
+
+/*페이지*/
+.lesson, .page {text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;}
+
+/* 정리하기 */
+.gotosubBtn  {top: 40px; left: 280px;}
+.cleanUp .tabContent  input, .cleanUp .tabContent  textarea {font-size: 18px;padding: 5px;}
+
+/* 1 */
+.cleanUp .tabContent .popupList:nth-child(1) .questionCont div {width: 550px;height: 50px;position: relative;left: 50%;transform: translateX(-50%);border-radius: 25px;border: 1px solid #d0c6b7;margin-bottom: 30px;}
+.cleanUp .tabContent .popupList:nth-child(1) .questionCont div span {font-family: "NanumMyeongjo-Bold";position: absolute;top: 50%;transform: translateY(-50%);width: 100%;text-align: center;word-spacing: 8px;font-size: 18px;}
+.cleanUp .tabContent ul {position: absolute;left: 80px;}
+.cleanUp .tabContent ul li {font-family: "NanumMyeongjo-Bold";width: 490px;font-size: 18px;margin-bottom: 10px;line-height: 30px;position: relative;}
+.cleanUp .tabContent ul li input {width: 100px;}
+.cleanUp .tabContent ul li::after {width: 18px;height: 18px;color: #fff;border-radius: 100%;display: inline-block;background-color: #171c61;position: absolute;left: -30px;top: 7px;line-height: 21px;text-align: center;font-family: "NanumSquareRoundEB";}
+.cleanUp .tabContent ul li:nth-child(1):after {content: "1";}
+.cleanUp .tabContent ul li:nth-child(2):after {content: "2";}
+.cleanUp .tabContent ul li:nth-child(3):after {content: "3";}
+
+/* 2 */
+.cleanUp .tabContent .popupList:nth-child(2) .questionCont > div.contText {width: 399px;height: 181px;position: relative;left: 85px;border-radius: 25px;border: 1px solid #d0c6b7;margin-bottom: 20px;padding: 0 10px 0 20px;box-sizing: border-box;}
+.cleanUp .tabContent .popupList:nth-child(2) .questionCont > div.contText > span span:not(.wid50) {float: left;font-size: 18px;margin: 6px 0px;line-height: 24px;text-align: justify;}
+.cleanUp .tabContent .popupList:nth-child(2) .questionCont > div.contText > span .name {width: 15%;margin-right: 4px;}
+.cleanUp .tabContent .popupList:nth-child(2) .questionCont > div.contText > span .text {width: 80%;font-family: "NanumMyeongjo-Bold";}
+.cleanUp .tabContent .popupList:nth-child(2) ul {left: 60px;top: 315px;}
+.cleanUp .tabContent .popupList:nth-child(2) ul li {margin-bottom: 25px;}
+
+.cleanUp .tabContent .popupList:nth-child(2) .img {position: absolute;right: 46px;top: 30px;}
+.cleanUp .tabContent .popupList:nth-child(2) .img img {width: 175px;height: auto;}
+.cleanUp .tabContent .popupList:nth-child(2) .questionCont > div.input {position: absolute;left: 60px;top: 310px;}
+.cleanUp .tabContent .popupList:nth-child(2) .questionCont > div.input input {position: absolute;width: 116px;height: 41px;left: 400px;border-radius: 10px;border: 2px solid #d2c8ba;top: 4px;}
+.cleanUp .tabContent .popupList:nth-child(2) .questionCont > div.input textarea {position: absolute;width: 495px;height: 73px;border-radius: 10px;border: 2px solid #d2c8ba;top: 141px;}
+
+/* 3 */
+.cleanUp .tabContent .popupList:nth-child(3) .questionCont > div.contText {width: 280px;height: 70px;position: relative;left: 330px;border-radius: 10px;border: 2px dashed #594d82;margin-bottom: 30px;top: 32px;}
+.cleanUp .tabContent .popupList:nth-child(3) .questionCont > div span:nth-of-type(1) {
+    top: -14px;
+    left: 110px;
+}
+.cleanUp .tabContent .popupList:nth-child(3) .questionCont > div span:nth-of-type(2) {font-family: "NanumMyeongjo-Bold";position: absolute;top: 50%;transform: translateY(-50%);width: 100%;text-align: center;word-spacing: 5px;font-size: 18px;}
+
+.cleanUp.popupOverlay .popupWrap .tabContent .topText .num3::after {content:"과학 글쓰기";background: url(../images/pop/n_text.png) no-repeat center/contain;width:84px;height: 23.5px;position: absolute;font-size: 14px;line-height: 27px;text-align: center;transform: rotate(-13deg);left: 24px;top: -16px;z-index: -1;color: #171c61;font-family: "NanumSquareB";}
+.cleanUp .tabContent .popupList:nth-child(3) .img {position: absolute;left: 40px;top: 114px;}
+.cleanUp .tabContent .popupList:nth-child(3) .img img {width:253px; height: auto;}
+
+
+.cleanUp .tabContent .popupList:nth-child(3) textarea {position: absolute;width: 556px;height: 141px;border-radius: 10px;border: 2px solid #d2c8ba;top: 341px;left: 60px;}
+
+.view {background: url(../images/common/view_img.png) no-repeat center/contain;width: 46px;height: 32px;display: inline-block;vertical-align: text-top;text-align: center;line-height: 26px;font-size: 17px;color: #191e62;font-family: "NanumSquareB";}
+.questionCont .view {position: absolute;top: 119px;left: 440px;z-index: 2;}
+
+.answerBox {width: 100%;height: 220px;background: #fcdfc1;position: absolute;bottom: 0px;}
+.answerBox .answerWrap {width: 90%; height: 90%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.answerBox .answer { background-color: #ffa447; border-radius: 30px 30px 0px 30px; width: 100px; height: 43px;}
+.answerBox .answer span {color: #fff;text-align: center;width: 100%;display: inline-block;font-size: 18px;line-height: 43px;font-family: "NanumSquareRoundEB";}
+.answerBox .box {margin-bottom: 60px;display: flex;}
+.answerBox .box .answerText {border-radius: 30px 30px 30px 0px;width: 552px;height: 191px;margin-left: 8px;background-color: #fff;padding-bottom: 6px;position: relative;}
+.answerBox .box .answerText > div {width: 90%;height: 90%;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+.answerBox .box .answerText > div span {font-size: 18px;display: block;line-height: 28px;position: relative;margin-bottom: 10px;text-align: justify;}
+
+.tabContent .popupList .answerBox .box .answerText > div span {left: 20px;display: inline-block;width: 95%;}
+.tabContent .popupList .answerBox .box .answerText > div span::after {background-color: #b4b4b4;width: 20px;height: 20px;line-height: 22px;position: absolute;top: 3px;left: -20px;border-radius: 20px;color: #fff;text-align: center;margin-left: -4px;}
+.tabContent .popupList .answerBox .box .answerText > div span:nth-of-type(1):after {content: "1";}
+.tabContent .popupList .answerBox .box .answerText > div span:nth-of-type(2):after {content: "2";}
+.tabContent .popupList .answerBox .box .answerText > div span:nth-of-type(3):after {content: "3";}
+
+.tabContent .popupList:nth-of-type(2) .text span {position: absolute;width: 50px;}
+.tabContent .popupList:nth-of-type(2) .text span:nth-of-type(1) {top: 2px;left: 175px;width: 50px;}
+.tabContent .popupList:nth-of-type(2) .text span:nth-of-type(2) {top: 85px;left: 176px;}
+.tabContent .popupList:nth-of-type(2) .text span:nth-of-type(3) {top: 127px;left: 163px;}
+
+
+.exanswerBtn {top: 560px;}
+.nextBtn {top: 550px;}
+
+
+/**/
+.cleanUp.popupOverlay .popupWrap .tabContent .topText .num2::after {
+    content: "서술형·논술형";
+    background: url(../images/pop/n_text.png) no-repeat center/contain;
+    width: 84px;
+    height: 23.5px;
+    position: absolute;
+    font-size: 14px;
+    line-height: 27px;
+    text-align: center;
+    transform: rotate(
+-13deg);
+    left: 24px;
+    top: -16px;
+    z-index: -1;
+    color: #171c61;
+    font-family: "NanumSquareB";
+}
+.cleanUp .popupWrap .tabContent .popupList:nth-of-type(3) .topText p {font-size: 19px;width: 590px;}
+   

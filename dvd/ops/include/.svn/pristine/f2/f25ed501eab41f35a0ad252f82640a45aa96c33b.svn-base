@@ -1,0 +1,139 @@
+div.pen_contents.app_contents {
+    opacity: 1;
+}
+
+.pen_contents {
+    display: none;
+    width: 70px;
+    height: 340px;
+    position: absolute;
+    top: 202px;
+    left: 1182px;
+    background: rgba(57, 31, 141, 0.8);
+    border-radius: 20px;
+}
+.pen_contents.show {
+    display: block;
+}
+
+.pen_contents > div > ul {
+    position: absolute;
+    left: 5px;
+    width: 60px;
+}
+
+.pen_contents>div>ul>li {
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+}
+
+.iconWrap {
+    width: 70px;
+    height: 300px;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+}
+
+.penType {top: 0px;}
+.colorType {top: 130px;}
+.weightType {top: 217px;}
+
+.penType li {height: 35px;}
+.colorType li {height: 25px;}
+.weightType li {height: 20px;}
+.penType li+li {margin-top: 7px;}
+.weightType li+li {margin-top: 5px;}
+
+.penType .pen_pen {background: url("../../images/draw/pen_pen.png") no-repeat center top/28px;}
+.penType .pen_magic {background: url("../../images/draw/pen_magic.png") no-repeat center top/28px;}
+.penType .pen_eraser {background: url("../../images/draw/pen_eraser.png") no-repeat center top/28px;}
+.colorType .red {background: url("../../images/draw/color_red.png") no-repeat center top/28px;}
+.colorType .green {background: url("../../images/draw/color_green.png") no-repeat center top/28px;}
+.colorType .blue {background: url("../../images/draw/color_blue.png") no-repeat center top/28px;}
+.weightType .thin {background: url("../../images/draw/weight_thin.png") no-repeat center top/28px;}
+.weightType .medium {background: url("../../images/draw/weight_medium.png") no-repeat center top/28px;}
+.weightType .bold {background: url("../../images/draw/weight_bold.png") no-repeat center top/28px;}
+
+.penType li:hover,
+.penType li.on {
+    background-position: center -35px;
+}
+
+.colorType li:hover,
+.colorType li.on {
+    background-position: center -25px;
+}
+
+.weightType li:hover,
+.weightType li.on {
+    background-position: center -20px;
+}
+
+/* .app_contents .moveBtn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(57, 31, 141, 0.8);
+}
+
+.btnWrap {
+    width: 30px;
+    height: 15px;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    overflow: hidden;
+} */
+
+.app_contents:before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, rgba(57, 31, 141, 0.8) 50%, transparent 50%);
+}
+
+.realMoveBtn {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    background: url("../../images/draw/icon_drag.png") no-repeat center top/contain;
+}
+.realMoveBtn:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    cursor: pointer;
+}
+
+/* draw canvas */
+canvas.draw_canvas {
+    pointer-events: none;
+}
+canvas.draw_canvas.active {
+    pointer-events: auto;
+}
+
+/* draw button */
+.drawBtn {
+    cursor: pointer;
+}
+.drawBtn.hide {
+}
+
+.draw_canvas {
+    border: 3px dashed #614ca4;
+    border-radius: 20px;
+}
+
+.drawImg::after {content: "[그림]";position: absolute;top: 10px;left: 10px;color: #eee;font-size: 20px;}

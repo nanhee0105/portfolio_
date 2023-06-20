@@ -1,0 +1,85 @@
+
+/* 해보아요 */
+.typeC .contWrap {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 600px;
+  border-radius: 0 70px 0 0;
+  background-color: #fff;
+}
+.typeC .title {
+  position: absolute;
+  top: -48px;
+  width: 100%;
+  height: 60px;
+  background: url(../../images/common/title_tam.png) no-repeat left/257px 60px;
+}
+.typeC .title span {
+  position: absolute;
+  left: 260px;
+  top: 8px;
+  font-size: 32px;
+  font-family: "cafe24";
+}
+.typeC .tabList {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  width: 1150px;
+  height: 480px;
+  transform: translateX(-50%);
+}
+.typeC .text {
+  display: flex;
+  margin-bottom: 30px;
+}
+.typeC .text:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.typeC .text p {
+  width: 1100px;
+  text-align: justify;
+}
+.typeC .imgWrap img {
+  width: 100%;
+  border-radius: 15px;
+}
+/* 해보아요 하나짜리 */
+.typeC.C2 .listBtn {
+  width: 170px;
+}
+.typeC.C2 .listBtn li.haebo {
+  right: 0;
+  width: 215px;
+  height: 48px;
+  background: url(../../images/btn/haebo_2.png) no-repeat center bottom/100%;
+  pointer-events: none;
+}
+/* 준비해요 / 창의융합 활동 */
+.typeC.C3 .title {
+  background: url(../../images/common/title_chang.png) no-repeat left/332px 60px;
+}
+.typeC.C3 .title span {
+  left: 340px;
+}
+.typeC.C3 .tabList {
+  top: 80px;
+}
+
+/* 준비해요, 해보아요 2개 */
+.typeC.C4 .listBtn {width: 496px;}
+.typeC.C4 .listBtn li.haebo1 {width: 158px;height: 48px;background: url(../../images/btn/haebo1.png) no-repeat center top/100%;left: 50%;transform: translateX(-50%);}
+.typeC.C4 .listBtn li.haebo2 {right: 0;width: 169px;height: 48px;background: url(../../images/btn/haebo2.png) no-repeat center top/100%;}
+.typeC.C4 .listBtn li.haebo1.ON, .typeC.C4 .listBtn li.haebo2.ON { background-position-y: bottom;}
+
+/* 준비해요 없이, 해보아요 2개 */
+.typeC.C5 .listBtn {width: 338px;}
+.typeC.C5 .listBtn li.haebo1 {width: 169px;height: 48px;background: url(../../images/btn/haebo1_2.png) no-repeat center top/100%;}
+.typeC.C5 .listBtn li.haebo2 {right: 0;width: 169px;height: 48px;background: url(../../images/btn/haebo2.png) no-repeat center top/100%;}
+.typeC.C5 .listBtn li.haebo1.ON, .typeC.C5 .listBtn li.haebo2.ON,
+.typeC.C5 .listBtn li.haebo1.on, .typeC.C5 .listBtn li.haebo2.on  { background-position-y: bottom;}
+
+/* 해보아요 생각열기 */
+.typeC.C5 .title {height: 69px; background: url(../../images/common/title_thinkopen.png) no-repeat 50px/166px 69px;}
+.typeC.C5 .title span {left: 225px;}

@@ -1,0 +1,153 @@
+@charset "utf-8";
+.top_p span:nth-of-type(1)::before {background-image: url(../images/common/top_icon3.png);}
+
+.soundWrap {position: absolute;top: 45px;left: 23px;}
+.soundWrap .talkBtn {top: -7px;left: 125px;}
+.soundWrap .char img {width: 80px;top: 130px;left: 70px;transform: scaleX(-1);position: absolute;}
+.soundWrap .balloon {width: 160px;height: 126px;top: 10px; left: 0px;background: url(../images/page041/01_ball.png)no-repeat center/contain;}
+.soundWrap .bubble {width: 155px;top: 23px;left: 5px;}
+
+.contWrap .topText {width: 478px;position: absolute;left: 236px;top: 79px;}
+
+
+.doitWrap {position: absolute;width: 100%;top: 300px;}
+
+#sliderWrap1 {top: -167px; left: -45px; width: 550px;height: 465px;}
+#sliderWrap1 .arrowLeft, #sliderWrap1 .arrowRight {top: 45%;}
+#sliderWrap1 .slideView {width: 450px;height: 477px;top: 10px;left: 50%;transform: translateX(-50%);background-color: #fff;border-radius: 20px;}
+#sliderWrap1 .sliceInner .itemList {width: 450px;height: 435px;top: 0px;left: 0px;position: relative;}
+#sliderWrap1 .slideView .sliceInner {width: 1800px;height: 435px;position: absolute;left: 0px;}
+#sliderWrap1 .slideView .itemList img.slideImg {display: block;}
+
+#sliderWrap1 .slideView .itemList .cont {width: 100%; position: absolute;top: 4%;left: 50%;transform: translateX(-50%);}
+#sliderWrap1 .slideView .itemList .text {position: absolute;top: 33px;left: 25px;}
+#sliderWrap1 .slideView .itemList .text > span {position: absolute;text-align: center;}
+
+
+#sliderWrap1 .slideView .itemList .cont > p {font-size: 16px;position: relative;left: 70px;top: 10px;width: 350px;}
+#sliderWrap1 .slideView .itemList .cont img.slideImg {width: 400px; margin: 0 auto; position: relative;}
+#sliderWrap1 .slideView .itemList:nth-of-type(2) .cont .show img {width: 171px;}
+#sliderWrap1 .slideView .itemList:nth-of-type(3) .cont .show img {width: 230px;left: 395px;top: -5px;}
+#sliderWrap1 .slideView .itemList:nth-of-type(4) .cont .show img {width: 260px;left: 5px;top: -15px;position: absolute;}
+
+
+
+/* 슬라이더에서 클릭시 효과 */
+.sliceInner .itemList .show {display: none;z-index: 1;position: absolute;top: 0px;left: 8px;}
+.clickBtn {z-index: 2;}
+.sliceInner .itemList:nth-of-type(2) .clickBtn {top: 137px;left: 180px;}
+.sliceInner .itemList:nth-of-type(3) .clickBtn {top: 195px;left: 258px;}
+.sliceInner .itemList:nth-of-type(4) .clickBtn {top: 95px;left: 179px;}
+.sliceInner .itemList:nth-of-type(3) .show {left: 94px;}
+.sliceInner .itemList:nth-of-type(3) .textnum span {position: absolute;background-color: #fff;}
+.sliceInner .itemList:nth-of-type(3) .textnum span:nth-of-type(1) {top: 196px;left: 39px;}
+.sliceInner .itemList:nth-of-type(3) .textnum span:nth-of-type(2) {top: 186px;left: 392px;}
+
+
+
+#sliderWrap1 .slideView .itemList:nth-of-type(1) .s_talk01 {top: 18px;left: 192px;width: 111px;}
+#sliderWrap1 .slideView .itemList:nth-of-type(1) .s_talk02 {width: 55px;top: 85px;left: 120px;}
+#sliderWrap1 .slideView .itemList:nth-of-type(2) .s_talk03 {width: 65px;top: 20px;left: 55px;}
+
+#sliderWrap1 .slideView .itemList:nth-of-type(3) .show .t_Num:nth-of-type(1) {top: 194px;left: 45px;}
+#sliderWrap1 .slideView .itemList:nth-of-type(3) .show .t_Num:nth-of-type(2) {top: 186px;left: 365px;}
+
+.bottomText {width: 100%;position: absolute;}
+.bottomText p {position:absolute;}
+.bottomText p:nth-of-type(1) {top: 668px; left: 256px; line-height: 27px;}
+.bottomText p:nth-of-type(1) .NumG3 {top: 3px;}
+/* .bottomText .MyeongjoB {top: 748px; left: 221px;} */
+.bottomText .MyeongjoB {top: 768px; left: 221px;}
+
+
+/*숫자*/
+.num {width: 20px;height: 20px;line-height: 17px;position: absolute;top: 0;left: -25px;box-sizing: border-box;padding-left: 3px;border:2px solid #58b7b7;color: #58b7b7;display: block;border-radius: 5px;}
+.t_Num {width: 20px;height: 20px;line-height: 16px;box-sizing: border-box;padding-left: 3px;border:2px solid #58b7b7;color: #58b7b7;border-radius: 5px;display: inline-block;position: relative;top: 0;}
+
+
+
+.popupOverlay.subPop .popupWrap .tabTopImg::after {left: 230px;}
+
+.popupOverlay.subPop .popupWrap .tabtop .tabTitle li[data-tab="1"]::before {content: "2"; left: 45%;}
+.popupOverlay.subPop .popupWrap .tabtop .tabTitle li[data-tab="2"]::before {content: "3";}
+
+/***pop_02***/
+.act_pop_02 .tnum {
+    width: 20px;
+    height: 20px;
+    line-height: 17px;
+    box-sizing: border-box;
+    border: 2px solid #58b7b7;
+    color: #58b7b7;
+    display: inline-block;
+    border-radius: 5px;
+    padding-right: 1px;
+    margin-left: 3px;
+}
+/***pop_03***/
+.act_pop_03 {text-align: center;}
+.act_pop_03 textarea{width: 640px;height: 134px;box-sizing: border-box;border: 2px solid #d2c8ba;border-radius: 3px;}
+
+
+/* 정리문제 */
+.popupOverlay.cleanUpPro .popupWrap .tabContent .answerWrap .box > div:nth-of-type(2) span i {font-style: normal;font-size: 20px;line-height: 30px;font-family: "NanumSquareB";margin-right: 7px;}
+
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(1) input {top: 340px;left: 50%;transform: translateX(-50%);}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-of-type(1) .quizCont {width: 560px;height: 200px;display: flex;top: 0;border: 1px solid #d2c8ba;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-of-type(1) .quizCont > div {width: 33.333%;height: 100%;display: flex;justify-content: center;align-items: center; position: relative;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-of-type(1) .quizCont .viewImg {left: 250px;}
+
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-of-type(1) .quizCont .tri {width: 90px;position: absolute;bottom: 11px;left: 52%;transform: translateX(-50%);font-size: 16px;line-height: 16px;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-of-type(1) .quizCont .img2 .tri {
+    width: 60px;
+}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-of-type(1) .quizCont .img3 .tri {
+    width: 22px;
+}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-of-type(1) .quizCont img {width: 150px;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-of-type(1) .quizCont .img3 img {width: 100px;}
+
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) .view {position: absolute;top: 330px;left: 50%;transform: translateX(-50%);width: 572px;border: 2px solid #d2c8ba;display: flex;box-sizing: border-box;height: 80px;align-items: center;justify-content: space-around;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) .view .viewImg {position: absolute;top: -16px;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) .view p {font-size: 18px;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) .imgBox {width: 560px;height: 180px;padding: 5px;display: flex;align-items: center;border: 2px solid #d2c8ba;position: absolute;left: 50%;transform: translateX(-50%);justify-content: center;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) .imgBox img {width: 54%;margin: 17px 10px;margin-bottom: 20px;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) .imgBox span {
+    position: absolute;
+    top: 46px;
+    left: 94px;
+}
+
+
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .checkText_p_list {overflow: hidden;}
+
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .quizCont {height: auto;padding: 15px;top: -20px;border: 1px solid #d2c8ba;text-indent: 14px;line-height: 36px;}
+
+
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3)  .checkText_p .selectText {font-size: 18px;line-height: 30px;padding: 1px 2px;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .quizCont .checkWrap p {position: relative;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .quizCont .checkWrap p::before {
+    top: 16px;
+}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .answerText correctResponse {display: flex;align-items: baseline;justify-content: flex-start;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .answerText correctResponse span {width: auto !important;}
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(3) .answerText correctResponse span:nth-of-type(2) {margin-left: 10px !important;}
+
+.goTolabBtn img {left: 0;top: 0px;}
+
+.popupOverlay.subPop .popupWrap .tabTopImg::after {left: 320px;}
+
+.experimentBtn {left: 291px;}
+.experiment2 {top: 55px;}
+
+.videoBg .scriptBox {height: 370px;}
+
+.videoBg .videoWrap .tabTopImg::after {background-position: 150px;}
+.videoBg .videoWrap .tabtop .tabName {top: 30px;}
+.talkBtn2{left: 290px;top: -10px;}
+
+
+
+/**/
+
+.popupOverlay.cleanUpPro .popupWrap .tabContent .popupList:nth-child(2) input {top: 430px;left: 50%;transform: translateX(-50%);}

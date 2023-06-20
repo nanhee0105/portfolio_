@@ -1,0 +1,391 @@
+(() => {
+  const inViewer = () => { return parent.parent.parent.GO_PAGE_LOAD || parent.parent.GO_PAGE_LOAD || parent.GO_PAGE_LOAD; }
+  const getViewerApi = (__name) => {
+    return parent[__name] || parent.parent[__name] || parent.parent.parent[__name];
+  }
+  const stopPropagation = (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+  };
+  
+  const isMobile = () => {
+    if (navigator.userAgent.toLowerCase().match(/ipad|iphone|ipod/i)) document.body.classList.add('run_IOS');
+    else if (navigator.userAgent.toLowerCase().match(/android/i)) document.body.classList.add('run_Android');
+    else if (navigator.userAgent.match(/Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i)) document.body.classList.add('run_Mobile');
+    else document.body.classList.add('run_PC');
+
+    return navigator.userAgent.match(/iPad|iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || 'ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch;
+  }
+
+  const getEl = (target, resultArray = false) => {
+    const nodeList = document.querySelectorAll(target);
+
+    const result = Array.prototype.map.call(nodeList, (node) => {
+      return new Convert(node);
+    });
+    
+    return (result.length === 1 && resultArray || result.length > 1) ? result : result[0];
+  }
+  
+  const getZoomRate = (DOM) => {
+    const zoomRate = DOM.getBoundingClientRect().width / DOM.offsetWidth;
+    return (inViewer() && (parent.parent.ZOOMVALUE || parent.ZOOMVALUE)) 
+      ? (parent.parent.ZOOMVALUE || parent.ZOOMVALUE) 
+      : zoomRate;
+  }
+  
+  const getEventPosition = (event) => {
+    const eventTarget = event.type.indexOf('touch') > -1 
+    ? (event.changedTouches[0] || event.touches[0]) 
+    : event;
+    
+    return {
+      x: eventTarget.clientX, 
+      y: eventTarget.clientY
+    }
+  }
+  
+  const getElementFromPoint = (event) => {
+    return document.elementFromPoint(getEventPosition(event).x, getEventPosition(event).y);
+  }
+  
+  const getBoundingData = (DOM) => {
+    return {
+      x: DOM.getBoundingClientRect().left,
+      y: DOM.getBoundingClientRect().top,
+      width: DOM.getBoundingClientRect().width,
+      height: DOM.getBoundingClientRect().height,
+    }
+  }
+
+  const isMouseEventInMobile = (event) => {
+    const isMobile = 'ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch;
+    return isMobile && (event.type.indexOf('mouse') || event.type.indexOf('click')) > -1;
+  }
+
+  const setStateBlockEvents = (container, isDragging = true) => {
+    const selectType = isDragging ? 'none' : 'auto';
+    
+    container.style({
+      'userSelect': selectType,
+      'msUserSelect': selectType,
+      'mozUserSelect': selectType,
+      'webkitUserSelect': selectType,
+    });
+  }
+  
+  const initScale = (element) => {
+    function getContainerSize() {
+      return {
+        width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+        height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+      };
+    }
+
+    function getZoomRate({containerSize, target}) {
+      const containerWidth = containerSize.width;
+      const containerHeight = containerSize.height;
+      const horizontalValue = containerWidth / target.width;
+      const verticalValue = containerHeight / target.height;
+
+      return target.width * verticalValue > containerWidth ? horizontalValue : verticalValue;
+    }
+
+    function getLeftValue({containerSize, target, zoomRate}) {
+      return (containerSize.width - (target.width * zoomRate)) / 2;
+    }
+
+    function setTransform({zoomRate, leftValue, element}) {
+      const style = element.style;
+
+      style.transform = `scale(${zoomRate})`;
+      style.MsTransform = `scale(${zoomRate})`;
+      style.MozTransform = `scale(${zoomRate})`;
+      style.WebkitTransform = `scale(${zoomRate})`;
+      
+      style.transformOrigin = '0% 0%';
+      style.MsTransformOrigin = '0% 0%';
+      style.MozTransformOrigin = '0% 0%';
+      style.WebkitTransformOrigin = '0% 0%';
+
+      style.left = `${leftValue}px`;
+    }
+
+    const target = {
+      width: element.clientWidth,
+      height: element.clientHeight
+    }
+    
+    const setScale = () => {
+      const containerSize = getContainerSize();
+      const zoomRate = getZoomRate({containerSize, target});
+      const leftValue = getLeftValue({containerSize, target, zoomRate});
+
+      setTransform({zoomRate, leftValue, element});
+    }
+
+    setScale();
+    window.addEventListener('resize', setScale);
+  }
+  
+  const initDrag = ({dragObj, container = document, callback}) => {
+    function event(target, eType, callback, listenertype = 'add') {
+      const eventTypeArray = eType.split(' ');
+      eventTypeArray.forEach((type) => {
+        target.DOM[`${listenertype}EventListener`](type, callback);
+      });
+    }
+  
+    const callback_start = callback.start;
+    const callback_move = callback.move;
+    const callback_end = callback.end;
+    
+    let zoomRate, startX, startY, moveX, moveY;
+  
+    const DRAG = {};
+
+    const startDrag = (event) => {
+      event.stopPropagation();
+      zoomRate = getZoomRate(dragObj.DOM);
+      DRAG.zoomRate = zoomRate;
+    
+      startX = getEventPosition(event).x;
+      startY = getEventPosition(event).y;
+  
+      DRAG.startPointer = { x: startX, y: startY }
+      
+      dragObj.on('off');
+      setStateBlockEvents(container, true);
+
+      addEventContainer();
+      
+      if (callback_start) callback_start(DRAG, event);
+    }
+  
+    const moveDrag = (event) => {
+      moveX = getEventPosition(event).x;
+      moveY = getEventPosition(event).y;
+
+      DRAG.moveX = (moveX - startX) / zoomRate;
+      DRAG.moveY = (moveY - startY) / zoomRate;
+      
+      if (callback_move) callback_move(DRAG, event);
+      if (!getElementFromPoint(event)) endDrag(event);
+    }
+  
+    const endDrag = (event) => {
+      event.stopPropagation();
+      removeEventContainer();
+      if (callback_end) callback_end(DRAG, event);
+
+      dragObj.off('off');
+      setStateBlockEvents(container, false);
+    }
+  
+    const addEventContainer = () => {
+      event(container, 'mousemove touchmove', moveDrag);
+      event(container, 'mouseup touchend', endDrag);
+      document.addEventListener('touchmove', stopPropagation, {passive: false});
+      onOffUserSelector('none');
+    }
+  
+    const removeEventContainer = () => {
+      event(container, 'mousemove touchmove', moveDrag, 'remove');
+      event(container, 'mouseup touchend', endDrag, 'remove');
+      document.removeEventListener('touchmove', stopPropagation, {passive: false});
+      onOffUserSelector('');
+    }
+  
+    event(dragObj, 'mousedown touchstart', startDrag);
+    container.DOM.addEventListener('touchmove', (event) => {
+      event.stopPropagation();
+    });
+  }
+
+  const onOffUserSelector = (value) => {
+    document.body.style.userSelect = value;
+    document.body.style.msUserSelect = value;
+    document.body.style.mozUserSelect = value;
+    document.body.style.webkitUserSelect = value;
+  }
+
+  const createAudio = ({audio, name, src}) => {
+    const sound = {};
+
+    sound.DOM = audio;
+    sound.src = `${src}/${name}.mp3`;
+
+    audio.src = sound.src;
+    audio.load();
+    audio.muted = true;
+    audio.play().then(() => {
+      audio.pause();
+      audio.muted = false;
+      console.log('audio loaded!');
+    }, (error) => {
+      console.log(error)
+    });
+
+    sound.stop = () => {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+    sound.play = () => {
+      if (audio.muted) audio.muted = false;
+      audio.src = sound.src;
+      audio.currentTime = 0;
+      audio.load();
+      audio.play();
+    }
+    return sound;
+  }
+
+  const createEl = ({
+    tag = 'div', 
+    className = null, 
+    id = null, 
+    attr = null,
+    insertBefore = false,
+    parent = document.body,
+		callback = null
+  }) => {
+    const el = document.createElement(tag);
+
+    if (id) el.setAttribute('id', id);
+    if (className) {
+      className.split(' ').forEach((name) => {
+        el.classList.add(name);
+      });
+    }
+    if (attr) {
+      for (let attrName in attr) {
+        element.setAttribute(attrName, attr[attrName]);
+      }
+    }
+
+		if (insertBefore) parent.insertBefore(el, insertBefore);
+		else parent.appendChild(el);
+
+		if (callback) callback(el);
+
+		return new Convert(el);
+  }
+
+  const pageLink = (__el) => {
+    const pageName = __el.data('page');
+    const type = __el.data('type') || 'contents';
+    const sliderPage = __el.data('sliderPage');
+    const href = location.href.split('/');
+    const isSub = href.filter((text) => text.includes('_sub'))[0];
+    const lesson = href.filter((text) => text.includes('lesson'))[0];
+    const viewerUrl = `/viewer/contents/index.html?contentInformationURL=../../resource`;
+    const viewerUrlInBrowser = `../../../../viewer/contents/index.html?contentInformationURL=../../resource`;
+
+    switch (type) {
+      case 'contents':
+        if (inViewer()) {
+          if (!isSub) getViewerApi('GO_PAGE_NAME_LOAD')(`${pageName}.html`);
+          else {
+            if (window.jj && jj.native.exe) {
+              jj.link.html(`${viewerUrl}/contents/${lesson}/&pageName=${pageName}.html&UUID=fcem:uuid:contents${sliderPage ? '?slider=' + sliderPage : ''}`, '_top');
+            }
+            else {
+              window.open(`${viewerUrlInBrowser}/contents/${lesson}/&pageName=${pageName}.html&UUID=fcem:uuid:contents${sliderPage ? '?slider=' + sliderPage : ''}`, '_top');
+            }
+          }
+        }
+        else location.assign(`../../contents/${lesson}/${pageName}.html${sliderPage ? '?slider=' + sliderPage : ''}`);
+        break;
+      case 'sub':
+        if (inViewer()) {
+          if (isSub) getViewerApi('GO_PAGE_NAME_LOAD')(`${pageName}.html`);
+          else {
+            if (window.jj && jj.native.exe) {
+              jj.link.html(`${viewerUrl}/contents_sub/${lesson}/&pageName=${pageName}.html&UUID=fcem:uuid:contents${sliderPage ? '?slider=' + sliderPage : ''}`, '_top');
+            }
+            else {
+              window.open(`${viewerUrlInBrowser}/contents_sub/${lesson}/&pageName=${pageName}.html&UUID=fcem:uuid:contents${sliderPage ? '?slider=' + sliderPage : ''}`, '_top');
+            }
+          }
+        }
+        else location.assign(`../../content_sub/${lesson}/${pageName}.html${sliderPage ? '?slider=' + sliderPage : ''}`);
+        break;
+    }
+  }
+
+  class Convert {
+    constructor(el) {
+      this.DOM = el;
+    }
+    get children() {
+      return Array.prototype.map.call(this.DOM.children, (child) => new Convert(child));
+    }
+    get parent() { return new Convert(this.DOM.parentNode); }
+    get top() { return this.DOM.offsetTop; }
+    get left() { return this.DOM.offsetLeft; }
+    get width() { return this.DOM.offsetWidth; }
+    get height() { return this.DOM.offsetHeight; }
+
+    class(__type, __names) {
+      __names.split(' ').forEach((name) => {
+        this.DOM.classList[__type](name);
+      });
+      return this;
+    }
+    style(__styles) {
+      Object.getOwnPropertyNames(__styles).forEach((property) => {
+        this.DOM.style[property] = __styles[property];
+      });
+      return this;
+    }
+    attr() {
+      if (arguments.length === 1) return this.DOM.getAttribute(arguments[0]);
+      else this.DOM.setAttribute(arguments[0], arguments[1]);
+    }
+    event(__event, __callback, type = 'add') {
+      __event.split(' ').forEach((eventType) => {
+        this.DOM[`${type}EventListener`](eventType, (event) => {
+          if (!isMouseEventInMobile(event)) __callback(event);
+        });
+      });
+      return this;
+    }
+    getEl(__type) {
+      const nodeList = this.DOM.querySelectorAll(__type);
+      return Array.prototype.map.call(nodeList, (node) => {
+        return new Convert(node);
+      });
+    }
+    data(name) { return this.DOM.dataset[name]; }
+    contains(__dom) { return this.DOM.contains(__dom); }
+    clear() { this.DOM.innerHTML = ''; return this; }
+    append(__dom) { this.DOM.appendChild(__dom); return this; }
+    remove(__dom) { this.DOM.removeChild(__dom); return this; }
+    on(name = 'on') { this.class('add', name); return this; }
+    off(name = 'on') { this.class('remove', name); return this; }
+    hover(name = 'ON') {
+      this.event('mouseover mouseenter', this.on.bind(this, name));
+      this.event('mouseout mouseleave', this.off.bind(this, name));
+      return this;
+    }
+  }
+  
+  window.$ic = {
+    inViewer,
+    stopPropagation,
+    isMobile,
+    getEl,
+    getZoomRate,
+    getEventPosition,
+    getElementFromPoint,
+    getBoundingData,
+    isMouseEventInMobile,
+    setStateBlockEvents,
+    initScale,
+    initDrag,
+    createAudio,
+		createEl,
+    pageLink,
+    Convert,
+  };
+})();

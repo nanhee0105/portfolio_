@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1280, height=720">
+	<link rel="stylesheet" type="text/css" href="./include/css/5/common.css">
+	<link rel="stylesheet" type="text/css" href="./css/g52_02_p028_05.css">
+	<script src="./include/js/jquery-3.5.1.min.js"></script>
+	<title>page028</title>
+	<style>
+
+	</style>
+</head>
+
+<body id="mainFrame">
+	<div id="wrap">
+		<div id="container" class="typeC loadMotion">
+			<p class="right-dark-arrow"><a href="g52_02_p028_06.html"></a></p>
+			<div class="contWrap">
+				<div class="title">
+					<span>숲 생태계 관찰하기</span>
+				</div>
+
+				<ul class="listBtn">
+					<li class="js-pageLink js-hover junbe" data-page="g52_02_p028_04"></li>
+					<li class="haebo ON"></li>
+				</ul>
+
+				<div class="js-slider slideWrap" data-slider-name="main" data-slider-option="motion">
+					<div class="tabList">
+						<div class="js-slidePage list on" data-slider="main">
+							<div class="text">
+								<span class="num">1</span>
+								<p><u class="bracket">과학</u> 30~31쪽의 생태계를 관찰하고, 생태계를 이루는 요소를 찾아 이야기해 봅시다.
+									<span class="js-pageLink gotoSub" data-page="g52_01_p12_01" data-type="sub"></span></p>
+							</div> <!-- text -->
+							<div class="imgWrap">
+								<img src="images/30/30_bg.png" alt="" />
+
+								<div class="mShow">
+									<img src="images/30/30_01.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_02.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_03.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_04.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_05.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_06.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_07.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_08.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_09.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_10.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_11.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_12.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_13.png" alt=""/>
+								</div>
+
+								<div class="mShow">
+									<img src="images/30/30_14.png" alt=""/>
+								</div>
+							</div>
+						</div>
+
+						<div class="js-slidePage list" data-slider="main">
+							<div class="text">
+								<span class="num">2</span>
+								<p>생태계 요소 붙임딱지를 이용하여 숲 생태계를 이루는 요소들을 살아 있는 것과 살아 있지 않은 것으로 분류해 봅시다.
+								<span class="js-pageLink gotoSub" data-page="g52_01_p12_02" data-type="sub"></span>
+								<span class="gotolab js-popupButton js-hover" data-popup="popup10"></span></p>
+							</div> <!-- text -->
+						</div>
+
+						<div class="js-slidePage list" data-slider="main">
+							<div class="text">
+								<span class="num">3</span>
+								<p>친구들이 분류한 것과 비교하여 다른 점이 있는지 이야기해 봅시다.   </p>
+							</div> <!-- text -->
+							<div class="imgWrap">
+								<img src="images/30/30_bg2.png" alt="" />
+							</div>
+						</div>
+					</div>
+
+					<div class="tab_box">
+						<span class="js-slideTab tab on" data-slider="main"></span>
+						<span class="js-slideTab tab" data-slider="main"></span>
+						<span class="js-slideTab tab" data-slider="main"></span>
+					</div> <!-- tab_box -->
+				</div>
+			</div>
+			<!--/box-->
+		</div>
+		<!--/continer-->
+		<div class="js-popup popcontainer" data-popup-name="popup10" data-popup-option="">
+            <div class="popContwrap">
+				<iframe src="./lab_pop/g52_02_p028_05_lab.html" frameborder="0"></iframe>
+            </div>
+            <div class="js-popupCloseButton popcloseBtn" data-popup="popup10"></div>
+        </div> <!-- popcontainer  -->
+	</div>
+	<script src="./include/js/util.js"></script>
+	<script src="./include/js/header.js"></script>
+	<script src="./include/js/player.js"></script>
+	<script src="./include/js/slider.js"></script>
+	<script src="./include/js/popup.js"></script>
+	<script src="./include/js/quiz.js"></script>
+	<script src="./include/js/contentManager.js"></script>
+	<script src="./include/js/motion.js"></script>
+	<script>
+		window.$CM.callback.main = () => {
+			// main[slider name] 페이지 이동 시 실행
+		}
+		window.$CM.callback.speaker = {
+			open: ({obj, targets, index}) => {
+				// 스피커 팝업이 열릴 때 실행
+			},
+			close: ({obj, targets, index}) => {
+				// 스피커 팝업이 닫힐 때 실행
+			}
+		}
+	</script>
+</body>
+
+</html>

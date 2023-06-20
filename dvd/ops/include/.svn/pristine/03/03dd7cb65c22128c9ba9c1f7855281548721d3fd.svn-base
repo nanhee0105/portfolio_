@@ -1,0 +1,343 @@
+@charset "utf-8";
+
+/* import */
+@import "../font.css";
+@import "../reset.css";
+@import "../inputType.css";
+@import "../player.css";
+@import "popup.css";
+@import "buttonType.css";
+@import "slider.css";
+@import "draw.css";
+@import "typeA_studyAct.css";
+@import "typeB_thinkUp.css";
+@import "typeC_createCombine.css";
+@import "typeD_arrangeQuiz.css";
+@import "typeE_thisLesson.css";
+
+/* END */
+
+
+#wrap {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 720px;
+}
+body {
+  width:100%;
+  height:100%;
+  font-size: 45px;
+  background-color: #fff;
+  overflow: hidden;
+}
+#container {
+  position: relative;
+  top: 52px;
+  left: 0;
+  width:1280px;
+  height:668px;
+  background-color: #ffeedb;
+  overflow: hidden;
+}
+.js-hover {
+  cursor: pointer;
+}
+.red {
+  color: red;
+}
+.answer {
+  position: absolute;
+  top: 50%;
+  width: 93%;
+  height: auto;
+  padding: 5px;
+  color: #d53030;
+  font-size: 42px;
+  font-family: "NotoSansKR-Medium";
+  box-sizing: border-box;
+  transform: translateY(-50%);
+  text-align: justify;
+}
+
+.answer span {font-family: "NotoSansKR-Medium";}
+
+u.bracket {
+  text-decoration: none;
+}
+u.bracket::after {
+  content: "』";
+  margin-right: -25px;
+}
+u.bracket::before {
+  content: "『";
+  margin-left: -23px;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* bottom: 0; */
+  height: 56px;
+}
+header.isFullMode {
+  height: 100%;
+  z-index: 10;
+}
+header > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+
+/* 숫자 배경 */
+.text span.num,
+.text span.numB {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  font-size: 35px;
+  font-family: "cafe24";
+  text-align: center;
+  vertical-align: top;
+  border-radius: 10px;
+}
+.text span.num {
+  color: #55b855;
+  background-color: #cceacc;
+}
+.text span.numB {
+  color: #009eaa;
+  background-color: #ccecee;
+}
+span.numS,
+span.numBS {
+  display: inline-block;
+  position: relative;
+  top: -8px;
+  width: 35px;
+  height: 35px;
+  font-size: 33px;
+  font-family: "cafe24";
+  text-align: center;
+  line-height: 42px;
+  border-radius: 10px;
+}
+span.numS {
+  color: #55b855;
+  background-color: #cceacc;
+}
+span.numBS {
+  color: #009eaa;
+  background-color: #ccecee;
+}
+
+/* 발문 텍스트 */
+.conteWrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 95%;
+  transform: translate(-50%, -50%);
+}
+.epilogue {
+  display: flex;
+  margin-bottom: 20px;
+}
+.epilogue:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.epilogue span.num {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  color: #55b855;
+  font-size: 35px;
+  font-family: "cafe24";
+  text-align: center;
+  border-radius: 10px;
+  background-color: #cceacc;
+}
+.epilogue p {
+  width: 1100px;
+  text-align: justify;
+}
+
+.tri {
+  font-size: 25px;
+}
+.tri::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -23px;
+  width: 0px;
+  height: 0px;
+  border-top: none;
+  border-bottom: 19px solid #939393;
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
+}
+
+/* 컨텐츠 내용 */
+.conteWrap table {
+  width: 100%;
+}
+.conteWrap table td {
+  position: relative;
+}
+
+/* 정답 체크했을 때 */
+.pointerOff {pointer-events: none;color: #d53030 !important;}
+
+.answer {
+  display: none;
+}
+.answer.show {
+  display: block;
+}
+
+/* SCROLL */
+.cont {
+  top: 0;
+  height: 330px;
+  padding:0px 20px 0 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.cont.noScroll {
+  height: auto;
+  overflow-y: auto
+}
+
+.cont.noScroll .Text_input {height: 340px;}
+
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+/* 스크롤바의 width */
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  border: 3px solid #d4bba3;
+  border-radius: 10px;
+}
+/* 스크롤바의 전체 배경색 */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #d4bba3, #e2c5a8);
+  border-radius: 10px;
+}
+/* 스크롤바 색 */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+
+/* 선긋기 */
+.dragLineBox{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.leftItem,
+.rightItem {
+	background: #848484;
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+	position: absolute;
+	border-radius: 100%;
+}
+
+.leftItem:before,
+.rightItem:before {
+	content: '';
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	width: 50px;
+	height: 50px;
+}
+svg.svgContainer {
+	position: absolute;
+	pointer-events: none;
+}
+svg.svgContainer > line {
+	stroke: #d53030;
+	stroke-width: 4px;
+}
+
+/* 탐구 활동 */
+.cont .research {position: relative;display: flex;font-size: 34px;margin-bottom: 20px;}
+.cont .research > div.text {
+  border-radius: 10px;
+  background: #cceacc;
+  line-height: 63px;
+  margin-right: 10px;
+  width: auto;
+  height: 63px;
+  text-align: center;
+  padding: 0 30px;
+}
+
+/* 해보아요 */
+.doit {position: relative; margin-bottom: 10px;}
+.doit > img {width: 201px; height: auto; display: none;}
+.doit > span {display: inline-block;padding: 4px 20px;border: 3px solid #00833d;border-radius: 32px;color: #55b855;font-family: "cafe24";font-size: 30px;}
+
+
+/* 실관 클릭시 동그라미 */
+.clickText  p  {font-family: "NotoSansKR-Medium"; text-align: justify;}
+.clickText  p span {font-family: "NotoSansKR-Medium";}
+.clickText .roundClick {display: inline-block;position: relative;width: auto;height: 68px;text-indent: 0; cursor: pointer;}
+.clickText  .roundClick span.on::after {content: "";position: absolute;top: 0px;left: 0px;width: 100%;height: 58px;border: 3px solid #a51f06;border-radius: 50%;}
+.circle {width: 60px; height: 36px; border: 2px solid #000000; display: inline-block; border-radius: 100%;}
+.clickText .pointerOff {color: #000 !important;}
+
+
+.checkWrapperBox input[type="checkbox"] + label{width: 30px;height: 30px; border:3px solid gray; display: inline-block;position: relative; border-radius: 5px;}
+.checkWrapperBox input[type="checkbox"]:checked+label::after {content: ""; background: url(../../images/common/redCheck.png) no-repeat center/100%; width: 50px; height: 50px; position: absolute;top: -23px; left: -10px; }
+
+.checkWrapperBox input[type="radio"] + label{width: 30px;height: 30px; border:3px solid gray; display: inline-block;position: relative; border-radius: 5px;}
+.checkWrapperBox input[type="radio"]:checked+label::after {content: ""; background: url(../../images/common/redCheck.png) no-repeat center/100%; width: 50px; height: 50px; position: absolute;top: -23px; left: -10px; }
+.redCheck {background: url(../../images/common/redCheck.png) no-repeat center/100%; width: 50px; height: 50px; display: inline-block;  vertical-align: bottom;}
+.blackCheck {background: url(../../images/btn/blackCheck.png) no-repeat center/contain;width: 30px;height: 36px;display: inline-block;vertical-align: baseline;}
+
+.input_answer .answerCheck {top: -14px;right: -14px;}
+.input_answer p.answer {text-align: center;width: 100%;}
+
+.viewImg {background: url(../../images/common/viewimg.png) no-repeat center/contain;width: 105px;height: 75px;position: absolute;}
+.viewImg span {font-size: 33px;display: inline-block;vertical-align: 4px;}
+
+/* 체크 없을 때 */
+.checkNO .answerCheck {display: none;}
+.checkNO  textarea, .checkNO .answer {width: 99%;}
+
+.dragItem img {pointer-events: none;}
+
+.exText {font-size: 22px;color: #e10000;position: absolute; line-height: 24px;height: 24px;}
+.exText::after {content: "";background: url(../../images/common/point_btn.png) no-repeat center/contain;width: 23px;height: 23px;position: absolute;left: -30px;top: 1px;}
+
+.popupBtn {display: inline-block;position: relative;top: -9px;width: auto;padding: 3px 20px;color: #fff;font-size: 23px;font-family: "NanumSquareRoundEB";border-radius: 30px;background-color: #ff6666;cursor: pointer;}
+.popupBtn.ON {
+  background-color: #d95757;
+}
+
+/* 드래그 */
+.dragItem.off {pointer-events: none;}

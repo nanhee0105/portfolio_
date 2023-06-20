@@ -1,0 +1,49 @@
+@charset "utf-8";
+.topWrap .bigTitle p {left: 30px;}
+.topWrap .bigTitle img:nth-child(1) {width: 78px;height: 72px;position: absolute;top: 26px;left: 149px;}
+.topWrap .bigTitle img:nth-child(2) {width: 226px;height: 154px;position: absolute;top: 60px;left: 504px;}
+.topWrap .topcont {width: 254px;}
+.videoBtn {top: 200px;left: 606px;}
+.bold.popupOpen2 {position: relative; top: -1px;}
+
+/* 슬라이드 */
+#sliderWrap1 .slideView .sliceInner .itemList .listBox img{width: 80px;}
+#sliderWrap1 .slideView .sliceInner .itemList:nth-of-type(3) .listBox:nth-child(2) img{width: 60px;}
+#sliderWrap1 .slideView .sliceInner .itemList:nth-of-type(3) .listBox:nth-child(1) img{width: 50px;}
+
+#sliderWrap1 .slideView .sliceInner .itemList:nth-of-type(3) .listBox:nth-child(1) span {width: 75px;}
+
+
+.bottomWrap img {width: 768px;height: 426.5px;position: absolute;bottom: 0px; left: 0px;}
+
+/* Btn */
+.btn .addBtn {left: 676px;}
+.btn .addBtn:nth-of-type(1) {bottom: 378px;}
+
+
+.popupOverlay.subPop .popupWrap .tabTopImg::after {left: 200px;}
+
+/***pop_01***/
+.act_pop_01 {width: 654px;height: 395px;display: flex;justify-content: space-between;align-content: space-between;flex-wrap: wrap;left: 50%;transform: translate(-50%);}
+.act_pop_01 .list {width: 100%;height: 24%;position: relative;box-sizing: border-box;margin-bottom: 30px;}
+.act_pop_01 .list div:nth-child(1) {width: 25%;height: 100%;position: absolute;background: #ebf6f4;border-radius: 15px;}
+.act_pop_01 .list div:nth-child(2) {width: 70%;height: 100%;position: absolute;top: 50%;right: 10px;transform: translateY(-50%);background: #fff3e9;border: 2px solid #a79888;border-radius: 15px; padding: 5px; box-sizing: border-box;}
+.act_pop_01 .list img {position: absolute;top: 25px;left: 50%;transform: translateX(-50%);width: 120px;height: auto;}
+.act_pop_01 .list span {width: 100%;position: absolute;bottom: 20px;left: 50%;transform: translateX(-50%);text-align: center;font-size: 15px;}
+.act_pop_01 .list textarea {width: 100%;height: 100%;}
+
+/* 용어 사전 */
+.openPopup2 .popupWrap {height: 660px;}
+
+
+.subPop .popupWrap .tabContent .popupList .activityTit {left: 50%;}
+
+.videoBg .videoWrap .tabTopImg::after {left: 205px;}
+
+
+/*팝업창 높이 변경*/
+.titlePopup > div{height: 40%;}
+.titlePopup .slider_wrap{height: 350px;}
+.titlePopup .sliderinner{height: 350px;}
+.titlePopup .slider_in{height: 300px;}
+.titlePopup .slider_in > div{height: 300px;}

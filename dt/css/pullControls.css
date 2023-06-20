@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+body {background: #565656;overflow: hidden;width: 100%;height: 100%;}
+#container {position: absolute;left: 0px;top: 0px;width: 100%;height: 100%;}
+#contents {position: absolute;left: 0px;top: 0px;width: 1536px;height: 960px;overflow: hidden;background: #fff;}
+.bg {width: 100%; height: 100%; background: #cabca8;}

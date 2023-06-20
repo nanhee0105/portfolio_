@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+#wrap {background: url(../images/page044/page044_bg.jpg)no-repeat center/contain;}
+
+.supreiBtn {
+    top: 404px;
+    left: 75px;
+    z-index: 2;
+}
+.top {top: 60px;left: 50%;transform: translateX(-50%);width: 100%;position: relative;}
+
+.top > .name {width: 590px; display: flex; justify-content: space-between; position: relative; left: 47%; transform: translateX(-50%);}
+.top > .name .images p {position: absolute;top: 13px;left: 19px;transform: rotate(349deg);text-align: center;color: #fff;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;}
+.top > .name .images p span {line-height: 1.5; font-size: 23px;}
+.top > .name .images p span:nth-of-type(1) {color: #fff100;}
+.top > .name .images p span:nth-of-type(2) {color: #fff;}
+.top > .name .images img {width: 135px;}
+
+.top > .name > p {position: relative; top: 10px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; font-family: "NanumSquareEB"; font-size: 46px; color: #252161;}
+.top > .name > p span {letter-spacing: -3px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; font-family: "NanumSquareEB"; font-size: 55px; color: #fff;}
+.videoBtn {top: 80px; left: 340px;}
+
+.top > .textbox {position: absolute;top: 170px;left: 50px;z-index: 3;}
+.top > .textbox p {line-height: 1.5;position: relative;text-indent: 16px;text-align: justify;width: 605px;}
+.top > .textbox p:nth-of-type(2) {width: 465px;}
+
+
+.corn {width: 768px;position: absolute;bottom: 0;z-index: 0;}
+
+.lesson, .page {text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;}
+
+/* midWrap */
+.contWrap .midWrap {top: 220px;left: 50%;transform: translateX(-50%);z-index: 1;}
+.midWrap .addBtn {top: -10px;left: 390px;}
+.midWrap > div img {width: 100%;}
+.midWrap .imgBox {width: 320px;position: absolute;top: 60px;left: 30px;}
+.midWrap .imgBox .tri {width: 220px;position: absolute;top: 240px;left: 80px;transform: rotate(356deg);font-size: 16px;}
+.midWrap .imgBox2 {width: 520px;position: absolute;top: -45px;left: 230px;z-index: -1;}
+
+.bottomText {position: absolute;top: 730px;left: 50px;width: 620px;line-height: 1.5;text-indent: 16px;z-index: 2;}
+.cleanupBtn {bottom: 39px; right: 179px;}
+
+.tri::before {top: 5px;}
+
+
+/* 동영상 자막*/
+.scriptBox p {float: left;}
+.scriptBox .left{width: auto;margin-right: 5px;}
+.scriptBox .right{width: 93%;}
+
+.titlePopup .slider_in > div {height: 400px;}
+.titlePopup .slider_in > div img {width: 100%;}
+
+.videoBg .videoWrap .tabTopImg::after {left: 408px;}
+
+/* 보충심화 */
+.supreiPopup .popupWrap {height: 500px;}
+.supreiPopup .sliderWrap {height: 380px;}
+.supreiPopup .sliderWrap .slideView {height: 430px;}
+.supreiPopup .sliderWrap .sliceInner {width: 2080px;}
+.supreiPopup .sliderWrap .sliceInner p {font-size: 20px;position: relative;}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(1):after {content: "해안가에 쓰러진 거북과 플라스틱 쓰레기";}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(2):after {content: "해양 쓰레기에 걸린 바다표범";}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(3):after {content: "플라스틱 쓰레기를 먹고 죽은 물고기";}
+.supreiPopup .sliderWrap .sliceInner .itemList:nth-of-type(4):after {content: "플라스틱 어망에 걸려 죽은 새";}

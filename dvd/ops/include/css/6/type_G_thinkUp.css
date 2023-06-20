@@ -1,0 +1,150 @@
+
+/* 생각쑥쑥 */
+.TypeG .contWrap {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 600px;
+  border-radius: 0 70px 0 0;
+  background-color: #fff;
+}
+.TypeG .title {
+  position: absolute;
+  top: -38px;
+  width: 100%;
+  height: 82px;
+  background: url(../../images/common/title_think.png) no-repeat left/361px 82px;
+}
+.TypeG .Text {
+  position: absolute;
+  left: 115px;
+  top: 56px;
+  width: 1100px;
+  height: 530px;
+}
+.TypeG .Text p {
+  position: relative;
+  margin-bottom: 30px;
+  font-size: 45px;
+  text-align: justify;
+}
+.TypeG .Text p:last-of-type(1) {
+  margin-bottom: 0px;
+}
+.TypeG .Text p::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -35px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #0782c2;
+}
+
+
+/* 생각쑥쑥 */
+.TypeG.G2 .title {
+  background: url(../../images/common/title_check.png) no-repeat left/361px 82px;
+}
+.TypeG.G2 .Text {
+  top: 100px;
+}
+
+.TypeG.G2 .friendCheck {
+  position: absolute;
+  left: 50%;
+  top: 260px;
+  width: 600px;
+  height: 132px;
+  padding-top: 6px;
+  padding-left: 10px;
+  transform: translateX(-50%);
+}
+.TypeG.G2 .friendCheck div:nth-last-of-type(1) {
+  margin-right: 0px;
+}
+.TypeG.G2 .checkicon{
+  float: left;
+  width: 120px;
+  height: 120px;
+  margin-right: 110px;
+  background: url(../../images/btn/self_check.png) no-repeat 0/240px 120px;
+  cursor: pointer;
+}
+.TypeG.G2 .checkicon.ON {
+  background-position: -120px;
+}
+/* 21.11.01 spvog 별 아이콘 마우스오버 */
+.TypeG.G2 .checkicon.hover {
+  transform: scale(0.95);
+}
+
+
+/* 자기평가 친구평가 */
+.TypeG.G3 .title {
+  background: url(../../images/common/title_check.png) no-repeat left/361px 82px;
+}
+.TypeG.G3 .Text {top: 100px;}
+
+.TypeG.G3 .friendCheck {width: 50%;}
+
+.TypeG.G3 .checkicon{
+  float: left;
+  width: 120px;
+  height: 120px;
+  margin-left: 50px;
+  background: url(../../images/btn/self_check.png) no-repeat 0/240px 120px;
+  cursor: pointer;
+}
+.TypeG.G3 .checkicon.ON {
+  background-position: -120px;
+}
+
+/* 친구평가 하트 */
+.TypeG.G3 .checkWrapper2 .checkicon{
+  background: url(../../images/btn/self_check_h.png) no-repeat 0/240px 120px;
+}
+.TypeG.G3 .checkWrapper2 .checkicon.ON {
+  background-position: -120px;
+}
+
+/* 21.11.01 spvog 별 아이콘 마우스오버 */
+.TypeG.G3 .checkicon.hover {
+  transform: scale(0.95);
+}
+
+.TypeG.G3 .checking {
+  position: relative;
+  top: 240px;
+  display: flex;
+  width: 94%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.TypeG.G3 .selfcheck {
+    width: 50%;
+}
+
+.TypeG.G3 .selfcheckBar {
+  width: 302px;
+  height: 102px;
+  background: url(../../images/common/countBar_01.png) no-repeat right top/302px;
+  position: relative;
+  right: -236px;
+}
+.TypeG.G3 .friendCheckBar {
+  width: 302px;
+  height: 102px;
+  background:  url(../../images/common/countBar_02.png)  no-repeat left top/302px;
+  position: relative;
+  left: 0px;
+}
+.TypeG.G3 .selfcheckBar span, .TypeG.G3 .friendCheckBar span {
+  font-family: 'NanumSquareRoundEB';
+  position: absolute;
+  left: 60px;
+  top: 7px;
+  color: #734e21;
+}

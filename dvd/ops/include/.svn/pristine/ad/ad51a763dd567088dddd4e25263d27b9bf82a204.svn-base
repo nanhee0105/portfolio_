@@ -1,0 +1,49 @@
+
+/* 창의융합 */
+.typeK .contWrap {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 600px;
+  border-radius: 0 70px 0 0;
+  background-color: #fff;
+}
+.typeK .title {
+  position: absolute;
+  top: -48px;
+  width: 100%;
+  height: 60px;
+  background: url(../../images/common/title_chang.png) no-repeat left/332px 60px;
+}
+.typeK .title span {
+  position: absolute;
+  left: 340px;
+  top: 8px;
+  font-size: 32px;
+  font-family: "cafe24";
+}
+.typeK .tabList {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  width: 1150px;
+  height: 510px;
+  transform: translateX(-50%);
+}
+.typeK .text {
+  display: flex;
+  margin-bottom: 30px;
+}
+.typeK .text:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.typeK .text p {
+  width: 1100px;
+}
+.typeK .imgWrap img {
+  width: 100%;
+}
+.typeK .topTitle {
+  top: 30px;
+  left: 63px;
+}

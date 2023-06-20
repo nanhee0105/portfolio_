@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+/* 레이아웃 */
+#wrap {background: url(../images/page027/page027_bg.jpg)no-repeat center/contain;}
+.contWrap > div {position: absolute;}
+
+/* 첫번째 div */
+.contWrap > div.conText {width: 510px; top: 165px; left: 165px;}
+.contWrap > div.conText p {font-family: "NanumSquareB"; font-size: 30px;}
+.contWrap > div.conText p span {font-family: "NanumSquareEB";font-size: 70px;color: #fff;}
+.contWrap > div.conText ul {position: relative; top: 10px; left: 15px;}
+.contWrap > div.conText ul li {line-height: 1.6; position: relative; font-family: "NanumSquareB"; font-size: 17px;}
+.contWrap > div.conText ul li:before {content: ""; width: 8px; height: 8px; position: absolute; top: 7px; left: -15px; border-radius: 100%; background: #fff;}
+
+.contWrap > div.soundWrap {top: 415px;left: 430px;}
+.contWrap > div.soundWrap .talkBtn {top: 30px;left: -25px;}
+.contWrap > div.soundWrap .char img {width: 70px;position: absolute;top: 35px;left: 171px;}
+.contWrap > div.soundWrap .balloon {width: 196px;height: 118px;position: absolute; top: 25px;left: -20px;background: url(../images/page027/01_ball.png)no-repeat center/contain;}
+.contWrap > div.soundWrap .bubble {width: 180px;top: 12px;left: -2px;}
+
+.contWrap > p {width: 400px;position: relative;top: 730px;left: 150px;text-align: center;font-family: "NanumSquareEB";font-size: 80px;color: #fff;}
+
+
+.videoBtn {top: 37px;left: 295px;}
+
+.page {color: #fff;}
+
+
+
+/* 용어 사전 */
+/* common */
+
+.miniPopup .glossary .miniPopT {left: 237px;}
+.miniPopup .glossary .wordCont {left: 30px;width: 510px;}
+.miniPopup .glossary .exSentence {left: 85px;}
+.miniPopup .glossary .exSentence > p {width: 500px;text-align: justify;}
+.miniPopup .glossary .exSentence > span {width: 446px;}
+
+.imgText span {position: absolute;font-size: 13px;}
+.imgText span:nth-of-type(1) {top: 373px;left: 261px;}
+.imgText span:nth-of-type(2) {top: 446px;left: 257px;}
+.imgText span:nth-of-type(3) {top: 433px;left: 98px;}
+
+.imgText2 span {position: absolute;font-size: 11px;}
+.imgText2 span:nth-of-type(1) {top: 473px;left: 145px;}
+.imgText2 span:nth-of-type(2) {top: 537px;left: 133px;}
+
+.videoBg .videoWrap .tabTopImg::after {background-position: -7px;}

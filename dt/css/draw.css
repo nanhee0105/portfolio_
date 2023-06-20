@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/* 공통 */
+.canvasContainer canvas {display: inline-block;position: absolute;top: 0px;left: 0px;}
+.canvasContainer ul > li.options{position: absolute;width: 45px;height: 246px;background-color: #fff;background: url(../images/draw/draw_bg.png) left/contain no-repeat;display: none;z-index: 10;}
+.canvasContainer button{position: absolute;width: 39px;height: 26px;cursor: pointer;left: 2px;}
+.canvasContainer ul > li.options > div.effet {width: 43px;position: absolute;left: 0px;height: 247px;}
+.canvasContainer .drawbtn_move{background: url(../images/draw/draw_move.png) no-repeat center/26px 26px;top: 10px;}
+.canvasContainer .drawbtn_delete{background: url(../images/draw/draw_eraser.png) no-repeat center/17px 17px;top: 73px;}
+.canvasContainer .drawbtn_delete.on{background: url(../images/draw/draw_eraser_on.png) no-repeat center/17px 17px;}
+.canvasContainer .drawbtn_delete_all{background: url(../images/draw/draw_trash.png) no-repeat center/20px 22px;top: 106px;}
+.canvasContainer .drawbtn_pen{background: url(../images/draw/draw_pen.png) no-repeat center/16px 16px;top: 42px;}
+.canvasContainer .drawbtn_pen.on{background: url(../images/draw/draw_pen_on.png) no-repeat center/16px 16px;}
+.canvasContainer .drawBtn_size{background: url(../images/draw/draw_stroke.png) no-repeat center/16px 16px;bottom: 45px;}
+.canvasContainer .border::after {content: "";border-bottom: 1px solid #99e9c2;position: absolute;width: 30px;bottom: 0px;left: 5px;}
+.canvasContainer .border.drawbtn_pencolor::after {bottom: -10px;left: -5px;}
+.canvasContainer .drawbtn_pencolor{background: #0018fb;width: 20px;height: 20px;border-radius: 4px;left: 12px;top: 143px;}
+.canvasContainer .drawbtn_stop{background: url(../images/draw/draw_close.png) no-repeat center/26px 26px;bottom: 10px;}
+
+#optionContener.options{position: absolute;width: 45px;height: 246px;background-color: #fff;background: url(../images/draw/draw_bg.png) left/contain no-repeat;display: none;}
+#optionContener.options > div.effet {width: 43px;position: absolute;left: 0px;height: 247px;}
+.options button{position: absolute;width: 39px;height: 26px;cursor: pointer;left: 2px;}
+.options .drawbtn_move{background: url(../images/draw/draw_move.png) no-repeat center/26px 26px;top: 10px;}
+.options .drawbtn_delete{background: url(../images/draw/draw_eraser.png) no-repeat center/17px 17px;top: 73px;}
+.options .drawbtn_delete.on{background: url(../images/draw/draw_eraser_on.png) no-repeat center/17px 17px;}
+.options .drawbtn_delete_all{background: url(../images/draw/draw_trash.png) no-repeat center/20px 22px;top: 106px;}
+.options .drawbtn_pen{background: url(../images/draw/draw_pen.png) no-repeat center/16px 16px;top: 42px;}
+.options .drawbtn_pen.on{background: url(../images/draw/draw_pen_on.png) no-repeat center/16px 16px;}
+.options .drawBtn_size{background: url(../images/draw/draw_stroke.png) no-repeat center/16px 16px;bottom: 45px;}
+.options .border::after {content: "";border-bottom: 1px solid #99e9c2;position: absolute;width: 30px;bottom: 0px;left: 5px;}
+.options .border.drawbtn_pencolor::after {bottom: -10px;left: -5px;}
+.options .drawbtn_pencolor{background: #0018fb;width: 20px;height: 20px;border-radius: 4px;left: 12px;top: 143px;}
+.options .drawbtn_stop{background: url(../images/draw/draw_close.png) no-repeat center/26px 26px;bottom: 10px;}
+
+.colorTool {background: url(../images/draw/draw_colortool.png) no-repeat center/contain;width: 76.5px;height: 64.5px;position: absolute;top: 126px;left: 37px;display: none;}
+.colorTool ul.color {position: absolute;top: 5px;left: 16px;width: 56px;}
+.colorTool ul li {width: 16px;height: 16px;margin-left: 2px;border-radius: 3px;cursor: pointer;float: left;margin-bottom: 3px;}
+.colorTool ul li.red {background-color: #ea0000;}
+.colorTool ul li.orange {background-color: #f47025;}
+.colorTool ul li.yellow {background-color: #f47025;}
+.colorTool ul li.green {background-color: #00a651;}
+.colorTool ul li.sky {background-color: #018dc2;}
+.colorTool ul li.blue {background-color: #0018fb;}
+.colorTool ul li.deepPurple {background-color: #4e01c2;}
+.colorTool ul li.purple {background-color: #914afc;}
+.colorTool ul li.pink {background-color: #f364e1;}
+
+.strokeSize {background: url(../images/draw/draw_strokebg.png) no-repeat center/contain;width: 39px;height: 67px;position: absolute;top: 170px;left: 37px;display: none;}
+.strokeSize button {width: 15px;height: 15px;border-radius: 100%;border: 2px solid #1ec172;margin: -2px 16px;position: relative;}
+.strokeSize button::after {content: ""; border-radius: 100%;background-color:#000;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.strokeSize .drawbtn_size1::after{width: 5px;height: 5px;}
+.strokeSize .drawbtn_size2::after{width: 6px;height: 6px;}
+.strokeSize .drawbtn_size3::after{width: 8px;height: 8px;}
+.strokeSize button.on {background-color: #ff8400;}
+

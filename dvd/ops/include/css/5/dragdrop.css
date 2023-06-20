@@ -1,0 +1,31 @@
+
+/* 퀴즈 정답보기 상태일 때 요소들 클릭 방지 */
+.isShowAnswer[data-quiz-type] { pointer-events: none; }
+
+/* 퀴즈 정답보기 상태일 때 클릭 방지 제외 요소들 */
+.isShowAnswer[data-quiz-type] .closeBtn,
+.isShowAnswer[data-quiz-type] .answerBtn,
+.isShowAnswer[data-quiz-type] .explainView,
+.isShowAnswer[data-quiz-type] .AllexplanationBox,
+.isShowAnswer[data-quiz-type] .retryBtn { pointer-events: auto; }
+
+[data-quiz-type="dragDrop"] .js-quizObj[data-type="drag"] {
+  position: absolute;
+}
+[data-quiz-type="dragDrop"] .js-quizObj[data-type="drag"] img {
+  pointer-events: none !important;
+}
+[data-quiz-type="dragDrop"] .js-quizObj[data-type="drag"].isDragging {
+  z-index: 10;
+}
+[data-quiz-type="dragDrop"] .js-quizObj[data-type="drag"].hide {
+  opacity: 0;
+  visibility: hidden;
+}
+[data-quiz-type="dragDrop"] .js-quizObj[data-type="drag"].off {
+  pointer-events: none !important;
+}
+[data-quiz-type="dragDrop"] [data-type="drop"] [data-type="drag"] {
+  top: 0;
+  left: 0;
+}

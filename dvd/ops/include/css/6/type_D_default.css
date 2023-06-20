@@ -1,0 +1,52 @@
+
+/* 디폴트 */
+.typeD .contWrap {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 630px;
+  border-radius: 0 70px 0 0;
+  background-color: #fff;
+}
+.typeD .text {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+  left: 49%;
+  top: 20px;
+  width: 90%;
+  margin-bottom: 30px;
+  text-align: justify;
+  transform: translateX(-50%);
+}
+
+.typeD .text .title{
+  color: #0a81de;
+  font-size: 47px;
+}
+
+.typeD .text:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.typeD .text span.robot {
+  width: 88px;
+  height: 51px;
+  margin-right: 5px;
+  background: url(../../images/common/bullet_robot.png) center/contain no-repeat;
+}
+.typeD .text span.txt {
+  width: 100%;
+}
+.typeD .subText {
+  position: relative;
+  left: 53%;
+  top: 30px;
+  width: 84%;
+  text-align: justify;
+  transform: translateX(-50%);
+}
+.typeD .showText {
+  display: none;
+}
+

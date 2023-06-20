@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>졸업과제</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@6.1.1/index.global.min.js"></script>
+</head>
+  
+<body>
+        <div class="container">
+            <div class="contents">
+
+                <header class="header">
+                    <button class="logout">logout</button>
+
+                    <p class="clock"></p>
+
+                    <div class="weather">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div>
+                        <span>Hello,</span>
+                        <span class="userName"></span>
+                    </div>
+                </header>
+             
+
+                <div class="sayingWrap">
+                    <h3>Famous Sayings</h3>
+                
+                    <p class="quote"></p>
+                    <p class="author"></p>
+                </div>
+
+
+                <div class="midWrap">
+                    <div class="calendarWrap">
+                      <div id="calendar"></div>
+                    </div>
+
+                    <div class="todoWrap">
+                        <form id="todoForm">
+                            <input type="text" placeholder="Write a To Do and Press Enter." required>
+                        </form>
+
+                        <ul class="todoList"></ul>
+                    </div>
+                </div>
+
+                <div class="footerWrap">
+                 
+                </div>
+            </div>
+        </div>
+        <div class="loginContainer show">
+            <h3>What is your name?</h3>
+
+            <form id="loginForm">
+                <input type="text" placeholder="nanhee" required>
+            </form>
+        </div> 
+        <script src="js/index.js"></script>
+        <script src="js/clock.js"></script>
+        <script src="js/weather.js"></script>
+        <script src="js/calendar.js"></script>
+</body>
+
+</html>
+
+

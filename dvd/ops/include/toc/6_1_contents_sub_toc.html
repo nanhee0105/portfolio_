@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=1280, height=720" />
+	<link rel="stylesheet" type="text/css" href="../css/6_sub/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/6_sub/g6_nav.css" />
+	<script src="../js/jquery-3.5.1.min.js"></script>
+	<title>nav</title>
+</head>
+
+<body id="mainFrame">
+	<div class="js-toc">
+		<div class="topMenu">
+			<p><img class="js-toggleTocButton navBar" src="../../images/nav/main_bar.png" alt=""></p>
+			<div class="menutext">
+				<span class="js-subTitleInHeader titleColor"></span>
+				<span class="js-infoTitleInHeader"></span>
+				<span class="stepArea">
+					<span class="titleColor">|</span>
+					<span class='js-stepInHeader'></span>
+				</span>
+			</div>
+			<div class="pagetext">
+				<p>
+					<span>실험 관찰</span>
+					<span class="js-pageNumber"></span><span>쪽으로 가기</span>
+				</p>
+			</div>
+			<div class="pagebox">
+				<div class="pageBtnleft"></div>
+				<div class="pageBtnright"></div>
+				<div class="pagenum">
+					<p>
+						<input type="text" value="" />/<input type="text" value="" />
+					</p>
+				</div>
+			</div>
+			<div class="help js-helpButton"></div>
+			<div class="appbox js-appButton"></div>
+			<div class="appWarp js-appContainer">
+				<div class="mainApp">
+					<div class="appList">
+						<div class="hardong">
+							<ul>
+								<li class="js-reference reference" data-active="reference">
+									<p class="appArea"></p>
+								</li>
+								<li class="js-activeButton board" data-active="board">
+									<p class="appArea"></p>
+								</li>
+								<li class="js-activeButton timer" data-active="timer">
+									<p class="appArea"></p>
+								</li>
+								<li class="js-activeButton sticker" data-active="groupSticker">
+									<p class="appArea"></p>
+								</li>
+								<li class="js-activeButton announce" data-active="selection">
+									<p class="appArea"></p>
+								</li>
+								<li class="js-stamp stamp" data-active="stamp">
+									<p class="appArea"></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="stampWrap js-stampContainer">
+				<div class="stampDropArea js-stampDropArea"></div>
+				<div class="stampBox js-stampBox">
+					<span class="stamp_drag js-stampDrag"></span>
+					<span class="stamp_close js-stampClose"></span>
+					<div class="stampArea">
+						<div class="stamp1 js-stampType" data-type="1">
+							<p class="appArea"></p>
+						</div>
+						<div class="stamp2 js-stampType" data-type="2">
+							<p class="appArea"></p>
+						</div>
+						<div class="stamp3 js-stampType" data-type="3">
+							<p class="appArea"></p>
+						</div>
+						<div class="stamp4 js-stampType" data-type="4">
+							<p class="appArea"></p>
+						</div>
+					</div>
+					<div class="easerArea">
+						<div class="easer1 js-eraser" data-type="piece">
+							<p class="appArea"></p>
+						</div>
+						<div class="easer2 js-eraser" data-type="all">
+							<p class="appArea"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mainCloseBtn js-tocCloseButton"></div>
+		</div>
+		<!--탑메뉴-->
+		<div class="navWrap">
+			<div class="navBackground"></div>
+			<nav>
+				<ul class="gnb">
+					<li class="js-sectionButton section1">
+						<h2>1. 탐구야, 신나게 놀자!<img src="../../images/nav/icon_b_1.png" alt=""/></h2>
+					</li>
+					<li class="js-sectionButton section2">
+						<h2>2. 지구와 달의 운동 <img src="../../images/nav/icon_b_2.png" alt=""/> </h2>
+					</li>
+					<li class="js-sectionButton section3">
+						<h2>3. 식물의 구조와 기능<img src="../../images/nav/icon_b_3.png" alt=""/> </h2>
+					</li>
+					<li class="js-sectionButton section4">
+						<h2>4. 여러 가지 기체<img src="../../images/nav/icon_b_4.png" alt=""/> </h2>
+					</li>
+					<li class="js-sectionButton section5">
+						<h2>5. 빛과 렌즈<img src="../../images/nav/icon_b_5.png" alt=""/> </h2>
+					</li>
+				</ul>
+
+				<div class="js-lessonBox liInner">
+					<div class="ofNum"><span>1.</span> <span class="js-lessonTitleText">탐구야, <br>신나게 놀자!</span></div>
+					<div class="js-subTitle subBox" data-sub-index="1">
+						<h3><span class="dashDot"></span>과학 탐구</h3>
+					</div>
+				</div>
+
+				<div class="js-lessonBox liInner">
+					<div class="ofNum"><span>2.</span> <span class="js-lessonTitleText">지구와 <br>달의 운동</span></div>
+					<div class="js-subTitle subBox" data-sub-index="1">
+						<h3><span class="dashDot"></span>과학 탐구</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="2">
+						<h3><span class="dashDot"></span>창의 융합 활동</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="3">
+						<h3><span class="dashDot"></span>단원 정리하기</h3>
+					</div>
+				</div>
+
+				<div class="js-lessonBox liInner">
+					<div class="ofNum"><span>3.</span> <span class="js-lessonTitleText">식물의 <br>구조와 기능</span></div>
+					<div class="js-subTitle subBox" data-sub-index="1">
+						<h3><span class="dashDot"></span>과학 탐구</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="2">
+						<h3><span class="dashDot"></span>창의 융합 활동</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="3">
+						<h3><span class="dashDot"></span>단원 정리하기</h3>
+					</div>
+				</div>
+
+				<div class="js-lessonBox liInner">
+					<div class="ofNum"><span>4.</span> <span class="js-lessonTitleText">여러 가지 <br>기체</span></div>
+					<div class="js-subTitle subBox" data-sub-index="1">
+						<h3><span class="dashDot"></span>과학 탐구</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="2">
+						<h3><span class="dashDot"></span>창의 융합 활동</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="3">
+						<h3><span class="dashDot"></span>단원 정리하기</h3>
+					</div>
+				</div>
+				
+				<div class="js-lessonBox liInner">
+					<div class="ofNum"><span>5.</span> <span class="js-lessonTitleText">빛과 렌즈</span></div>
+					<div class="js-subTitle subBox" data-sub-index="1">
+						<h3><span class="dashDot"></span>과학 탐구</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="2">
+						<h3><span class="dashDot"></span>창의 융합 활동</h3>
+					</div>
+					<div class="js-subTitle subBox" data-sub-index="3">
+						<h3><span class="dashDot"></span>단원 정리하기</h3>
+					</div>
+				</div>
+				
+				<div class="infoInner">
+					<div class="js-subMenuBox infoInner_sub">
+						<div class="js-subMenu infoBox" data-index="1">
+							<div class="js-infoTitle">탐구 문제를 정하고 가설을 세워 볼까요?</div>
+							<div class="js-infoTitle">실험을 계획해 볼까요?</div>
+							<div class="js-infoTitle">실험을 해 볼까요?</div>
+							<div class="js-infoTitle">실험 결과를 변환하고 해석해 볼까요?</div>
+							<div class="js-infoTitle">결론을 내려 볼까요?</div>
+						</div>
+					</div><!-- 1 -->
+					
+					<div class="js-subMenuBox infoInner_sub">
+						<div class="js-subMenu infoBox" data-index="1">
+							<div class="js-infoTitle">하루 동안 태양과 달의 위치 변화</div>
+							<div class="js-infoTitle">하루 동안 지구의 운동</div>
+							<div class="js-infoTitle">낮과 밤이 생기는 까닭</div>
+							<div class="js-infoTitle">계절별 별자리</div>
+							<div class="js-infoTitle">일 년 동안 지구의 운동</div>
+							<div class="js-infoTitle">여러 날 동안 달의 모양과 위치 변화</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="2">
+							<div class="js-infoTitle">지구와 달의 운동 모형을 만들어 볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-hidden-menu="" data-index="3">
+							<div class="js-infoTitle">단원 정리하기</div>
+						</div>
+					</div><!-- 2 -->
+					
+					<div class="js-subMenuBox infoInner_sub">
+						<div class="js-subMenu infoBox" data-index="1">
+							<div class="js-infoTitle">생물을 이루는 세포</div>
+							<div class="js-infoTitle">뿌리의 생김새와 하는 일</div>
+							<div class="js-infoTitle">줄기의 생김새와 하는 일</div>
+							<div class="js-infoTitle">잎의 생김새와 하는 일</div>
+							<div class="js-infoTitle">꽃의 생김새와 하는 일</div>
+							<div class="js-infoTitle">씨가 퍼지는 방법</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="2">
+							<div class="js-infoTitle">식물 역할놀이 영상을 만들어 볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-hidden-menu="" data-index="3">
+							<div class="js-infoTitle">단원 정리하기</div>
+						</div>
+					</div>	<!-- 3 -->
+				
+					<div class="js-subMenuBox infoInner_sub">
+						<div class="js-subMenu infoBox" data-index="1">
+							<div class="js-infoTitle">산소의 성질</div>
+							<div class="js-infoTitle">이산화 탄소의 성질</div>
+							<div class="js-infoTitle">압력에 따른 기체의 부피 변화</div>
+							<div class="js-infoTitle">온도에 따른 기체의 부피 변화</div>
+							<div class="js-infoTitle">공기를 이루는 여러 가지 기체</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="2">
+							<div class="js-infoTitle">에어 로켓을 만들어 볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-hidden-menu="" data-index="3">
+							<div class="js-infoTitle">단원 정리하기</div>
+						</div>
+					</div>	<!-- 4 -->
+				
+					<div class="js-subMenuBox infoInner_sub">
+						<div class="js-subMenu infoBox" data-index="1">
+							<div class="js-infoTitle">프리즘을 통과한 햇빛 </div>
+							<div class="js-infoTitle">물과 유리를 통과하는 빛</div>
+							<div class="js-infoTitle">볼록 렌즈의 특징 </div>
+							<div class="js-infoTitle">볼록 렌즈를 통과하는 햇빛  </div>
+							<div class="js-infoTitle">볼록 렌즈로 본 물체의 모습 </div>
+							<div class="js-infoTitle">생활 속 볼록 렌즈의 이용</div>
+						</div>
+						<div class="js-subMenu infoBox" data-index="2">
+							<div class="js-infoTitle">볼록 렌즈를 이용한 사진 전시회를 열어 <br>볼까요?</div>
+						</div>
+						<div class="js-subMenu infoBox" data-hidden-menu="" data-index="3">
+							<div class="js-infoTitle">단원 정리하기</div>
+						</div>
+					</div>
+					<!-- 5 -->
+				</div>
+			</nav>
+
+
+			<div class="sectionInfo">
+				<ul class='js-infoBox section1_info'>
+					<!--1. 탐구야, 신나게 놀자!-->
+					<li class="js-infoList infoPop">
+						<!--1-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">탐구 문제를 정하고 가설 세우기</p>
+									<p class="js-page hidden">탐구 문제를 정하고 가설 세우기</p>
+									<p class="js-page hidden">탐구 문제를 정하고 가설 세우기</p>
+									<p class="js-page hidden">탐구 문제를 정하고 가설 세우기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--2-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">실험 계획 세우기</p>
+									<p class="js-page hidden">실험 계획 세우기</p>
+									<p class="js-page hidden">실험 계획 세우기</p>
+									<p class="js-page hidden">실험 계획 세우기</p>
+									<p class="js-page hidden">실험 계획 세우기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--3-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">종이 기둥이 견디는 무게 알아보기</p>
+									<p class="js-page hidden">종이 기둥이 견디는 무게 알아보기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--4-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">실험 결과 변환하기</p>
+									<p class="js-page">자료 해석하기</p>
+									<p class="js-page hidden">자료 해석하기</p>
+									<p class="js-page hidden">자료 해석하기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--5-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">결론을 이끌어 내고 새로운 탐구 시작하기</p>
+									<p class="js-page hidden">결론을 이끌어 내고 새로운 탐구 시작하기</p>
+									<p class="js-page hidden">결론을 이끌어 내고 새로운 탐구 시작하기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+				<ul class='js-infoBox section2_info'>
+					<!--2. 지구와 달의 운동-->
+					<li class="js-infoList infoPop">
+						<!--2-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">하루 동안 태양과 달의 위치 변화 관찰하기</p>
+									<p class="js-page hidden">하루 동안 태양과 달의 위치 변화 관찰하기</p>
+									<p class="js-page hidden">하루 동안 태양과 달의 위치 변화 관찰하기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--3-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">하루 동안 지구의 운동과 태양의 위치 변화 관계 알아보기</p>
+									<p class="js-page hidden">하루 동안 지구의 운동과 태양의 위치 변화 관계 알아보기</p>
+									<p class="js-page hidden">하루 동안 지구의 운동과 태양의 위치 변화 관계 알아보기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--4-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">낮과 밤이 생기는 까닭 알아보기</p>
+									<p class="js-page hidden">낮과 밤이 생기는 까닭 알아보기</p>
+									<p class="js-page hidden">낮과 밤이 생기는 까닭 알아보기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--5-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">계절별 대표적인 별자리 찾아보기</p>
+									<p class="js-page hidden">계절별 대표적인 별자리 찾아보기</p>
+									<p class="js-page hidden">계절별 대표적인 별자리 찾아보기</p>
+									<!-- <p class="js-page hidden">계절별 대표적인 별자리 찾아보기</p> -->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--6-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">일 년 동안 지구의 운동과 계절별 대표적인 별자리 변화의 관계 알아보기</p>
+									<p class="js-page hidden">일 년 동안 지구의 운동과 계절별 대표적인 별자리 변화의 관계 알아보기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--7-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">여러 날 동안 같은 시각에 보이는 달의 모양과 위치 관찰하기</p>
+									<p class="js-page hidden">여러 날 동안 같은 시각에 보이는 달의 모양과 위치 관찰하기</p>
+									<p class="js-page hidden">여러 날 동안 같은 시각에 보이는 달의 모양과 위치 관찰하기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--창의 융합 활동-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">지구와 달의 운동 모형 만들기</p>
+									<p class="js-page hidden">지구와 달의 운동 모형 만들기</p>
+									<p class="js-page hidden">지구와 달의 운동 모형 만들기</p>
+									<p class="js-page hidden">지구와 달의 운동 모형 만들기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--단원 정리하기-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">1 개념 확인</p>
+									<p class="js-page">2 서술형ㆍ논술형</p>
+									<p class="js-page">3 과학 글쓰기</p>
+									<p class="js-page">이 단원에서 나는</p>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+				<ul class='js-infoBox section3_info'>
+					<!--3. 식물의 구조와 기능-->
+					<li class="js-infoList infoPop">
+						<!--2-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">세포 관찰하기</p>
+									<p class="js-page hidden">세포 관찰하기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--3-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">뿌리의 생김새와 흡수 기능 알아보기</p>
+									<p class="js-page hidden">뿌리의 생김새와 흡수 기능 알아보기</p>
+									<p class="js-page hidden">뿌리의 생김새와 흡수 기능 알아보기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--4-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">줄기의 생김새와 물의 이동 알아보기</p>
+									<p class="js-page hidden">줄기의 생김새와 물의 이동 알아보기</p>
+									<p class="js-page hidden">줄기의 생김새와 물의 이동 알아보기</p>
+									<p class="js-page hidden">줄기의 생김새와 물의 이동 알아보기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--5-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">잎의 생김새와 잎에서 만드는 양분 알아보기</p>
+									<p class="js-page hidden">잎의 생김새와 잎에서 만드는 양분 알아보기</p>
+									<p class="js-page hidden">잎의 생김새와 잎에서 만드는 양분 알아보기</p>
+									<p class="js-page hidden">잎의 생김새와 잎에서 만드는 양분 알아보기</p>
+									<p class="js-page">잎에 도달한 물의 이동 알아보기</p>
+									<p class="js-page hidden">잎에 도달한 물의 이동 알아보기</p>
+									<p class="js-page hidden">잎에 도달한 물의 이동 알아보기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--6-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">꽃의 생김새와 하는 일 알아보기</p>
+									<p class="js-page hidden">꽃의 생김새와 하는 일 알아보기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--7-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">여러 가지 식물의 씨가 퍼지는 방법 조사하기</p>
+									<p class="js-page hidden">여러 가지 식물의 씨가 퍼지는 방법 조사하기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--창의 융합 활동-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">식물 역할놀이 영상 만들기</p>
+									<p class="js-page hidden">식물 역할놀이 영상 만들기</p>
+									<p class="js-page hidden">식물 역할놀이 영상 만들기</p>
+									<p class="js-page hidden">식물 역할놀이 영상 만들기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--단원 정리하기-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">1 개념 확인</p>
+									<p class="js-page">2 서술형ㆍ논술형</p>
+									<p class="js-page">3 과학 글쓰기</p>
+									<p class="js-page">이 단원에서 나는</p>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+				<ul class='js-infoBox section4_info'>
+					<!--4. 여러 가지 기체-->
+					<li class="js-infoList infoPop">
+						<!--2-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">산소를 발생시켜 그 성질을 알아보기</p>
+									<p class="js-page hidden">산소를 발생시켜 그 성질을 알아보기</p>
+									<p class="js-page hidden">산소를 발생시켜 그 성질을 알아보기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--3-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">이산화 탄소를 발생시켜 그 성질을 알아보기</p>
+									<p class="js-page hidden">이산화 탄소를 발생시켜 그 성질을 알아보기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--4-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">압력을 가한 정도에 따른 기체의 부피 변화 관찰하기</p>
+									<p class="js-page hidden">압력을 가한 정도에 따른 기체의 부피 변화 관찰하기</p>
+									<p class="js-page hidden">압력을 가한 정도에 따른 기체의 부피 변화 관찰하기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--5-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">온도가 높고 낮음에 따른 기체의 부피 변화 관찰하기</p>
+									<p class="js-page hidden">온도가 높고 낮음에 따른 기체의 부피 변화 관찰하기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--6-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">공기를 이루는 여러 가지 기체 조사하기</p>
+									<p class="js-page hidden">공기를 이루는 여러 가지 기체 조사하기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--창의 융합 활동-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">에어 로켓을 만들어 볼까요?</p>
+									<p class="js-page hidden">에어 로켓을 만들어 볼까요?</p>
+									<p class="js-page hidden">에어 로켓을 만들어 볼까요?</p>
+									<p class="js-page hidden">에어 로켓을 만들어 볼까요?</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--단원 정리하기-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">1 개념 확인</p>
+									<p class="js-page">2 서술형ㆍ논술형</p>
+									<p class="js-page">3 과학 글쓰기</p>
+									<p class="js-page">이 단원에서 나는</p>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+				<ul class='js-infoBox section5_info'>
+					<!--5. 에너지와 생활-->
+					<li class="js-infoList infoPop">
+						<!--2-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">프리즘을 통과한 햇빛 관찰하기 </p>
+									<p class="js-page hidden">프리즘을 통과한 햇빛 관찰하기 </p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--3-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">공기와 물의 경계에서 빛이 나아가는 모습 관찰하기</p>
+									<p class="js-page hidden">공기와 물의 경계에서 빛이 나아가는 모습 관찰하기</p>
+									<p class="js-page hidden">공기와 물의 경계에서 빛이 나아가는 모습 관찰하기</p>
+									<p class="js-page">생각 쑥쑥</p>
+									<p class="js-page">공기와 유리의 경계에서 빛이 나아가는 모습 관찰하기</p>
+									<p class="js-page hidden">공기와 유리의 경계에서 빛이 나아가는 모습 관찰하기</p>
+									<p class="js-page hidden">공기와 유리의 경계에서 빛이 나아가는 모습 관찰하기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--4-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">볼록 렌즈의 특징 관찰하기</p>
+									<p class="js-page hidden">볼록 렌즈의 특징 관찰하기</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--5-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">볼록 렌즈를 통과한 햇빛 관찰하기</p>
+									<p class="js-page hidden">볼록 렌즈를 통과한 햇빛 관찰하기</p>
+									<p class="js-page hidden">볼록 렌즈를 통과한 햇빛 관찰하기</p>
+									<!-- <p class="js-page hidden">볼록 렌즈를 통과한 햇빛 관찰하기</p> -->
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--6-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">볼록 렌즈를 이용한 도구를 만들어 물체 관찰하기 </p>
+									<p class="js-page hidden">볼록 렌즈를 이용한 도구를 만들어 물체 관찰하기 </p>
+									<p class="js-page hidden">볼록 렌즈를 이용한 도구를 만들어 물체 관찰하기 </p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--7-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">우리 생활에서 볼록 렌즈의 쓰임새 조사하기</p>
+									<p class="js-page hidden">우리 생활에서 볼록 렌즈의 쓰임새 조사하기</p>
+									<p class="js-page">생각 쑥쑥</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--창의 융합 활동-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">볼록 렌즈를 이용한 사진 전시회를 열어 볼까요? </p>
+									<p class="js-page hidden">볼록 렌즈를 이용한 사진 전시회를 열어 볼까요? </p>
+									<p class="js-page hidden">볼록 렌즈를 이용한 사진 전시회를 열어 볼까요? </p>
+									<p class="js-page hidden">볼록 렌즈를 이용한 사진 전시회를 열어 볼까요? </p>
+									<p class="js-page hidden">볼록 렌즈를 이용한 사진 전시회를 열어 볼까요? </p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="js-infoList infoPop">
+						<!--단원 정리하기-->
+						<div class="infoArea type2">
+							<div>
+								<div class="subBox" data-no-step="">
+									<p class="js-page">1 개념 확인</p>
+									<p class="js-page">2 서술형ㆍ논술형</p>
+									<p class="js-page">3 과학 글쓰기</p>
+									<p class="js-page">이 단원에서 나는</p>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--섹션인포-->
+		</div>
+		<!--//navWrap-->
+
+	</div>
+	<script src="../js/util.js"></script>
+	<script src="../js/activeHelper.js"></script>
+	<script src="../js/stamp.js"></script>
+	<script src="../js/nav.js"></script>
+</body>
+
+</html>

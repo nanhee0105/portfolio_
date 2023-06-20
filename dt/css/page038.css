@@ -1,0 +1,86 @@
+@charset "utf-8";
+.topWrap .bigTitle img:nth-child(1) {width: 70px;height: auto;position: absolute;top: 185px;left: 170px;z-index: 1;}
+.topWrap .bigTitle img:nth-child(2) {width: 235px;height: auto;position: absolute;top: 130px;left: 505px;}
+.topWrap .topcont {width: 250px;left: 240px;}
+.videoBtn {top: 80px;left: 520px;}
+.learningBtn {left: 250px;}
+
+/* 슬라이드 */
+.sliderWrap .slideView .sliceInner .itemList .listBox img{width: 100px;}
+.itemList:nth-of-type(1) .listBox:nth-of-type(2) .checkText {width: 86px; left: 54%;}
+
+.doitWrap {left: 235px;}
+
+.bottomWrap {position: absolute;bottom: 0px;right: 0px;z-index: 0;}
+.bottomWrap img {width: 768px;}
+
+/* 팝업 */
+.popupOverlay.subPop .popupWrap .tabTopImg::after {left: 365px;}
+
+.act_pop_01 {width: 650px;height: 630px;display: flex;justify-content: space-between;flex-wrap: wrap;left: 50%;transform: translateX(-50%);top: -10px;}
+.act_pop_01 .list {width: 49%; height: 32%; display: flex; background: #ede8e5; border-radius: 10px;}
+.act_pop_01 .list img {width: 100%; position: absolute; top: 45%; transform: translateY(-50%);}
+.act_pop_01 .list span {line-height: 1; position: absolute;}
+.act_pop_01 .list .listleft {width: 30%; position: relative; }
+.act_pop_01 .list .listleft span {width: 100%;top: 130px;left: 50%;transform: translateX(-50%);text-align: center;}
+.act_pop_01 .list .listright {width: 70%; position: relative; box-sizing: border-box; background: #fff; border: 1px solid #c9c0b7; border-radius: 0 10px 10px 0;}
+.act_pop_01 .list .listright > div {position: relative; left: 25px;}
+.act_pop_01 .list .listright > div span {display: block; position: absolute; line-height: 1;}
+.act_pop_01 .list .listright > div span::before {content: ""; width: 5px; height: 5px; position: absolute; top: 50%; left: -10px; transform: translateY(-50%); border-radius: 100%; background: #000;}
+.act_pop_01 .list .listright > div:nth-of-type(1) {top: 30px;}
+.act_pop_01 .list .listright input {width: 148px;line-height: 1;position: absolute;top: -1px;left: 35px;background: #fff3e9;text-align: left;margin-left: 3px;}
+.act_pop_01 .list .listright > div:nth-of-type(2) {top: 65px;}
+.act_pop_01 .list .listright textarea {width: 85%;height: 110px;position: relative;line-height: 18px;top: 20px;left: 0;background: #fff3e9;padding: 5px;}
+.place1 {width: 50%;position: absolute;left: 39px;text-indent: 5px;line-height: 20px;top: -1px;}
+.place2 {width: 85%;height: 110px;position: absolute;top: -4px;left: 0;text-indent: 58px;line-height: 25px;}
+
+.act_pop_02 {text-align: center;}
+.act_pop_02 textarea {width: 640px; height: 134px; box-sizing: border-box; border: 2px solid #d2c8ba; border-radius: 3px;}
+
+/* Btn */
+.addBtn {left: 425px;top: 804px;}
+.videoBg .videoWrap .tabTopImg::after {left: 376px;}
+
+.studyPopup.miniPopup .videoBox{top: 200px;}
+
+/* 학습문제 팝업 */
+.openPopup1 .clickBtn {
+    top: 149px;
+    left: auto;
+    right: 57px;
+    z-index: 2;
+}
+
+.titlePopup.titlePopup1.dim {
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+.titlePopup.titlePopup1 > div {
+    height: 83%;
+    top: 290px;
+}
+
+.titlePopup.titlePopup1 .slider_in > div, .titlePopup.titlePopup1 .sliderinner, .titlePopup.titlePopup1 .slider_wrap {
+    height: 410px;
+}
+
+.titlePopup.titlePopup1 .slider_in > div > span {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    background-color: rgba(255,255,255,0.5);
+    font-size: 22px;
+    z-index: 2;
+    border-radius: 10px;
+    padding: 4px 14px;
+}
+
+.titlePopup.titlePopup1 .slider_in > div img {
+    width: 610px;
+    top: 44%;
+}
+
+.titlePopup.titlePopup1 .slider_in > div:nth-of-type(1) img{
+    top: 45%;
+}

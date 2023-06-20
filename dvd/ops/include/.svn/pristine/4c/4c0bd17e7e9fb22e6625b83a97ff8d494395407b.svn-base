@@ -1,0 +1,451 @@
+(() => {
+  function setStateMedia(media, endedCallback) {
+    media.play = () => { return media.DOM.play(); }
+    media.pause = () => { return media.DOM.pause(); }
+    media.stop = () => {
+      media.DOM.pause();
+      media.DOM.currentTime = 0;
+      media.DOM.load();
+    }
+    media.muted = (boolean) => { media.DOM.muted = boolean; }
+    media.DOM.addEventListener('ended', endedCallback);
+    
+    media.muted(true);
+    media.play().then(() => {
+      media.stop();
+      media.muted(false);
+      console.log('video loaded');
+    });
+
+    return media;
+  }
+  
+	function isFullScreenElement() {
+		return (document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || document.fullscreenElement) || null;
+	}
+
+	function enterFullScreen(dom) {
+		dom.style.width = '100%';
+		dom.style.height = '100%';
+		if (dom.requestFullscreen) dom.requestFullscreen();
+		else if (dom.webkitEnterFullScreen) dom.webkitEnterFullScreen();
+		else if (dom.msRequestFullscreen) dom.msRequestFullscreen(); /* IE/Edge */
+		else if (dom.mozRequestFullScreen) dom.mozRequestFullScreen(); /* Firefox */
+		else if (dom.webkitRequestFullscreen) dom.webkitRequestFullscreen(); /* Chrome, Safari and Opera */
+	}
+
+	function exitFullScreen() {
+		// this.container.style.width = '';
+		// this.container.style.height = '';
+		if (document.exitFullscreen) document.exitFullscreen();
+		else if (document.msExitFullscreen) document.msExitFullscreen(); /* IE/Edge */
+		else if (document.mozCancelFullScreen) document.mozCancelFullScreen(); /* Firefox */
+		else if (document.webkitExitFullscreen) document.webkitExitFullscreen(); /* Chrome, Safari and Opera */
+	}
+
+	function setFullScreen() {
+		if (!isFullScreenElement()) this.isFullscreenMode = false;
+		else this.isFullscreenMode = true;
+	}
+
+  function getTime(time) {
+
+if( isNaN(time))
+    time = 0;
+
+    const min = Math.floor(time / 60);
+    const sec = Math.floor(time % 60);
+    return `${min < 10 ? '0'+min: min}:${sec < 10 ? '0'+sec : sec}`;
+  }
+
+  const clickEvent = 'click touchstart';
+  const downEvent = 'mousedown touchstart';
+  const TIME_AUTOHIDE = 1000;
+
+  class Player {
+    constructor(opts) {
+      this.binding();
+      this.init(opts);
+
+      this.isPlaying = false;
+      this.isFullscreenMode = false;
+      this.muted = false;
+      this.timeUpdate;
+    }
+
+    binding() {
+      this.togglePlay = this.togglePlay.bind(this);
+      this.play = this.play.bind(this);
+      this.pause = this.pause.bind(this);
+      this.stop = this.stop.bind(this);
+      this.setStateVolume = this.setStateVolume.bind(this);
+      this.setStateFullScreen = this.setStateFullScreen.bind(this);
+    }
+
+    get type() { return this.container.data('type'); }
+    get duration() { return this.media.DOM.duration; }
+    get timeRate() { return this.currentTime / this.duration; }
+
+    set currentTime(__time) { this.media.DOM.currentTime = __time; }
+    get currentTime() { return this.media.DOM.currentTime; }
+
+    get progressWidth() { return this.progressBg.width; }
+    get progressHandlerDefaultLeft() { 
+      return this.progressHandler.defaultLeft - (this.progressHandler.defaultWidth / 2);
+     }
+
+    togglePlay() {
+      if (this.isPlaying) this.pause();
+      else this.play();
+    }
+
+    play() {
+      this.callback && this.callback.play && this.callback.play(this);
+      
+      this.media.play();
+      this.isPlaying = true;
+      this.setStateButton();
+      this.container.off('isPaused');
+
+      clearInterval(this.timeUpdate);
+      this.timeUpdate = setInterval(() => {
+        this.timer && this.setStateTimer();
+        this.isProgress && this.setStateProgress(this.timeRate);
+      }, 10);
+      
+      if (this.playerBox) this.setAutoHide();
+    }
+
+    pause() {
+      this.media.pause();
+      this.isPlaying = false;
+      this.setStateButton();
+      if (this.playerBox) this.showPlayerBox();
+
+      this.container.on('isPaused');
+
+      this.callback && this.callback.pause && this.callback.pause(this);
+    }
+
+    stop() {
+      clearInterval(this.timeUpdate);
+      
+      this.media.stop();
+      this.isPlaying = false;
+      this.setStateButton();
+      this.isProgress && this.setStateProgress();
+      if (this.playerBox) this.showPlayerBox();
+      this.container.off('isPaused');
+
+      this.screenButton && this.screenButton.off('off');
+
+      this.callback && this.callback.stop && this.callback.stop(this);
+    }
+
+    setAutoHide() {
+      this.setTimeHidePlayerBox = setTimeout(() => { this.playerBox.on('hide'); }, TIME_AUTOHIDE);
+      this.playerBox.event('mouseover', this.showPlayerBox.bind(this));
+      this.playerBox.event('mouseout', this.hidePlayerBox.bind(this));
+    }
+
+    hidePlayerBox() {
+      clearTimeout(this.setTimeHidePlayerBox);
+      if (this.isPlaying) this.setTimeHidePlayerBox = setTimeout(() => { this.playerBox.on('hide'); }, TIME_AUTOHIDE);
+    }
+
+    showPlayerBox() {
+      clearTimeout(this.setTimeHidePlayerBox);
+      this.playerBox.off('hide');
+    }
+
+    setStateVolume() {
+      this.savedVolume = this.savedVolume || 1;
+      if (this.muted) {
+        this.muted = false;
+        this.media.muted(false);
+        this.volumeButton.off('muted');
+        this.setStateVolumeProgress(this.savedVolume);
+      }
+      else {
+        this.savedVolume = this.media.DOM.volume;
+        this.muted = true;
+        this.media.muted(true);
+        this.volumeButton.on('muted');
+        this.setStateVolumeProgress(0);
+      }
+    }
+
+    setStateFullScreen() {
+      if (this.isFullscreenMode) exitFullScreen();
+      else enterFullScreen(this.media.DOM);
+    }
+
+    reset() {
+      this.stop();
+    }
+
+    setStateButton() {
+      if (this.isPlaying) {
+        this.playButton && this.playButton.on('pause');
+        this.screenButton && this.screenButton.on('off');
+      }
+      else {
+        this.playButton && this.playButton.off('pause');
+        // this.screenButton && this.screenButton.off('off');
+      }
+    }
+
+    get timer_curTime() { return this.timer.getEl('.curTime')[0].DOM; }
+    get timer_totTime() { return this.timer.getEl('.totTime')[0].DOM; }
+
+    setStateTimer() {
+      this.timer_curTime.value = getTime(this.currentTime);
+      this.timer_totTime.value = getTime(this.duration);
+    }
+
+    setStateProgress(__rate = 0) {
+      this.setStateProgressHandler(__rate);
+      this.setStateProgressBg(__rate);
+    }
+
+    setStateProgressHandler(__rate = 0) {
+      const progressWidth = (this.progressWidth * __rate) + this.progressHandlerDefaultLeft;
+      this.progressHandler.style({left: `${progressWidth}px`});
+    }
+
+    setStateProgressBg(__rate = 0) {
+      const progressWidth = this.progressWidth * __rate;
+      this.progress.style({width: `${progressWidth}px`});
+    }
+
+    setProgressOnRate(__rate) {
+      const movedTime = this.duration * __rate;
+      if (movedTime) this.currentTime = movedTime;
+      this.setStateProgress(__rate);
+      /* video poster가 보이지 않아서 수동으로 stop 시켜줌 */
+      if (__rate === 0) {
+        if (!this.isPlaying) this.stop();
+      }
+    }
+
+    setStateVolumeProgress(__rate) {
+      const handlerMovedLeft = (this.soundProgressBg.width * __rate) + this.soundProgressHandler.initialLeft;
+      const progressMovedLeft = this.soundProgressBg.width * __rate;
+
+      this.soundProgressHandler.style({left: `${handlerMovedLeft}px`});
+      this.soundProgressBar.style({width: `${progressMovedLeft}px`});
+      this.media.DOM.volume = __rate;
+    }
+
+    createSoundProgress() {
+      const soundProgressClassname = 'soundProgress';
+      const soundProgressBg = $ic.createEl({
+        className: `${soundProgressClassname}_bg`, 
+        parent: this.container.DOM.querySelector('.playbar')
+      });
+      const soundProgressBar = $ic.createEl({
+        className: `${soundProgressClassname}_bar`, 
+        parent: this.container.DOM.querySelector('.playbar')
+      });
+      const soundProgressHandler = $ic.createEl({
+        className: `${soundProgressClassname}_handler`, 
+        parent: this.container.DOM.querySelector('.playbar')
+      });
+      soundProgressHandler.computedStyle = (__style) => {
+        return getComputedStyle(soundProgressHandler.DOM)[__style].replace('px', '') - 0;
+      };
+      soundProgressHandler.defaultLeft = soundProgressHandler.computedStyle('left');
+      soundProgressHandler.defaultWidth = soundProgressHandler.computedStyle('width');
+      soundProgressHandler.initialLeft = soundProgressHandler.defaultLeft - (soundProgressHandler.defaultWidth / 2);
+      soundProgressHandler.style({left: `${soundProgressHandler.initialLeft}px`});
+
+      this.soundProgressHandler = soundProgressHandler;
+      this.soundProgressBar = soundProgressBar;
+      this.soundProgressBg = soundProgressBg;
+      
+      const getRate = (__left) => {
+        const barWidth = soundProgressBg.width;
+        return (__left / barWidth).toFixed(2) - 0;
+      }
+      const movedHandler = (__DRAG) => {
+        let moveValue;
+        const barData = soundProgressBg.DOM.getBoundingClientRect();
+        const startValue = (__DRAG.startPointer.x - barData.left) / __DRAG.zoomRate;
+        
+        moveValue = __DRAG.moveX + startValue;
+        if (moveValue < 0) moveValue = 0
+        else if (moveValue > soundProgressBg.width) moveValue = soundProgressBg.width;
+
+        const result = getRate(moveValue);
+        if (handling && result === 1) this.setStateVolumeProgress(0.998);
+        else if (handling && result === 0) {
+          this.setStateVolumeProgress(0.002);
+          if (!this.muted) this.setStateVolume();
+        }
+        else {
+          this.setStateVolumeProgress(result);
+          if (this.muted) this.setStateVolume();
+        }
+      }
+      
+      let movedIndex = 0;
+      let handling = false;
+
+      $ic.initDrag({
+        dragObj: soundProgressHandler,
+        container: this.container,
+        callback: {
+          start: (DRAG, event) => {
+            
+          },
+          move: (DRAG, event) => {
+            movedIndex++;
+            if (movedIndex % 3 !== 0) return;
+            movedHandler(DRAG);
+            handling = true;
+          },
+          end: (DRAG, event) => {
+            movedIndex = 0;
+            handling = false;
+            // movedHandler(DRAG);
+          },
+        }
+      });
+
+      this.setStateVolumeProgress(1);
+    }
+
+    init({container, name, options, media, timer, callback = null,
+      // buttons
+      screenButton, playButton, stopButton, volumeButton, fullScreenButton,
+      // progress
+      progress, progressHandler, progressBg}) {
+
+      this.container = container;
+      this.media = setStateMedia(media, this.stop);
+
+      this.createSoundProgress();
+
+      if (options) {
+        options.forEach((option) => this[option] = true);
+      }
+
+      if (screenButton) {
+        screenButton.hover();
+        screenButton.event(clickEvent, this.play);
+        this.screenButton = screenButton;
+      }
+
+      if (playButton) {
+        playButton.hover();
+        playButton.event(clickEvent, this.togglePlay);
+        this.playButton = playButton;
+      }
+
+      if (stopButton) {
+        stopButton.hover();
+        stopButton.event(clickEvent, this.stop);
+        this.stopButton = stopButton;
+      }
+
+      if (volumeButton) {
+        volumeButton.hover();
+        volumeButton.event(clickEvent, this.setStateVolume);
+        this.volumeButton = volumeButton;
+      }
+
+      if (fullScreenButton) {
+        fullScreenButton.hover();
+        fullScreenButton.event(clickEvent, this.setStateFullScreen);
+        this.fullScreenButton = fullScreenButton;
+
+        document.addEventListener('fullscreenchange', setFullScreen.bind(this));
+        document.addEventListener('webkitfullscreenchange', setFullScreen.bind(this));
+        document.addEventListener('mozfullscreenchange', setFullScreen.bind(this));
+        document.addEventListener('MSFullscreenChange', setFullScreen.bind(this));
+      }
+
+      if (progress && progressHandler && progressBg) {
+        const getRate = (__left) => {
+          const barWidth = progressBg.width;
+          return (__left / barWidth).toFixed(2) - 0;
+        }
+        const movedHandler = (__DRAG) => {
+          let moveValue;
+          const barData = progressBg.DOM.getBoundingClientRect();
+          const startValue = (__DRAG.startPointer.x - barData.left) / __DRAG.zoomRate;
+          
+          moveValue = __DRAG.moveX + startValue;
+          if (moveValue < 0) moveValue = 0
+          else if (moveValue > progressBg.width) moveValue = progressBg.width;
+
+          const result = getRate(moveValue);
+          
+          if (this.handling && result === 1) this.setProgressOnRate(0.998);
+          else if (this.handling && result === 0) this.setProgressOnRate(0.002);
+          else this.setProgressOnRate(result);
+        }
+        this.isProgress = true;
+        this.handling = false;
+        this.progress = progress;
+        this.playerBox = playButton.parent;
+        
+        this.progressBg = progressBg;
+        progressBg.event(downEvent, (event) => {
+          const eventValue = $ic.getEventPosition(event).x;
+          const bgLeftValue = progressBg.DOM.getBoundingClientRect().left;
+          const zoomRate = $ic.getZoomRate(progressBg.DOM);
+          const clickedValue = (eventValue - bgLeftValue) / zoomRate;
+          this.setProgressOnRate(getRate(clickedValue));
+        });
+
+        this.progressHandler = progressHandler;
+        progressHandler.computedStyle = (__style) => {
+          return getComputedStyle(progressHandler.DOM)[__style].replace('px', '') - 0;
+        };
+        progressHandler.defaultLeft = progressHandler.computedStyle('left');
+        progressHandler.defaultWidth = progressHandler.computedStyle('width');
+        this.progressHandler.style({left: `${this.progressHandlerDefaultLeft}px`});
+        let movedIndex = 0;
+        $ic.initDrag({
+          dragObj: this.progressHandler,
+          container: this.container,
+          callback: {
+            start: (DRAG, event) => {
+              this.media.pause();
+            },
+            move: (DRAG, event) => {
+              movedIndex++;
+              if (movedIndex % 3 !== 0) return;
+              movedHandler(DRAG);
+              this.handling = true;
+            },
+            end: (DRAG, event) => {
+              movedIndex = 0;
+              this.handling = false;
+              movedHandler(DRAG);
+              if (this.isPlaying) this.media.play();
+            },
+          }
+        });
+      }
+
+      if (timer) {
+        this.timer = timer;
+        setTimeout(() => { this.setStateTimer(); }, 300);
+      }
+
+      if (callback) this.callback = callback;
+
+      $CM.inPage[(name || 'player')] = {
+        _this: this,
+        play: this.play,
+        pause: this.pause,
+        stop: this.stop,
+        reset: this.reset,
+      }
+    }
+  }
+  
+  window.$ic.Player = Player;
+})();

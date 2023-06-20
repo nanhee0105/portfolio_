@@ -1,0 +1,165 @@
+@charset "utf-8";
+.top_p span:nth-of-type(1)::before {background-image: url(../images/common/top_icon3.png);}
+.top_p span:nth-of-type(2)::before {background-image: url(../images/common/top_icon5.png);}
+
+.rightTop {position: absolute;left: 280px;top: 80px;width: 520px;}
+.rightTop .MyeongjoB {position: absolute;}
+.rightTop > p:nth-of-type(1) {width: 270px; top: -10px;}
+.rightTop > p:nth-of-type(2) {width: 410px;top: 380px;}
+.imgSerial .imgWrap img {/* filter: grayscale(50%) brightness(0%) opacity(0.1); */height: auto;}
+
+.imgSerial .imgWrap:nth-of-type(1) img {width:95px}
+.imgSerial .imgWrap:nth-of-type(2) img {width:117px}
+.imgSerial .imgWrap:nth-of-type(3) img {width:103px}
+.imgSerial .imgWrap:nth-of-type(4) img {width:147px}
+.imgSerial .imgWrap:nth-of-type(5) img {width:91px}
+.imgSerial .imgWrap:nth-of-type(6) img {width:99px}
+
+.imgSerial .imgWrap {position: absolute;}
+.imgSerial .imgWrap:nth-of-type(1) {top: 40px;left: -220px;}
+.imgSerial .imgWrap:nth-of-type(2) {top: 260px;left: -221px;}
+.imgSerial .imgWrap:nth-of-type(3) {top: 130px;left: -100px;}
+.imgSerial .imgWrap:nth-of-type(4) {top: 80px;left: 40px;}
+.imgSerial .imgWrap:nth-of-type(5) {top: 250px;left: 50px;}
+.imgSerial .imgWrap:nth-of-type(6) {top: 160px;left: 190px;}
+
+.imgSerial .imgWrap p{position: absolute;}
+.imgSerial .imgWrap:nth-of-type(1) p{left:50px;}
+.imgSerial .imgWrap:nth-of-type(2) p{left: 40px;}
+.imgSerial .imgWrap:nth-of-type(3) p{left: 50px;}
+.imgSerial .imgWrap:nth-of-type(4) p{left: 32px;top: 130px;}
+.imgSerial .imgWrap:nth-of-type(5) p{left: 40px;top: 76px;}
+.imgSerial .imgWrap:nth-of-type(6) p{left: 40px;}
+/*
+.imgSerial .imgWrap::after {position: absolute;left: 50%;bottom: -15px;transform: translateX(-50%);width: 100%;text-align: center;}
+.imgSerial .imgWrap:nth-of-type(2)::after {content: "▲ 컵"}
+.imgSerial .imgWrap:nth-of-type(3)::after {content: "▲ 저금통"}
+.imgSerial .imgWrap:nth-of-type(4)::after {content: "▲ 분무기"}
+.imgSerial .imgWrap:nth-of-type(5)::after {content: "▲ 물뿌리개";left: 35%;bottom: -18px;}
+.imgSerial .imgWrap:nth-of-type(6)::after {content: "▲ 블록"}
+.imgSerial .imgWrap:nth-of-type(7)::after {content: "▲ 페트병"}
+*/
+
+
+.rightTop .clickBtn {right: 99px;top: 102px;z-index: 2;}
+
+.original img { animation: original 2s linear forwards; }
+
+/* 애니메이션 */
+.bar .imgWrap.opacity { animation: none; }
+.bar .imgWrap.opacity img { animation: original 2s linear forwards; }
+
+@keyframes original {
+    0% {filter: grayscale(50%) brightness(0%) opacity(0.1);}
+    10% {filter: grayscale(0%) brightness(100%) opacity(1);}
+    100% {filter: grayscale(0%) brightness(100%) opacity(1);}
+}
+
+
+
+.rightMid {position: absolute;right: 30px;top: 530px;width: 700px;height: 240px;}
+
+.rightMid .imgclickWrap {height: 170px;}
+.rightMid .imgclickWrap .imgBox {width: 202px;height: 152px;margin-right: 28px;}
+.rightMid .imgclickWrap .imgBox .imgWrap img {width: 202px;height: auto;}
+.rightMid .imgclickWrap .imgClick:nth-child(1) {margin-right: 10px;}
+.rightMid .imgclickWrap .imgBox .imgWrap {width: 202px;height: 152px;position: relative;top: 50%;left: 50%;transform: translate(-50%,-50%);opacity: 1;transform-origin: 0% 0%;overflow: hidden;border-radius: 10px;}
+.rightMid .imgclickWrap .imgBox .text {bottom: -30px;left: 54%;}
+.rightMid .imgclickWrap .imgBox .imgWrap.subimg {width: 90px;position: absolute;top: 150px;left: 170px;}
+.rightMid .imgclickWrap .imgBox .imgWrap.subimg img {width: 100%;}
+.rightMid .clickBtn {z-index: 2;top: 350px;left: 629px;}
+
+
+.imgclickWrap .bar {width: 150px;position: absolute;bottom: -329px;right: -20px;}
+.imgclickWrap .bar img {width: 151px;filter: grayscale(50%) brightness(0%) opacity(0.5);}
+
+.contentpage {color: #fff;}
+
+/* normal */
+.normal .tabContent {width: 550px;}
+p.tabTitle {width: 500px;}
+.selfcheck > p {width: 400px;}
+.selfcheck .checkWrapperBox {right: 10px;}
+
+/* 생각쑥쑥 */
+.popupOverlay.thinkPop .popupWrap .tabContent {top: 240px;height: 733px;}
+.act_pop_01 table tbody tr:not(:nth-child(1)) td{background: none;height: 100px;}
+.act_pop_01 table tbody tr td:nth-child(1){width: 100px;}
+.act_pop_01 table tbody tr td:nth-child(2){width: 150px;}
+.thinkPop .popupWrap .tabContent .act_pop_01 textarea {border: none;}
+
+/*정리하기*/
+.openPopup1 .popupWrap{height: 340px;}
+
+
+/* 정리문제 */
+
+.popupList:nth-child(1) .checkNum .inputBox {float: left;margin-right: 19px;width: 30%;margin-bottom: 20px;}
+.popupList:nth-child(1) .quizCont {top: 0;}
+.popupList:nth-child(1) .answerCheck {top: 126px;left: 462px;}
+
+#p035_qp_06 {top: 220px;left: 50%;transform: translateX(-50%);}
+.popupList:nth-child(2) .view {width: 400px;height: 70px;position: absolute;top: 120px;left: 50%;transform: translateX(-50%);border: 1px solid #d2c8ba;}.popupList:nth-child(1) .view p {width: 100%;text-align: center;word-spacing: 20px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.popupList:nth-child(2) .view p::after {content: "< 보기 >";position: absolute;top: -40px;left: 50%;transform: translateX(-50%);font-size: 20px;background-color: #fff;word-spacing: 0px;}
+.popupList:nth-child(2) .view span {font-size: 20px;}
+.popupList:nth-child(2) .view p {width: 100%;text-align: center;word-spacing: 20px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.popupList:nth-child(2) .quizCont{border: 1px solid #d2c8ba;padding: 10px;box-sizing: border-box;top: -20px;}
+.popupList:nth-child(2) .quizCont p{top: 50%;position: absolute;left: 50%;transform: translate(-50%, -50%);width: 440px;}
+
+
+
+.popupList:nth-child(3) .checkNum .inputBox {float: left;margin-right: 19px;width: 100%;margin-bottom: 20px;}
+.popupList:nth-child(3) .quizCont {top: -20px;}
+.popupList:nth-child(3) .answerCheck {top: 330px;left: 70px;}
+
+.thinkPop .popupWrap .tabTopImg::after {left: 200px;}
+
+
+/*0924*/
+.top_p{z-index: 1;}
+
+
+/* 드래그 */
+.dragWrap .dragTarget {width: 151px;height: 283px;line-height: 30px;position: absolute;background: rgba(0,0,0,0.2);border: 2px dashed red;padding: 10px;box-sizing: border-box;}
+.dragWrap .dragTargetWrap div:nth-of-type(1) {top: 0;left: 612px;}
+.dragWrap .dragTargetWrap div:nth-of-type(2) {top: 458px;left: 604px;}
+.dragWrap .dragTargetWrap div:nth-of-type(3) {top: 243px;left: 0;}
+.dragWrap .dragTargetWrap div:nth-of-type(4) {top: 289px;left: 0;}
+.dragWrap .dragTarget input {display: none;}
+.dragWrap .dragBox {width: 186px;height: 158px;position: absolute;left: -219px;top: 190px;border-radius: 10px;background: #efe2d2;}
+.dragWrap .dragBox .drag {position: absolute;}
+.dragWrap .dragBox .drag img {width: 41px;height: auto;}
+.dragWrap .dragBox .drag1 {top: -191px;left: 243px;}
+.dragWrap .dragBox .drag2 {top: -191px;left: 294px;}
+.dragWrap .dragBox .drag3 {top: -191px;left: 346px;}
+.dragWrap .dragBox .drag4 {top: -191px;left: 397px;}
+.dragWrap .dragBox .ex {position: absolute;top: -180px;left: 474px;width: 235px;text-align: left;color: #f44741;line-height: 25px;}
+.dragWrap .dragBox .ex .dragTarget {position: relative;top: 7px;display: inline-block;margin: 0 4px;width: 40px;height: 25px;border-radius: 6px;border: 1px dashed green;background: #f6f6f6;}
+.dragWrap .dragBox .ex::after {content: "";background: url(../images/common/point_btn.png) no-repeat center/19px 19px;width: 24px;height: 24px;position: absolute;left: -28px;top: 0;}
+.dragWrap .dragTargetWrap div.complete {width: 100%;position: absolute;top: 0;left: 0px;}
+.dragWrap .dragTargetWrap div.complete img {width: 100%;}
+
+.retryagainBtn {display: none;top: 35px;left: 402px;}
+.doitsolve {top: 30px;right: auto;left: 447px;z-index: 2;}
+.doitsolve::after {transform: rotate(90deg);top: 16px;left: -9px;}
+
+.checkBtn {width: 33px;height: 34px;cursor: pointer;position: absolute;top: 35px;left: 402px;}
+.retry .retryagainBtn {display: block;}
+.retry .checkBtn {display: none;}
+
+.thinkagain {top: 2px !important;}
+
+.thinkagain {top: 2px !important;}
+.thinkagain {top: 2px !important;}
+
+.dragWrap .dragTarget .guideT {
+    color: #f44741;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+/* 2023.02.17 추가수정 */
+.miniPopup.openPopup1 {top: 0; left: 0;} 
+

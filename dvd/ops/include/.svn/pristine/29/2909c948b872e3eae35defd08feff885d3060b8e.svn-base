@@ -1,0 +1,685 @@
+(() => {
+  /* parentHeader */
+  const TEXT_FULL = 'isFullMode';
+  function headerOnFullMode() {
+    const parentHeader = parent.document.querySelector('header');
+    parentHeader.classList.add(TEXT_FULL);
+  }
+  function headerOffFullMode() {
+    const parentHeader = parent.document.querySelector('header');
+    parentHeader.classList.remove(TEXT_FULL);
+  }
+
+  /* help */
+  function openFile(__src = null) {
+    if (!__src) { console.log('pdf 경로가 없습니다!'); return; }
+
+    if (window.jj && jj.link.html) window.jj.link.html(__src, '_blank', {"maximize": true});
+    else window.open(__src);
+  }
+
+  /* get page infomation */
+  function getDataFromLocation() {
+    const pathname = window.location.pathname.split('/');
+    const pathnameFromParent = parent.location.pathname.split('/');
+    const lessonFolderName = pathname.filter((name) => name.includes('lesson'))[0];
+    const htmlName = pathnameFromParent.filter((name) => name.includes('.html'))[0];
+    const name = htmlName.replace('.html', '');
+
+    FOLDER = lessonFolderName;
+    LESSON = lessonFolderName.replace('lesson', '') - 0;
+    NAME = name;
+  }
+
+  /* lesson & chapter & corner */
+  function setStateStamp(container) {
+    const stamp = {};
+    stamp.container = container;
+    stamp.closeButton = stamp.container.getEl('.js-stampClose')[0];
+    stamp.dragButton = stamp.container.getEl('.js-stampDrag')[0];
+    stamp.dragBox = stamp.container.getEl('.js-stampBox')[0];
+    stamp.dropArea = stamp.container.getEl('.js-stampDropArea')[0];
+    stamp.selectButtons = stamp.container.getEl('.js-stampType');
+    stamp.erasers = stamp.container.getEl('.js-eraser');
+    return stamp;
+  }
+  
+  function setStateApp(button, container) {
+    const app = {};
+    app.button = button;
+    app.container = container;
+    app.activeButtons = container.getEl('.js-activeButton');
+    app.stamp = container.getEl('.js-stamp')[0];
+    app.reference = container.getEl('.js-reference')[0];
+    return app;
+  }
+
+  function getStepTitle(__page) {
+    const text = __page.parent && __page.parent.parent && __page.parent.parent.DOM.querySelector('.title > span');
+    return text ? text.innerHTML : null;
+  }
+  
+  function getStepText(__index) {
+    let returnText;
+    switch(__index - 0) {
+      case 1: returnText = '도입'; break;
+      case 2: returnText = '전개'; break;
+      case 3: returnText = '정리'; break;
+    }
+    return returnText;
+  }
+
+  function appendData(__page, __data) {
+    __page.step = getStepTitle(__page);
+    __page.html = __data.html;
+    __page.pageToHtml = __data.pageToHtml;
+    __page.pageToEbook = __data.pageToEbook;
+    if (__data.noCheck) __page.noCheck = __data.noCheck;
+    if (__data.infoTitleText) __page.infoTitleText = __data.infoTitleText;
+  }
+
+  /* configs */
+  let FOLDER, LESSON, NAME;
+  const clickEvent = 'click touchstart';
+  const TEXT_OFF = 'OFF';
+  const TEXT_SHOW = 'isShow';
+  const TEXT_SELECTED = 'selected';
+  const TEXT_NOSTEP = 'noStepTextInHeader';
+  const TEXT_HASSUBMENU = 'hasSubMenu';
+
+  class TOC {
+    constructor(opts) {
+      this.binding();
+      this.init(opts);
+    }
+
+    binding() {
+      this.openToc = this.openToc.bind(this);
+      this.closeToc = this.closeToc.bind(this);
+      this.toggleToc = this.toggleToc.bind(this);
+      this.goToEbook = this.goToEbook.bind(this);
+    }
+
+    get PAGES() {
+      let pageArray = [];
+      this.sections[LESSON-1].subMenus.forEach((subMenu) => {
+        if (subMenu.infoMenus) {
+          subMenu.infoMenus.forEach((infoMenu) => {
+            pageArray = pageArray.concat(infoMenu.pages);
+          });
+        }
+      });
+      return pageArray;
+    }
+    get lessonTitleText() { return this.sections[LESSON-1].titleText; }
+    get subMenuHasIntro() { return this.sections[LESSON-1].hasIntro; }
+    get introPage() { return this.sections[LESSON-1].subMenus[0]; }
+
+    openToc() {
+      this.isShow = true;
+      this.container.on(TEXT_SHOW);
+      headerOnFullMode();
+      this.currentPage.lessonIndex;
+    }
+
+    closeToc() {
+      this.isShow = false;
+      this.container.off(TEXT_SHOW);
+      this.reset();
+      if (!this.isRunStamp) headerOffFullMode();
+    }
+
+    toggleToc() {
+      if (this.isShow) this.closeToc();
+      else this.openToc();
+    }
+
+    insertDataToHeader() {
+      this.textBookPage.DOM.innerHTML = this.currentPage.pageToHtml;
+      this.subTitleInHeader.DOM.innerHTML = `[${this.currentSubText}]`;
+
+      /* 21.10.25 spvog
+        단원 정리하기는 타이틀에서 내용 보여주지 않음.
+      */
+      if (this.currentInfoText === '단원 정리하기' || this.lessonTitleText === '단원 정리하기') this.infoTitleInHeader.DOM.innerHTML = '';
+      else this.infoTitleInHeader.DOM.innerHTML = this.currentPage.infoTitleText || this.currentInfoText || this.lessonTitleText;
+
+      if (this.currentStep) {
+        this.stepInHeader.DOM.innerHTML = this.currentStep;
+        this.container.off(TEXT_NOSTEP);
+      }
+      else this.container.on(TEXT_NOSTEP);
+    }
+
+    setStateTOC() {
+      let section, subMenu, infoMenu, page, current, total;
+      /* 현재 페이지가 대단원 도입 페이지인 경우 */
+      if (this.subMenuHasIntro && NAME === this.introPage.html) {
+        this.currentPage = this.introPage;
+        this.selectedLessonIndex = LESSON-1;
+        section = this.sections[LESSON-1];
+        subMenu = this.introPage;
+        infoMenu = null;
+        page = null;
+        current = 1;
+        total = 1;
+      }
+      else {
+        this.currentPage = this.PAGES.filter((page, index) => {
+          if (page.html === NAME) {
+            this.nextPage = this.PAGES[index+1];
+            this.prevPage = this.PAGES[index-1];
+            return page;
+          }
+        })[0];
+        const {lessonIndex, subIndex, infoIndex, index} = this.currentPage;
+        
+        this.selectedLessonIndex = lessonIndex;
+        section = this.sections[lessonIndex];
+        subMenu = section.subMenus[subIndex];
+        infoMenu = subMenu.infoMenus ? subMenu.infoMenus[infoIndex] : null;
+        page = infoMenu.pages[index];
+        current = index+1;
+        total = infoMenu.pages.length;
+        
+        let getPageIndex = index - 1;
+        while (page.noCheck) {
+          page = infoMenu.pages[getPageIndex];
+          getPageIndex--;
+        }
+      }
+
+      if (subMenu.isHiddenMenu) this.container.off(TEXT_HASSUBMENU);
+      else this.container.on(TEXT_HASSUBMENU);
+      
+      section.active();
+      subMenu.active();
+      this.currentSubText = subMenu.text;
+
+      if (infoMenu) {
+        infoMenu.active();
+        this.currentInfoText = infoMenu.text;
+      }
+      if (page) {
+        page.active();
+        this.currentStep = page.step ? page.step : getStepText(page.step);
+      }
+
+      this.insertDataToHeader();
+      this.setStatePageInHeader(current, total);
+    }
+
+    loadPage(__page) {
+      console.log('해당 페이지로 이동', __page.html);
+      const lesson = __page.lessonIndex + 1;
+      const pageName = __page.html;
+      const type = location.pathname.includes('contents_sub') ? 'contents_sub' : 'contents';
+      const viewerUrlInViewer = `/viewer/contents/index.html?contentInformationURL=/resource`;
+      const viewerUrlInBrowser = `../../../../../../viewer/contents/index.html?contentInformationURL=../../resource`;
+
+      if ($ic.inViewer()) {
+        if (FOLDER === `lesson0${lesson}`) {
+          if (parent.parent.GO_PAGE_NAME_LOAD) parent.parent.GO_PAGE_NAME_LOAD(`${pageName}.html`);
+          else parent.parent.parent.GO_PAGE_NAME_LOAD(`${pageName}.html`);
+        }
+        else {
+          const contentsUrl = type+'/lesson0'+lesson+'/&pageName='+pageName+'.html';
+        
+          if (window.jj && jj.native.exe) jj.link.html(`/viewer/contents/index.html?contentInformationURL=../../resource/`+contentsUrl, '_top');
+          else window.open(`../../../../../../viewer/contents/index.html?contentInformationURL=../../resource/`+contentsUrl, '_top');
+        }
+      }
+      else {
+        const href = parent.location.href.split(FOLDER);
+        parent.location.assign(`${href[0]}lesson0${lesson}/${pageName}.html`);
+      }
+    }
+
+    pageMove(__type) {
+      let page;
+      if (__type === 'next') page = this.nextPage;
+      else page = this.prevPage;
+
+      this.loadPage(page);
+    }
+
+    goToEbook() {
+      const viewerUrlInViewer = `/viewer/ebook/index.html?contentInformationURL=../../resource`;
+      const viewerUrlInBrowser = `../../../../../../viewer/ebook/index.html?contentInformationURL=../../resource`;
+      const type = location.pathname.includes('contents_sub') ? 'ebook_sub' : 'ebook';
+      const ebokPage = this.currentPage.pageToEbook;
+      const contentsUrl = type+'/&page='+ebokPage+'&UUID=fcem:uuid:ebook';
+      
+      if (window.jj && jj.native.exe) jj.link.html(`/viewer/ebook/index.html?contentInformationURL=../../resource/`+contentsUrl, '_top');
+      else window.open(`../../../../../../viewer/ebook/index.html?contentInformationURL=../../resource/`+contentsUrl, '_top');
+    }
+
+    setStatePageButton(__case) {
+      switch(__case) {
+        case 'maximum': /* 마지막 페이지 */
+          this.paging.prevButton.off(TEXT_OFF);
+          this.paging.nextButton.on(TEXT_OFF);
+          break;
+        case 'minimum': /* 1 페이지 */
+          this.paging.prevButton.on(TEXT_OFF);
+          this.paging.nextButton.off(TEXT_OFF);
+          break;
+        case 'off': /* 전체 페이지가 1인 경우 */
+          this.paging.prevButton.on(TEXT_OFF);
+          this.paging.nextButton.on(TEXT_OFF);
+          break;
+        default:
+          this.paging.prevButton.off(TEXT_OFF);
+          this.paging.nextButton.off(TEXT_OFF);
+          break;
+      }
+    }
+
+    setStatePageInHeader(__current, __total) {
+      this.paging.current.DOM.value = __current;
+      this.paging.total.DOM.value = __total;
+
+      const isCase = __current === 1 && __total === 1 ? 'off' 
+        : __current === 1 ? 'minimum'
+        : __current === __total ? 'maximum'
+        : 'default';
+
+      this.setStatePageButton(isCase);
+    }
+
+    reset() {
+      this.sections[0].allReset();
+      this.setStateTOC();
+    }
+
+    download(__button) {
+      let src;
+      switch (__button.type) {
+        case 'mp4':
+          src = `contents/lesson0${this.selectedLessonIndex + 1}/ops/media/movie/${__button.fileName}`;
+          break;
+        case 'hwp':
+          src = `data/0${this.selectedLessonIndex + 1}/${__button.fileName}`;
+          break;
+        case 'ppt': case 'pptx':
+          src = `data/0${this.selectedLessonIndex + 1}/${__button.fileName}`;
+          break;
+        case 'pdf':
+          src = `data/0${this.selectedLessonIndex + 1}/${__button.fileName}`;
+          break;
+      }
+
+      if (window.jj && jj.native.exe) jj.native.exe(`/resource/${src}`);
+      else window.open(`../../../../../${src}`);
+    }
+    
+    init({container, closeButton, toggleTocButton, app, stamp, sections, navInHeader, paging, downButtons}) {
+      this.parentHeader = parent.document.querySelector('header');
+      this.container = container;
+      this.subTitleInHeader = navInHeader.subTitle;
+      this.infoTitleInHeader = navInHeader.infoTitle;
+      this.stepInHeader = navInHeader.step;
+      this.textBookPage = navInHeader.page;
+      
+      const goToEbookButton = navInHeader.page.parent.parent;
+      goToEbookButton && goToEbookButton.event(clickEvent, this.goToEbook);
+      
+      /* show/hide toggle TOC */
+      toggleTocButton.event(clickEvent, this.toggleToc);
+
+      /* move to ebook */
+      closeButton.event(clickEvent, this.goToEbook);
+
+      /* activeHelper */
+      $activeHelper(app, {
+        openCallback: () => {
+          if (!this.isShow) headerOnFullMode();
+        },
+        closeCallback: () => {
+          if (!this.isShow && !this.isRunStamp) headerOffFullMode();
+        },
+      });
+
+      /* stamp */
+      this.stamp = $stamp(stamp, {
+        endCallback: () => {
+          this.isRunStamp = false;
+          if (!this.isShow) headerOffFullMode();
+        }
+      });
+      app.stamp.event(clickEvent, () => {
+        this.isRunStamp = true;
+        this.stamp.startStamp();
+      });
+
+      /* lesson & chapter & corner */
+      this.sections = sections;
+      const setSection = (section, sectionIndex) => {
+        const DATA = $TOC_DATA[`lesson0${sectionIndex+1}`];
+        const setSubMenu = (subMenu) => {
+          const setInfoMenu = (infoMenu) => {
+            const setPage = (page, pageIndex) => {
+              if (DATA) {
+                let pageInfoIndex;
+
+                if (section.hasIntro) {
+                  /* 대단원 도입이 있는 경우 첫번째가 대단원 도입에 포함되므로 하나씩 뒤로 밀어줘야 함. */
+                  pageInfoIndex = page.infoIndexForGetList + 1;
+                }
+                else pageInfoIndex = page.infoIndexForGetList;
+
+                appendData(page, DATA[pageInfoIndex][pageIndex]);
+
+                page.event(clickEvent, () => {
+                  infoMenu.pageReset();
+                  page.active();
+                  this.loadPage(page);
+                });
+              }
+            }
+            
+            infoMenu.pages.forEach(setPage);
+            infoMenu.title.event(clickEvent, () => {
+              section.resetInfoMenu();
+              infoMenu.active();
+              this.currentInfoText = infoMenu.text;
+            });
+          }
+          subMenu.infoMenus && subMenu.infoMenus.forEach(setInfoMenu);
+          if (subMenu.isIntro) {
+            /* 대단원 도입 페이지 */
+            if (DATA) {
+              appendData(subMenu, DATA[0][0]);
+              subMenu.lessonIndex = sectionIndex;
+            }
+          }
+          subMenu.title.event(clickEvent, () => {
+            section.resetSubMenu();
+            section.resetInfoMenu();
+
+            if (subMenu.isHiddenMenu) {
+              /* 서브메뉴가 보이지 않아야 하는 경우(단원 정리하기, 신기한 과학 탐험 등) */
+              subMenu.active();
+              subMenu.infoMenus[0].active();
+              this.container.off(TEXT_HASSUBMENU);
+            }
+            else {
+              subMenu.active();
+              this.container.on(TEXT_HASSUBMENU);
+            }
+
+            if (subMenu.isIntro) {
+              console.log('intro로 이동');
+              this.loadPage(subMenu);
+            }
+          });
+        }
+
+        /* 서브메뉴에 대단원 도입이 있는지 확인 */
+        if (section.subMenus.filter((menu) => menu.isIntro).length > 0) {
+          section.hasIntro = true;
+        }
+        section.subMenus.forEach(setSubMenu);
+        section.button.event(clickEvent, () => {
+          section.allReset();
+          section.active();
+          this.selectedLessonIndex = sectionIndex;
+        });
+      }
+      sections.forEach(setSection);
+
+      /* paging */
+      this.paging = paging;
+      paging.prevButton.event(clickEvent, this.pageMove.bind(this, 'prev'));
+      paging.nextButton.event(clickEvent, this.pageMove.bind(this, 'next'));
+
+      if (downButtons) {
+        downButtons.forEach((button) => {
+          button.event(clickEvent, this.download.bind(this, button));
+        });
+      }
+
+      /* start */
+      this.setStateTOC();
+    }
+  }
+
+  window.addEventListener('load', () => {
+    const container = $ic.getEl('.js-toc');
+    const toggleTocButton = $ic.getEl('.js-toggleTocButton');
+    const closeButton = $ic.getEl('.js-tocCloseButton');
+    const sectionButtons = $ic.getEl('.js-sectionButton');
+    const lessonBoxes = $ic.getEl('.js-lessonBox');
+    const subMenuBoxes = $ic.getEl('.js-subMenuBox');
+    const infoBoxes = $ic.getEl('.js-infoBox');
+    const downButtons = $ic.getEl('[data-down]');
+
+    /* pageing */
+    const paging = {};
+    paging.nextButton = $ic.getEl('.pageBtnright');
+    paging.prevButton = $ic.getEl('.pageBtnleft');
+    paging.current = $ic.getEl('.pagenum input')[0];
+    paging.total = $ic.getEl('.pagenum input')[1];
+
+    /* help */
+    const helpButton = $ic.getEl('.js-helpButton');
+    if (helpButton) {
+      helpButton.hover();
+      helpButton.event(clickEvent, openFile.bind(null, `../../../../../include/manual.pdf`));
+    }
+
+    /* activeHelper */
+    let app;
+    if ($ic.getEl('.js-appButton'), $ic.getEl('.js-appContainer')) {
+      app = setStateApp($ic.getEl('.js-appButton'), $ic.getEl('.js-appContainer'));
+    }
+    
+    /* stamp */
+    let stamp;
+    if ($ic.getEl('.js-stampContainer')) stamp = setStateStamp($ic.getEl('.js-stampContainer'));
+    
+    /* openviewer(textbook) */
+    if (closeButton) {
+      closeButton.hover();
+      // closeButton.event(clickEvent, () => {console.log('이북으로 이동')});
+    }
+
+    /* navigation in header */
+    const navInHeader = {
+      subTitle: $ic.getEl('.js-subTitleInHeader'),
+      infoTitle: $ic.getEl('.js-infoTitleInHeader'),
+      step: $ic.getEl('.js-stepInHeader'),
+      page: $ic.getEl('.js-pageNumber'),
+    }
+
+    /* navigation */
+    let infoIndexForGetList = 0;
+    function setStateInfo(__lessonIndex, __subIndex, infoTitle, infoIndex) {
+      const infoMenu = {};
+      const infoBox = infoBoxes[__lessonIndex];
+      
+      infoMenu.title = infoTitle;
+      infoMenu.title.hover();
+      infoMenu.text = infoTitle.DOM.innerHTML.replace(/<br>/g, ' ');
+      infoMenu.menu = infoBox.getEl('.js-infoList')[infoIndexForGetList];
+
+      const stepBox = infoMenu.menu.getEl('.subBox');
+      stepBox.forEach((step, index) => {
+        if (!step.DOM.hasAttribute('data-no-step')) step.attr('data-step', index + 1);
+      });
+      infoMenu.pages = infoMenu.menu.getEl('.js-page');
+      infoMenu.pages.forEach((page, index) => {
+        page.infoIndexForGetList = infoIndexForGetList;
+        page.lessonIndex = __lessonIndex;
+        page.subIndex = __subIndex;
+        page.infoIndex = infoIndex;
+        page.index = index;
+        page.step = page.parent.data('step');
+
+        page.hover();
+        page.active = () => {
+          page.on(TEXT_SELECTED);
+        }
+      });
+
+      /* api */
+      infoMenu.reset = () => {
+        infoMenu.pageReset();
+        infoMenu.title.off(TEXT_SELECTED);
+        if (infoMenu.menu) infoMenu.menu.off(TEXT_SELECTED);
+      }
+      infoMenu.active = () => {
+        infoMenu.title.on(TEXT_SELECTED);
+        if (infoMenu.menu) infoMenu.menu.on(TEXT_SELECTED);
+      }
+      infoMenu.pageReset = () => {
+        infoMenu.pages.forEach((page) => page.off(TEXT_SELECTED));
+      }
+
+      infoIndexForGetList++;
+
+      return infoMenu;
+    }
+    function setStateSubMenu(__lessonIndex, subTitle, subIndex) {
+      const subMenu = {};
+      const subMenuIndex = subTitle.data('subIndex');
+      const subBox = subMenuBoxes[__lessonIndex];
+      
+      subMenu.title = subTitle;
+      subMenu.title.hover();
+      subMenu.text = subTitle.DOM.querySelector('h3').innerText;
+      if (subMenuIndex) {
+        subMenu.menu = subBox.getEl(`.js-subMenu[data-index="${subMenuIndex}"]`)[0];
+
+        /* 서브 메뉴가 보이면 안되는 경우가 있어서 추가함 */
+        subMenu.isHiddenMenu = subMenu.menu.DOM.hasAttribute('data-hidden-menu');
+
+        /* setCorner */
+        const currentInfoTitles = subMenu.menu.getEl('.js-infoTitle');
+        subMenu.infoMenus = currentInfoTitles.map((title, index) => {
+          // __lessonIndex === 4 && console.log(index)
+          return setStateInfo(__lessonIndex, subIndex, title, index);
+        });
+      }
+      else subMenu.menu = null;
+
+      if (subTitle.DOM.hasAttribute('data-intro')) subMenu.isIntro = true;
+      if (subTitle.DOM.hasAttribute('data-outro')) subMenu.isOutro = true;
+
+      /* api */
+      subMenu.reset = () => {
+        subMenu.title.off(TEXT_SELECTED);
+        if (subMenu.menu) subMenu.menu.off(TEXT_SELECTED);
+        if (subMenu.infoMenus) subMenu.infoMenus.forEach((infoMenu) => infoMenu.reset());
+      }
+      subMenu.active = () => {
+        subMenu.title.on(TEXT_SELECTED);
+        if (subMenu.menu) subMenu.menu.on(TEXT_SELECTED);
+      }
+
+      return subMenu;
+    }
+    function setStateSection(sectionButton, lessonIndex) {
+      const section = {};
+      section.button = sectionButton;
+      section.box = lessonBoxes[lessonIndex];
+      section.titleText = section.box.DOM.querySelector('.js-lessonTitleText').innerHTML.replace(/<br>/g, ' ');
+      section.button.hover();
+      infoIndexForGetList = 0;
+
+      /* api */
+      section.reset = () => {
+        section.button.off(TEXT_SELECTED);
+        section.box.off(TEXT_SELECTED);
+        section.resetSubMenu();
+      }
+      section.allReset = () => {
+        sections.forEach((section) => {
+          section.reset();
+          section.subMenus.forEach((subMenu) => {
+            subMenu.reset();
+          });
+        });
+      }
+      section.resetSubMenu = () => {
+        section.subMenus.forEach((subMenu) => subMenu.reset());
+      }
+      section.resetInfoMenu = () => {
+        section.subMenus.forEach((subMenu) => {
+          if (subMenu.infoMenus) subMenu.infoMenus.forEach((infoMenu) => infoMenu.reset());
+        });
+      }
+      section.active = (__subIndex = 0) => {
+        section.button.on(TEXT_SELECTED);
+        section.box.on(TEXT_SELECTED);
+      }
+      
+      /* setChapter */
+      const currentSubTitles = section.box.getEl('.js-subTitle');
+      section.subMenus = currentSubTitles.map((title, subIndex) => {
+        return setStateSubMenu(lessonIndex, title, subIndex);
+      });
+
+      return section;
+    }
+    
+    let sections;
+    if (sectionButtons) sections = sectionButtons.map(setStateSection);
+    
+    if (downButtons) {
+      downButtons.forEach((button) => {
+        const dataDown = button.data('down').split('.');
+        button.type = dataDown[1];
+        button.fileName = button.data('down');
+        button.hover();
+      });
+    }
+
+    /* run TOC */
+    getDataFromLocation();
+    const getTocDataFromParent = setInterval(() => {
+      if (parent.TOC) {
+        clearInterval(getTocDataFromParent);
+        window.$TOC_DATA = parent.TOC.data;
+        
+        if (parent.TOC.data) {
+          new TOC({
+            container, 
+            closeButton,
+            toggleTocButton,
+            app,
+            stamp,
+            sections,
+            navInHeader,
+            paging,
+            downButtons
+          });
+        }
+        else {
+          function goPrev() {
+            parent.loadPage('prev');
+            setStatePage();
+          }
+          function goNext() {
+            parent.loadPage('next');
+            setStatePage();
+          }
+          function setStatePage() {
+            const currentPage = $ic.getEl('.pagenum input')[0];
+            const totalPage = $ic.getEl('.pagenum input')[1];
+        
+            currentPage.DOM.value = parent.TOC.currentIndex;
+            totalPage.DOM.value = parent.TOC.totalIndex;
+          }
+          
+          const prevButton = $ic.getEl('.pageBtnleft');
+          const nextButton = $ic.getEl('.pageBtnright');
+      
+          prevButton.event('click touchstart', goPrev);
+          nextButton.event('click touchstart', goNext);
+          setStatePage();
+        }
+      }
+    }, 10);
+  });
+})();
